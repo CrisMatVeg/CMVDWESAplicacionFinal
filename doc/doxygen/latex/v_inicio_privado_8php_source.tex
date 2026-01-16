@@ -1,0 +1,37 @@
+\doxysection{v\+Inicio\+Privado.\+php}
+\hypertarget{v_inicio_privado_8php_source}{}\label{v_inicio_privado_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/view/vInicioPrivado.php@{D:/ProyectosNB/CMVDWESLoginLogoff/view/vInicioPrivado.php}}
+\doxymbox{\hyperlink{v_inicio_privado_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00032}00032\ ?>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00033}00033\ <header>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00034}00034\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}logo"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}owl"{}}\ aria-\/hidden=\textcolor{stringliteral}{"{}true"{}}></span>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ <span>Login\ Logoff<span\ style=\textcolor{stringliteral}{"{}color:var(-\/-\/muted);font-\/weight:600;margin-\/left:6px;font-\/size:.9rem"{}}>—}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ Inicio\ Privado</span></span>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00038}00038\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00039}00039\ \ \ \ \ <nav>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ <form\ method=\textcolor{stringliteral}{"{}post"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}hidden"{}}\ name=\textcolor{stringliteral}{"{}paginaAnterior"{}}\ value=\textcolor{stringliteral}{"{}inicioPublico"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}atras"{}}\ value=\textcolor{stringliteral}{"{}Cerrar\ Sesión"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn\ primary"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00044}00044\ \ \ \ \ </nav>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00045}00045\ </header>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00047}00047\ <main>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00048}00048\ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h1>Bienvenido\ "{}}\ .\ \doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$avInicioPrivado}}[\textcolor{stringliteral}{"{}descUsuario"{}}]\ .\ \textcolor{stringliteral}{"{}</h1>"{}};}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>Esta\ el\ la\ "{}}\ .\ \doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$avInicioPrivado}}[\textcolor{stringliteral}{"{}numConexiones"{}}]\ +\ 1\ .\ \textcolor{stringliteral}{"{}ª\ vez\ que\ se\ conecta.</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$avInicioPrivado}}[\textcolor{stringliteral}{"{}numConexiones"{}}]!=0)\{}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>Usted\ se\ conectó\ por\ última\ vez\ el\ "{}}.\$avInicioPrivado[\textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}]-\/>format(\textcolor{charliteral}{'d'}).\textcolor{stringliteral}{"{}\ del\ "{}}.\doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$avInicioPrivado}}[\textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}]-\/>format(\textcolor{charliteral}{'m'}).\ \textcolor{stringliteral}{"{}\ de\ "{}}\ .\$avInicioPrivado[\textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}]-\/>format(\textcolor{charliteral}{'Y'}).\ \textcolor{stringliteral}{"{}\ a\ las\ "{}}\ .\$avInicioPrivado[\textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}]-\/>format(\textcolor{charliteral}{'H'}).\textcolor{stringliteral}{"{}:"{}}.\doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$avInicioPrivado}}[\textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}]-\/>format(\textcolor{charliteral}{'i'}).\textcolor{stringliteral}{"{}</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00053}\doxymbox{\hyperlink{v_inicio_privado_8php_a3d4b37b94f1cd641be4503bd573debda}{00053}}\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h2>BIENVENIDO!</h2>'};}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<br>'}}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00057}00057\ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00058}00058\ \ \ \ \ <form\ method=\textcolor{stringliteral}{"{}post"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}paginaDestino"{}}\ value=\textcolor{stringliteral}{'Detalle'}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn\ primary"{}}>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00060}00060\ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{v_inicio_privado_8php_source_l00061}00061\ </main>}
+
+\end{DoxyCode}

@@ -1,0 +1,177 @@
+\doxysection{layout.\+php}
+\hypertarget{layout_8php_source}{}\label{layout_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/view/layout.php@{D:/ProyectosNB/CMVDWESLoginLogoff/view/layout.php}}
+\doxymbox{\hyperlink{layout_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00022}00022\ ?>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00023}00023\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00024}00024\ <html\ lang=\textcolor{stringliteral}{"{}es"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00025}00025\ \ \ \ \ <head>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00027}00027\ \ \ \ \ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ <title>Login\ Logoff</title>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ <link\ href=\textcolor{stringliteral}{"{}https://cdnjs.cloudflare.com/ajax/libs/font-\/awesome/6.0.0-\/beta3/css/all.min.css"{}}\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}./webroot/css/estilosLoginLogoff.css"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ <style>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ @font-\/face\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/family:\ \textcolor{stringliteral}{"{}mFeather"{}};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src:\ url(\textcolor{stringliteral}{"{}./webroot/fonts/Nunito/static/Nunito-\/Black.ttf"{}})\ format(\textcolor{stringliteral}{"{}truetype"{}});}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/weight:\ 700;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/style:\ normal;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ @font-\/face\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/family:\ \textcolor{stringliteral}{"{}mNunito"{}};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ src:\ url(\textcolor{stringliteral}{"{}./webroot/fonts/Nunito/Nunito-\/VariableFont\_wght.ttf"{}})\ format(\textcolor{stringliteral}{"{}truetype"{}});}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/weight:\ bold;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/style:\ normal;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ :root\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/brand-\/green:\ \#58cc02;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/accent:\ \#4a9bff;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/footera:\ \#A5ED6E;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/footertext:\ \#D7FFB8;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/campocolor:\ \#f7f7f7;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/text:\ \#1a1a1a;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/btnsazul:\ \#1fc2ff;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/muted:\ \#6b7280;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/max-\/width:\ 100vw;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/btnshadowblue:\ \#1AA8EB;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/btnshadowgreen:\#58A700;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/btngrisshadow:\ \#cecece;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/bg:\ \#ffffff;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/headline:\ \textcolor{stringliteral}{'mFeather'};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/body:\ \textcolor{stringliteral}{'mNunito'};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ footer\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background:\ var(-\/-\/brand-\/green);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ margin-\/top:\ 3rem;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding:\ 2rem\ 0;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ var(-\/-\/muted);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font-\/size:\ .9rem;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:\textcolor{keyword}{static};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bottom:0;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 100\%;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ pre,td\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text-\/align:\ start;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding-\/left:10px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ main\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/color:\ var(-\/-\/bg);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text-\/align:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding:\ 100px\ 20px\ 20px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ header\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ flex;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ align-\/items:\ center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ justify-\/content:\ space-\/between;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding:\ 1rem\ 0;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding-\/left:20px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding-\/right:20px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:fixed;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ top:0;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background:\ var(-\/-\/bg);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z-\/index:\ 1000;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ .logo\ .owl\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 60px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 60px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/image:\ url(\textcolor{stringliteral}{"{}./webroot/images/paloma.svg"{}});}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/size:cover;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background-\/repeat:\ no-\/repeat;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ \textcolor{keyword}{inline}-\/block;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00109}00109\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#es,\ \#pr,\ \#fr\ \{}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ none;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ img\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 30px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ form\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ flex;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ justify-\/content:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ align-\/content:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flex-\/direction:column;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flex-\/wrap:wrap;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gap:20px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ form\ *\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cursor:\ pointer;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ form\ *\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ justify-\/content:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ form\ div\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ flex;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ justify-\/content:space-\/between;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ .labels\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display:\ flex;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ justify-\/content:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ align-\/content:center;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gap:10px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ padding-\/top:10px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ .cta\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 120px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box-\/shadow:\ 0px\ 5px\ 0px\ 0px\ var(-\/-\/btnshadowgreen);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ .hero\ div\ img\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 700px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 450px;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ .selected-\/idioma\ img\{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border:4px\ solid\ var(-\/-\/accent);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border-\/radius:10px;\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ .btn.primary\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ \textcolor{keyword}{auto};}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ background:\ var(-\/-\/btnsazul);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ white;}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ box-\/shadow:\ 0px\ 5px\ 0px\ 0px\ var(-\/-\/btnshadowblue);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ .btn.secondary\ \{}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border:\ 2px\ solid\ var(-\/-\/btngrisshadow);}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00172}00172\ \ \ \ \ \ \ \ \ </style>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00173}00173\ \ \ \ \ </head>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00174}00174\ \ \ \ \ <body>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}container"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ require\_once\ \doxymbox{\hyperlink{conf_a_p_p_8php_acccf2eac8663e0cebe8101e90fbab089}{\$view}}[\$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]];}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ <footer>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}footer-\/grid"{}}>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div>©\ 2025-\/26\ IES\ Los\ Sauces.\ Todos\ los\ derechos\ reservados.\ <a\ href=\textcolor{stringliteral}{"{}../CMVDWESProyectoDWES/indexProyectoDWES.php"{}}\ title=\textcolor{stringliteral}{"{}Inicio"{}}>Cristian\ Mateos\ Vega</a></div>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}https://es.duolingo.com/"{}}\ target=\textcolor{stringliteral}{"{}\_blank"{}}\ title=\textcolor{stringliteral}{"{}Duolingo"{}}>Pagina\ Imitada</a>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ·}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}https://github.com/CrisMatVeg/CMVDWESLoginLogoff"{}}\ target=\textcolor{stringliteral}{"{}\_blank"{}}\ title=\textcolor{stringliteral}{"{}Github"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/brands\ fa-\/github\ fa-\/2xl"{}}></i></a>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ </footer>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00189}00189\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00190}00190\ \ \ \ \ </body>}
+\DoxyCodeLine{\Hypertarget{layout_8php_source_l00191}00191\ </html>}
+
+\end{DoxyCode}

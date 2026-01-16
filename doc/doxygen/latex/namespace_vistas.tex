@@ -1,0 +1,167 @@
+\doxysection{Vistas Namespace Reference}
+\hypertarget{namespace_vistas}{}\label{namespace_vistas}\index{Vistas@{Vistas}}
+
+
+\doxysubsection{Detailed Description}
+Vista Login/\+\+Logoff
+
+Este archivo es la plantilla principal de la interfaz de login y logoff. Incluye la estructura HTML, enlaces a hojas de estilo y scripts, definición de fuentes y variables CSS, y carga dinámica de la vista correspondiente según la página en curso en la sesión.
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item \$view\+[\$\+\_\+\+SESSION\+[\textquotesingle{}pagina\+En\+Curso\textquotesingle{}]\+]\+ → archivo PHP de vista que se carga dinámicamente
+\end{DoxyItemize}
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Define la estructura HTML5 con {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}, {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}} y {\ttfamily \texorpdfstring{$<$}{<}footer\texorpdfstring{$>$}{>}}
+\item Carga CSS externo y define estilos internos para el login/\+logoff
+\item Muestra enlaces a recursos externos (Font Awesome, Duolingo, Github)
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista Parcial:\+ Detalle
+
+Este archivo muestra la página de detalle de la aplicación Login/\+\+Logoff. Su propósito principal es mostrar información de las superglobales de PHP (\$\+\_\+\+SESSION, \$\+\_\+\+COOKIE, \$\+\_\+\+SERVER, \$\+\_\+\+ENV, \$\+\_\+\+REQUEST, \$\+\_\+\+GET, \$\+\_\+\+POST, \$\+\_\+\+FILES) y toda la configuración del servidor mediante {\ttfamily phpinfo()}.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ logo y formulario con botón "{}\+Volver"{} para regresar a inicio privado.
+\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ sección {\ttfamily .hero} que despliega:\+
+\begin{DoxyItemize}
+\item Título del contenido:\+ “\+Superglobales y phpinfo()”
+\item Tablas HTML para cada superglobal, mostrando clave y valor
+\item Salida completa de {\ttfamily phpinfo()} al final
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Elementos importantes:\+
+\begin{DoxyItemize}
+\item Logo con clase {\ttfamily .owl} y texto “\+Login Logoff — Detalle”
+\item Formulario con botón "{}\+Volver"{} ({\ttfamily pagina\+Anterior = inicio\+Privado})
+\item Tablas de superglobales para depuración
+\item phpinfo() para información completa del servidor y PHP
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de superglobales de PHP
+\item Estilos CSS externos/\+internos
+\item Archivo PHP de acción del formulario ({\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}})
+\end{DoxyItemize}
+
+Advertencia:\+
+\begin{DoxyItemize}
+\item Esta vista debe usarse solo en entorno de desarrollo o pruebas, ya que expone información sensible de la sesión y del servidor.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista Parcial:\+ Inicio Privado
+
+Este archivo muestra la interfaz de la página de inicio privado de la aplicación Login/\+\+Logoff. Se encarga de mostrar un mensaje de bienvenida al usuario, información sobre sus conexiones, y proporciona un botón para acceder a la página de detalle.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ muestra el logo y un formulario con botón "{}\+Cerrar Sesión"{}.
+\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ muestra:\+
+\begin{DoxyItemize}
+\item Bienvenida al usuario con su nombre ({\ttfamily desc\+Usuario})
+\item Número de conexiones realizadas ({\ttfamily num\+Conexiones})
+\item Fecha y hora de la penúltima conexión ({\ttfamily fecha\+Hora\+Ultima\+Conexion\+Anterior}) si aplica
+\item Botón para ir a la sección de "{}\+Detalle"{}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Elementos importantes:\+
+\begin{DoxyItemize}
+\item Logo con clase {\ttfamily .owl} y texto “\+Login Logoff — Inicio Privado”
+\item Formulario de cierre de sesión con botón "{}\+Cerrar Sesión"{}
+\item Información dinámica extraída del array {\ttfamily \$av\+Inicio\+Privado}
+\item Botón de navegación a {\ttfamily Detalle}
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variable PHP {\ttfamily \$av\+Inicio\+Privado} con datos del usuario
+\item Estilos CSS externos e internos
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista Parcial:\+ Inicio Público
+
+Este archivo contiene la sección de cabecera y contenido principal para la página de inicio público de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ muestra el logo y un formulario de navegación al login.
+\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ contiene un título y un conjunto de imágenes representativas de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).
+\end{DoxyItemize}
+
+Elementos importantes:\+
+\begin{DoxyItemize}
+\item Logo con la clase {\ttfamily .owl} y texto “\+Login Logoff — Inicio Público”
+\item Formulario de navegación con botón “\+Login”
+\item Imágenes con clase {\ttfamily .btn secondary} que actúan como elementos interactivos
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Estilos definidos en CSS externo e interno del proyecto
+\item Acciones dirigidas a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista Parcial:\+ Login
+
+Este archivo contiene la sección de cabecera y contenido principal para la página de Login de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ muestra el logo y un formulario con botón "{}\+Registrarse"{}.
+\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ contiene la sección principal ({\ttfamily .hero}) con el formulario de login que permite introducir usuario y contraseña, y botones de acción.
+\end{DoxyItemize}
+
+Elementos importantes:\+
+\begin{DoxyItemize}
+\item Logo con la clase {\ttfamily .owl} y texto “\+Login Logoff — Login”
+\item Formulario de registro con botón "{}\+Registrarse"{}
+\item Formulario de login con campos {\ttfamily cod\+Usuario} y {\ttfamily password}
+\item Botones de acción:\+
+\begin{DoxyItemize}
+\item "{}\+Entrar"{} ({\ttfamily pagina\+Destino = inicio\+Privado})
+\item "{}\+Cancelar"{} ({\ttfamily atras} con valor de página anterior)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Estilos CSS externos e internos
+\item Acciones dirigidas a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}

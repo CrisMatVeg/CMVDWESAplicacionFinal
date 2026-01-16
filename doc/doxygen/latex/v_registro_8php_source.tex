@@ -1,0 +1,49 @@
+\doxysection{v\+Registro.\+php}
+\hypertarget{v_registro_8php_source}{}\label{v_registro_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/view/vRegistro.php@{D:/ProyectosNB/CMVDWESLoginLogoff/view/vRegistro.php}}
+\doxymbox{\hyperlink{v_registro_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00001}00001\ <header>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00002}00002\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}logo"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00003}00003\ \ \ \ \ \ \ \ \ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}owl"{}}\ aria-\/hidden=\textcolor{stringliteral}{"{}true"{}}></span>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00004}00004\ \ \ \ \ \ \ \ \ <span>Login\ Logoff<span\ style=\textcolor{stringliteral}{"{}color:var(-\/-\/muted);font-\/weight:600;margin-\/left:6px;font-\/size:.9rem"{}}>—}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ Registro</span></span>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00006}00006\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00007}00007\ </header>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00009}00009\ <main>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00010}00010\ \ \ \ \ <section\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}hero"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00011}00011\ \ \ \ \ \ \ \ \ <div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isset(\$\_COOKIE[\textcolor{stringliteral}{"{}idioma"{}}]))\{}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\$\_COOKIE[\textcolor{stringliteral}{"{}idioma"{}}]==\textcolor{stringliteral}{"{}FR"{}})\{}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>SE\ CONNECTER</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}elseif\ (\$\_COOKIE[\textcolor{stringliteral}{"{}idioma"{}}]==\textcolor{stringliteral}{"{}PR"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>CONECTE-\/SE</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>INICIAR\ SESIÓN</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00021}\doxymbox{\hyperlink{v_registro_8php_ad8ebf21c54b23691034931d79c96084f}{00021}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h2>REGISTRO</h2>"{}};}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ <div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <form\ method=\textcolor{stringliteral}{"{}post"{}}\ action=\textcolor{stringliteral}{"{}indexLoginLogoff.php"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ name=\textcolor{stringliteral}{"{}codUsuario"{}}\ placeholder=\textcolor{stringliteral}{"{}Usuario"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}codUsuario"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}\ value=\textcolor{stringliteral}{"{}"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ name=\textcolor{stringliteral}{"{}descUsuario"{}}\ placeholder=\textcolor{stringliteral}{"{}Nombre\ Completo"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}descUsuario"{}}\ value=\textcolor{stringliteral}{"{}"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ name=\textcolor{stringliteral}{"{}password"{}}\ placeholder=\textcolor{stringliteral}{"{}Contraseña"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}password"{}}\ value=\textcolor{stringliteral}{"{}"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Input\ submit\ Entrar\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}paginaDestino"{}}\ value=\textcolor{stringliteral}{"{}inicioPrivado"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn\ primary"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Input\ submit\ para\ volver\ a\ Login\ si\ se\ cambia\ de\ opinión,\ con\ un\ valor\ oculto\ para\ que\ sepa\ cual\ es\ la\ anterior\ exacta\ al\ pulsar\ este\ boton-\/-\/>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}hidden"{}}\ name=\textcolor{stringliteral}{"{}paginaAnterior"{}}\ value=\textcolor{stringliteral}{"{}Login"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}atras"{}}\ value=\textcolor{stringliteral}{"{}Login"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn\ primary"{}}>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00042}00042\ \ \ \ \ </section>}
+\DoxyCodeLine{\Hypertarget{v_registro_8php_source_l00043}00043\ </main>}
+
+\end{DoxyCode}

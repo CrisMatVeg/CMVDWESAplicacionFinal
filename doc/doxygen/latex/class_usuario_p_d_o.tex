@@ -1,0 +1,100 @@
+\doxysection{Usuario\+PDO Class Reference}
+\hypertarget{class_usuario_p_d_o}{}\label{class_usuario_p_d_o}\index{UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}{validar\+Usuario}} (\$cod\+Usuario, \$password)
+\item 
+\doxymbox{\hyperlink{class_usuario_p_d_o_a51e5b047b8655d1513915cdd0f5f6653}{actualizar\+Ultima\+Conexion\+YUsuario}} (\$usuario)
+\item 
+\doxymbox{\hyperlink{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004}{alta\+Usuario}} (\$cod\+Usuario, \$password, \$desc\+Usuario)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00016}{16}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_usuario_p_d_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_usuario_p_d_o_a51e5b047b8655d1513915cdd0f5f6653}\index{UsuarioPDO@{UsuarioPDO}!actualizarUltimaConexionYUsuario@{actualizarUltimaConexionYUsuario}}
+\index{actualizarUltimaConexionYUsuario@{actualizarUltimaConexionYUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{actualizarUltimaConexionYUsuario()}{actualizarUltimaConexionYUsuario()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a51e5b047b8655d1513915cdd0f5f6653} 
+actualizar\+Ultima\+Conexion\+YUsuario (\begin{DoxyParamCaption}\item[{}]{\$usuario}{}\end{DoxyParamCaption})}
+
+Actualiza la última conexión y la información del usuario en la base de datos
+
+Incrementa el número de conexiones y actualiza la fecha/\+hora de la última conexión en la tabla T01\+\_\+\+Usuarios. Luego actualiza el objeto \doxylink{class_usuario}{Usuario} pasado como parámetro con la nueva fecha/\+hora.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxylink{class_usuario}{Usuario} & {\em \$usuario} & Objeto \doxylink{class_usuario}{Usuario} a actualizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00062}{62}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
+
+\Hypertarget{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004}\index{UsuarioPDO@{UsuarioPDO}!altaUsuario@{altaUsuario}}
+\index{altaUsuario@{altaUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{altaUsuario()}{altaUsuario()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004} 
+alta\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{, }\item[{}]{\$desc\+Usuario}{}\end{DoxyParamCaption})}
+
+Da de alta un nuevo usuario en la base de datos
+
+Inserta un nuevo registro en la tabla T01\+\_\+\+Usuarios con el código, contraseña (encriptada) y descripción proporcionados. Si el registro se realiza correctamente, valida el usuario y devuelve el objeto \doxylink{class_usuario}{Usuario} para la sesión. Si falla, devuelve false.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Usuario} & Código del nuevo usuario \\
+\hline
+string & {\em \$password} & Contraseña del nuevo usuario \\
+\hline
+string & {\em \$desc\+Usuario} & Descripción o nombre del nuevo usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Usuario\texorpdfstring{$\vert$}{|}false Objeto \doxylink{class_usuario}{Usuario} recién creado o false si falla la inserción 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00090}{90}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
+
+\Hypertarget{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}\index{UsuarioPDO@{UsuarioPDO}!validarUsuario@{validarUsuario}}
+\index{validarUsuario@{validarUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{validarUsuario()}{validarUsuario()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7} 
+validar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{}\end{DoxyParamCaption})}
+
+Valida un usuario en la base de datos
+
+Consulta la tabla T01\+\_\+\+Usuarios para comprobar si existe un usuario con el código y la contraseña proporcionados. Si existe, crea y devuelve un objeto \doxylink{class_usuario}{Usuario}; si no, devuelve false.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Usuario} & Código del usuario a validar \\
+\hline
+string & {\em \$password} & Contraseña del usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Usuario\texorpdfstring{$\vert$}{|}false Devuelve un objeto \doxylink{class_usuario}{Usuario} si es válido, o false si no lo es 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00029}{29}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+D:\+/\+\+Proyectos\+NB/\+\+CMVDWESLogin\+Logoff/\+model/\+\doxymbox{\hyperlink{_usuario_p_d_o_8php}{Usuario\+PDO.\+php}}\end{DoxyCompactItemize}

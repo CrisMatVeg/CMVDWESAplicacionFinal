@@ -1,0 +1,99 @@
+\doxysection{v\+Detalle.\+php}
+\hypertarget{v_detalle_8php_source}{}\label{v_detalle_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/view/vDetalle.php@{D:/ProyectosNB/CMVDWESLoginLogoff/view/vDetalle.php}}
+\doxymbox{\hyperlink{v_detalle_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00036}00036\ ?>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00037}00037\ <header>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00038}00038\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}logo"{}}>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}owl"{}}\ aria-\/hidden=\textcolor{stringliteral}{"{}true"{}}></span>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ <span>Login\ Logoff<span\ style=\textcolor{stringliteral}{"{}color:var(-\/-\/muted);font-\/weight:600;margin-\/left:6px;font-\/size:.9rem"{}}>—}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ Detalle</span></span>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00042}00042\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00043}00043\ \ \ \ \ <form\ method=\textcolor{stringliteral}{"{}post"{}}\ action=\textcolor{stringliteral}{"{}indexLoginLogoff.php"{}}>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}hidden"{}}\ name=\textcolor{stringliteral}{"{}paginaAnterior"{}}\ value=\textcolor{stringliteral}{"{}inicioPrivado"{}}>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00045}00045\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}atras"{}}\ value=\textcolor{stringliteral}{"{}Volver"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn\ primary"{}}>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00046}00046\ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00047}00047\ </header>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00049}00049\ <main>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00050}00050\ <section\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}hero"{}}>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00051}00051\ <div>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00052}00052\ \ \ \ \ <h1>Superglobales\ y\ phpinfo()</h1>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00053}00053\ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_SESSION}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h1>\$\_SESSION</h1>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Clave</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00057}\doxymbox{\hyperlink{v_detalle_8php_af6657d3769819fe7180550af4f11c54b}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_SESSION\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$clave</th><td>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<pre>"{}};\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ print\_r(\$valor);\ \textcolor{comment}{//\ Imprime\ de\ forma\ legible\ el\ contenido\ de\ la\ variable}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</pre>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_COOKIE}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_COOKIE</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00068}00068\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Clave</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_COOKIE\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_SERVER}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00075}00075\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_SERVER</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Clave</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_SERVER\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_ENV}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_ENV</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Variable\ \$\_ENV</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_ENV\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_REQUEST}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_REQUEST</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Clave</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_REQUEST\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_GET}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_GET</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Clave</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_GET\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_POST}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_POST</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Variable\ \$\_POST</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_POST\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00112}00112\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ de\ \$\_FILES\ (archivos\ subidos)}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<h3>\$\_FILES</h3>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<table><tr><th>Variable\ \$\_FILES</th><th>Valor</th></tr>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$\_FILES\ as\ \$clave\ =>\ \$valor)\ \{}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr><th>\$\$clave</th><td>"{}}\ .\ \$valor\ .\ \textcolor{stringliteral}{"{}</td></tr>"{}};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</table>'};}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ información\ completa\ de\ PHP,\ configuración\ del\ servidor,\ módulos,\ etc.}}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ echo\ phpinfo();}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00124}00124\ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00125}00125\ </div>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00126}00126\ </section>}
+\DoxyCodeLine{\Hypertarget{v_detalle_8php_source_l00127}00127\ </main>}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{c\+Login.\+php}
+\hypertarget{c_login_8php_source}{}\label{c_login_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cLogin.php@{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cLogin.php}}
+\doxymbox{\hyperlink{c_login_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00032}00032\ \ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00033}00033\ \textcolor{comment}{//\ Gestión\ del\ botón\ "{}Atrás"{}/Cancelar}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00034}00034\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'atras'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00035}00035\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{'paginaAnterior'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00036}00036\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00037}00037\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00038}00038\ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00041}00041\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'registro'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00042}00042\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00043}00043\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \textcolor{stringliteral}{'Registro'};}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00044}00044\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00045}00045\ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00048}00048\ \textcolor{comment}{//\ Gestión\ del\ login\ hacia\ inicio\ privado}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00049}\doxymbox{\hyperlink{c_login_8php_ab96282db4312d69f248921075bdd3138}{00049}}\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'paginaDestino'}])\ \&\&\ \$\_REQUEST[\textcolor{stringliteral}{'paginaDestino'}]\ ==\ \textcolor{stringliteral}{"{}inicioPrivado"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00050}00050\ \ \ \ \ \$codUsuario\ =\ \$\_REQUEST[\textcolor{stringliteral}{'codUsuario'}]\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{stringliteral}{''}\ :\ \$\_REQUEST[\textcolor{stringliteral}{'codUsuario'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00051}00051\ \ \ \ \ \$password\ =\ \$\_REQUEST[\textcolor{stringliteral}{'password'}]\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{stringliteral}{''}\ :\ \$codUsuario\ .\ \$\_REQUEST[\textcolor{stringliteral}{'password'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ Llamar\ al\ modelo}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00054}00054\ \ \ \ \ \$usuarioPDO\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_usuario_p_d_o}{UsuarioPDO}}();}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00055}00055\ \ \ \ \ \$usuario\ =\ \$usuarioPDO-\/>validarUsuario(\$codUsuario,\ \$password);}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$usuario\ !=\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \$usuarioPDO-\/>actualizarUltimaConexionYUsuario(\$usuario);}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]\ =\ \$usuario;}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{"{}paginaDestino"{}}];}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00067}00067\ \textcolor{comment}{//\ Carga\ la\ vista\ layout\ principal}}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00068}00068\ require\_once\ \doxymbox{\hyperlink{conf_a_p_p_8php_acccf2eac8663e0cebe8101e90fbab089}{\$view}}[\textcolor{stringliteral}{'layout'}];}
+
+\end{DoxyCode}

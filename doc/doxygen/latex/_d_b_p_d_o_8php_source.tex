@@ -1,0 +1,21 @@
+\doxysection{DBPDO.\+php}
+\hypertarget{_d_b_p_d_o_8php_source}{}\label{_d_b_p_d_o_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/model/DBPDO.php@{D:/ProyectosNB/CMVDWESLoginLogoff/model/DBPDO.php}}
+\doxymbox{\hyperlink{_d_b_p_d_o_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00002}00002\ require\_once\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/../config/confDBPDO.php'};}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00014}\doxymbox{\hyperlink{class_d_b_p_d_o}{00014}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_d_b_p_d_o}{DBPDO}}\ \{}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00029}\doxymbox{\hyperlink{class_d_b_p_d_o_a5c5fd0383b6df10038d62722deb5c5ef}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{class_d_b_p_d_o_a5c5fd0383b6df10038d62722deb5c5ef}{ejecutarConsulta}}(\$sql,\ \$parametros\ =\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ \$conexion\ =\ \textcolor{keyword}{new}\ PDO(\doxymbox{\hyperlink{conf_d_b_p_d_o_8php_a0b4365dc3cc0e967808cd7034a971d0c}{DSN}},\ \doxymbox{\hyperlink{conf_d_b_p_d_o_8php_a74aeb024c560ee70f79b2c2b039bc113}{USERNAME}},\ \doxymbox{\hyperlink{conf_d_b_p_d_o_8php_a627633cf1f3c4ee60fcc7d025a4039ed}{PASSWORD}});}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \$conexion-\/>setAttribute(PDO::ATTR\_ERRMODE,\ PDO::ERRMODE\_EXCEPTION);}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \$consulta\ =\ \$conexion-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \$consulta-\/>execute(\$parametros\ !=\ \textcolor{keyword}{null}\ ?\ \$parametros\ :\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \$objetoResultado\ =\ \$consulta-\/>fetch();}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$objetoResultado;}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{_d_b_p_d_o_8php_source_l00038}00038\ ?>}
+
+\end{DoxyCode}

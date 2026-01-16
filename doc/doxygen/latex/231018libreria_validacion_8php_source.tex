@@ -1,0 +1,299 @@
+\doxysection{231018libreria\+Validacion.\+php}
+\hypertarget{231018libreria_validacion_8php_source}{}\label{231018libreria_validacion_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/core/231018libreriaValidacion.php@{D:/ProyectosNB/CMVDWESLoginLogoff/core/231018libreriaValidacion.php}}
+\doxymbox{\hyperlink{231018libreria_validacion_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00036}\doxymbox{\hyperlink{classvalidacion_formularios}{00036}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classvalidacion_formularios}{validacionFormularios}}\ \{\ \ \textcolor{comment}{//ELIMINA\ EL\ METODO\ VALIDATEDATE\ Y\ LO\ INCLUYE\ EN\ VALIDAR\ FECHA,\ ELIMINACION\ DE\ VALIDAR\ CHECKBOX\ Y\ RADIOB,\ MEJORA\ GENERAL\ DE\ RESPUESTA,\ INCLUSION\ DE\ PARAMETROS\ PREDEFINIDOS\ Y\ MEJORAS\ SUSTANCIALES\ EN\ ALGUNOS\ METODOS}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00055}\doxymbox{\hyperlink{classvalidacion_formularios_aea57853b69e9f11c8a6fe0967e09348f}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_aea57853b69e9f11c8a6fe0967e09348f}{comprobarAlfabetico}}(\$cadena,\ \$maxTamanio\ =\ 1000,\ \$minTamanio\ =\ 1,\ \$obligatorio\ =\ 0)\ \{\ \ \textcolor{comment}{//AÑADIDOS\ VALORES\ POR\ DEFECTO\ Y\ MEJORADA\ LA\ RESPUESTA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patrón\ para\ campos\ de\ solo\ texto}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \$patron\_texto\ =\ \textcolor{stringliteral}{"{}/\string^[a-\/zA-\/ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\(\backslash\)s]+\$/"{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \$cadena\ =\ htmlspecialchars(strip\_tags(trim((\textcolor{keywordtype}{string})\ \$cadena)));}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ es\ olbigatorio\ se\ comprueba\ si\ está\ vacío,\ si\ no\ es\ obligatorio,\ no\ es\ necesario}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$cadena);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Comprobación\ de\ que\ la\ cadena\ introducida\ coincide\ con\ la\ sintaxis\ permitida\ del\ patrón}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!preg\_match(\$patron\_texto,\ \$cadena)\ \&\&\ !empty(\$cadena))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ Solo\ se\ admiten\ letras."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00070}00070\ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \doxymbox{\hyperlink{classvalidacion_formularios_a5701da174450e7c521ba7a38fbd21939}{self::comprobarMaxTamanio}}(\$cadena,\ \$maxTamanio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \doxymbox{\hyperlink{classvalidacion_formularios_aeb1e0298e77ea4ba53b61cb3c6f3bd3c}{self::comprobarMinTamanio}}(\$cadena,\ \$minTamanio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00075}00075\ \textcolor{comment}{//\ Función\ para\ comprobar\ un\ campo\ AlfaNumerico}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00076}00076\ \textcolor{comment}{//\ Return\ nada\ si\ es\ correcto,\ si\ hay\ errores\ devuelve\ un\ mensaje\ de\ error}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00077}00077\ \textcolor{comment}{//\ Si\ es\ un\ 1\ es\ obligatorio,\ si\ es\ un\ 0\ no\ lo\ es}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00094}\doxymbox{\hyperlink{classvalidacion_formularios_a9cec4205d93c48bb5ef51bb5a7ccad22}{00094}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a9cec4205d93c48bb5ef51bb5a7ccad22}{comprobarAlfaNumerico}}(\$cadena,\ \$maxTamanio\ =\ 1000,\ \$minTamanio\ =\ 1,\ \$obligatorio\ =\ 0)\ \{\ \ \textcolor{comment}{//AÑADIDOS\ VALORES\ POR\ DEFECTO\ Y\ MEJORADA\ LA\ RESPUESTA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \$cadena\ =\ htmlspecialchars(strip\_tags(trim((\textcolor{keywordtype}{string})\ \$cadena)));}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ es\ obligatorio\ se\ hace\ la\ comprobación\ de\ que\ no\ está\ vacío}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1\ \&\&\ \$cadena\ !=\ \textcolor{charliteral}{'0'})\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$cadena);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \doxymbox{\hyperlink{classvalidacion_formularios_a5701da174450e7c521ba7a38fbd21939}{self::comprobarMaxTamanio}}(\$cadena,\ \$maxTamanio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \doxymbox{\hyperlink{classvalidacion_formularios_aeb1e0298e77ea4ba53b61cb3c6f3bd3c}{self::comprobarMinTamanio}}(\$cadena,\ \$minTamanio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00106}00106\ \textcolor{comment}{//\ Función\ para\ comprobar\ si\ es\ un\ campo\ entero}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00107}00107\ \textcolor{comment}{//\ Return\ null\ es\ correcto,\ si\ no\ muestra\ el\ mensaje\ de\ error}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00108}00108\ \textcolor{comment}{//\ Si\ es\ un\ 1\ es\ obligatorio,\ si\ es\ un\ 0\ no\ lo\ es}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00124}\doxymbox{\hyperlink{classvalidacion_formularios_aa6ea0126c71ac63a4f330bc78e808975}{00124}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_aa6ea0126c71ac63a4f330bc78e808975}{comprobarEntero}}(\$integer,\ \$max\ =\ PHP\_INT\_MAX,\ \$min\ =\ -\/PHP\_INT\_MAX,\ \$obligatorio\ =\ 0)\ \{\ \ \textcolor{comment}{//AÑADIDOS\ VALORES\ POR\ DEFECTO\ Y\ AHORA\ DETECTA\ EL\ 0}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1\ \&\&\ \$integer\ !=\ \textcolor{charliteral}{'0'})\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$integer);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\$obligatorio\ ==\ 0\ \&\&\ \$integer\ !=\ \textcolor{keyword}{null})\ ||\ (\$obligatorio\ ==\ 1\ \&\&\ empty(\$mensajeError)))\ \{\textcolor{comment}{//COMPROBAMOS\ QUE\ SI\ ES\ OPCIONAL,\ NO\ ESTÉ\ VACÍO\ Y\ SI\ ES\ OBLIGATORIO\ QUE\ NO\ HAYA\ GUARDADO\ UN\ MENSAJE\ DE\ ERROR\ ANTERIOR\ (QUE\ EL\ CAMPO\ NO\ ESTÉ\ VACÍO)\ \ }}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \$integer\ =\ str\_replace(\textcolor{charliteral}{'.'},\ \textcolor{charliteral}{','},\ \$integer);\ \textcolor{comment}{//SI\ SE\ HA\ INTRODUCIDO\ UN\ NÚMERO\ CON\ '.'(FLOAT),\ SUSTITUIMOS\ EL\ PUNTO\ POR\ UNA\ COMA\ PARA\ QUE\ SEA\ UN\ STRING}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_numeric(\$integer))\ \{\ \textcolor{comment}{//SI\ NO\ ES\ UN\ NÚMERO\ O\ STRING\ NUMÉRICO}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}El\ campo\ no\ es\ un\ entero.\ "{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$integer\ >\ \$max)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \$mensajeError\ .\ \textcolor{stringliteral}{"{}El\ número\ no\ puede\ ser\ mayor\ que\ "{}}\ .\ \$max\ .\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$integer\ <\ \$min)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \$mensajeError\ .\ \textcolor{stringliteral}{"{}El\ número\ no\ puede\ ser\ menor\ que\ "{}}\ .\ \$min\ .\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00148}00148\ \textcolor{comment}{//\ Función\ para\ comprobar\ si\ es\ un\ campo\ float}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00149}00149\ \textcolor{comment}{//\ Return\ null\ es\ correcto,\ si\ no\ muestra\ el\ mensaje\ de\ error}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00150}00150\ \textcolor{comment}{//\ Si\ es\ un\ 1\ es\ obligatorio,\ si\ es\ un\ 0\ no\ lo\ es}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00165}\doxymbox{\hyperlink{classvalidacion_formularios_afe5a1720a0c252f9c2b493f16175ea5c}{00165}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_afe5a1720a0c252f9c2b493f16175ea5c}{comprobarFloat}}(\$float,\ \$max\ =\ PHP\_FLOAT\_MAX,\ \$min\ =\ -\/PHP\_FLOAT\_MAX,\ \$obligatorio\ =\ 0)\ \{\ \ \textcolor{comment}{//AÑADIDOS\ VALORES\ POR\ DEFECTO\ Y\ AHORA\ DETECTA\ 0}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00166}00166\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1\ \&\&\ \$float\ !=\ \textcolor{charliteral}{'0'})\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$float);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\$obligatorio\ ==\ 0\ \&\&\ \$float\ !=\ \textcolor{keyword}{null})\ ||\ (\$obligatorio\ ==\ 1\ \&\&\ empty(\$mensajeError)))\ \{\textcolor{comment}{//COMPROBAMOS\ QUE\ SI\ ES\ OPCIONAL,\ NO\ ESTÉ\ VACÍO\ Y\ SI\ ES\ OBLIGATORIO\ QUE\ NO\ HAYA\ GUARDADO\ UN\ MENSAJE\ DE\ ERROR\ ANTERIOR\ (QUE\ EL\ CAMPO\ NO\ ESTÉ\ VACÍO)\ \ \ }}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_numeric(\$float))\ \{\textcolor{comment}{//SI\ NO\ ES\ UN\ NÚMERO\ O\ STRING\ NUMÉRICO}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}El\ campo\ no\ es\ un\ decimal.\ (Debe\ llevar\ punto(.)\ entre\ la\ parte\ entera\ y\ la\ parte\ decimal)"{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$float\ >\ \$max)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \$mensajeError\ .\ \textcolor{stringliteral}{"{}El\ número\ no\ puede\ ser\ mayor\ que\ "{}}\ .\ \$max\ .\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$float\ <\ \$min)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \$mensajeError\ .\ \textcolor{stringliteral}{"{}El\ número\ no\ puede\ ser\ menor\ que\ "{}}\ .\ \$min\ .\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00186}00186\ \textcolor{comment}{//\ Función\ para\ comprobar\ si\ es\ un\ correo\ electronico}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00187}00187\ \textcolor{comment}{//\ Return\ nada\ si\ es\ correcto,\ si\ hay\ errores\ devuelve\ un\ mensaje\ de\ error}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00188}00188\ \textcolor{comment}{//\ Si\ es\ un\ 1\ es\ obligatorio,\ si\ es\ un\ 0\ no\ lo\ es}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00203}\doxymbox{\hyperlink{classvalidacion_formularios_a631fc4952fe300300173eb5cdaaa1868}{00203}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a631fc4952fe300300173eb5cdaaa1868}{validarEmail}}(\$email,\ \$obligatorio\ =\ 0)\ \{\ \textcolor{comment}{//ELIMINADoS\ MAX\ Y\ MIN,\ IMPLEMENTACION\ DE\ PARAMETRO\ POR\ DEFECTO\ Y\ MEJORADA\ \ LA\ RESPUESTA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Compruebo\ si\ está\ vacío\ cuadno\ es\ obligatorio}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$email);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Comprobación\ de\ que\ la\ sintaxis\ del\ correo\ introducido\ es\ correcta}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!filter\_var(\$email,\ FILTER\_VALIDATE\_EMAIL)\ \&\&\ !empty(\$email))\ \{\ \textcolor{comment}{//HE\ SIMPLIFICADO\ ESTO}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ Formato\ de\ correo\ incorrecto(Ejemplo:\ tunombre@hotmail.com)."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00218}00218\ \textcolor{comment}{//\ Función\ para\ comprobar\ si\ es\ una\ url,\ local\ o\ no}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00219}00219\ \textcolor{comment}{//\ Devuelve\ null\ si\ es\ correcto,\ sino\ muestra\ el\ mensaje\ de\ error}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00220}00220\ \textcolor{comment}{//\ Si\ el\ parámetro\ \$obligatorio\ es\ un\ 1\ es\ obligatorio,\ si\ es\ un\ 0\ es\ opcional}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00232}\doxymbox{\hyperlink{classvalidacion_formularios_aed5f622812dec4069aaf35b5d8247a25}{00232}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_aed5f622812dec4069aaf35b5d8247a25}{validarURL}}(\$url,\ \$obligatorio\ =\ 0)\ \{\ \textcolor{comment}{//MEJORADA\ LA\ RESPUESTA\ Y\ ASIGNADO\ VALOR\ POR\ DEFECTO}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$url);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!filter\_var(\$url,\ FILTER\_VALIDATE\_URL)\ \&\&\ !empty(\$url))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}Formato\ incorrecto\ de\ URL."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00239}00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00254}\doxymbox{\hyperlink{classvalidacion_formularios_ab4641ed6cc37b66c56c36363197e7743}{00254}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_ab4641ed6cc37b66c56c36363197e7743}{validarFecha}}(\$fecha,\ \$fechaMaxima\ =\ \textcolor{stringliteral}{'01/01/2200'},\ \$fechaMinima\ =\ \textcolor{stringliteral}{"{}01/01/1900"{}},\ \$obligatorio\ =\ 0)\ \{\ \textcolor{comment}{//REDISEÑO\ TOTAL\ Y\ AÑADIDOS\ PARAMETROS\ INICIALES}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00255}00255\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00256}00256\ \ \ \ \ \ \ \ \ \$fechaMaxima\ =\ strtotime(\$fechaMaxima);\ \textcolor{comment}{//PASAR\ A\ TIMESTAMP\ PARA\ PODER\ OPERAR}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00257}00257\ \ \ \ \ \ \ \ \ \$fechaMinima\ =\ strtotime(\$fechaMinima);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$fecha);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \$fechaFormateada\ =\ strtotime(\$fecha);\ \ \textcolor{comment}{//CREAR\ FECHA\ PARA\ TRABAJAR\ CON\ LAS\ FUNCIONES\ DE\ PHP}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_bool(\$fechaFormateada)\ \&\&\ !empty(\$fecha))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ Formato\ incorrecto\ de\ fecha\ (Año-\/Mes-\/dia)\ (2000-\/01-\/01)."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00265}00265\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\$fecha)\ \&\&\ (\$fechaFormateada\ <\ \$fechaMinima)\ ||\ (\$fechaFormateada\ >\ \$fechaMaxima))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ Por\ favor\ introduzca\ una\ fecha\ entre\ "{}}\ .\ date(\textcolor{stringliteral}{'d/m/Y'},\ \$fechaMinima)\ .\ \textcolor{stringliteral}{"{}\ y\ "{}}\ .\ date(\textcolor{stringliteral}{'d/m/Y'},\ \$fechaMaxima)\ .\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00271}00271\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00284}\doxymbox{\hyperlink{classvalidacion_formularios_a1fe73429d216aa57bfdce69e5920294e}{00284}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a1fe73429d216aa57bfdce69e5920294e}{validarDni}}(\$dni,\ \$obligatorio\ =\ 0)\ \{\ \textcolor{comment}{//AÑADIDO\ VALOR\ POR\ DEFECTO\ Y\ MEJORADA\ LA\ SALIDA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00285}00285\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00286}00286\ \ \ \ \ \ \ \ \ \$letra\ =\ substr(\$dni,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00287}00287\ \ \ \ \ \ \ \ \ \$numeros\ =\ substr(\$dni,\ 0,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$dni);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_numeric(\$letra)\ \&\&\ is\_numeric(\$numeros))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((substr(\textcolor{stringliteral}{"{}TRWAGMYFPDXBNJZSQVHLCKE"{}},\ \$numeros\ \%\ 23,\ 1)\ !=\ \$letra\ ||\ strlen(\$letra)\ !=\ 1\ ||\ strlen(\$numeros)\ !=\ 8)\ \&\&\ !empty(\$dni))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ DNI\ no\ es\ válido."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00295}00295\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\$dni))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ DNI\ no\ es\ válido."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00301}00301\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00303}00303\ \ \ \ \ \textcolor{comment}{//\ Valida\ el\ código\ postal,\ si\ es\ opcional\ da\ por\ válido\ que\ sea\ correcto\ o\ este\ vacío,\ si\ es\ obligatorio\ solo\ da\ por\ válido\ que\ esté\ correcto}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00316}\doxymbox{\hyperlink{classvalidacion_formularios_ac2b6ff7cb10eff8ac14a92b6541058ff}{00316}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_ac2b6ff7cb10eff8ac14a92b6541058ff}{validarCp}}(\$cp,\ \$obligatorio\ =\ 0)\ \{\ \ \textcolor{comment}{//AÑADIDO\ PARAMETRO\ INDEFINIDO\ Y\ SALIDA\ MEJORADA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00317}00317\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$cp);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00320}00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!preg\_match(\textcolor{stringliteral}{'/\string^[0-\/9]\{5\}\$/i'},\ \$cp)\ \&\&\ !empty(\$cp))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ código\ postal\ no\ es\ válido."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00324}00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00326}00326\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00328}00328\ \ \ \ \ \textcolor{comment}{//\ Valida\ el\ password,\ comprueba\ longitud\ y\ si\ al\ menos\ contiene\ una\ mayúscula\ y\ un\ número,\ si\ es\ opcional\ da\ por\ válido\ que\ sea\ correcto\ o\ este\ vacío,\ si\ es\ obligatorio\ solo\ da\ por\ válido\ que\ esté\ correcto}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00345}\doxymbox{\hyperlink{classvalidacion_formularios_af487c571a7b5832ce18d00af44672cad}{00345}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_af487c571a7b5832ce18d00af44672cad}{validarPassword}}(\$passwd,\ \$maximo\ =\ 16,\ \$minimo\ =\ 2,\ \$tipo\ =\ 3,\ \$obligatorio\ =\ 1)\ \{\ \ \textcolor{comment}{//CAMBIADO\ ORDEN\ DE\ LOS\ PARAMETROS,\ AÑADIDOS\ PARAMETROS\ PREDEFINIDOS\ Y\ MEJORADA\ LA\ RESPUESTA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00346}00346\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00347}00347\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$passwd);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00349}00349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(\$passwd)\ <\ \$minimo\ \&\&\ !empty(\$passwd))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ La\ contraseña\ debe\ ser\ de\ al\ menos\ "{}}\ .\ \$minimo\ .\ \textcolor{stringliteral}{"{}\ caracteres."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00352}00352\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(\$passwd)\ >\ \$maximo\ \&\&\ !empty(\$passwd))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ La\ contraseña\ debe\ tener\ como\ maximo\ "{}}\ .\ \$maximo\ .\ \textcolor{stringliteral}{"{}\ caracteres."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00355}00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00356}00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\$passwd)\ \&\&\ \$mensajeError\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\$tipo)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_aea57853b69e9f11c8a6fe0967e09348f}{self::comprobarAlfabetico}}(\$passwd,\ \$maximo,\ \$minimo,\ \$obligatorio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a9cec4205d93c48bb5ef51bb5a7ccad22}{self::comprobarAlfaNumerico}}(\$passwd,\ \$maximo,\ \$minimo,\ \$obligatorio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((!preg\_match(\textcolor{stringliteral}{"{}\`{}[A-\/Z]`"{}},\ \$passwd)\ ||\ !preg\_match(\textcolor{stringliteral}{"{}\`{}[0-\/9]`"{}},\ \$passwd))\ \&\&\ !empty(\$passwd))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \textcolor{stringliteral}{"{}\ La\ contraseña\ debe\ contener\ una\ mayúscula\ y\ un\ número."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00370}00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00373}00373\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00375}00375\ \textcolor{comment}{//\ Función\ para\ validar\ si\ no\ esta\ vacio}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00376}00376\ \textcolor{comment}{//\ Return\ null\ si\ está\ vacío\ el\ mensajeError,\ cadena\ con\ error\ si\ es\ que\ lo\ hay\ \ }}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00377}00377\ \textcolor{comment}{//\ Función\ para\ validar\ si\ no\ esta\ vacio}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00378}00378\ \textcolor{comment}{//\ Return\ false\ esta\ vacio,\ true\ no\ esta\ vacio}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00391}\doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{00391}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{comprobarNoVacio}}(\$cadena)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00392}00392\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00393}00393\ \ \ \ \ \ \ \ \ \$cadena\ =\ htmlspecialchars(strip\_tags(trim(\$cadena)));}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$cadena))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ Campo\ vacío."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00397}00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00398}00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00399}00399\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00401}00401\ \textcolor{comment}{//\ Función\ para\ tamaño\ maximo}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00402}00402\ \textcolor{comment}{//\ Si\ tamaño\ es\ 0\ significa\ que\ no\ tiene\ limite}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00403}00403\ \textcolor{comment}{//\ Return\ false\ no\ es\ correcto,\ true\ es\ correcta}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00417}\doxymbox{\hyperlink{classvalidacion_formularios_a5701da174450e7c521ba7a38fbd21939}{00417}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a5701da174450e7c521ba7a38fbd21939}{comprobarMaxTamanio}}(\$cadena,\ \$tamanio)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00418}00418\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00419}00419\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(\$cadena)\ >\ \$tamanio)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ tamaño\ máximo\ es\ de\ "{}}\ .\ \$tamanio\ .\ \textcolor{stringliteral}{"{}\ caracteres."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00421}00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00423}00423\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00425}00425\ \textcolor{comment}{//\ Función\ para\ tamaño\ minimo}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00426}00426\ \textcolor{comment}{//\ Si\ el\ tamaño\ es\ 0\ significa\ que\ no\ tiene\ limite}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00427}00427\ \textcolor{comment}{//\ Return\ false\ no\ es\ correcto,\ true\ es\ correcta}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00441}\doxymbox{\hyperlink{classvalidacion_formularios_aeb1e0298e77ea4ba53b61cb3c6f3bd3c}{00441}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_aeb1e0298e77ea4ba53b61cb3c6f3bd3c}{comprobarMinTamanio}}(\$cadena,\ \$tamanio)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00442}00442\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(\$cadena)\ <\ \$tamanio\ \&\&\ strlen(\$cadena)\ >\ 0)\ \{\ \textcolor{comment}{//AÑADIDA\ SEGUNDA\ COMPROBACIÓN.\ Para\ que\ cuando\ el\ campo\ esté\ vacío\ no\ muestre\ este\ mensaje,\ sólo\ cuando\ haya\ mínimo\ 1\ caracter\ para\ advertir\ del\ tamaño\ mínimo}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ tamaño\ mínimo\ es\ de\ "{}}\ .\ \$tamanio\ .\ \textcolor{stringliteral}{"{}\ caracteres."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00445}00445\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00446}00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00447}00447\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00459}\doxymbox{\hyperlink{classvalidacion_formularios_ac062142050452a39309e2adb87ce5683}{00459}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_ac062142050452a39309e2adb87ce5683}{validarElementoEnLista}}(\$elementoElegido,\ \$aOpciones)\ \{\ \ \ \textcolor{comment}{//NO\ TIENE\ SENTIDO\ HACER\ UNA\ LISTA\ NO\ OBLIGATORIA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00460}00460\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};\ \textcolor{comment}{//Inicializa\ el\ mensaje\ de\ error\ a\ null.}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00462}00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in\_array(\$elementoElegido,\ \$aOpciones))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}\ El\ elemento\ no\ se\ encuentra\ entre\ los\ posibles\ valores."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00464}00464\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00465}00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;\ \textcolor{comment}{//Devuelve\ el\ mensaje\ de\ error.}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00466}00466\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00482}\doxymbox{\hyperlink{classvalidacion_formularios_a9c273bf39ac276793c325b174de7eb2e}{00482}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_a9c273bf39ac276793c325b174de7eb2e}{validarTelefono}}(\$tel,\ \$obligatorio\ =\ 0)\ \{\ \textcolor{comment}{//AÑADIDO\ PARAMETRO\ POR\ DEFECTO,\ MEJORADA\ LA\ FUNCIONALIDAD\ Y\ LA\ SALIDA}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00483}00483\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00484}00484\ \ \ \ \ \ \ \ \ \$patron\ =\ \textcolor{stringliteral}{"{}/\string^[6|7|9][0-\/9]\{8\}\$/"{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00485}00485\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$obligatorio\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a0dff9658b09504bc020d0be6478fd997}{self::comprobarNoVacio}}(\$tel);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00487}00487\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!preg\_match(\$patron,\ \$tel)\ \&\&\ !empty(\$tel))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ .=\ \textcolor{stringliteral}{"{}\ El\ telefono\ debe\ comenzar\ por\ 6,7\ o\ 9\ y\ a\ continuación\ 8\ dígitos\ del\ 0\ al\ 9."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00490}00490\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00491}00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00492}00492\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00508}\doxymbox{\hyperlink{classvalidacion_formularios_ac31b51a4360039b6bc19367ac435ef6a}{00508}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \doxymbox{\hyperlink{classvalidacion_formularios_ac31b51a4360039b6bc19367ac435ef6a}{validarNombreArchivo}}(\$nombreArchivo,\ \$aExtensiones,\ \$maxTamanio\ =\ 150,\ \$minTamanio\ =\ 4,\ \$obligatorio\ =\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00509}00509\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validación\ del\ texto\ del\ nombre\ del\ archivo.}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00510}00510\ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \doxymbox{\hyperlink{classvalidacion_formularios_a9cec4205d93c48bb5ef51bb5a7ccad22}{self::comprobarAlfaNumerico}}(\$nombreArchivo,\ \$maxTamanio,\ \$minTamanio,\ \$obligatorio);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00512}00512\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Si\ el\ nombre\ de\ archivo\ no\ está\ vacío\ (es\ decir,\ se\ ha\ enviado\ uno),}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00513}00513\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ comprueba\ si\ la\ extensión\ está\ entre\ las\ admitidas.}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00514}00514\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ En\ el\ caso\ que\ el\ campo\ fuese\ obligatorio,\ ya\ se\ habría\ validado\ en\ la}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00515}00515\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ función\ comprobarAlfaNumerico.}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00516}00516\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!empty(\$nombreArchivo))\{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \$sExtension\ =\ substr(\$nombreArchivo,\ strpos(\$nombreArchivo,\ \textcolor{charliteral}{'.'})\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in\_array(\$sExtension,\ \$aExtensiones))\ \{}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mensajeError\ =\ \textcolor{stringliteral}{"{}El\ archivo\ no\ tiene\ una\ extensión\ válida.\ Sólo\ se\ admite\ "{}}.implode(\textcolor{stringliteral}{',\ '},\ \$aExtensiones).\textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00522}00522\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00523}00523\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mensajeError;}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00524}00524\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00525}00525\ \}}
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{231018libreria_validacion_8php_source_l00527}00527\ ?>}
+
+\end{DoxyCode}

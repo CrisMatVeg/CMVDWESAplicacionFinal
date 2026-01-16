@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpdocumentor
+    configVersion="3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
+>
+
+
+     <!-- Control de cache -->
+    <use_cache>false</use_cache>
+
+    
+    <paths>
+        <output>doc</output>
+        <cache>.phpdoc</cache>
+    </paths>
+    <template name="default"/>
+   
+
+</phpdocumentor>

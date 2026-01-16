@@ -1,0 +1,17 @@
+\doxysection{c\+Inicio\+Publico.\+php}
+\hypertarget{c_inicio_publico_8php_source}{}\label{c_inicio_publico_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cInicioPublico.php@{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cInicioPublico.php}}
+\doxymbox{\hyperlink{c_inicio_publico_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00025}\doxymbox{\hyperlink{c_inicio_publico_8php_a8728538e9596235d5bc0b1282c8adbb4}{00025}}\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'paginaDestino'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00026}00026\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00027}00027\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{"{}paginaDestino"{}}];}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00028}00028\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00029}00029\ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00032}00032\ \textcolor{comment}{//\ Carga\ la\ vista\ layout\ principal}}
+\DoxyCodeLine{\Hypertarget{c_inicio_publico_8php_source_l00033}00033\ require\_once\ \doxymbox{\hyperlink{conf_a_p_p_8php_acccf2eac8663e0cebe8101e90fbab089}{\$view}}[\textcolor{stringliteral}{"{}layout"{}}];}
+
+\end{DoxyCode}

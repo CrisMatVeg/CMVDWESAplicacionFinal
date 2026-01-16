@@ -1,0 +1,144 @@
+\doxysection{Controladores Namespace Reference}
+\hypertarget{namespace_controladores}{}\label{namespace_controladores}\index{Controladores@{Controladores}}
+
+
+\doxysubsection{Detailed Description}
+Controlador:\+ Detalle (c\+Detalle)
+
+Este controlador gestiona la navegación de la página de detalle en la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Gestión del botón "{}\+Atrás"{}:\+
+\begin{DoxyItemize}
+\item Si se envía {\ttfamily atras}, actualiza las variables de sesión:\+
+\begin{DoxyItemize}
+\item {\ttfamily pagina\+Anterior} con el valor enviado
+\item {\ttfamily pagina\+En\+Curso} con la página anterior
+\end{DoxyItemize}
+\item Redirige inmediatamente a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
+\end{DoxyItemize}
+\item Si no se envía {\ttfamily atras}, carga la vista principal ({\ttfamily layout}).
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar la vista layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ Inicio Privado (c\+Inicio\+Privado)
+
+Este controlador gestiona la página de inicio privado de la aplicación Login/\+\+Logoff. Se encarga de validar la sesión del usuario, manejar la navegación entre páginas, y preparar los datos del usuario para la vista.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Validación de sesión:\+
+\begin{DoxyItemize}
+\item Si no existe {\ttfamily \$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+}, redirige a la página de Login.
+\end{DoxyItemize}
+\item Navegación hacia otra página:\+
+\begin{DoxyItemize}
+\item Si se envía {\ttfamily pagina\+Destino}, actualiza {\ttfamily pagina\+Anterior} y {\ttfamily pagina\+En\+Curso}, y redirige.
+\end{DoxyItemize}
+\item Gestión del botón "{}\+Atrás"{} /\+ cierre de sesión:\+
+\begin{DoxyItemize}
+\item Si se envía {\ttfamily atras}, destruye la sesión actual, la reinicia y vuelve a la página anterior.
+\end{DoxyItemize}
+\item Preparación de datos del usuario ({\ttfamily \$av\+Inicio\+Privado}):\+
+\begin{DoxyItemize}
+\item Extrae de {\ttfamily \$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+}:\+
+\begin{DoxyItemize}
+\item Código de usuario ({\ttfamily cod\+Usuario})
+\item Número de conexiones ({\ttfamily num\+Conexiones})
+\item Fecha y hora de la última conexión anterior ({\ttfamily fecha\+Hora\+Ultima\+Conexion\+Anterior})
+\item Descripción del usuario ({\ttfamily desc\+Usuario})
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Carga la vista principal ({\ttfamily layout}) con los datos preparados.
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Clase {\ttfamily \doxylink{class_usuario}{Usuario}} para obtener información del usuario
+\item Arreglo {\ttfamily \$view} para cargar la vista layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ Inicio Público (c\+Inicio\+Publico)
+
+Este controlador gestiona la navegación desde la página de inicio público de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica si se ha enviado {\ttfamily pagina\+Destino} mediante formulario o enlace.
+\item Si se ha enviado:\+
+\begin{DoxyItemize}
+\item Actualiza la página anterior ({\ttfamily pagina\+Anterior}) con la página en curso.
+\item Actualiza la página en curso ({\ttfamily pagina\+En\+Curso}) con el destino.
+\item Redirige inmediatamente a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}} para cargar la vista correspondiente.
+\end{DoxyItemize}
+\item Si no se ha enviado {\ttfamily pagina\+Destino}, carga la vista principal ({\ttfamily layout}).
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar la vista layout principal
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ Login (c\+Login)
+
+Este controlador gestiona la lógica de inicio de sesión y navegación de la página de login de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Gestiona el botón "{}\+Cancelar"{}/\+"{}\+Atrás"{}:\+
+\begin{DoxyItemize}
+\item Si se envía el parámetro {\ttfamily atras}, actualiza la página actual a la página anterior y redirige a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
+\end{DoxyItemize}
+\item Gestiona el inicio de sesión:\+
+\begin{DoxyItemize}
+\item Si se envía {\ttfamily pagina\+Destino = inicio\+Privado}, recoge los valores de {\ttfamily cod\+Usuario} y {\ttfamily password} del formulario.
+\item Construye la contraseña combinando código de usuario y contraseña.
+\item Llama al modelo {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} para validar el usuario.
+\item Si el usuario es válido:\+
+\begin{DoxyItemize}
+\item Actualiza la última conexión en la base de datos y en el objeto usuario.
+\item Almacena el usuario en la sesión ({\ttfamily usuario\+Actual\+DWESLogin\+Logoff}).
+\item Actualiza la página en curso y redirige a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} y sus métodos {\ttfamily validar\+Usuario} y {\ttfamily actualizar\+Ultima\+Conexion\+YUsuario}
+\item Arreglo {\ttfamily \$view} para cargar la vista final ({\ttfamily layout})
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
