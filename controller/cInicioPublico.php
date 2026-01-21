@@ -10,7 +10,7 @@
  * - Si se ha enviado:
  *      - Actualiza la página anterior (`paginaAnterior`) con la página en curso.
  *      - Actualiza la página en curso (`paginaEnCurso`) con el destino.
- *      - Redirige inmediatamente a `indexLoginLogoff.php` para cargar la vista correspondiente.
+ *      - Redirige inmediatamente a `index.php` para cargar la vista correspondiente.
  * - Si no se ha enviado `paginaDestino`, carga la vista principal (`layout`).
  *
  * Dependencias:
@@ -25,7 +25,7 @@
 if (isset($_REQUEST['paginaDestino'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 

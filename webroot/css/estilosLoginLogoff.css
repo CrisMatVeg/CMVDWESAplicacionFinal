@@ -120,7 +120,7 @@ h1 {
   gap: 0.75rem;
 }
 
-input {
+input,select {
   background-color: var(--campocolor);
   border: 2px solid var(--campoborde);
   padding: 15px;
@@ -163,7 +163,72 @@ img.btn.secondary {
   background-color: #ffffff;
 }
 
-main img:hover {
+.apimain{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(1,1fr);
+  gap: 20px;
+}
+
+.nasa.apicontainer{
+  grid-column: 1/2;
+}
+
+.aemet.apicontainer img{
+  transform: rotate(90deg);
+}
+
+.nasaform, .perroform{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  gap:10px;
+}
+
+.modal{
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  border: 2px solid var(--brand-green);
+  border-radius: 10px;
+  width: 70vw;
+  height: 70vh;
+  top: 150px;
+  left: 100px;
+  text-align: start;
+  padding: 50px;
+  display: none;
+}
+
+.modal b{
+  font-weight: bold;
+  color: #58cc02;
+}
+
+.apicontainer a{
+  color: #58cc02;
+  padding: 20px;
+}
+
+.modal a{
+  font-size: 1.2rem;
+  color: var(--accent);
+  position: relative;
+  left: 95%;
+}
+
+.apicontainer{
+  border-radius: 10px;
+  border: 2px solid var(--brand-green);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.publicmain img:hover {
   transform: scale(1.5);
   transition: all ease 0.5s;
 }

@@ -10,7 +10,7 @@
  *    - Si se envía `atras`, actualiza las variables de sesión:
  *       - `paginaAnterior` con el valor enviado
  *       - `paginaEnCurso` con la página anterior
- *    - Redirige inmediatamente a `indexLoginLogoff.php`.
+ *    - Redirige inmediatamente a `index.php`.
  *
  * 2. Si no se envía `atras`, carga la vista principal (`layout`).
  *
@@ -25,14 +25,14 @@
 
 if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 

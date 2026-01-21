@@ -25,10 +25,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Logoff</title>
+        <title>Aplicación Final</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./webroot/css/estilosLoginLogoff.css">
-
+        <script type="module" src="./webroot/js/modal.js"></script>
         <style>
             @font-face {
                 font-family: "mFeather";
@@ -108,10 +108,6 @@
 
             #es, #pr, #fr {
                 display: none;
-            }
-
-            img{
-                height: 30px;
             }
 
             .imgwip{
@@ -216,7 +212,7 @@
                     <div>
                         <a href="https://es.duolingo.com/" target="_blank" title="Duolingo">Pagina Imitada</a>
                         ·
-                        <a href="https://github.com/CrisMatVeg/CMVDWESLoginLogoff" target="_blank" title="Github"><i class="fa-brands fa-github fa-2xl"></i></a>
+                        <a href="https://github.com/CrisMatVeg/CMVDWESAplicacionFinal" target="_blank" title="Github"><i class="fa-brands fa-github fa-2xl"></i></a>
                     </div>
                 </div>
             </footer>

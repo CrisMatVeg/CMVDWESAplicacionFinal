@@ -22,7 +22,7 @@
  *       - `codUsuario`: código de usuario
  *       - `descUsuario`: nombre completo del usuario
  *       - `password`: contraseña
- *    - El formulario envía los datos mediante POST a `indexLoginLogoff.php`.
+ *    - El formulario envía los datos mediante POST a `index.php`.
  *
  * 4. Navegación:
  *    - Botón "Entrar" para enviar el formulario y realizar el alta.
@@ -31,7 +31,7 @@
  *
  * Dependencias:
  * - Cookie `idioma` para la internacionalización básica del título
- * - Controlador frontal `indexLoginLogoff.php`
+ * - Controlador frontal `index.php`
  * - Variables de formulario enviadas por método POST
  *
  * @package Vistas
@@ -44,7 +44,7 @@
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
         <span>
-            Login Logoff
+            Aplicación Final
             <span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">
                 — Registro
             </span>
@@ -69,7 +69,7 @@
                 }
             ?>
             <div>
-                <form method="post" action="indexLoginLogoff.php">
+                <form method="post" action="index.php">
                     <input type="text" name="codUsuario" placeholder="Usuario" id="codUsuario" class="required" value="">
                     <input type="text" name="descUsuario" placeholder="Nombre Completo" id="descUsuario" class="required" value="">
                     <input type="password" name="password" placeholder="Contraseña" id="password" class="required" value="">

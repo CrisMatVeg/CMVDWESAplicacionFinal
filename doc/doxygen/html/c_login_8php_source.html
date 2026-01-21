@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: D:/ProyectosNB/CMVDWESLoginLogoff/controller/cLogin.php Source File</title>
+<title>LoginLogoff: D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cLogin.php Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,14 +99,14 @@ $(function(){initNavTree('c_login_8php_source.html','',''); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;atras&#39;</span>])) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    exit;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;registro&#39;</span>])) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>];</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <span class="stringliteral">&#39;Registro&#39;</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    exit;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
@@ -124,7 +124,7 @@ $(function(){initNavTree('c_login_8php_source.html','',''); });
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        $_SESSION[<span class="stringliteral">&#39;usuarioActualDWESLoginLogoff&#39;</span>] = $usuario;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>];</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = $_REQUEST[<span class="stringliteral">&quot;paginaDestino&quot;</span>];</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        exit;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>

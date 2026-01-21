@@ -1,19 +1,19 @@
 \doxysection{c\+Inicio\+Privado.\+php}
-\hypertarget{c_inicio_privado_8php_source}{}\label{c_inicio_privado_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cInicioPrivado.php@{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cInicioPrivado.php}}
+\hypertarget{c_inicio_privado_8php_source}{}\label{c_inicio_privado_8php_source}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cInicioPrivado.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cInicioPrivado.php}}
 \doxymbox{\hyperlink{c_inicio_privado_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00001}00001\ <?php}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00038}00038\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]))\ \{}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00039}00039\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \textcolor{stringliteral}{'Login'};}
-\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00040}00040\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00040}00040\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00041}00041\ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00042}00042\ \}}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00043}00043\ }
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00044}00044\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'paginaDestino'}]))\ \{}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00045}00045\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00046}00046\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{"{}paginaDestino"{}}];}
-\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00047}00047\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00047}00047\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00048}00048\ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00049}00049\ \}}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00050}00050\ }
@@ -23,7 +23,7 @@
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00054}00054\ \ \ \ \ session\_start();}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00055}00055\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{'paginaAnterior'}];}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00056}00056\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}];}
-\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00057}00057\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00057}00057\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00058}00058\ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00059}00059\ \}}
 \DoxyCodeLine{\Hypertarget{c_inicio_privado_8php_source_l00060}00060\ }

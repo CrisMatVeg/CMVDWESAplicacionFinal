@@ -5,5 +5,5 @@ var files_dup =
     [ "core", "dir_4270bfced15e0e73154b13468c7c9ad9.html", "dir_4270bfced15e0e73154b13468c7c9ad9" ],
     [ "model", "dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html", "dir_3f14f6767c31cb4a1d22c13c18cc6fc3" ],
     [ "view", "dir_b2f003339c516cc00c8cadcafbe82f13.html", "dir_b2f003339c516cc00c8cadcafbe82f13" ],
-    [ "indexLoginLogoff.php", "index_login_logoff_8php.html", "index_login_logoff_8php" ]
+    [ "index.php", "index_login_logoff_8php.html", "index_login_logoff_8php" ]
 ];

@@ -103,7 +103,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 <li><span class="tt">paginaEnCurso</span> con la página anterior</li>
 </ul>
 </li>
-<li>Redirige inmediatamente a <span class="tt"><a class="el" href="index_login_logoff_8php.html">indexLoginLogoff.php</a></span>.</li>
+<li>Redirige inmediatamente a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span>.</li>
 </ul>
 </li>
 <li>Si no se envía <span class="tt">atras</span>, carga la vista principal (<span class="tt">layout</span>).</li>
@@ -155,7 +155,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 <li>Si se ha enviado:<ul>
 <li>Actualiza la página anterior (<span class="tt">paginaAnterior</span>) con la página en curso.</li>
 <li>Actualiza la página en curso (<span class="tt">paginaEnCurso</span>) con el destino.</li>
-<li>Redirige inmediatamente a <span class="tt"><a class="el" href="index_login_logoff_8php.html">indexLoginLogoff.php</a></span> para cargar la vista correspondiente.</li>
+<li>Redirige inmediatamente a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span> para cargar la vista correspondiente.</li>
 </ul>
 </li>
 <li>Si no se ha enviado <span class="tt">paginaDestino</span>, carga la vista principal (<span class="tt">layout</span>).</li>
@@ -170,7 +170,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 <p>Este controlador gestiona la lógica de inicio de sesión y navegación de la página de login de la aplicación Login/Logoff.</p>
 <p>Funcionalidad:</p><ol type="1">
 <li>Gestiona el botón "Cancelar"/"Atrás":<ul>
-<li>Si se envía el parámetro <span class="tt">atras</span>, actualiza la página actual a la página anterior y redirige a <span class="tt"><a class="el" href="index_login_logoff_8php.html">indexLoginLogoff.php</a></span>.</li>
+<li>Si se envía el parámetro <span class="tt">atras</span>, actualiza la página actual a la página anterior y redirige a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span>.</li>
 </ul>
 </li>
 <li>Gestiona el inicio de sesión:<ul>
@@ -180,7 +180,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 <li>Si el usuario es válido:<ul>
 <li>Actualiza la última conexión en la base de datos y en el objeto usuario.</li>
 <li>Almacena el usuario en la sesión (<span class="tt">usuarioActualDWESLoginLogoff</span>).</li>
-<li>Actualiza la página en curso y redirige a <span class="tt"><a class="el" href="index_login_logoff_8php.html">indexLoginLogoff.php</a></span>.</li>
+<li>Actualiza la página en curso y redirige a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span>.</li>
 </ul>
 </li>
 </ul>

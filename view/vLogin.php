@@ -11,7 +11,7 @@
  *   de login que permite introducir usuario y contraseña, y botones de acción.
  *
  * Elementos importantes:
- * - Logo con la clase `.owl` y texto “Login Logoff — Login”
+ * - Logo con la clase `.owl` y texto “Aplicación Final — Login”
  * - Formulario de registro con botón "Registrarse"
  * - Formulario de login con campos `codUsuario` y `password`
  * - Botones de acción:
@@ -20,7 +20,7 @@
  *
  * Dependencias:
  * - Estilos CSS externos e internos
- * - Acciones dirigidas a `indexLoginLogoff.php`
+ * - Acciones dirigidas a `index.php`
  *
  * @package Vistas
  * @author Cristian Mateos
@@ -30,7 +30,7 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
+        <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
             Login</span></span>
     </div>
     <form>
@@ -55,7 +55,7 @@
                 }
             ?>
             <div>
-                <form method="post" action="indexLoginLogoff.php">
+                <form method="post" action="index.php">
                     <input type="text" name="codUsuario" placeholder="Usuario" id="codUsuario" class="required" value="">
                     <input type="password" name="password" placeholder="Contraseña" id="password" value="">
 

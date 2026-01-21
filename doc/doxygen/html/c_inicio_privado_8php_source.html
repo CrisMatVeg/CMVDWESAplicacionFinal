@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: D:/ProyectosNB/CMVDWESLoginLogoff/controller/cInicioPrivado.php Source File</title>
+<title>LoginLogoff: D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cInicioPrivado.php Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,14 +97,14 @@ $(function(){initNavTree('c_inicio_privado_8php_source.html','',''); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordflow">if</span> (!isset($_SESSION[<span class="stringliteral">&#39;usuarioActualDWESLoginLogoff&#39;</span>])) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <span class="stringliteral">&#39;Login&#39;</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    exit;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;paginaDestino&#39;</span>])) {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>];</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = $_REQUEST[<span class="stringliteral">&quot;paginaDestino&quot;</span>];</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    exit;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
@@ -114,7 +114,7 @@ $(function(){initNavTree('c_inicio_privado_8php_source.html','',''); });
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    session_start();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    $_SESSION[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = $_SESSION[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    header(<span class="stringliteral">&#39;Location: indexLoginLogoff.php&#39;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    exit;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>

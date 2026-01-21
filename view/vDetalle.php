@@ -15,7 +15,7 @@
  *      - Salida completa de `phpinfo()` al final
  *
  * Elementos importantes:
- * - Logo con clase `.owl` y texto “Login Logoff — Detalle”
+ * - Logo con clase `.owl` y texto “Aplicación Final — Detalle”
  * - Formulario con botón "Volver" (`paginaAnterior = inicioPrivado`)
  * - Tablas de superglobales para depuración
  * - phpinfo() para información completa del servidor y PHP
@@ -23,7 +23,7 @@
  * Dependencias:
  * - Variables de superglobales de PHP
  * - Estilos CSS externos/internos
- * - Archivo PHP de acción del formulario (`indexLoginLogoff.php`)
+ * - Archivo PHP de acción del formulario (`index.php`)
  *
  * Advertencia:
  * - Esta vista debe usarse solo en entorno de desarrollo o pruebas, 
@@ -37,10 +37,10 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
+        <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
             Detalle</span></span>
     </div>
-    <form method="post" action="indexLoginLogoff.php">
+    <form method="post" action="index.php">
         <input type="hidden" name="paginaAnterior" value="inicioPrivado">
         <input type="submit" name="atras" value="Volver" class="btn primary">
     </form>

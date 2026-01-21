@@ -11,13 +11,13 @@
  *   de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).
  *
  * Elementos importantes:
- * - Logo con la clase `.owl` y texto “Login Logoff — Inicio Público”
+ * - Logo con la clase `.owl` y texto “Aplicación Final — Inicio Público”
  * - Formulario de navegación con botón “Login”
  * - Imágenes con clase `.btn secondary` que actúan como elementos interactivos
  *
  * Dependencias:
  * - Estilos definidos en CSS externo e interno del proyecto
- * - Acciones dirigidas a `indexLoginLogoff.php`
+ * - Acciones dirigidas a `index.php`
  *
  * @package Vistas
  * @author Cristian Mateos
@@ -27,16 +27,16 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">— Inicio Público</span></span>
+        <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">— Inicio Público</span></span>
     </div>
     <nav>
-        <form method="post" action="indexLoginLogoff.php">
+        <form method="post" action="index.php">
             <input type="submit" name="paginaDestino" value="Login" class="cta">
         </form>
     </nav>
 </header>
 
-<main>
+<main class="publicmain">
     <h1>Inicio Público</h1>
     <div class="imagenes">
         <img src="./webroot/images/navegacion.png" alt="" class="btn secondary">

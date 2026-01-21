@@ -37,27 +37,27 @@
 
 if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
 if (isset($_REQUEST['detalle'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'Detalle';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
 if (isset($_REQUEST['mantenimiento'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 if (isset($_REQUEST['rest'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: indexLoginLogoff.php');
+    $_SESSION['paginaEnCurso'] = 'REST';
+    header('Location: index.php');
     exit;
 }
 
@@ -66,7 +66,7 @@ if (isset($_REQUEST['error'])) {
     $consultaError = "SELECT * FROM T03_Cuestion";
     DBPDO::ejecutarConsulta($consultaError,null);
     $_SESSION['paginaEnCurso'] = 'error';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -76,7 +76,7 @@ if (isset($_REQUEST['atras'])) {
     session_start();
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 

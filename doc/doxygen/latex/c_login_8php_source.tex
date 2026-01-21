@@ -1,5 +1,5 @@
 \doxysection{c\+Login.\+php}
-\hypertarget{c_login_8php_source}{}\label{c_login_8php_source}\index{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cLogin.php@{D:/ProyectosNB/CMVDWESLoginLogoff/controller/cLogin.php}}
+\hypertarget{c_login_8php_source}{}\label{c_login_8php_source}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cLogin.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cLogin.php}}
 \doxymbox{\hyperlink{c_login_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00001}00001\ <?php}
@@ -8,14 +8,14 @@
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00034}00034\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'atras'}]))\ \{}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00035}00035\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{'paginaAnterior'}];}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00036}00036\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}];}
-\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00037}00037\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00037}00037\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00038}00038\ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00039}00039\ \}}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00040}00040\ }
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00041}00041\ \textcolor{keywordflow}{if}\ (isset(\$\_REQUEST[\textcolor{stringliteral}{'registro'}]))\ \{}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00042}00042\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00043}00043\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \textcolor{stringliteral}{'Registro'};}
-\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00044}00044\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00044}00044\ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00045}00045\ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00046}00046\ \}}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00047}00047\ }
@@ -33,7 +33,7 @@
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]\ =\ \$usuario;}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaAnterior'}]\ =\ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}];}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'paginaEnCurso'}]\ =\ \$\_REQUEST[\textcolor{stringliteral}{"{}paginaDestino"{}}];}
-\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ indexLoginLogoff.php'});}
+\DoxyCodeLine{\Hypertarget{c_login_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{'Location:\ index.php'});}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ exit;}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00064}00064\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{c_login_8php_source_l00065}00065\ \}}

@@ -16,7 +16,7 @@
  *      - Botón para ir a la sección de "Detalle"
  *
  * Elementos importantes:
- * - Logo con clase `.owl` y texto “Login Logoff — Inicio Privado”
+ * - Logo con clase `.owl` y texto “Aplicación Final — Inicio Privado”
  * - Formulario de cierre de sesión con botón "Cerrar Sesión"
  * - Información dinámica extraída del array `$avInicioPrivado`
  * - Botón de navegación a `Detalle`
@@ -33,7 +33,7 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
+        <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
             Inicio Privado</span></span>
     </div>
     <nav>

@@ -23,7 +23,7 @@ class DBPDO {
             $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'] ?? '';
             $_SESSION['paginaEnCurso'] = 'error';
             $_SESSION['error'] = new AppError($e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine(), $_SESSION['paginaAnterior']);
-            header('Location: indexLoginLogoff.php');
+            header('Location: index.php');
             exit;
         }
     }

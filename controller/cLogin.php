@@ -8,7 +8,7 @@
  * Funcionalidad:
  * 1. Gestiona el botón "Cancelar"/"Atrás":
  *    - Si se envía el parámetro `atras`, actualiza la página actual
- *      a la página anterior y redirige a `indexLoginLogoff.php`.
+ *      a la página anterior y redirige a `index.php`.
  * 
  * 2. Gestiona el inicio de sesión:
  *    - Si se envía `paginaDestino = inicioPrivado`, recoge los valores
@@ -18,7 +18,7 @@
  *    - Si el usuario es válido:
  *       - Actualiza la última conexión en la base de datos y en el objeto usuario.
  *       - Almacena el usuario en la sesión (`usuarioActualDWESLoginLogoff`).
- *       - Actualiza la página en curso y redirige a `indexLoginLogoff.php`.
+ *       - Actualiza la página en curso y redirige a `index.php`.
  *
  * Dependencias:
  * - Clase `UsuarioPDO` y sus métodos `validarUsuario` y `actualizarUltimaConexionYUsuario`
@@ -34,14 +34,14 @@
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
 if (isset($_REQUEST['registro'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'Registro';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -59,7 +59,7 @@ if (isset($_REQUEST['paginaDestino']) && $_REQUEST['paginaDestino'] == "inicioPr
         $_SESSION['usuarioActualDWESLoginLogoff'] = $usuario;
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
-        header('Location: indexLoginLogoff.php');
+        header('Location: index.php');
         exit;
     }
 }

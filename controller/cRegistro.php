@@ -1,7 +1,7 @@
 <?php
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
-    header('Location: indexLoginLogoff.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -58,13 +58,13 @@ if (isset($_REQUEST['acceso'])) {
                 $_SESSION['errorRegistro'] = "Error al crear el usuario. Por favor, inténtalo de nuevo.";
                 //Se redirige al login 
                 $_SESSION['paginaEnCurso'] = 'Login';
-                header('Location: indexLoginLogoff.php');
+                header('Location: index.php');
                 exit;
             } else {
                 // Login correcto
                 $_SESSION['usuarioActualDWESLoginLogoff'] = $oUsuario;
                 $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-                header('Location: indexLoginLogoff.php');
+                header('Location: index.php');
                 exit;
             }
         }

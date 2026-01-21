@@ -3,6 +3,9 @@
     require_once './model/Usuario.php';
     require_once './model/UsuarioPDO.php';
     require_once './model/AppError.php';
+    require_once './model/REST.php';
+    require_once './model/NASA.php';
+    require_once './model/DogApi.php';
     $controller=[
         "inicioPublico" => "controller/cInicioPublico.php",
         "Login" => "controller/cLogin.php",
@@ -13,7 +16,8 @@
         "CambiarPassword" => "controller/cCambiarPassword.php",
         "Registro" => "controller/cRegistro.php",
         "WIP" => "controller/cWIP.php",
-        "error" => "controller/cError.php"
+        "error" => "controller/cError.php",
+        "REST" => "controller/cREST.php"
     ];
     $view=[
         "inicioPublico" => "view/vInicioPublico.php",
@@ -26,6 +30,7 @@
         "CambiarPassword" => "view/vCambiarPassword.php",
         "Registro" => "view/vRegistro.php",
         "WIP" => "view/vWIP.php",
-        "error" => "view/vError.php"
+        "error" => "view/vError.php",
+        "REST" => "view/vREST.php"
     ];
 ?>
