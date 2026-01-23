@@ -2,6 +2,8 @@
     require_once './core/231018libreriaValidacion.php';
     require_once './model/Usuario.php';
     require_once './model/UsuarioPDO.php';
+    require_once './model/Departamento.php';
+    require_once './model/DepartamentoPDO.php';
     require_once './model/AppError.php';
     require_once './model/REST.php';
     require_once './model/NASA.php';
@@ -17,7 +19,9 @@
         "Registro" => "controller/cRegistro.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php",
-        "REST" => "controller/cREST.php"
+        "REST" => "controller/cREST.php",
+        "DetallesNasa" => "controller/cDetallesNasa.php",
+        "MtoDepartamentos" => "controller/cMtoDepartamentos.php"
     ];
     $view=[
         "inicioPublico" => "view/vInicioPublico.php",
@@ -31,6 +35,8 @@
         "Registro" => "view/vRegistro.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php",
-        "REST" => "view/vREST.php"
+        "REST" => "view/vREST.php",
+        "DetallesNasa" => "view/vDetallesNasa.php",
+        "MtoDepartamentos" => "view/vMtoDepartamentos.php"
     ];
 ?>

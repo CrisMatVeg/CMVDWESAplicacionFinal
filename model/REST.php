@@ -3,7 +3,7 @@
 class REST {
 
     /**
-     * Realiza una solicitud GET a una URL y devuelve el resultado decodificado como arreglo.
+     * Realiza una solicitud GET a una URL y devuelve el resultado decodificado como array.
      *
      * @param string $url URL de la API a consultar
      * @return array|null Datos decodificados en array asociativo o null si falla

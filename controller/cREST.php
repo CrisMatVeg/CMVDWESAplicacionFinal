@@ -15,6 +15,13 @@ if (!isset($_SESSION['razaPerroSeleccionada'])) {
     $_SESSION['razaPerroSeleccionada']=null;
 }
 
+if (isset($_REQUEST['ampliarnasa'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'DetallesNasa';
+    header('Location: index.php');
+    exit;
+}
+
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
@@ -32,8 +39,7 @@ if (isset($_REQUEST['enviarRaza'])) {
 if (isset($_REQUEST['enviarFecha'])) { //validar fecha con libreria
     $_SESSION['fechaFotoNasa']=$_REQUEST['fecha'];
 }
-
-$fotoDelDia = $nasa->obtenerFotoDelDia($_SESSION['fechaFotoNasa']);
+$_SESSION['fotoDelDia'] = $nasa->obtenerFotoDelDia($_SESSION['fechaFotoNasa']);
 $fotoPerro = $dogapi->obtenerPerro($_SESSION['razaPerroSeleccionada']);
 
 require_once $view["layout"];

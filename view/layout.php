@@ -78,12 +78,6 @@
                 padding-left:10px;
             }
 
-            main{
-                background-color: var(--bg);
-                text-align:center;
-                padding: 100px 20px 20px;
-            }
-
             header {
                 display: flex;
                 align-items: center;
@@ -144,28 +138,6 @@
                 align-items:center;
             }
 
-            form{
-                display: flex;
-                justify-content:center;
-                align-content:center;
-                flex-direction:column;
-                flex-wrap:wrap;
-                gap:20px;
-            }
-
-            form *{
-                cursor: pointer;
-            }
-
-            form *{
-                justify-content:center;
-            }
-
-            form div{
-                display: flex;
-                justify-content:space-between;
-            }
-
             .labels{
                 display: flex;
                 justify-content:center;
@@ -190,7 +162,7 @@
             }
 
             .btn.primary {
-                width: auto;
+                width: max-content;
                 background: var(--btnsazul);
                 color: white;
                 box-shadow: 0px 5px 0px 0px var(--btnshadowblue);

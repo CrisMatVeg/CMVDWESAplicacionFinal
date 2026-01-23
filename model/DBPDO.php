@@ -17,7 +17,11 @@ class DBPDO {
             $conexion = new PDO(DSN, USERNAME, PASSWORD);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $consulta = $conexion->prepare($sql);
-            $consulta->execute($parametros);
+            if($parametros!=null){
+                $consulta->execute($parametros);
+            }else{
+                $consulta->execute();
+            }
             return $consulta;
         } catch (PDOException $e) {
             $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'] ?? '';

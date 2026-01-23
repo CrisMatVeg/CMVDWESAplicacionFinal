@@ -41,6 +41,9 @@
             <input type="hidden" name="paginaAnterior" value="inicioPublico">
             <input type="submit" name="atras" value="Cerrar Sesión" class="btn primary">
         </form>
+        <form method="post">
+            <input type="submit" name="miperfil" value="Mi Perfil" class="btn primary">
+        </form>
     </nav>
 </header>
 

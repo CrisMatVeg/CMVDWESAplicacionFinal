@@ -41,6 +41,13 @@ if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
     exit;
 }
 
+if (isset($_REQUEST['miperfil'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'MiCuenta';
+    header('Location: index.php');
+    exit;
+}
+
 if (isset($_REQUEST['detalle'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'Detalle';
@@ -50,7 +57,7 @@ if (isset($_REQUEST['detalle'])) {
 
 if (isset($_REQUEST['mantenimiento'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
+    $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
     header('Location: index.php');
     exit;
 }
@@ -87,6 +94,7 @@ $avInicioPrivado = [
     "fechaHoraUltimaConexionAnterior" => $_SESSION['usuarioActualDWESLoginLogoff']->getFechaHoraUltimaConexionAnterior(),
     "descUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getDescUsuario()
 ];
+$_SESSION['arrayDatosUsuarioActualDWESLoginLogoff']=$avInicioPrivado;
 
 // Carga la vista layout principal
 require_once $view["layout"];
