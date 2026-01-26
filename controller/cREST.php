@@ -23,6 +23,7 @@ if (isset($_REQUEST['ampliarnasa'])) {
 }
 
 if (isset($_REQUEST['atras'])) {
+    $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit;

@@ -5,6 +5,7 @@
     </div>
     <nav>
         <form method="post" action="index.php">
+            <input type="hidden" name="paginaAnterior" value="inicioPrivado">
             <input type="submit" name="atras" value="Volver" class="btn primary">
         </form>
     </nav>
