@@ -9,7 +9,7 @@ class DogApi {
         $this->estado = $datosApi['status'] ?? '';
     }
 
-    public function obtenerDatos() {
+    public function obtenerDatosFotoPerro() {
         return [
             'imagen' => $this->imagen,
             'estado' => $this->estado

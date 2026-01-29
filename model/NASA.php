@@ -16,7 +16,7 @@ class NASA {
         $this->tipoMedia = $datosApi['media_type'] ?? '';
     }
 
-    public function obtenerDatos() {
+    public function obtenerDatosFotoNasa() {
         return [
             'titulo' => $this->titulo,
             'fecha' => $this->fecha,

@@ -59,6 +59,31 @@ main{
   margin-top: 50px;
 }
 
+.documentacion-api{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.detalleapi{
+  align-items: flex-start;
+}
+
+.documentacion-api h3{
+  color: #1aa8eb;
+}
+
+.documentacion-api p{
+  text-align: start;
+  width: 50%;
+}
+
+.documentacion-api a{
+  color:black;
+  text-decoration:underline;
+}
+
 header {
   display: flex;
   align-items: center;

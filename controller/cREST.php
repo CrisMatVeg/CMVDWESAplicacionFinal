@@ -21,6 +21,12 @@ if (isset($_REQUEST['ampliarnasa'])) {
     header('Location: index.php');
     exit;
 }
+if (isset($_REQUEST['ampliardog'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'DetallesDog';
+    header('Location: index.php');
+    exit;
+}
 
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
@@ -55,8 +61,8 @@ $datosRazasApi = $rest->obtenerRazasPerro();
 $listadoRazas = DogApi::procesarRazas($datosRazasApi);
 
 /* ===== ARRAY ÚNICO PARA LA VISTA ===== */
-$_SESSION['nasa'] = $nasa->obtenerDatos();
-$_SESSION['perro'] = $perro ? $perro->obtenerDatos() : null;
+$_SESSION['nasa'] = $nasa->obtenerDatosFotoNasa();
+$_SESSION['perro'] = $perro->obtenerDatosFotoPerro();
 $_SESSION['razas'] = $listadoRazas;
 
 require_once $view["layout"];

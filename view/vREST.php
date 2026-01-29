@@ -22,7 +22,7 @@
             </form>
             <?php if (!empty($_SESSION['nasa'])){ ?>
             <img src="<?= htmlspecialchars($_SESSION['nasa']['url']) ?>"
-            alt="<?= htmlspecialchars($_SESSION['nasa']['titulo']) ?>"
+            alt="No se ha podido cargar la imagen"
             style="width:250px;height:250px;">
             <form method="post" action="index.php">
                 <input type="submit" name="ampliarnasa" value="Ampliar">
@@ -61,7 +61,9 @@
             <img src="<?= htmlspecialchars($_SESSION['perro']['imagen']) ?>"
                 alt="Perro"
                 style="width:250px;height:250px;">
-            <a href="#" id="btnabrirmodalperro">Ampliar</a>
+            <form method="post" action="index.php">
+                <input type="submit" name="ampliardog" value="Ampliar">
+            </form>
             <h4 class="parametrostitulo">Parametros:</h4>
             <div class="modal mperro">
                 <p><b>Mensaje (Foto): </b><?= htmlspecialchars($_SESSION['perro']['imagen']) ?></p>
