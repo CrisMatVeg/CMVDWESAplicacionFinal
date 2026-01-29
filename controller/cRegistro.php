@@ -8,13 +8,15 @@ if (isset($_REQUEST['atras'])) {
 $aErrores = [
     'codUsuario' => null,
     'password' => null,
-    'descUsuario' => null
+    'descUsuario' => null,
+    'preguntaSeguridad' => null
 ];
 
 $aRespuestas = [
     'codUsuario' => '',
     'password' => '',
-    'descUsuario' => ''
+    'descUsuario' => '',
+    'preguntaSeguridad' => ''
 ];
 
 $entradaOK = true;
@@ -26,10 +28,12 @@ if (isset($_REQUEST['acceso'])) {
     $aErrores['codUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['codUsuario'], 10, 4, 1);
     $aErrores['password'] = validacionFormularios::validarPassword($_REQUEST['password'], 10, 4, 1, 1);
     $aErrores['descUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descUsuario'], 255, 4, 1);
+    $aErrores['preguntaSeguridad'] = $_REQUEST['preguntaSeguridad']===RESPUESTA_SEGURIDAD ? null : "La respuesta no es correcta";
 
     $aRespuestas['codUsuario'] = $_REQUEST['codUsuario'];
     $aRespuestas['password'] = $_REQUEST['password'];
     $aRespuestas['descUsuario'] = $_REQUEST['descUsuario'];
+    $aRespuestas['preguntaSeguridad'] = $_REQUEST['preguntaSeguridad'];
 
     foreach ($aErrores as $campo => $error) {
         if ($error != null) {

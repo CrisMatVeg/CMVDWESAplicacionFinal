@@ -7,8 +7,8 @@ class UsuarioPDO {
     // Validar usuario en la base de datos
     public static function validarUsuario($codUsuario, $password) {
         $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = SHA2(:password,256)";
-        $stmt = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario, ':password' => $password]);
-        $objetoResultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        $consulta = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario, ':password' => $password]);
+        $objetoResultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
         if (!$objetoResultado) {
             return null;
@@ -37,8 +37,8 @@ class UsuarioPDO {
         DBPDO::ejecutarConsulta($sqlUpdate, [':usuario' => $codUsuario]);
 
         $sqlSelect = "SELECT T01_FechaHoraUltimaConexion FROM T01_Usuarios WHERE T01_CodUsuario = :usuario";
-        $stmt = DBPDO::ejecutarConsulta($sqlSelect, [':usuario' => $codUsuario]);
-        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        $consulta = DBPDO::ejecutarConsulta($sqlSelect, [':usuario' => $codUsuario]);
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
         $usuario->setFechaHoraUltimaConexion(new DateTime($resultado['T01_FechaHoraUltimaConexion']));
     }
@@ -46,8 +46,8 @@ class UsuarioPDO {
     // Comprueba si el código ya existe
     public static function validarCodNoExiste($codUsuario) {
         $sql = "SELECT 1 FROM T01_Usuarios WHERE T01_CodUsuario = :codUsuario";
-        $stmt = DBPDO::ejecutarConsulta($sql, [':codUsuario' => $codUsuario]);
-        return $stmt->fetch() !== false; // true si existe, false si no
+        $consulta = DBPDO::ejecutarConsulta($sql, [':codUsuario' => $codUsuario]);
+        return $consulta->fetch() !== false; // true si existe, false si no
     }
 
     // Alta de usuario
@@ -55,19 +55,76 @@ class UsuarioPDO {
         $sql = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_Password, T01_DescUsuario)
                 VALUES (:codUsuario, SHA2(:password,256), :descUsuario)";
 
-        $stmt = DBPDO::ejecutarConsulta($sql, [
+        $consulta = DBPDO::ejecutarConsulta($sql, [
             ':codUsuario' => $codUsuario,
             ':password' => $password,
             ':descUsuario' => $descUsuario
         ]);
 
         // Si no se insertó ninguna fila, devolver null
-        if ($stmt->rowCount() === 0) {
+        if ($consulta->rowCount() === 0) {
             return null;
         }
 
         // Validar usuario recién creado
         return self::validarUsuario($codUsuario, $password);
+    }
+
+    public static function cambiarPassword($codUsuario, $passwordNueva) {
+        $sql = "UPDATE T01_Usuarios 
+                SET T01_Password = SHA2(:password,256) 
+                WHERE T01_CodUsuario = :usuario";
+    
+        $consulta = DBPDO::ejecutarConsulta($sql, [
+            ':password' => $codUsuario.$passwordNueva,
+            ':usuario'  => $codUsuario
+        ]);
+        return $consulta->rowCount() === 1;
+    }
+
+    public static function editarUsuario($codUsuario, array $datosNuevos) {
+        if (empty($datosNuevos)) {
+            return false;
+        }
+    
+        $campos = [];
+        $parametros = [':usuario' => $codUsuario];
+    
+        foreach ($datosNuevos as $campo => $valor) {
+            $campos[] = "$campo = :$campo";
+            $parametros[":$campo"] = $valor;
+        }
+    
+        $sql = "UPDATE T01_Usuarios 
+                SET " . implode(', ', $campos) . "
+                WHERE T01_CodUsuario = :usuario";
+    
+        $consulta = DBPDO::ejecutarConsulta($sql, $parametros);
+    
+        return $consulta->rowCount() === 1;
+    }
+    
+    public static function buscarUsuarios($descripcion=null) {
+        if ($descripcion === null || $descripcion === '') {
+            $sql = "SELECT * FROM T01_Usuarios WHERE T01_Perfil <> 'admin'";
+            $consulta = DBPDO::ejecutarConsulta($sql, null);
+        }else{
+            $sql = "SELECT * FROM T01_Usuarios WHERE T01_Perfil <> 'admin'
+            AND T01_DescUsuario LIKE :descripcion";
+            $consulta = DBPDO::ejecutarConsulta($sql, [':descripcion' => '%' . $descripcion . '%']);
+        }
+        $objetoResultado = $consulta->fetchAll(PDO::FETCH_OBJ);
+        return $objetoResultado;
+    }
+
+    public static function borrarUsuario($codUsuario) {
+        $sql = "DELETE FROM T01_Usuarios WHERE T01_CodUsuario LIKE :codUsuario";
+        $consulta = DBPDO::ejecutarConsulta($sql, [':codUsuario' => $codUsuario]);
+        if ($consulta->rowCount() === 0) {
+            return false;
+        }else{
+            return true;
+        }
     }
 }
 ?>

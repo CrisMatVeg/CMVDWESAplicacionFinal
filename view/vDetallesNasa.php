@@ -11,6 +11,11 @@
 </header>
 
 <main>
-    <img src="<?= htmlspecialchars($_SESSION['fotoDelDia']['url']) ?>" alt="<?= htmlspecialchars($_SESSION['fotoDelDia']['title']) ?>" style="width:600px;height:600px;">
-    <p>Explicación de como se usa la api...</p>
+    <?php if (!empty($_SESSION['nasa'])) { ?>
+        <img src="<?= htmlspecialchars($_SESSION['nasa']['urlHd']) ?>"
+            alt="<?= htmlspecialchars($_SESSION['nasa']['titulo']) ?>"
+            style="width:600px;height:600px;">
+    <?php } else { ?>
+        <p>No se pudo cargar la información de la NASA.</p>
+    <?php } ?>
 </main>

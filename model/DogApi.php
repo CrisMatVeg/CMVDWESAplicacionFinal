@@ -1,42 +1,34 @@
 <?php
 class DogApi {
-    private $rest;
-    //no utiliza api key
 
-    public function __construct() {
-        $this->rest = new REST();
+    private $imagen;
+    private $estado;
+
+    public function __construct(array $datosApi) {
+        $this->imagen = $datosApi['message'] ?? '';
+        $this->estado = $datosApi['status'] ?? '';
     }
 
-    /**
-     * @return array|null Información de la foto o null si falla
-     */
-    public function obtenerPerro($raza = null) {
-
-        if ($raza) {
-            $url = "https://dog.ceo/api/breed/{$raza}/images/random";
-        } else {
-            $url = "https://dog.ceo/api/breeds/image/random";
-        }
-
-        return $this->rest->obtenerDatos($url);
+    public function obtenerDatos() {
+        return [
+            'imagen' => $this->imagen,
+            'estado' => $this->estado
+        ];
     }
 
-    public function obtenerRazas(){
-        $url = "https://dog.ceo/api/breeds/list/all";
-        $datos = $this->rest->obtenerDatos($url);
-
-        if (!$datos || !isset($datos['message'])) {
+    public static function procesarRazas(array $datosApi) {
+        if (!isset($datosApi['message'])) {
             return [];
         }
 
         $resultado = [];
 
-        foreach ($datos['message'] as $raza => $subrazas) {
+        foreach ($datosApi['message'] as $raza => $subrazas) {
             if (empty($subrazas)) {
                 $resultado[] = $raza;
             } else {
                 foreach ($subrazas as $subraza) {
-                    $resultado[] = $raza . '/' . $subraza;
+                    $resultado[] = "{$raza}/{$subraza}";
                 }
             }
         }
@@ -45,4 +37,3 @@ class DogApi {
         return $resultado;
     }
 }
-?>

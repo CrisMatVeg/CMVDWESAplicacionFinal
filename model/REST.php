@@ -1,46 +1,53 @@
 <?php
-// app/modelos/REST.php
 class REST {
 
-    /**
-     * Realiza una solicitud GET a una URL usando cURL y devuelve el resultado decodificado como array.
-     *
-     * @param string $url URL de la API a consultar
-     * @return array|null Datos decodificados en array asociativo o null si falla
-     */
+    private const URL_NASA = 'https://api.nasa.gov/planetary/apod';
+    private const URL_DOG_RANDOM = 'https://dog.ceo/api/breeds/image/random';
+    private const URL_DOG_BREED = 'https://dog.ceo/api/breed';
+    private const URL_DOG_BREEDS = 'https://dog.ceo/api/breeds/list/all';
+
     public function obtenerDatos($url) {
-        // Inicializar cURL
         $ch = curl_init();
 
-        // Configurar opciones
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   // devolver resultado como string
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);   // seguir redirecciones
-        curl_setopt($ch, CURLOPT_TIMEOUT, 15);            // timeout 15 segundos
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);   // verificar certificado SSL
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 
-        // Ejecutar la solicitud
         $respuesta = curl_exec($ch);
 
-        // Capturar errores
         if ($respuesta === false) {
-            // Opcional: log de error
-            // error_log('cURL error: ' . curl_error($ch));
             curl_close($ch);
             return null;
         }
 
-        // Cerrar cURL
         curl_close($ch);
 
-        // Decodificar JSON
-        $datosDecodificados = json_decode($respuesta, true);
+        $datos = json_decode($respuesta, true);
+        return json_last_error() === JSON_ERROR_NONE ? $datos : null;
+    }
 
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            return null; // error en JSON
+    /* ========= LLAMADAS CENTRALIZADAS ========= */
+
+    public function obtenerNasa($apiKey, $fecha = null) {
+        $url = self::URL_NASA . "?api_key={$apiKey}";
+        if ($fecha) {
+            $url .= "&date={$fecha}";
         }
+        return $this->obtenerDatos($url);
+    }
 
-        return $datosDecodificados;
+    public function obtenerPerro($raza = null) {
+        if ($raza) {
+            $url = self::URL_DOG_BREED . "/{$raza}/images/random";
+        } else {
+            $url = self::URL_DOG_RANDOM;
+        }
+        return $this->obtenerDatos($url);
+    }
+
+    public function obtenerRazasPerro() {
+        return $this->obtenerDatos(self::URL_DOG_BREEDS);
     }
 }
-?>

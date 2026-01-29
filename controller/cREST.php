@@ -29,18 +29,34 @@ if (isset($_REQUEST['atras'])) {
     exit;
 }
 
-$claveApiNasa = 'aJQGMfgeU4awVVTZeZeGMd5f6584nCyFtm4Ud4h1';
-$nasa = new NASA($claveApiNasa);
-$dogapi = new DogApi();
-$listadoRazas= $dogapi->obtenerRazas();
+/* ===== PROCESAR FORMULARIOS ===== */
+if (isset($_REQUEST['enviarFecha']) && !empty($_REQUEST['fecha'])) {
+    $_SESSION['fechaFotoNasa'] = $_REQUEST['fecha'];
+}
 
 if (isset($_REQUEST['enviarRaza'])) {
-    $_SESSION['razaPerroSeleccionada']=$_REQUEST['razas'];
+    $_SESSION['razaPerroSeleccionada'] = $_REQUEST['razas'] ?: null;
 }
-if (isset($_REQUEST['enviarFecha'])) { //validar fecha con libreria
-    $_SESSION['fechaFotoNasa']=$_REQUEST['fecha'];
-}
-$_SESSION['fotoDelDia'] = $nasa->obtenerFotoDelDia($_SESSION['fechaFotoNasa']);
-$fotoPerro = $dogapi->obtenerPerro($_SESSION['razaPerroSeleccionada']);
+
+$rest = new REST();
+
+$claveApiNasa = 'aJQGMfgeU4awVVTZeZeGMd5f6584nCyFtm4Ud4h1';
+
+/* ===== NASA ===== */
+$datosNasaApi = $rest->obtenerNasa($claveApiNasa, $_SESSION['fechaFotoNasa']);
+$nasa = $datosNasaApi ? new NASA($datosNasaApi) : null;
+
+/* ===== DOG ===== */
+$datosPerroApi = $rest->obtenerPerro($_SESSION['razaPerroSeleccionada']);
+$perro = $datosPerroApi ? new DogApi($datosPerroApi) : null;
+
+/* ===== RAZAS ===== */
+$datosRazasApi = $rest->obtenerRazasPerro();
+$listadoRazas = DogApi::procesarRazas($datosRazasApi);
+
+/* ===== ARRAY ÚNICO PARA LA VISTA ===== */
+$_SESSION['nasa'] = $nasa->obtenerDatos();
+$_SESSION['perro'] = $perro ? $perro->obtenerDatos() : null;
+$_SESSION['razas'] = $listadoRazas;
 
 require_once $view["layout"];

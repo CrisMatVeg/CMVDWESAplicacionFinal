@@ -71,9 +71,14 @@
             <div>
                 <form method="post" action="index.php">
                     <input type="text" name="codUsuario" placeholder="Usuario" id="codUsuario" class="required" value="">
+                    <span style="color:red;"><?php echo $aErrores['codUsuario']; ?></span>
                     <input type="text" name="descUsuario" placeholder="Nombre Completo" id="descUsuario" class="required" value="">
+                    <span style="color:red;"><?php echo $aErrores['descUsuario']; ?></span>
                     <input type="password" name="password" placeholder="Contraseña" id="password" class="required" value="">
-
+                    <span style="color:red;"><?php echo $aErrores['password']; ?></span>
+                    <label for="preguntaSeguridad">Respuesta a la pregunta de seguridad:</label>
+                    <input type="text" name="preguntaSeguridad" placeholder="..." id="preguntaSeguridad" class="required" value="">
+                    <span style="color:red;"><?php echo $aErrores['preguntaSeguridad']; ?></span>
                     <div>
                         <!-- Botón para enviar el formulario -->
                         <input type="submit" name="acceso" value="inicioPrivado" class="btn primary">

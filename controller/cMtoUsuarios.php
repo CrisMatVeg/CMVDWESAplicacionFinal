@@ -22,42 +22,40 @@ if (isset($_REQUEST['volver'])) {
     exit;
 }
 
-$departamentoPDO = new DepartamentoPDO();
+$usuarioPDO = new UsuarioPDO();
 
-if (isset($_REQUEST['verDpto'])) {
+if (isset($_REQUEST['verUsuario'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $codDpto = $_REQUEST['codDpto'];
-    $dptoSeleccionado= $departamentoPDO->seleccionarDepartamento($codDpto);
-    $_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
-    $_SESSION['paginaEnCurso'] = 'ConsultarDepartamentos';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['editarDpto'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $codDpto = $_REQUEST['codDpto'];
-    $dptoSeleccionado= $departamentoPDO->seleccionarDepartamento($codDpto);
-    $_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
-    $_SESSION['paginaEnCurso'] = 'EditarDepartamentos';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['bajaDpto'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $codDpto = $_REQUEST['codDpto'];
-    $_SESSION['codDptoSeleccionado'] = $codDpto;
+    $codUsuario = $_REQUEST['codUsuario'];
+/*     $UsuarioSeleccionado= $usuarioPDO->seleccionarDepartamento($codUsuario);
+    $_SESSION['UsuarioSeleccionado'] = $UsuarioSeleccionado; */
     $_SESSION['paginaEnCurso'] = 'WIP';
     header('Location: index.php');
     exit;
 }
 
-if (isset($_REQUEST['borrarDpto'])) {
+if (isset($_REQUEST['editarUsuario'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $codDpto = $_REQUEST['codDpto'];
-    $_SESSION['codDptoSeleccionado'] = $codDpto;
+    $codUsuario = $_REQUEST['codUsuario'];
+/*     $UsuarioSeleccionado= $usuarioPDO->seleccionarDepartamento($codUsuario);
+    $_SESSION['UsuarioSeleccionado'] = $UsuarioSeleccionado; */
     $_SESSION['paginaEnCurso'] = 'WIP';
+    header('Location: index.php');
+    exit;
+}
+
+if (isset($_REQUEST['bajaUsuario'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+/*     $codUsuario = $_REQUEST['codUsuario'];
+    $_SESSION['codUsuarioSeleccionado'] = $codUsuario; */
+    $_SESSION['paginaEnCurso'] = 'WIP';
+    header('Location: index.php');
+    exit;
+}
+
+if (isset($_REQUEST['borrarUsuario'])) {
+    $codUsuario = $_REQUEST['codUsuario'];
+    $usuarioPDO->borrarUsuario($codUsuario);
     header('Location: index.php');
     exit;
 }
@@ -71,8 +69,8 @@ $aRespuestas = [
 ];
 
 // Si ya hay búsqueda previa guardada en sesión, rellenamos $aRespuestas
-if (isset($_SESSION['busquedaDepartamento'])) {
-    $aRespuestas['descripcion'] = $_SESSION['busquedaDepartamento'];
+if (isset($_SESSION['busquedaUsuario'])) {
+    $aRespuestas['descripcion'] = $_SESSION['busquedaUsuario'];
 }
 
 if (isset($_REQUEST['enviar'])) {
@@ -91,15 +89,15 @@ if (isset($_REQUEST['enviar'])) {
 
     if ($entradaOK) {
         // Guardamos en sesión
-        $_SESSION['busquedaDepartamento'] = $_REQUEST['descripcion'];
+        $_SESSION['busquedaUsuario'] = $_REQUEST['descripcion'];
     }
 }
 
 // Llamar al modelo
-if ($entradaOK && !empty($_SESSION['busquedaDepartamento'])) {
-    $departamentos = $departamentoPDO->buscarDepartamentos($_SESSION['busquedaDepartamento']);
+if ($entradaOK && !empty($_SESSION['busquedaUsuario'])) {
+    $usuarios = $usuarioPDO->buscarUsuarios($_SESSION['busquedaUsuario']);
 } else {
-    $departamentos = $departamentoPDO->buscarDepartamentos();
+    $usuarios = $usuarioPDO->buscarUsuarios();
 }
 
 require_once $view["layout"];

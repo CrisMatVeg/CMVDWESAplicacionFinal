@@ -61,7 +61,12 @@
     <form method="post" class="ipbotones">
         <input type="submit" name="detalle" value='Detalle' class="btn primary">
         <input type="submit" name="rest" value='REST' class="btn primary">
-        <input type="submit" name="mantenimiento" value='Mantenimiento Departamentos' class="btn primary">
+        <input type="submit" name="mtoDptos" value='Mto Departamentos' class="btn primary">
+        <?php
+            if($esAdmin){
+                echo "<input type='submit' name='mtoUsuarios' value='Mto Usuarios' class='btn primary'>";
+            }
+        ?>
         <input type="submit" name="error" value='Error' class="btn primary">
     </form>
 </main>

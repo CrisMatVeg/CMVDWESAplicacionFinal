@@ -51,6 +51,14 @@ main{
   flex-wrap: wrap;
 }
 
+.maindptos, .mainUsuarios{
+  justify-content: start;
+}
+
+.maindptos h1, .mainUsuarios h1{
+  margin-top: 50px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -226,6 +234,18 @@ td{
   width: max-content;
 }
 
+.edicion.dpto{
+  width: 60%;
+}
+
+.edicion.dpto fieldset div div *{
+  width: 150%;
+}
+
+.edicion.dpto fieldset div div input{
+  margin-bottom: 30px;
+}
+
 .botoneseditar{
   display: flex;
   flex-direction: row;
@@ -239,7 +259,7 @@ td{
   color:#58cc02
 }
 
-.opcionDpto{
+.opcionDpto,.opcionUsuario{
   color: var(--text);
   background-color: transparent;
   border: none;

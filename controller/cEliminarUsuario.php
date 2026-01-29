@@ -14,19 +14,7 @@ if (isset($_REQUEST['atras'])) {
     exit;
 }
 if (isset($_REQUEST['volver'])) {
-    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-    header('Location: index.php');
-    exit;
-}
-if (isset($_REQUEST['borrarCuenta'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'BorrarCuenta';
-    header('Location: index.php');
-    exit;
-}
-if (isset($_REQUEST['cambiarContraseña'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'CambiarPassword';
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit;
 }

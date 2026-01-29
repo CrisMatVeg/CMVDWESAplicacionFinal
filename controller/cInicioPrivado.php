@@ -41,6 +41,12 @@ if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
     exit;
 }
 
+if ($_SESSION['usuarioActualDWESLoginLogoff']->getPerfil()=="admin") {
+    $esAdmin=true;
+}else{
+    $esAdmin=false;
+}
+
 if (isset($_REQUEST['miperfil'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'MiCuenta';
@@ -55,12 +61,20 @@ if (isset($_REQUEST['detalle'])) {
     exit;
 }
 
-if (isset($_REQUEST['mantenimiento'])) {
+if (isset($_REQUEST['mtoDptos'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
     header('Location: index.php');
     exit;
 }
+
+if (isset($_REQUEST['mtoUsuarios'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+    header('Location: index.php');
+    exit;
+}
+
 if (isset($_REQUEST['rest'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'REST';
@@ -92,7 +106,8 @@ $avInicioPrivado = [
     "codUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getCodUsuario(),
     "numConexiones" => $_SESSION['usuarioActualDWESLoginLogoff']->getNumConexiones(),
     "fechaHoraUltimaConexionAnterior" => $_SESSION['usuarioActualDWESLoginLogoff']->getFechaHoraUltimaConexionAnterior(),
-    "descUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getDescUsuario()
+    "descUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getDescUsuario(),
+    $esAdmin
 ];
 $_SESSION['arrayDatosUsuarioActualDWESLoginLogoff']=$avInicioPrivado;
 

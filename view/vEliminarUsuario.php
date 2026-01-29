@@ -2,7 +2,7 @@
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
         <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
-            Borrar Usuario</span></span>
+            Eliminar Usuario</span></span>
     </div>
     <nav>
         <form method="post">
@@ -16,7 +16,7 @@
 </header>
 
 <main>
-    <h1>Seguro que quieres borrar tu cuenta?</h1>
+    <h1>Seguro que quieres borrar este usuario?</h1>
     <h3>Introduzca SI o NO</h3>
     <div>
         <form method="post">

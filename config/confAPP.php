@@ -8,20 +8,25 @@
     require_once './model/REST.php';
     require_once './model/NASA.php';
     require_once './model/DogApi.php';
+    define("RESPUESTA_SEGURIDAD","pimentel");
     $controller=[
         "inicioPublico" => "controller/cInicioPublico.php",
         "Login" => "controller/cLogin.php",
         "inicioPrivado" => "controller/cInicioPrivado.php",
         "Detalle" => "controller/cDetalle.php",
         "MiCuenta" => "controller/cMiCuenta.php",
-        "BorrarUsuario" => "controller/cBorrarUsuario.php",
+        "BorrarCuenta" => "controller/cBorrarUsuario.php",
         "CambiarPassword" => "controller/cCambiarPassword.php",
         "Registro" => "controller/cRegistro.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php",
         "REST" => "controller/cREST.php",
         "DetallesNasa" => "controller/cDetallesNasa.php",
-        "MtoDepartamentos" => "controller/cMtoDepartamentos.php"
+        "MtoDepartamentos" => "controller/cMtoDepartamentos.php",
+        "MtoUsuarios" => "controller/cMtoUsuarios.php",
+        "ConsultarDepartamentos" => "controller/cConsultarDepartamentos.php",
+        "EditarDepartamentos" => "controller/cEditarDepartamentos.php",
+        "EliminarUsuario" => "controller/cEliminarUsuario.php"
     ];
     $view=[
         "inicioPublico" => "view/vInicioPublico.php",
@@ -30,13 +35,17 @@
         "Login" => "view/vLogin.php",
         "Detalle" => "view/vDetalle.php",
         "MiCuenta" => "view/vMiCuenta.php",
-        "BorrarUsuario" => "view/vBorrarUsuario.php",
+        "BorrarCuenta" => "view/vBorrarCuenta.php",
         "CambiarPassword" => "view/vCambiarPassword.php",
         "Registro" => "view/vRegistro.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php",
         "REST" => "view/vREST.php",
         "DetallesNasa" => "view/vDetallesNasa.php",
-        "MtoDepartamentos" => "view/vMtoDepartamentos.php"
+        "MtoDepartamentos" => "view/vMtoDepartamentos.php",
+        "MtoUsuarios" => "view/vMtoUsuarios.php",
+        "ConsultarDepartamentos" => "view/vConsultarDepartamentos.php",
+        "EditarDepartamentos" => "view/vEditarDepartamentos.php",
+        "EliminarUsuario" => "view/vEliminarUsuario.php"
     ];
 ?>
