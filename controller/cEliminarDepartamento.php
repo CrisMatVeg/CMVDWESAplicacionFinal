@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
     exit;
 }
 
-if (isset($_REQUEST['atras'])) {
+if (isset($_REQUEST['volver'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit;
@@ -13,13 +13,9 @@ if (isset($_REQUEST['atras'])) {
 
 $departamentoPDO = new DepartamentoPDO();
 
-if (isset($_REQUEST['cambiarDatos'])) {
+if (isset($_REQUEST['confirmar']) && $_REQUEST['confirmacion']==="SI") {
     $codUsuario = $_SESSION['codDptoSeleccionado'];
-    $datosNuevos=[
-        "T02_DescDepartamento"=>$_REQUEST['descDepartamento'],
-        "T02_VolumenDeNegocio"=>$_REQUEST['VolumenDeNegocio']
-    ];
-    $departamentoPDO->editarDepartamento($codUsuario,$datosNuevos);
+    $departamentoPDO->borrarDepartamento($codUsuario);
     $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
     header('Location: index.php');
     exit;

@@ -37,8 +37,7 @@ if (isset($_REQUEST['verDpto'])) {
 if (isset($_REQUEST['editarDpto'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codDpto = $_REQUEST['codDpto'];
-    $dptoSeleccionado= $departamentoPDO->seleccionarDepartamento($codDpto);
-    $_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
+    $_SESSION['codDptoSeleccionado'] = $codDpto;
     $_SESSION['paginaEnCurso'] = 'EditarDepartamentos';
     header('Location: index.php');
     exit;
@@ -57,7 +56,7 @@ if (isset($_REQUEST['borrarDpto'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codDpto = $_REQUEST['codDpto'];
     $_SESSION['codDptoSeleccionado'] = $codDpto;
-    $_SESSION['paginaEnCurso'] = 'WIP';
+    $_SESSION['paginaEnCurso'] = 'EliminarDepartamento';
     header('Location: index.php');
     exit;
 }

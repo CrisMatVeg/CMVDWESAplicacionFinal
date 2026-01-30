@@ -21,5 +21,37 @@ class DepartamentoPDO {
         $objetoResultado = $stmt->fetch(PDO::FETCH_OBJ);
         return $objetoResultado;
     }
+
+    public static function editarDepartamento($codDepartamento, $datosNuevos) {
+        if (empty($datosNuevos)) {
+            return false;
+        }
+    
+        $campos = [];
+        $parametros = [':departamento' => $codDepartamento];
+    
+        foreach ($datosNuevos as $campo => $valor) {
+            $campos[] = "$campo = :$campo";
+            $parametros[":$campo"] = $valor;
+        }
+    
+        $sql = "UPDATE T02_Departamento 
+                SET " . implode(', ', $campos) . "
+                WHERE T02_CodDepartamento = :departamento";
+    
+        $consulta = DBPDO::ejecutarConsulta($sql, $parametros);
+    
+        return $consulta->rowCount() > 0;
+    }
+
+    public static function borrarDepartamento($codDepartamento) {
+        $sql = "DELETE FROM T02_Departamento WHERE T02_CodDepartamento LIKE :codDepartamento";
+        $consulta = DBPDO::ejecutarConsulta($sql, [':codDepartamento' => $codDepartamento]);
+        if ($consulta->rowCount() === 0) {
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
 ?>

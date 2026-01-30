@@ -16,13 +16,13 @@
                 <div>
                     <div>
                         <label for="codDepartamento">Código de departamento:</label>
-                        <input type="text" id="codDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_CodDepartamento?>">
+                        <input type="text" disabled name="codDepartamento" id="codDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_CodDepartamento?>">
                         <label for="descDepartamento">Descripción de departamento:</label>
-                        <input type="text" id="descDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_DescDepartamento?>">
+                        <input type="text" class="required" name="descDepartamento" id="descDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_DescDepartamento?>">
                         <label for="fechaCreacionDepartamento">Fecha de creación de departamento:</label>
-                        <input disabled type="text" id="fechaCreacionDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_FechaCreacionDepartamento?>">
+                        <input disabled type="text" name="fechaCreacionDepartamento" id="fechaCreacionDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_FechaCreacionDepartamento?>">
                         <label for="VolumenDeNegocio">Volumen de negocio de departamento:</label>
-                        <input type="text" id="VolumenDeNegocio" value="<?php echo $_SESSION['dptoSeleccionado']->T02_VolumenDeNegocio?>">
+                        <input type="text" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php echo $_SESSION['dptoSeleccionado']->T02_VolumenDeNegocio?>">
                     </div>
                 </div>
             </fieldset>

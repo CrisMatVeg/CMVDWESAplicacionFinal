@@ -27,7 +27,8 @@
         "MtoUsuarios" => "controller/cMtoUsuarios.php",
         "ConsultarDepartamentos" => "controller/cConsultarDepartamentos.php",
         "EditarDepartamentos" => "controller/cEditarDepartamentos.php",
-        "EliminarUsuario" => "controller/cEliminarUsuario.php"
+        "EliminarUsuario" => "controller/cEliminarUsuario.php",
+        "EliminarDepartamento" => "controller/cEliminarDepartamento.php"
     ];
     $view=[
         "inicioPublico" => "view/vInicioPublico.php",
@@ -48,6 +49,7 @@
         "MtoUsuarios" => "view/vMtoUsuarios.php",
         "ConsultarDepartamentos" => "view/vConsultarDepartamentos.php",
         "EditarDepartamentos" => "view/vEditarDepartamentos.php",
-        "EliminarUsuario" => "view/vEliminarUsuario.php"
+        "EliminarUsuario" => "view/vEliminarUsuario.php",
+        "EliminarDepartamento" => "view/vEliminarDepartamento.php"
     ];
 ?>
