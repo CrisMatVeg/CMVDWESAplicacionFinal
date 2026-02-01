@@ -38,6 +38,13 @@ body {
 
 .imagenes {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80vw;
 }
 
 main{
@@ -192,8 +199,8 @@ input,select {
 
 img.btn.secondary {
   padding: 0px;
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   background-color: #ffffff;
 }
 
@@ -267,7 +274,7 @@ td{
   width: 150%;
 }
 
-.edicion.dpto fieldset div div input{
+.edicion.dpto fieldset div div input, .edicion.dpto fieldset div div select{
   margin-bottom: 30px;
 }
 
@@ -332,7 +339,7 @@ td{
   overflow: visible !important;
 }
 
-.edicion fieldset input{
+.edicion fieldset input, .edicion fieldset select{
   margin-right: 20px;
 }
 

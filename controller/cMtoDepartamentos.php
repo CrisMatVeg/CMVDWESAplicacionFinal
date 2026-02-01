@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
+if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
     exit;
@@ -27,7 +27,7 @@ $departamentoPDO = new DepartamentoPDO();
 if (isset($_REQUEST['verDpto'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codDpto = $_REQUEST['codDpto'];
-    $dptoSeleccionado= $departamentoPDO->seleccionarDepartamento($codDpto);
+    $dptoSeleccionado = $departamentoPDO->seleccionarDepartamento($codDpto);
     $_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
     $_SESSION['paginaEnCurso'] = 'ConsultarDepartamentos';
     header('Location: index.php');
@@ -38,7 +38,9 @@ if (isset($_REQUEST['editarDpto'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codDpto = $_REQUEST['codDpto'];
     $_SESSION['codDptoSeleccionado'] = $codDpto;
-    $_SESSION['paginaEnCurso'] = 'EditarDepartamentos';
+    $dptoSeleccionado = $departamentoPDO->seleccionarDepartamento($codDpto);
+    $_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
+    $_SESSION['paginaEnCurso'] = 'EditarDepartamento';
     header('Location: index.php');
     exit;
 }

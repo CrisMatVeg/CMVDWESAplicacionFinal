@@ -23,7 +23,7 @@
  * @version 1.0
  */
 
-if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
+if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
     exit;

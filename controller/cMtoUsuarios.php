@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
+if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
     exit;
@@ -27,9 +27,9 @@ $usuarioPDO = new UsuarioPDO();
 if (isset($_REQUEST['verUsuario'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codUsuario = $_REQUEST['codUsuario'];
-/*     $UsuarioSeleccionado= $usuarioPDO->seleccionarDepartamento($codUsuario);
-    $_SESSION['UsuarioSeleccionado'] = $UsuarioSeleccionado; */
-    $_SESSION['paginaEnCurso'] = 'WIP';
+    $usuarioSeleccionado= $usuarioPDO->seleccionarUsuario($codUsuario);
+    $_SESSION['usuarioSeleccionado'] = $usuarioSeleccionado;
+    $_SESSION['paginaEnCurso'] = 'ConsultarUsuario';
     header('Location: index.php');
     exit;
 }
@@ -37,9 +37,10 @@ if (isset($_REQUEST['verUsuario'])) {
 if (isset($_REQUEST['editarUsuario'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codUsuario = $_REQUEST['codUsuario'];
-/*     $UsuarioSeleccionado= $usuarioPDO->seleccionarDepartamento($codUsuario);
-    $_SESSION['UsuarioSeleccionado'] = $UsuarioSeleccionado; */
-    $_SESSION['paginaEnCurso'] = 'WIP';
+    $_SESSION['codUsuarioSeleccionado'] = $codUsuario;
+    $usuarioSeleccionado= $usuarioPDO->seleccionarUsuario($codUsuario);
+    $_SESSION['usuarioSeleccionado'] = $usuarioSeleccionado;
+    $_SESSION['paginaEnCurso'] = 'EditarUsuario';
     header('Location: index.php');
     exit;
 }
@@ -54,8 +55,10 @@ if (isset($_REQUEST['bajaUsuario'])) {
 }
 
 if (isset($_REQUEST['borrarUsuario'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codUsuario = $_REQUEST['codUsuario'];
-    $usuarioPDO->borrarUsuario($codUsuario);
+    $_SESSION['codUsuarioSeleccionado'] = $codUsuario;
+    $_SESSION['paginaEnCurso'] = 'EliminarUsuario';
     header('Location: index.php');
     exit;
 }

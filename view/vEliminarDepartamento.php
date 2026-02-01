@@ -2,7 +2,7 @@
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
         <span>Aplicación Final<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
-            Borrar Departamento</span></span>
+            Eliminar Departamento</span></span>
     </div>
     <nav>
         <form method="post">
@@ -12,7 +12,7 @@
 </header>
 
 <main>
-    <h1>Seguro que quieres borrar este departamento?</h1>
+    <h1>Seguro que quieres eliminar este departamento?</h1>
     <h3>Introduzca "SI" si quiere eliminarlo</h3>
     <div>
         <form method="post">

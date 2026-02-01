@@ -1,36 +1,4 @@
 <?php
-/**
- * Controlador: Login (cLogin)
- *
- * Este controlador gestiona la lógica de inicio de sesión y navegación de la página de login
- * de la aplicación Login/Logoff.
- *
- * Funcionalidad:
- * 1. Gestiona el botón "Cancelar"/"Atrás":
- *    - Si se envía el parámetro `atras`, actualiza la página actual
- *      a la página anterior y redirige a `index.php`.
- * 
- * 2. Gestiona el inicio de sesión:
- *    - Si se envía `paginaDestino = inicioPrivado`, recoge los valores
- *      de `codUsuario` y `password` del formulario.
- *    - Construye la contraseña combinando código de usuario y contraseña.
- *    - Llama al modelo `UsuarioPDO` para validar el usuario.
- *    - Si el usuario es válido:
- *       - Actualiza la última conexión en la base de datos y en el objeto usuario.
- *       - Almacena el usuario en la sesión (`usuarioActualDWESLoginLogoff`).
- *       - Actualiza la página en curso y redirige a `index.php`.
- *
- * Dependencias:
- * - Clase `UsuarioPDO` y sus métodos `validarUsuario` y `actualizarUltimaConexionYUsuario`
- * - Arreglo `$view` para cargar la vista final (`layout`)
- * - Variables de sesión `$_SESSION`
- *
- * @package Controladores
- * @author Cristian Mateos
- * @version 1.0
- */
- 
-// Gestión del botón "Atrás"/Cancelar
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
@@ -45,24 +13,69 @@ if (isset($_REQUEST['registro'])) {
     exit;
 }
 
-// Gestión del login hacia inicio privado
+$aErrores = [
+    'codUsuario' => null,
+    'password' => null
+];
+
+$aRespuestas = [
+    'codUsuario' => '',
+    'password' => ''
+];
+
+$entradaOK = true;
+
 if (isset($_REQUEST['paginaDestino']) && $_REQUEST['paginaDestino'] == "inicioPrivado") {
-    $codUsuario = $_REQUEST['codUsuario'] == null ? '' : $_REQUEST['codUsuario'];
-    $password = $_REQUEST['password'] == null ? '' : $codUsuario . $_REQUEST['password'];
 
-    // Llamar al modelo
-    $usuarioPDO = new UsuarioPDO();
-    $usuario = $usuarioPDO->validarUsuario($codUsuario, $password);
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
 
-    if ($usuario != false) {
-        $usuarioPDO->actualizarUltimaConexionYUsuario($usuario);
-        $_SESSION['usuarioActualDWESLoginLogoff'] = $usuario;
-        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
-        header('Location: index.php');
-        exit;
+    // Validaciones usando la librería
+    $aErrores['codUsuario'] = validacionFormularios::comprobarAlfaNumerico(
+        $_REQUEST['codUsuario'],
+        10,
+        4,
+        1
+    );
+
+    $aErrores['password'] = validacionFormularios::validarPassword(
+        $_REQUEST['password'],
+        10,
+        4,
+        1,
+        1
+    );
+
+    // Guardar respuestas
+    $aRespuestas['codUsuario'] = $_REQUEST['codUsuario'];
+    $aRespuestas['password'] = $_REQUEST['password'];
+
+    // Comprobar si hay errores
+    foreach ($aErrores as $error) {
+        if ($error != null) {
+            $entradaOK = false;
+        }
     }
+
+    if ($entradaOK) {
+
+        $codUsuario = $_REQUEST['codUsuario'];
+        $password = $codUsuario . $_REQUEST['password'];
+
+        // Llamar al modelo
+        $usuarioPDO = new UsuarioPDO();
+        $usuario = $usuarioPDO->validarUsuario($codUsuario, $password);
+
+        if ($usuario != false) {
+            $usuarioPDO->actualizarUltimaConexionYUsuario($usuario);
+            $_SESSION['usuarioActualDWESAplicacionFinal'] = $usuario;
+            $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
+            header('Location: index.php');
+            exit;
+        }
+    }
+} else {
+    // Si no se ha enviado el formulario
+    $entradaOK = false;
 }
 
-// Carga la vista layout principal
 require_once $view['layout'];

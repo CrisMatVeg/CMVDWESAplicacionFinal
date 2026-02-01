@@ -66,7 +66,7 @@ if (isset($_REQUEST['acceso'])) {
                 exit;
             } else {
                 // Login correcto
-                $_SESSION['usuarioActualDWESLoginLogoff'] = $oUsuario;
+                $_SESSION['usuarioActualDWESAplicacionFinal'] = $oUsuario;
                 $_SESSION['paginaEnCurso'] = 'inicioPrivado';
                 header('Location: index.php');
                 exit;

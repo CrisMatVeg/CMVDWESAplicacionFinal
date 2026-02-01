@@ -40,9 +40,9 @@ if (isset($_REQUEST['confirmar'])) {
     }
 
     if ($entradaOK) {
-        $codUsuario = $_SESSION['codUsuarioSeleccionado'];
+        $codUsuario = $_SESSION['usuarioActualDWESAplicacionFinal']->getCodUsuario();
         $usuarioPDO->borrarUsuario($codUsuario);
-        $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+        $_SESSION['paginaEnCurso'] = 'inicioPublico';
         header('Location: index.php');
         exit;
     }

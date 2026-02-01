@@ -5,9 +5,15 @@ require_once 'Usuario.php';
 class UsuarioPDO {
 
     // Validar usuario en la base de datos
-    public static function validarUsuario($codUsuario, $password) {
-        $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = SHA2(:password,256)";
-        $consulta = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario, ':password' => $password]);
+    public static function validarUsuario($codUsuario, $password=null) {
+        if($password!=null){
+            $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = SHA2(:password,256)";
+            $consulta = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario, ':password' => $password]);
+        }else{
+            $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario";
+            $consulta = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario]);
+        }
+        
         $objetoResultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
         if (!$objetoResultado) {
@@ -80,6 +86,13 @@ class UsuarioPDO {
             ':usuario'  => $codUsuario
         ]);
         return $consulta->rowCount() === 1;
+    }
+
+    public static function seleccionarUsuario($codUsuario) {
+        $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :codUsuario ";
+        $stmt = DBPDO::ejecutarConsulta($sql, [':codUsuario' => $codUsuario]);
+        $objetoResultado = $stmt->fetch(PDO::FETCH_OBJ);
+        return $objetoResultado;
     }
 
     public static function editarUsuario($codUsuario, array $datosNuevos) {

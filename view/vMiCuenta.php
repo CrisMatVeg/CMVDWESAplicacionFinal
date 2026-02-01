@@ -19,8 +19,8 @@
     <div class="perfilshow">
         <img src="http://picsum.photos/id/654/500/500" alt="">
         <?php
-            echo "<h2>".$_SESSION['arrayDatosUsuarioActualDWESLoginLogoff']["descUsuario"]."</h2>";
-            echo "<h3>".$_SESSION['arrayDatosUsuarioActualDWESLoginLogoff']["codUsuario"]."</h3>";
+            echo "<h2>".$_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']["descUsuario"]."</h2>";
+            echo "<h3>".$_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']["codUsuario"]."</h3>";
         ?>
     </div>
     <div>
@@ -29,8 +29,8 @@
                 <legend>Datos de Usuario:</legend>
                 <div>
                     <div>
-                        <label for="password">Nombre Completo:</label>
-                        <input type="text" id="description">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description">
                     </div>
                 </div>
                 <input type="submit" name="cambiarDatos" value='Cambiar Datos' class="btn primary">

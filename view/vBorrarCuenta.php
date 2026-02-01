@@ -6,21 +6,17 @@
     </div>
     <nav>
         <form method="post">
-            <input type="hidden" name="paginaAnterior" value="inicioPublico">
-            <input type="submit" name="atras" value="Cerrar Sesión" class="btn primary">
-        </form>
-        <form method="post">
             <input type="submit" name="volver" value="Volver" class="btn primary">
         </form>
     </nav>
 </header>
 
 <main>
-    <h1>Seguro que quieres borrar tu cuenta?</h1>
-    <h3>Introduzca SI o NO</h3>
+    <h1>Seguro que quieres eliminar esta cuenta?</h1>
+    <h3>Introduzca "SI" si quiere eliminarlo</h3>
     <div>
         <form method="post">
-            <input type="text" id="confirmacion">
+            <input type="text" name="confirmacion" id="confirmacion">
             <input type="submit" name="confirmar" value='Confirmar' class="btn primary">
         </form>
     </div>

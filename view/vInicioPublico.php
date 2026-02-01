@@ -39,9 +39,33 @@
 <main class="publicmain">
     <h1>Inicio Público</h1>
     <div class="imagenes">
-        <img src="./webroot/images/navegacion.png" alt="" class="btn secondary">
-        <img src="./webroot/images/ficheros.png" alt="" class="btn secondary">
-        <img src="./webroot/images/clases.png" alt="" class="btn secondary">
-        <img src="./webroot/images/modelofisico.png" alt="" class="btn secondary">
+        <div>
+            <p>Casos de Uso</p>
+            <a href="./webroot/images/casosuso.jpg" target="_blank"><img src="./webroot/images/casosuso.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Navegación</p>
+            <a href="./webroot/images/navegacion.jpg" target="_blank"><img src="./webroot/images/navegacion.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Ficheros</p>
+            <a href="./webroot/images/ficheros.jpg" target="_blank"><img src="./webroot/images/ficheros.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Clases</p>
+            <a href="./webroot/images/clases.jpg" target="_blank"><img src="./webroot/images/clases.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Modelo Físico</p>
+            <a href="./webroot/images/modelofisico.jpg" target="_blank"><img src="./webroot/images/modelofisico.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Sesión</p>
+            <a href="./webroot/images/sesion.jpg" target="_blank"><img src="./webroot/images/sesion.jpg" alt="" class="btn secondary"></a>
+        </div>
+        <div>
+            <p>Requisitos</p>
+            <a href="./webroot/images/requisitos.pdf" target="_blank"><img src="./webroot/images/requisitos.jpg" alt="" class="btn secondary"></a>
+        </div>
     </div>
 </main>

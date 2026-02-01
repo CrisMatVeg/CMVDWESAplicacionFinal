@@ -8,7 +8,7 @@
  *
  * Funcionalidad:
  * 1. Validación de sesión:
- *    - Si no existe `$_SESSION['usuarioActualDWESLoginLogoff']`, redirige a la página de Login.
+ *    - Si no existe `$_SESSION['usuarioActualDWESAplicacionFinal']`, redirige a la página de Login.
  *
  * 2. Navegación hacia otra página:
  *    - Si se envía `paginaDestino`, actualiza `paginaAnterior` y `paginaEnCurso`, y redirige.
@@ -17,7 +17,7 @@
  *    - Si se envía `atras`, destruye la sesión actual, la reinicia y vuelve a la página anterior.
  *
  * 4. Preparación de datos del usuario (`$avInicioPrivado`):
- *    - Extrae de `$_SESSION['usuarioActualDWESLoginLogoff']`:
+ *    - Extrae de `$_SESSION['usuarioActualDWESAplicacionFinal']`:
  *       - Código de usuario (`codUsuario`)
  *       - Número de conexiones (`numConexiones`)
  *       - Fecha y hora de la última conexión anterior (`fechaHoraUltimaConexionAnterior`)
@@ -35,13 +35,13 @@
  * @version 1.0
  */
 
-if (!isset($_SESSION['usuarioActualDWESLoginLogoff'])) {
+if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
     exit;
 }
 
-if ($_SESSION['usuarioActualDWESLoginLogoff']->getPerfil()=="admin") {
+if ($_SESSION['usuarioActualDWESAplicacionFinal']->getPerfil()=="admin") {
     $esAdmin=true;
 }else{
     $esAdmin=false;
@@ -103,13 +103,13 @@ if (isset($_REQUEST['atras'])) {
 
 // Preparación de los datos del usuario para la vista
 $avInicioPrivado = [
-    "codUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getCodUsuario(),
-    "numConexiones" => $_SESSION['usuarioActualDWESLoginLogoff']->getNumConexiones(),
-    "fechaHoraUltimaConexionAnterior" => $_SESSION['usuarioActualDWESLoginLogoff']->getFechaHoraUltimaConexionAnterior(),
-    "descUsuario" => $_SESSION['usuarioActualDWESLoginLogoff']->getDescUsuario(),
+    "codUsuario" => $_SESSION['usuarioActualDWESAplicacionFinal']->getCodUsuario(),
+    "numConexiones" => $_SESSION['usuarioActualDWESAplicacionFinal']->getNumConexiones(),
+    "fechaHoraUltimaConexionAnterior" => $_SESSION['usuarioActualDWESAplicacionFinal']->getFechaHoraUltimaConexionAnterior(),
+    "descUsuario" => $_SESSION['usuarioActualDWESAplicacionFinal']->getDescUsuario(),
     $esAdmin
 ];
-$_SESSION['arrayDatosUsuarioActualDWESLoginLogoff']=$avInicioPrivado;
+$_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']=$avInicioPrivado;
 
 // Carga la vista layout principal
 require_once $view["layout"];

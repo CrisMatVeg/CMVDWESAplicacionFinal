@@ -19,8 +19,8 @@
     <h3>Introduzca su contraseña actual y la nueva</h3>
     <div>
         <form method="post">
-            <input type="password" id="passwordactual" placeholder="Actual">
-            <input type="password" id="passwordnueva" placeholder="Nueva Contraseña">
+            <input type="password" id="passwordactual" name="passwordactual" placeholder="Actual">
+            <input type="password" id="passwordnueva" name="passwordnueva" placeholder="Nueva Contraseña">
             <input type="submit" name="confirmar" value='Confirmar' class="btn primary">
         </form>
     </div>

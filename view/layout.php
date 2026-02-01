@@ -184,6 +184,10 @@
                     <div>
                         <a href="https://es.duolingo.com/" target="_blank" title="Duolingo">Pagina Imitada</a>
                         ·
+                        <a href="https://cristianmatveg.ieslossauces.es/" target="_blank" title="Github">Portfolio</a>
+                        ·
+                        <a href="./webroot/images/CurriculumCristianMateos.pdf" target="_blank" title="Github">Curriculum</a>
+                        .
                         <a href="https://github.com/CrisMatVeg/CMVDWESAplicacionFinal" target="_blank" title="Github"><i class="fa-brands fa-github fa-2xl"></i></a>
                     </div>
                 </div>

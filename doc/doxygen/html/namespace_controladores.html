@@ -118,7 +118,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 <p>Este controlador gestiona la página de inicio privado de la aplicación Login/Logoff. Se encarga de validar la sesión del usuario, manejar la navegación entre páginas, y preparar los datos del usuario para la vista.</p>
 <p>Funcionalidad:</p><ol type="1">
 <li>Validación de sesión:<ul>
-<li>Si no existe <span class="tt">$_SESSION['usuarioActualDWESLoginLogoff']</span>, redirige a la página de Login.</li>
+<li>Si no existe <span class="tt">$_SESSION['usuarioActualDWESAplicacionFinal']</span>, redirige a la página de Login.</li>
 </ul>
 </li>
 <li>Navegación hacia otra página:<ul>
@@ -130,7 +130,7 @@ $(function(){initNavTree('namespace_controladores.html','',''); });
 </ul>
 </li>
 <li>Preparación de datos del usuario (<span class="tt">$avInicioPrivado</span>):<ul>
-<li>Extrae de <span class="tt">$_SESSION['usuarioActualDWESLoginLogoff']</span>:<ul>
+<li>Extrae de <span class="tt">$_SESSION['usuarioActualDWESAplicacionFinal']</span>:<ul>
 <li>Código de usuario (<span class="tt">codUsuario</span>)</li>
 <li>Número de conexiones (<span class="tt">numConexiones</span>)</li>
 <li>Fecha y hora de la última conexión anterior (<span class="tt">fechaHoraUltimaConexionAnterior</span>)</li>

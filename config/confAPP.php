@@ -15,7 +15,7 @@
         "inicioPrivado" => "controller/cInicioPrivado.php",
         "Detalle" => "controller/cDetalle.php",
         "MiCuenta" => "controller/cMiCuenta.php",
-        "BorrarCuenta" => "controller/cBorrarUsuario.php",
+        "BorrarCuenta" => "controller/cBorrarCuenta.php",
         "CambiarPassword" => "controller/cCambiarPassword.php",
         "Registro" => "controller/cRegistro.php",
         "WIP" => "controller/cWIP.php",
@@ -26,7 +26,9 @@
         "MtoDepartamentos" => "controller/cMtoDepartamentos.php",
         "MtoUsuarios" => "controller/cMtoUsuarios.php",
         "ConsultarDepartamentos" => "controller/cConsultarDepartamentos.php",
-        "EditarDepartamentos" => "controller/cEditarDepartamentos.php",
+        "EditarDepartamento" => "controller/cEditarDepartamento.php",
+        "ConsultarUsuario" => "controller/cConsultarUsuario.php",
+        "EditarUsuario" => "controller/cEditarUsuario.php",
         "EliminarUsuario" => "controller/cEliminarUsuario.php",
         "EliminarDepartamento" => "controller/cEliminarDepartamento.php"
     ];
@@ -48,7 +50,9 @@
         "MtoDepartamentos" => "view/vMtoDepartamentos.php",
         "MtoUsuarios" => "view/vMtoUsuarios.php",
         "ConsultarDepartamentos" => "view/vConsultarDepartamentos.php",
-        "EditarDepartamentos" => "view/vEditarDepartamentos.php",
+        "EditarDepartamento" => "view/vEditarDepartamento.php",
+        "ConsultarUsuario" => "view/vConsultarUsuario.php",
+        "EditarUsuario" => "view/vEditarUsuario.php",
         "EliminarUsuario" => "view/vEliminarUsuario.php",
         "EliminarDepartamento" => "view/vEliminarDepartamento.php"
     ];
