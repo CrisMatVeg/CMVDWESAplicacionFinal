@@ -24,7 +24,9 @@ $aRespuestas = [
 $entradaOK = true;
 
 $departamentoPDO = new DepartamentoPDO();
-
+$codDpto = $_SESSION['codDptoSeleccionado'];
+$dptoSeleccionado = $departamentoPDO->seleccionarDepartamento($codDpto);
+$_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
 if (isset($_REQUEST['cambiarDatos'])) {
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
@@ -53,7 +55,6 @@ if (isset($_REQUEST['cambiarDatos'])) {
     }
 
     if ($entradaOK) {
-        $codUsuario = $_SESSION['codDptoSeleccionado'];
         $datosNuevos = [
             "T02_DescDepartamento" => $_REQUEST['descDepartamento'],
             "T02_VolumenDeNegocio" => $_REQUEST['VolumenDeNegocio']

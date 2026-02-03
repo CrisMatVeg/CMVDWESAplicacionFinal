@@ -29,6 +29,8 @@ $entradaOK = true;
 
 $usuarioPDO = new usuarioPDO();
 $codUsuario = $_SESSION['codUsuarioSeleccionado'];
+$usuarioSeleccionado= $usuarioPDO->seleccionarUsuario($_SESSION['codUsuarioSeleccionado']);
+$_SESSION['usuarioSeleccionado'] = $usuarioSeleccionado;
 
 if (isset($_REQUEST['cambiarDatos'])) {
 

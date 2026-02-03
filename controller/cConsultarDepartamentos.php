@@ -4,4 +4,8 @@ if (isset($_REQUEST['atras'])) {
     header('Location: index.php');
     exit;
 }
+$departamentoPDO = new DepartamentoPDO();
+$codDpto = $_SESSION['codDptoSeleccionado'];
+$dptoSeleccionado = $departamentoPDO->seleccionarDepartamento($codDpto);
+$_SESSION['dptoSeleccionado'] = $dptoSeleccionado;
 require_once $view["layout"];

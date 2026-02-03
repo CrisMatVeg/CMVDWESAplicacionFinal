@@ -27,8 +27,7 @@ $usuarioPDO = new UsuarioPDO();
 if (isset($_REQUEST['verUsuario'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $codUsuario = $_REQUEST['codUsuario'];
-    $usuarioSeleccionado= $usuarioPDO->seleccionarUsuario($codUsuario);
-    $_SESSION['usuarioSeleccionado'] = $usuarioSeleccionado;
+    $_SESSION['codUsuarioSeleccionado'] = $codUsuario;
     $_SESSION['paginaEnCurso'] = 'ConsultarUsuario';
     header('Location: index.php');
     exit;
