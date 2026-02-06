@@ -70,7 +70,7 @@ if (isset($_REQUEST['mtoDptos'])) {
 
 if (isset($_REQUEST['mtoUsuarios'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+    $_SESSION['paginaEnCurso'] = 'MtoUsuariosAPI';
     header('Location: index.php');
     exit;
 }

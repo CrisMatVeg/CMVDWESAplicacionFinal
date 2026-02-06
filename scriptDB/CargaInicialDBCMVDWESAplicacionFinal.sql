@@ -8,17 +8,17 @@
  */
 use DBCMVDWESAplicacionFinal;
 
-insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenDeNegocio,T02_FechaBajaDepartamento) values
-        /* ('INF','Departamento de informatica.',now(),1235.5,null),
+/* insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenDeNegocio,T02_FechaBajaDepartamento) values
+        ('INF','Departamento de informatica.',now(),1235.5,null),
         ('AUT','Departamento de automocion.',now(),5235.8,null),
         ('ELE','Departamento de electricidad.',now(),2275.1,null),
         ('MAT','Departamento de matematicas.',now(),735.2,null),
-        ('ING','Departamento de ingles.',now(),235.9,now()), */
+        ('ING','Departamento de ingles.',now(),235.9,now()),
         ('MUS','Departamento de musica.',now(),1235.5,null),
         ('LEN','Departamento de lengua.',now(),5235.8,null),
         ('BIO','Departamento de biologia.',now(),2275.1,null),
         ('HIS','Departamento de historia.',now(),735.2,null),
-        ('FIS','Departamento de fisica.',now(),235.9,now());
+        ('FIS','Departamento de fisica.',now(),235.9,now()); */
 
 insert into T01_Usuarios (T01_CodUsuario,T01_Password,T01_DescUsuario,T01_Perfil) values
         ('admin',SHA2('adminpaso',256),'Administrador','admin');

@@ -22,7 +22,7 @@ $aRespuestas = [
 $entradaOK = true;
 
 $usuarioPDO = new UsuarioPDO();
-
+$codUsuario = $_SESSION['codUsuarioSeleccionado'];
 if (isset($_REQUEST['confirmar'])) {
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
@@ -40,9 +40,8 @@ if (isset($_REQUEST['confirmar'])) {
     }
 
     if ($entradaOK) {
-        $codUsuario = $_SESSION['codUsuarioSeleccionado'];
         $usuarioPDO->borrarUsuario($codUsuario);
-        $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+        $_SESSION['paginaEnCurso'] = 'MtoUsuariosAPI';
         header('Location: index.php');
         exit;
     }

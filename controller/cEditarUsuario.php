@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
 }
 
 if (isset($_REQUEST['atras'])) {
-    $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+    $_SESSION['paginaEnCurso'] = 'MtoUsuariosAPI';
     header('Location: index.php');
     exit;
 }
@@ -27,9 +27,9 @@ $aRespuestas = [
 
 $entradaOK = true;
 
-$usuarioPDO = new usuarioPDO();
+$usuarioPDO = new UsuarioPDO();
 $codUsuario = $_SESSION['codUsuarioSeleccionado'];
-$usuarioSeleccionado= $usuarioPDO->seleccionarUsuario($_SESSION['codUsuarioSeleccionado']);
+$usuarioSeleccionado= $usuarioPDO->validarUsuario($_SESSION['codUsuarioSeleccionado']);
 $_SESSION['usuarioSeleccionado'] = $usuarioSeleccionado;
 
 if (isset($_REQUEST['cambiarDatos'])) {
@@ -65,50 +65,12 @@ if (isset($_REQUEST['cambiarDatos'])) {
             "T01_Perfil" => $_REQUEST['Perfil']
         ];
         $usuarioPDO->editarUsuario($codUsuario, $datosNuevos);
-        $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
+        $_SESSION['paginaEnCurso'] = 'MtoUsuariosAPI';
         header('Location: index.php');
         exit;
     }
-} elseif (isset($_REQUEST['confirmar'])) {
-
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-
-    $aErrores['passwordactual'] = validacionFormularios::validarPassword(
-        $_REQUEST['passwordactual'],
-        10,
-        4,
-        1,
-        1
-    );
-
-    $aErrores['passwordnueva'] = validacionFormularios::validarPassword(
-        $_REQUEST['passwordnueva'],
-        10,
-        4,
-        1,
-        1
-    );
-
-    $aRespuestas['passwordactual'] = $_REQUEST['passwordactual'];
-    $aRespuestas['passwordnueva'] = $_REQUEST['passwordnueva'];
-
-    foreach ($aErrores as $error) {
-        if ($error != null) {
-            $entradaOK = false;
-        }
-    }
-
-    if (
-        $entradaOK &&
-        hash('sha256', $codUsuario . $_REQUEST['passwordactual']) === $_SESSION['usuarioSeleccionado']->T01_Password
-    ) {
-        $usuarioPDO->cambiarPassword($codUsuario, $_REQUEST['passwordnueva']);
-        $_SESSION['paginaEnCurso'] = 'MtoUsuarios';
-        header('Location: index.php');
-        exit;
-    }
-} else {
-    $entradaOK = false;
+} else{
+    $entradaOK=false;
 }
 
 require_once $view["layout"];

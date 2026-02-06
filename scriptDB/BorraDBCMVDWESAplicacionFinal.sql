@@ -7,5 +7,5 @@
  * Created: 30 oct. 2025
  */
 
-DROP DATABASE IF EXISTS DBCMVDWESAplicacionFinalTema5;
-DROP USER IF EXISTS userCMVDWESAplicacionFinalTema5
+DROP DATABASE IF EXISTS DBCMVDWESAplicacionFinal;
+DROP USER IF EXISTS userCMVDWESAplicacionFinal;

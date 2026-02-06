@@ -12,7 +12,7 @@
 </header>
 
 <main>
-    <h1>Seguro que quieres eliminar este usuario?</h1>
+    <h1>Seguro que quieres eliminar al usuario que se llama <?php echo $_SESSION['codUsuarioSeleccionado'] ?>?</h1>
     <h3>Introduzca "SI" si quiere eliminarlo</h3>
     <div>
         <form method="post">

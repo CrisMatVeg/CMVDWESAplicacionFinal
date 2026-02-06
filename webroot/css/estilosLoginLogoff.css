@@ -156,6 +156,19 @@ h1 {
   margin-bottom: 0.6rem;
 }
 
+.dpto-baja td {
+  color: #9aa0a6;
+  text-decoration: line-through;
+}
+
+.flecha-roja,.fa-circle-down {
+  color: red;
+}
+
+.flecha-verde,.fa-circle-up{
+  color: green;
+}
+
 .hero .buttons {
   display: flex;
   gap: 0.75rem;

@@ -16,13 +16,15 @@
                 <div>
                     <div>
                         <label for="codDepartamento">Código de departamento:</label>
-                        <input type="text" disabled id="codDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_CodDepartamento?>">
+                        <input type="text" disabled id="codDepartamento" value="<?php echo $avConsultarDpto["codDepartamento"]?>">
                         <label for="descDepartamento">Descripción de departamento:</label>
-                        <input type="text" disabled id="descDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_DescDepartamento?>">
+                        <input type="text" disabled id="descDepartamento" value="<?php echo $avConsultarDpto["descDepartamento"]?>">
                         <label for="fechaCreacionDepartamento">Fecha de creación de departamento:</label>
-                        <input type="text" disabled id="fechaCreacionDepartamento" value="<?php echo $_SESSION['dptoSeleccionado']->T02_FechaCreacionDepartamento?>">
+                        <input type="text" disabled id="fechaCreacionDepartamento" value="<?php echo $avConsultarDpto["fechaCreacionDepartamento"]?>">
                         <label for="VolumenDeNegocio">Volumen de negocio de departamento:</label>
-                        <input type="text" disabled id="VolumenDeNegocio" value="<?php echo $_SESSION['dptoSeleccionado']->T02_VolumenDeNegocio?>">
+                        <input type="text" disabled id="VolumenDeNegocio" value="<?php echo $avConsultarDpto["VolumenDeNegocio"]?>">
+                        <label for="FechaDeBaja">Fecha de Baja:</label>
+                        <input type="text" disabled id="FechaDeBaja" value="<?php echo $avConsultarDpto["fechaBajaDepartamento"]?? "---"?>">
                     </div>
                 </div>
             </fieldset>

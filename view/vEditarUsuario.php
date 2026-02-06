@@ -24,9 +24,9 @@
                     <label for="FechaHoraUltimaConexion">Fecha de Registro:</label>
                     <input type="text" disabled id="FechaHoraUltimaConexion" name="FechaHoraUltimaConexion" value="<?php echo $_SESSION['usuarioSeleccionado']->T01_FechaHoraUltimaConexion ?>">
                     <label for="Perfil">Perfil:</label>
-                    <select class="required" name="Perfil" id="Perfil" value="<?php echo $_SESSION['usuarioSeleccionado']->T01_Perfil ?>">
-                        <option value="usuario">Usuario</option>
-                        <option value="admin">Administrador</option>
+                    <select class="required" name="Perfil" id="Perfil">
+                        <option value="usuario" <?php echo $_SESSION['usuarioSeleccionado']->T01_Perfil=='usuario'?'selected':''; ?>>Usuario</option>
+                        <option value="admin" <?php echo $_SESSION['usuarioSeleccionado']->T01_Perfil=='admin'?'selected':''; ?>>Administrador</option>
                     </select>
                     <label for="ImagenUsuario">Foto de Perfil:</label>
                     <input type="text" disabled id="ImagenUsuario" name="ImagenUsuario" value="<?php echo $_SESSION['usuarioSeleccionado']->T01_ImagenUsuario ?>">
@@ -34,17 +34,5 @@
             </div>
         </fieldset>
         <input type="submit" name="cambiarDatos" value='Cambiar Datos' class="btn primary">
-    </form>
-    <form method="post" class="edicion dpto">
-        <fieldset>
-            <div>
-                <div>
-                    <legend>Cambiar Contraseña:</legend>
-                    <input type="password" id="passwordactual" name="passwordactual" placeholder="Contraseña Actual">
-                    <input type="password" id="passwordnueva" name="passwordnueva" placeholder="Nueva Contraseña">
-                </div>
-            </div>
-        </fieldset>
-        <input type="submit" name="confirmar" value='Confirmar' class="btn primary">
     </form>
 </main>

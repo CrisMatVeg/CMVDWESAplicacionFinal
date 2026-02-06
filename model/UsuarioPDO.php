@@ -77,22 +77,16 @@ class UsuarioPDO {
     }
 
     public static function cambiarPassword($codUsuario, $passwordNueva) {
+        $passwordConcatenada = $codUsuario . $passwordNueva;
         $sql = "UPDATE T01_Usuarios 
                 SET T01_Password = SHA2(:password,256) 
                 WHERE T01_CodUsuario = :usuario";
     
         $consulta = DBPDO::ejecutarConsulta($sql, [
-            ':password' => $codUsuario.$passwordNueva,
+            ':password' => $passwordConcatenada,
             ':usuario'  => $codUsuario
         ]);
         return $consulta->rowCount() === 1;
-    }
-
-    public static function seleccionarUsuario($codUsuario) {
-        $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :codUsuario ";
-        $stmt = DBPDO::ejecutarConsulta($sql, [':codUsuario' => $codUsuario]);
-        $objetoResultado = $stmt->fetch(PDO::FETCH_OBJ);
-        return $objetoResultado;
     }
 
     public static function editarUsuario($codUsuario, array $datosNuevos) {
@@ -119,15 +113,30 @@ class UsuarioPDO {
     
     public static function buscarUsuarios($descripcion=null) {
         if ($descripcion === null || $descripcion === '') {
-            $sql = "SELECT * FROM T01_Usuarios WHERE T01_Perfil <> 'admin'";
+            $sql = "SELECT * FROM T01_Usuarios";
             $consulta = DBPDO::ejecutarConsulta($sql, null);
         }else{
-            $sql = "SELECT * FROM T01_Usuarios WHERE T01_Perfil <> 'admin'
-            AND T01_DescUsuario LIKE :descripcion";
+            $sql = "SELECT * FROM T01_Usuarios WHERE T01_DescUsuario LIKE :descripcion";
             $consulta = DBPDO::ejecutarConsulta($sql, [':descripcion' => '%' . $descripcion . '%']);
         }
-        $objetoResultado = $consulta->fetchAll(PDO::FETCH_OBJ);
-        return $objetoResultado;
+        $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+        $usuariosListado = [];
+
+        foreach ($usuarios as $usuario) {
+            $usuariosListado[] = new Usuario(
+                $usuario['T01_CodUsuario'],
+                $usuario['T01_Password'],
+                $usuario['T01_DescUsuario'],
+                $usuario['T01_NumConexiones'],
+                $usuario['T01_FechaHoraUltimaConexion'],
+                $usuario['T01_Perfil'],
+                $usuario['T01_ImagenUsuario'],
+                null
+            );
+        }
+
+        return $usuariosListado;
     }
 
     public static function borrarUsuario($codUsuario) {

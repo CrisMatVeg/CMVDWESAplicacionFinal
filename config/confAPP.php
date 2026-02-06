@@ -8,7 +8,9 @@
     require_once './model/REST.php';
     require_once './model/NASA.php';
     require_once './model/DogApi.php';
+
     define("RESPUESTA_SEGURIDAD","pimentel");
+    
     $controller=[
         "inicioPublico" => "controller/cInicioPublico.php",
         "Login" => "controller/cLogin.php",
@@ -25,8 +27,10 @@
         "DetallesDog" => "controller/cDetallesDog.php",
         "MtoDepartamentos" => "controller/cMtoDepartamentos.php",
         "MtoUsuarios" => "controller/cMtoUsuarios.php",
+        "MtoUsuariosAPI" => "controller/cMtoUsuariosAPI.php",
         "ConsultarDepartamentos" => "controller/cConsultarDepartamentos.php",
         "EditarDepartamento" => "controller/cEditarDepartamento.php",
+        "AltaDepartamento" => "controller/cAltaDepartamento.php",
         "ConsultarUsuario" => "controller/cConsultarUsuario.php",
         "EditarUsuario" => "controller/cEditarUsuario.php",
         "EliminarUsuario" => "controller/cEliminarUsuario.php",
@@ -49,8 +53,10 @@
         "DetallesDog" => "view/vDetallesDog.php",
         "MtoDepartamentos" => "view/vMtoDepartamentos.php",
         "MtoUsuarios" => "view/vMtoUsuarios.php",
+        "MtoUsuariosAPI" => "view/vMtoUsuariosAPI.php",
         "ConsultarDepartamentos" => "view/vConsultarDepartamentos.php",
         "EditarDepartamento" => "view/vEditarDepartamento.php",
+        "AltaDepartamento" => "view/vAltaDepartamento.php",
         "ConsultarUsuario" => "view/vConsultarUsuario.php",
         "EditarUsuario" => "view/vEditarUsuario.php",
         "EliminarUsuario" => "view/vEliminarUsuario.php",
