@@ -81,11 +81,11 @@
                     <span style="color:red;"><?php echo $aErrores['preguntaSeguridad']; ?></span>
                     <div>
                         <!-- Botón para enviar el formulario -->
-                        <input type="submit" name="acceso" value="inicioPrivado" class="btn primary">
+                        <input type="submit" name="acceso" value="Acceder" class="btn primary">
 
                         <!-- Botón para volver al login -->
-                        <input type="hidden" name="paginaAnterior" value="Login">
-                        <input type="submit" name="atras" value="Login" class="btn primary">
+                        <input type="hidden" name="paginaAnterior" value="Volver">
+                        <input type="submit" name="atras" value="Volver" class="btn primary">
                     </div>
                 </form>
             </div>

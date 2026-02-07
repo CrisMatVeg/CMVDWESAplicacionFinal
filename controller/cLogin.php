@@ -1,7 +1,6 @@
 <?php
 if (isset($_REQUEST['atras'])) {
-    $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    $_SESSION['paginaEnCurso'] = 'inicioPublico';
     header('Location: index.php');
     exit;
 }
@@ -25,7 +24,7 @@ $aRespuestas = [
 
 $entradaOK = true;
 
-if (isset($_REQUEST['paginaDestino']) && $_REQUEST['paginaDestino'] == "inicioPrivado") {
+if (isset($_REQUEST['acceder'])) {
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
 
@@ -68,7 +67,7 @@ if (isset($_REQUEST['paginaDestino']) && $_REQUEST['paginaDestino'] == "inicioPr
         if ($usuario != false) {
             $usuarioPDO->actualizarUltimaConexionYUsuario($usuario);
             $_SESSION['usuarioActualDWESAplicacionFinal'] = $usuario;
-            $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
+            $_SESSION['paginaEnCurso'] = 'inicioPrivado';
             header('Location: index.php');
             exit;
         }

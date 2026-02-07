@@ -12,7 +12,7 @@
 </header>
 
 <main>
-    <h1>Seguro que quieres eliminar este departamento?</h1>
+    <h1>Seguro que quieres eliminar el departamento con código: <?php echo $_SESSION['codDptoSeleccionado'] ?>?</h1>
     <h3>Introduzca "SI" si quiere eliminarlo</h3>
     <div>
         <form method="post">

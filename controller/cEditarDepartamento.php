@@ -66,7 +66,7 @@ if (isset($_REQUEST['cambiarDatos'])) {
             "T02_DescDepartamento" => $_REQUEST['descDepartamento'],
             "T02_VolumenDeNegocio" => $_REQUEST['VolumenDeNegocio']
         ];
-        $departamentoPDO->editarDepartamento($codUsuario, $datosNuevos);
+        $departamentoPDO->editarDepartamento($codDpto, $datosNuevos);
         $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
         header('Location: index.php');
         exit;
