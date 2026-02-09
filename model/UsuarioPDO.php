@@ -76,17 +76,22 @@ class UsuarioPDO {
         return self::validarUsuario($codUsuario, $password);
     }
 
-    public static function cambiarPassword($codUsuario, $passwordNueva) {
-        $passwordConcatenada = $codUsuario . $passwordNueva;
+    public static function cambiarPassword($oUsuario, $nuevaPassword)
+    {
         $sql = "UPDATE T01_Usuarios 
                 SET T01_Password = SHA2(:password,256) 
                 WHERE T01_CodUsuario = :usuario";
-    
+
         $consulta = DBPDO::ejecutarConsulta($sql, [
-            ':password' => $passwordConcatenada,
-            ':usuario'  => $codUsuario
+            ':codUsuario' => $oUsuario->getCodUsuario(),
+            ':password' => $oUsuario->getCodUsuario() . $nuevaPassword
         ]);
-        return $consulta->rowCount() === 1;
+
+        if ($consulta) {
+            $oUsuario->setPassword(hash('sha256', $oUsuario->getCodUsuario() . $nuevaPassword));
+            return $oUsuario;
+        }
+        return null;
     }
 
     public static function editarUsuario($codUsuario, array $datosNuevos) {
