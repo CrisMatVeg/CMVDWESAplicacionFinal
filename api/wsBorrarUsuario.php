@@ -3,8 +3,11 @@ session_start();
 require_once '../model/UsuarioPDO.php';
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
-    echo json_encode([]);
+$token = $_GET['token'] ?? null;
+
+if (!$token || !UsuarioPDO::validarToken($token)) {
+    http_response_code(401);
+    echo json_encode(['error' => 'No autorizado']);
     exit;
 }
 

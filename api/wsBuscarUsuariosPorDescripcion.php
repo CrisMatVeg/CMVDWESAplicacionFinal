@@ -1,18 +1,13 @@
 <?php
-session_start();
 require_once '../model/UsuarioPDO.php';
 header('Content-Type: application/json');
-define('API_KEY', 'apikey1234');
-
-if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
-    echo json_encode(['sesion_iniciada'=>false]);
-    exit;
-}
 
 $token = $_GET['token'] ?? null;
 
-if ($token !== API_KEY) {
-    echo json_encode(['error_de_token' => 'Acceso no autorizado']);
+// Validar token
+if (!$token || !UsuarioPDO::validarToken($token)) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Token no válido']);
     exit;
 }
 

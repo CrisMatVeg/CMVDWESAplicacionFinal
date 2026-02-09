@@ -1,14 +1,23 @@
 window.onload = function () {
-  cargarUsuarios();
-  const descripcion = document.getElementById("descripcion");
-  descripcion.addEventListener("input", function (e) {
-    e.preventDefault();
-    cargarUsuarios(descripcion.value.trim());
+  const descripcionInput = document.getElementById("descripcion");
+
+  // Recuperar búsqueda guardada
+  const busquedaGuardada = localStorage.getItem("busquedaUsuarios") ?? "";
+  descripcionInput.value = busquedaGuardada;
+
+  cargarUsuarios(busquedaGuardada);
+
+  descripcionInput.addEventListener("input", function () {
+    const valor = descripcionInput.value.trim();
+    localStorage.setItem("busquedaUsuarios", valor);
+    cargarUsuarios(valor);
   });
 };
 
 function cargarUsuarios(descripcion = "") {
-  let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=apikey1234`;
+  let tokenAPI = '38641cd2ecbb2fb866b28f2e104e94101e150a820f6201ae39c8e48c5c17f918';
+
+  let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=${tokenAPI}`;
   if (descripcion) {
     url += `&descripcion=${encodeURIComponent(descripcion)}`;
   }
@@ -18,7 +27,7 @@ function cargarUsuarios(descripcion = "") {
     .then((listaUsuarios) => {
       const cuerpoTabla = document.querySelector("#tablaUsuarios tbody");
       cuerpoTabla.innerHTML = "";
-      if (listaUsuarios!=[]) {
+      if (listaUsuarios.length > 0) {
         listaUsuarios.forEach((usuario) => {
           cuerpoTabla.innerHTML += `
             <tr>
@@ -43,7 +52,7 @@ function cargarUsuarios(descripcion = "") {
           `;
         });
       } else {
-        cuerpoTabla.innerHTML = `<td>No hay resultados que coincidan con la busqueda</td>`;
+        cuerpoTabla.innerHTML = `<td>No hay resultados que mostrar</td>`;
       }
     });
 }

@@ -9,6 +9,7 @@ if (isset($_REQUEST['atras'])) {
     session_unset();
     session_destroy();
     session_start();
+    /* UsuarioPDO::guardarToken($codUsuario, null); */
     $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');

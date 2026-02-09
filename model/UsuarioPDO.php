@@ -110,6 +110,31 @@ class UsuarioPDO {
     
         return $consulta->rowCount() === 1;
     }
+
+    public static function guardarToken($codUsuario, $token) {
+        $sql = "UPDATE T01_Usuarios
+                SET T01_TokenApi = :token
+                WHERE T01_CodUsuario = :codUsuario";
+    
+        DBPDO::ejecutarConsulta($sql, [
+            ':token' => $token,
+            ':codUsuario' => $codUsuario
+        ]);
+    }
+
+    public static function obtenerToken($codUsuario) {
+        $sql = "SELECT T01_TokenApi FROM T01_Usuarios WHERE T01_CodUsuario = :usuario";
+        $consulta = DBPDO::ejecutarConsulta($sql, [':usuario' => $codUsuario]);
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+    
+        return $resultado['T01_TokenApi'] ?? null;
+    }
+
+    public static function validarToken($token) {
+        $sql = "SELECT 1 FROM T01_Usuarios WHERE T01_TokenApi = :token";
+        $consulta = DBPDO::ejecutarConsulta($sql, [':token' => $token]);
+        return $consulta->fetch() !== false;
+    }
     
     public static function buscarUsuarios($descripcion=null) {
         if ($descripcion === null || $descripcion === '') {

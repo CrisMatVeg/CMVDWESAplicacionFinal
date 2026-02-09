@@ -62,14 +62,32 @@ if (isset($_REQUEST['acceder'])) {
 
         // Llamar al modelo
         $usuarioPDO = new UsuarioPDO();
-        $usuario = $usuarioPDO->validarUsuario($codUsuario, $password);
+        $usuario = UsuarioPDO::validarUsuario($codUsuario, $password);
 
-        if ($usuario != false) {
-            $usuarioPDO->actualizarUltimaConexionYUsuario($usuario);
+        if ($usuario) {
+            // Guardar usuario en sesión para la app
             $_SESSION['usuarioActualDWESAplicacionFinal'] = $usuario;
+        
+            // Buscar si ya tiene token en la base de datos
+            $token = UsuarioPDO::obtenerToken($codUsuario);
+        
+            if (!$token) {
+                // Generar token aleatorio (una sola vez)
+                $token = bin2hex(random_bytes(32)); // 64 caracteres hex
+                UsuarioPDO::guardarToken($codUsuario, $token);
+            }
+        
+            // Guardar token en sesión opcional (para mostrarlo en la app)
+            $_SESSION['tokenAPI'] = $token;
+        
+            // Redirigir a la app
             $_SESSION['paginaEnCurso'] = 'inicioPrivado';
             header('Location: index.php');
             exit;
+        } else {
+            // Usuario o contraseña incorrecta
+            $aErrores['codUsuario'] = 'Usuario o contraseña incorrecta';
+            $entradaOK = false;
         }
     }
 } else {
