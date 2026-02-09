@@ -25,9 +25,20 @@
             <form method="post" class="formbuscar">
                 <label for="descripcion">Buscar Departamento de:</label>
                 <input type="text" name="descripcion" id="descripcion" value="<?php echo(empty($aErrores['descripcion'])) ? ($_SESSION['busquedaDepartamento'] ?? '') : ''; ?>">
+                <div>
+                    <label for="todos">Todos</label>
+                    <input type="radio" name="estado" id="todos" checked>
+                    <label for="alta">Alta</label>
+                    <input type="radio" name="estado" id="alta">
+                    <label for="baja">Baja</label>
+                    <input type="radio" name="estado" id="baja">
+                </div>
                 <input type="submit" name="enviar" value="Buscar" id="enviar" class="btn primary">
             </form>
             <span style="color:red;"><?php echo $aErrores['descripcion']; ?></span>
+            <form method="post" class="formbuscar">
+                
+            </form>
         </div>
     <?php
         if ($entradaOK) {

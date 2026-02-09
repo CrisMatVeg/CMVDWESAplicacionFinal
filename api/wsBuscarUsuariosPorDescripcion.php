@@ -7,7 +7,7 @@ $token = $_GET['token'] ?? null;
 // Validar token
 if (!$token || !UsuarioPDO::validarToken($token)) {
     http_response_code(401);
-    echo json_encode(['error' => 'Token no válido']);
+    echo json_encode(['error' => 'Token no valido']);
     exit;
 }
 

@@ -15,7 +15,7 @@ window.onload = function () {
 };
 
 function cargarUsuarios(descripcion = "") {
-  let tokenAPI = '38641cd2ecbb2fb866b28f2e104e94101e150a820f6201ae39c8e48c5c17f918';
+  let tokenAPI = '4db4c99a1258756d97732f80de66485f687b7711070547bff0b2496fa51fa741';
 
   let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=${tokenAPI}`;
   if (descripcion) {
