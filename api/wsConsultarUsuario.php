@@ -10,11 +10,9 @@ if (!$token || !UsuarioPDO::validarToken($token)) {
     exit;
 }
 
-/* Leer JSON correctamente */
 $rawData = file_get_contents("php://input");
 $input = json_decode($rawData, true);
 
-/* Validar que llega codUsuario */
 if (!$input || !isset($input['codUsuario']) || empty($input['codUsuario'])) {
     http_response_code(400);
     echo json_encode(['error' => 'Usuario no especificado']);
@@ -31,7 +29,6 @@ if (!$usuario) {
     exit;
 }
 
-/* Devolver datos */
 echo json_encode([
     'codUsuario' => $usuario->getCodUsuario(),
     'descUsuario' => $usuario->getDescUsuario(),

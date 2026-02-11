@@ -108,11 +108,20 @@ if (isset($_REQUEST['enviar'])) {
     }
 }
 
-// Llamar al modelo
-if ($entradaOK && !empty($_SESSION['busquedaDepartamento'])) {
-    $departamentos = $departamentoPDO->buscarDepartamentos($_SESSION['busquedaDepartamento']);
+$estadoSeleccionado = $_REQUEST['estado'] ?? 'Todos';
+
+// Guardar estado en sesión
+if (isset($_REQUEST['enviar'])) {
+    $_SESSION['estadoDepartamento'] = $estadoSeleccionado;
 } else {
-    $departamentos = $departamentoPDO->buscarDepartamentos();
+    $estadoSeleccionado = $_SESSION['estadoDepartamento'] ?? 'Todos';
 }
+
+$descripcionBusqueda = $_SESSION['busquedaDepartamento'] ?? null;
+
+$departamentos = $departamentoPDO->buscarDepartamentos(
+    $estadoSeleccionado,
+    $descripcionBusqueda
+);
 
 require_once $view["layout"];

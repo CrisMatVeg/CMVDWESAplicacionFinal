@@ -76,8 +76,7 @@ class UsuarioPDO {
         return self::validarUsuario($codUsuario, $password);
     }
 
-    public static function cambiarPassword($oUsuario, $nuevaPassword)
-    {
+    public static function cambiarPassword($oUsuario, $nuevaPassword) {
         $sql = "UPDATE T01_Usuarios 
                 SET T01_Password = SHA2(:password,256) 
                 WHERE T01_CodUsuario = :usuario";

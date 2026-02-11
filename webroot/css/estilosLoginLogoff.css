@@ -372,23 +372,27 @@ td{
   margin-right: 20px;
 }
 
+.formbuscar div label{
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
 .parametrostitulo{
   color: var(--accent);
 }
 
 .truncate-text {
-  display: -webkit-box;       /* Necesario para truncar con varias líneas */
-  -webkit-line-clamp: 2;      /* Número de líneas visibles antes de cortar */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  cursor: pointer;            /* Muestra que es clicable */
+  cursor: pointer;
 }
 
-/* Modal de ampliación */
 .modal-expandido {
-  max-height: none !important;
-  overflow: visible !important;
+  max-height: none;
+  overflow: visible;
 }
 
 .edicion fieldset input, .edicion fieldset select{

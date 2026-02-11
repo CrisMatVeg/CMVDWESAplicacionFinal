@@ -53,7 +53,7 @@
         </div>
         <div>
             <p>Clases</p>
-            <a href="./webroot/images/clases.jpg" target="_blank"><img src="./webroot/images/clases.jpg" alt="" class="btn secondary"></a>
+            <a href="./webroot/images/clases.drawio.png" target="_blank"><img src="./webroot/images/clases.drawio.png" alt="" class="btn secondary"></a>
         </div>
         <div>
             <p>Modelo Físico</p>

@@ -3,16 +3,24 @@ require_once 'DBPDO.php';
 require_once 'Departamento.php';
 
 class DepartamentoPDO {
-    public static function buscarDepartamentos($descripcion=null) {
-        if($descripcion==null){
-            $sql = "SELECT * FROM T02_Departamento";
-            $stmt = DBPDO::ejecutarConsulta($sql, null);
-        }else{
-            $sql = "SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE :descripcion";
-            $stmt = DBPDO::ejecutarConsulta($sql, [':descripcion' => '%' . $descripcion . '%']);
+    public static function buscarDepartamentos($estado = "Todos", $descripcion = null) {
+
+        $sql = "SELECT * FROM T02_Departamento WHERE 1=1";
+        $parametros = [];
+    
+        if ($estado === "Alta") {
+            $sql .= " AND T02_FechaBajaDepartamento IS NULL";
+        } elseif ($estado === "Baja") {
+            $sql .= " AND T02_FechaBajaDepartamento IS NOT NULL";
         }
-        $objetoResultado = $stmt->fetchAll(PDO::FETCH_OBJ);
-        return $objetoResultado;
+    
+        if (!empty($descripcion)) {
+            $sql .= " AND T02_DescDepartamento LIKE :descripcion";
+            $parametros[':descripcion'] = '%' . $descripcion . '%';
+        }
+    
+        $stmt = DBPDO::ejecutarConsulta($sql, $parametros);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public static function seleccionarDepartamento($codDepartamento) {

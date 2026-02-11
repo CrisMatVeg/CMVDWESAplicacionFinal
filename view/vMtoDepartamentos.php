@@ -25,13 +25,19 @@
             <form method="post" class="formbuscar">
                 <label for="descripcion">Buscar Departamento de:</label>
                 <input type="text" name="descripcion" id="descripcion" value="<?php echo(empty($aErrores['descripcion'])) ? ($_SESSION['busquedaDepartamento'] ?? '') : ''; ?>">
+                <?php $estadoActual = $_SESSION['estadoDepartamento'] ?? 'Todos'; ?>
                 <div>
                     <label for="todos">Todos</label>
-                    <input type="radio" name="estado" id="todos" checked>
+                    <input type="radio" name="estado" id="todos" value="Todos"
+                        <?php echo ($estadoActual === 'Todos') ? 'checked' : ''; ?>>
+
                     <label for="alta">Alta</label>
-                    <input type="radio" name="estado" id="alta">
+                    <input type="radio" name="estado" id="alta" value="Alta"
+                        <?php echo ($estadoActual === 'Alta') ? 'checked' : ''; ?>>
+
                     <label for="baja">Baja</label>
-                    <input type="radio" name="estado" id="baja">
+                    <input type="radio" name="estado" id="baja" value="Baja"
+                        <?php echo ($estadoActual === 'Baja') ? 'checked' : ''; ?>>
                 </div>
                 <input type="submit" name="enviar" value="Buscar" id="enviar" class="btn primary">
             </form>
