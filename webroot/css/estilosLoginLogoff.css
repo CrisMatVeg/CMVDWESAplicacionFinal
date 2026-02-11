@@ -156,6 +156,45 @@ h1 {
   margin-bottom: 0.6rem;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal centrado */
+.modal {
+  background: white;
+  width: 600px;
+  max-width: 90%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: aparecer 0.2s ease-out;
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.accionesModal {
+  margin-top: 20px;
+  text-align: right;
+}
+
 .dpto-baja td {
   color: #9aa0a6;
   text-decoration: line-through;

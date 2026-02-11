@@ -41,6 +41,13 @@
             <!-- AQUÍ ENTRA JS -->
         </tbody>
     </table>
+    <!-- MODAL -->
+    <div id="overlayModal" class="overlay">
+    <div class="modal">
+        <div id="contenidoModal"></div>
+        <div id="accionesModal" class="accionesModal"></div>
+    </div>
+</div>
 </main>
 
 <script src="./webroot/js/usuarios.js"></script>
