@@ -28,7 +28,6 @@
         <title>Aplicación Final</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./webroot/css/estilosLoginLogoff.css">
-        <script type="module" src="./webroot/js/cerrarsesion.js"></script>
         <style>
             @font-face {
                 font-family: "mFeather";
