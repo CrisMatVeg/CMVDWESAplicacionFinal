@@ -181,6 +181,13 @@
                 <div class="footer-grid">
                     <div>© 2025-26 IES Los Sauces. Todos los derechos reservados. <a href="../CMVDWESProyectoDWES/indexProyectoDWES.php" title="Inicio">Cristian Mateos Vega</a></div>
                     <div>
+                        <?php
+                            if(isset($_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']) && $_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']['esAdmin']){
+                                echo "<a href='./webroot/images/casosuso.jpg' target='_blank' title='CasosUso'>Casos de Uso</a>";
+                                echo " ·";
+                            }
+                        ?>
+                        
                         <a href="https://es.duolingo.com/" target="_blank" title="Duolingo">Pagina Imitada</a>
                         ·
                         <a href="https://cristianmatveg.ieslossauces.es/" target="_blank" title="Github">Portfolio</a>

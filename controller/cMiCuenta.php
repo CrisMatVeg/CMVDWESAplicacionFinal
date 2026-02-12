@@ -111,7 +111,7 @@ if (isset($_REQUEST['cambiarDatos'])) {
                 "numConexiones" => $_SESSION['usuarioActualDWESAplicacionFinal']->getNumConexiones(),
                 "fechaHoraUltimaConexionAnterior" => $_SESSION['usuarioActualDWESAplicacionFinal']->getFechaHoraUltimaConexionAnterior(),
                 "descUsuario" => $_SESSION['usuarioActualDWESAplicacionFinal']->getDescUsuario(),
-                $esAdmin
+                "esAdmin"=>$esAdmin
             ];
 
             $_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal'] = $avMiPerfil;
