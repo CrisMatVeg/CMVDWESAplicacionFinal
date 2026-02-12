@@ -1,11 +1,11 @@
 <?php
 /**
- * Clase Departamento
+ * Clase Usuario
  *
- * Representa un departamento con su código, descripción, fecha de creación, 
- * volumen de negocio y fecha de baja (si existe).
+ * Representa un usuario del sistema con sus datos de acceso, perfil, 
+ * número de conexiones y fecha/hora de última conexión.
  *
- * @package Modelos
+ * @package Usuarios
  * @author Cristian Mateos
  * @version 1.0
  */
@@ -17,17 +17,20 @@ class Departamento {
     private $fechaBajaDepartamento;
 
     /**
-     * Constructor de la clase Departamento
+     * Constructor de la clase Usuario
      *
-     * Inicializa todas las propiedades del departamento.
+     * Inicializa todas las propiedades del usuario.
      *
-     * @param string $codDepartamento Código único del departamento
-     * @param string $descDepartamento Descripción del departamento
-     * @param string $fechaCreacionDepartamento Fecha de creación del departamento
-     * @param float $volumenDeNegocio Volumen de negocio del departamento
-     * @param string|null $fechaBajaDepartamento Fecha de baja del departamento (opcional)
+     * @param string $codUsuario Código único del usuario
+     * @param string $password Contraseña del usuario
+     * @param string $descUsuario Nombre o descripción del usuario
+     * @param int $numConexiones Número de conexiones realizadas
+     * @param string $fechaHoraUltimaConexion Fecha/hora de la última conexión
+     * @param string $perfil Perfil del usuario
+     * @param string|null $imagenUsuario Imagen del usuario (opcional)
+     * @param string $fechaHoraUltimaConexionAnterior Fecha/hora de la penúltima conexión
      */
-    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento = null) {
+    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento) {
         $this->codDepartamento = $codDepartamento;
         $this->descDepartamento = $descDepartamento;
         $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
@@ -36,40 +39,40 @@ class Departamento {
     }
 
     /**
-     * Obtiene el código del departamento
-     * @return string Código del departamento
+     * Obtiene el código del usuario
+     * @return string Código del usuario
      */
     public function getCodDepartamento() {
         return $this->codDepartamento; 
     }
 
     /**
-     * Obtiene la descripción del departamento
-     * @return string Descripción del departamento
+     * Obtiene la contraseña del usuario
+     * @return string Contraseña del usuario
      */
     public function getDescDepartamento() { 
         return $this->descDepartamento; 
     }
 
     /**
-     * Obtiene la fecha de creación del departamento
-     * @return string Fecha de creación
+     * Obtiene la descripción o nombre del usuario
+     * @return string Descripción del usuario
      */
     public function getFechaCreacionDepartamento() { 
         return $this->fechaCreacionDepartamento; 
     }
 
     /**
-     * Obtiene el volumen de negocio del departamento
-     * @return float Volumen de negocio
+     * Obtiene el perfil del usuario
+     * @return string Perfil del usuario
      */
     public function getVolumenDeNegocio() { 
         return $this->volumenDeNegocio; 
     }
 
     /**
-     * Obtiene la fecha de baja del departamento
-     * @return string|null Fecha de baja, o null si no existe
+     * Obtiene el número de conexiones realizadas por el usuario
+     * @return int Número de conexiones
      */
     public function getFechaBajaDepartamento() { 
         return $this->fechaBajaDepartamento; 
