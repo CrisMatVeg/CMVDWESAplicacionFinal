@@ -1,6 +1,6 @@
 <?php
 /**
- * Controlador: Detalle
+ * Controlador: Detalle (cDetalle)
  *
  * Este controlador gestiona la navegación de la página de detalle
  * en la aplicación Login/Logoff.

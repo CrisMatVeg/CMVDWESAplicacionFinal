@@ -1,34 +1,31 @@
 <?php
 /**
- * Controlador: WIP
+ * Controlador: Inicio Público (cInicioPublico)
  *
- * Este controlador gestiona la página WIP (Work In Progress) de la aplicación.
- * Su función principal es permitir la navegación hacia otra página si se envía
- * `paginaDestino`, o retroceder si se pulsa "Atrás".
+ * Este controlador gestiona la navegación desde la página de inicio público
+ * de la aplicación Login/Logoff.
  *
  * Funcionalidad:
- * - Botón "Atrás": vuelve a la página anterior almacenada en sesión.
- * - Navegación a otra página: si se envía `paginaDestino`, actualiza la página
- *   anterior y la página en curso y redirige.
- * - Si no hay acción, simplemente carga el layout principal.
+ * - Verifica si se ha enviado `paginaDestino` mediante formulario o enlace.
+ * - Si se ha enviado:
+ *      - Actualiza la página anterior (`paginaAnterior`) con la página en curso.
+ *      - Actualiza la página en curso (`paginaEnCurso`) con el destino.
+ *      - Redirige inmediatamente a `index.php` para cargar la vista correspondiente.
+ * - Si no se ha enviado `paginaDestino`, carga la vista principal (`layout`).
  *
  * Dependencias:
  * - Variables de sesión `$_SESSION`
- * - Arreglo `$view` para cargar la vista layout
+ * - Arreglo `$view` para cargar la vista layout principal
  *
  * @package Controladores
  * @author Cristian Mateos
  * @version 1.0
  */
-
-// Botón Atrás
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit;
 }
-
-// Navegación a otra página
 if (isset($_REQUEST['paginaDestino'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
@@ -36,5 +33,5 @@ if (isset($_REQUEST['paginaDestino'])) {
     exit;
 }
 
-// Cargar layout principal
+// Carga la vista layout principal
 require_once $view["layout"];

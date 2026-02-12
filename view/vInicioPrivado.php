@@ -18,11 +18,11 @@
  * Elementos importantes:
  * - Logo con clase `.owl` y texto “Aplicación Final — Inicio Privado”
  * - Formulario de cierre de sesión con botón "Cerrar Sesión"
- * - Información dinámica extraída del array `$datosUsuarioVista`
+ * - Información dinámica extraída del array `$avInicioPrivado`
  * - Botón de navegación a `Detalle`
  *
  * Dependencias:
- * - Variable PHP `$datosUsuarioVista` con datos del usuario
+ * - Variable PHP `$avInicioPrivado` con datos del usuario
  * - Estilos CSS externos e internos
  *
  * @package Vistas
@@ -49,10 +49,10 @@
 
 <main>
     <?php
-        echo "<h1>Bienvenido " . $datosUsuarioVista["descUsuario"] . "</h1>";
-        echo "<h2>Esta el la " . $datosUsuarioVista["numConexiones"] + 1 . "ª vez que se conecta.</h2>";
-        if($datosUsuarioVista["numConexiones"]!=0){
-            echo "<h2>Usted se conectó por última vez el ".$datosUsuarioVista["fechaHoraUltimaConexionAnterior"]->format('d')." del ".$datosUsuarioVista["fechaHoraUltimaConexionAnterior"]->format('m'). " de " .$datosUsuarioVista["fechaHoraUltimaConexionAnterior"]->format('Y'). " a las " .$datosUsuarioVista["fechaHoraUltimaConexionAnterior"]->format('H').":".$datosUsuarioVista["fechaHoraUltimaConexionAnterior"]->format('i')."</h2>";
+        echo "<h1>Bienvenido " . $avInicioPrivado["descUsuario"] . "</h1>";
+        echo "<h2>Esta el la " . $avInicioPrivado["numConexiones"] + 1 . "ª vez que se conecta.</h2>";
+        if($avInicioPrivado["numConexiones"]!=0){
+            echo "<h2>Usted se conectó por última vez el ".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('d')." del ".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('m'). " de " .$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('Y'). " a las " .$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('H').":".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('i')."</h2>";
         }else{
             echo '<h2>BIENVENIDO!</h2>';
         }

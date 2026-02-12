@@ -42,10 +42,10 @@
         </div>
         <h1 class="error titulo">ALGO SALIO MAL</h1>
         <div class="error mensaje">
-            <p>Código de error: <?php echo $datosError['codError']; ?></p>
-            <p>Descripción: <?php echo $datosError['descError']; ?></p>
-            <p>Archivo: <?php echo $datosError['archivoError']; ?></p>
-            <p>Línea: <?php echo $datosError['lineaError']; ?></p>
+            <p>Código de error: <?php echo $avError['codError']; ?></p>
+            <p>Descripción: <?php echo $avError['descError']; ?></p>
+            <p>Archivo: <?php echo $avError['archivoError']; ?></p>
+            <p>Línea: <?php echo $avError['lineaError']; ?></p>
         </div>
         <form>
         <input type="submit" name="atras" value="Atras" class="btn primary">
