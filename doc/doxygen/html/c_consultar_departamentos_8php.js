@@ -1,8 +1,8 @@
 var c_consultar_departamentos_8php =
 [
     [ "$_SESSION", "c_consultar_departamentos_8php.html#acadc2734fedf3f592bfd07658d412d7a", null ],
-    [ "$codigoDepartamentoSeleccionado", "c_consultar_departamentos_8php.html#a54350bac53973f48b83ae768fc370f16", null ],
-    [ "$datosDepartamentoVista", "c_consultar_departamentos_8php.html#a66ace87ea8563eaf04dab422e0296a82", null ],
-    [ "$departamentoSeleccionado", "c_consultar_departamentos_8php.html#a57bc0d9e9d6910aab0b5777c06f5c2b2", null ],
-    [ "$gestionDepartamentos", "c_consultar_departamentos_8php.html#ab2cd2ec338fec022f4f2be21119a93ac", null ]
+    [ "$avConsultarDpto", "c_consultar_departamentos_8php.html#aee9cd2b0cbd18a79b414c5a2ba054c1d", null ],
+    [ "$codDpto", "c_consultar_departamentos_8php.html#a01d4e5101064b4f505ad21f6e21ccbb1", null ],
+    [ "$departamentoPDO", "c_consultar_departamentos_8php.html#a1b4f5ddc83171623eda557e0b40e1ed3", null ],
+    [ "$dptoSeleccionado", "c_consultar_departamentos_8php.html#a5f0d991f17c490c35c7fb1679e9f7f71", null ]
 ];

@@ -5,7 +5,7 @@
  * Representa un usuario del sistema con sus datos de acceso, perfil, 
  * número de conexiones y fecha/hora de última conexión.
  *
- * @package Usuarios
+ * @package Modelos
  * @author Cristian Mateos
  * @version 1.0
  */

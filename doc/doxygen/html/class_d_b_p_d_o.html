@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: DBPDO Class Reference</title>
+<title>Aplicación Final: DBPDO Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="paloma.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">LoginLogoff<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación con control de acceso MVC</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -98,10 +98,7 @@ $(function(){initNavTree('class_d_b_p_d_o.html','',''); });
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c5fd0383b6df10038d62722deb5c5ef" id="r_a5c5fd0383b6df10038d62722deb5c5ef"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a5c5fd0383b6df10038d62722deb5c5ef">ejecutarConsulta</a> ($sql, $parametros=null)</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_d_b_p_d_o_8php_source.html#l00014">14</a> of file <a class="el" href="_d_b_p_d_o_8php_source.html">DBPDO.php</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a5c5fd0383b6df10038d62722deb5c5ef" name="a5c5fd0383b6df10038d62722deb5c5ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c5fd0383b6df10038d62722deb5c5ef">&#9670;&#160;</a></span>ejecutarConsulta()</h2>
 
@@ -128,29 +125,20 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Ejecuta una consulta SQL en la base de datos y devuelve el primer resultado.</p>
-<p>Este método utiliza PDO para conectarse a la base de datos utilizando los parámetros definidos en <a class="el" href="conf_d_b_p_d_o_8php.html">confDBPDO.php</a>. Permite pasar parámetros opcionales para consultas preparadas.</p>
+<p>Ejecuta una consulta SQL y devuelve el PDOStatement. No realiza fetch ni interpreta resultados.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$sql</td><td>La consulta SQL a ejecutar. </td></tr>
-    <tr><td class="paramtype">array&#160;|&#160;null</td><td class="paramname">$parametros</td><td>(Opcional) Array de parámetros para la consulta preparada. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$sql</td><td>Consulta SQL a ejecutar </td></tr>
+    <tr><td class="paramtype">array&#160;|&#160;null</td><td class="paramname">$parametros</td><td>Parámetros para consultas preparadas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>mixed Retorna el primer registro devuelto por la consulta como objeto/array, según fetch(). </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">PDOException</td><td>Lanza excepción si ocurre un error en la consulta o la conexión. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_d_b_p_d_o_8php_source.html#l00029">29</a> of file <a class="el" href="_d_b_p_d_o_8php_source.html">DBPDO.php</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>PDOStatement Objeto PDOStatement ya ejecutado </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_d_b_p_d_o_8php_source.html">DBPDO.php</a></li>
+<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_d_b_p_d_o_8php.html">DBPDO.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

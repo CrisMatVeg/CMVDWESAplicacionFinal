@@ -8,48 +8,56 @@ namespace \doxymbox{\hyperlink{namespace_a_p_i}{API}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}{\$token\+Acceso}} = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}(\$token\+Acceso)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903}{\$datos\+Entrada}} = json\+\_\+decode(file\+\_\+get\+\_\+contents("{}php:\+/\+/\+input"{}), true)
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$token\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}(\$token)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a30e356a2467a4cdc5bc7e16577d23919}{\$raw\+Data}} = file\+\_\+get\+\_\+contents("{}php:\+/\+/\+input"{})
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$datos\+Entrada\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}empty(\$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_aba1fe35914806ec2253a9c2bc664f0a8}{\$codigo\+Usuario}} = \$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a69b271260be394b90709736cccb22c76}{\$input}} = json\+\_\+decode(\$raw\+Data, true)
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_aa426dc0fc9577c731868d64419bd4f23}{\$usuario\+Encontrado}} = \doxymbox{\hyperlink{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}{Usuario\+PDO::\+validar\+Usuario}}(\$codigo\+Usuario)
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$input\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset(\$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}empty(\$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} = \$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$usuario\+Encontrado)
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a559c8003f481610caf373b85cc607fb6}{\$usuario}} = \doxymbox{\hyperlink{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}{Usuario\+PDO::\+validar\+Usuario}}(\$cod\+Usuario)
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (! \$usuario)
 \end{DoxyCompactItemize}
 
 
 \label{doc-var-members}
 \Hypertarget{ws_consultar_usuario_8php_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{ws_consultar_usuario_8php_aba1fe35914806ec2253a9c2bc664f0a8}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$codigoUsuario@{\$codigoUsuario}}
-\index{\$codigoUsuario@{\$codigoUsuario}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$codigoUsuario}{\$codigoUsuario}}
-{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_aba1fe35914806ec2253a9c2bc664f0a8} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$datos\+Entrada\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}empty( \$datos\+Entrada\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \$codigo\+Usuario = \$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+}
+\Hypertarget{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$codUsuario@{\$codUsuario}}
+\index{\$codUsuario@{\$codUsuario}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$codUsuario}{\$codUsuario}}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (! \$input\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset( \$input\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}empty( \$input\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \$cod\+Usuario = \$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+}
 
-\Hypertarget{ws_consultar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$datosEntrada@{\$datosEntrada}}
-\index{\$datosEntrada@{\$datosEntrada}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$datosEntrada}{\$datosEntrada}}
-{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}( \$token\+Acceso)) \$datos\+Entrada = json\+\_\+decode(file\+\_\+get\+\_\+contents("{}php:\+/\+/\+input"{}), true)}
+\Hypertarget{ws_consultar_usuario_8php_a69b271260be394b90709736cccb22c76}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$input@{\$input}}
+\index{\$input@{\$input}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$input}{\$input}}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a69b271260be394b90709736cccb22c76} 
+\$input = json\+\_\+decode(\$raw\+Data, true)}
 
-\Hypertarget{ws_consultar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$tokenAcceso@{\$tokenAcceso}}
-\index{\$tokenAcceso@{\$tokenAcceso}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$tokenAcceso}{\$tokenAcceso}}
-{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08} 
-\$token\+Acceso = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null}
+\Hypertarget{ws_consultar_usuario_8php_a30e356a2467a4cdc5bc7e16577d23919}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$rawData@{\$rawData}}
+\index{\$rawData@{\$rawData}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$rawData}{\$rawData}}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a30e356a2467a4cdc5bc7e16577d23919} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (! \$token\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}( \$token)) \$raw\+Data = file\+\_\+get\+\_\+contents("{}php:\+/\+/\+input"{})}
 
-\Hypertarget{ws_consultar_usuario_8php_aa426dc0fc9577c731868d64419bd4f23}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$usuarioEncontrado@{\$usuarioEncontrado}}
-\index{\$usuarioEncontrado@{\$usuarioEncontrado}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$usuarioEncontrado}{\$usuarioEncontrado}}
-{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_aa426dc0fc9577c731868d64419bd4f23} 
-\$usuario\+Encontrado = \doxymbox{\hyperlink{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}{Usuario\+PDO::\+validar\+Usuario}}(\$codigo\+Usuario)}
+\Hypertarget{ws_consultar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$token@{\$token}}
+\index{\$token@{\$token}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$token}{\$token}}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e} 
+\$token = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null}
 
-\Hypertarget{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!if@{if}}
+\Hypertarget{ws_consultar_usuario_8php_a559c8003f481610caf373b85cc607fb6}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!\$usuario@{\$usuario}}
+\index{\$usuario@{\$usuario}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$usuario}{\$usuario}}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a559c8003f481610caf373b85cc607fb6} 
+\$usuario = \doxymbox{\hyperlink{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}{Usuario\+PDO::\+validar\+Usuario}}(\$cod\+Usuario)}
+
+\Hypertarget{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}\index{wsConsultarUsuario.php@{wsConsultarUsuario.php}!if@{if}}
 \index{if@{if}!wsConsultarUsuario.php@{wsConsultarUsuario.php}}
 \doxysubsubsection{\texorpdfstring{if}{if}}
-{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c} 
-if(! \$usuario\+Encontrado) (\begin{DoxyParamCaption}\item[{!}]{\$usuario\+Encontrado}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd} 
+if(! \$usuario) (\begin{DoxyParamCaption}\item[{!}]{\$usuario}{}\end{DoxyParamCaption})}
 

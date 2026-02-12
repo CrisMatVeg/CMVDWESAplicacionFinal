@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "LoginLogoff", "index.html", [
+  [ "Aplicación Final", "index.html", [
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -48,7 +48,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"231018libreria_validacion_8php.html"
+"231018libreria_validacion_8php.html",
+"ws_borrar_usuario_8php.html#a7c130730dd1c2f4cba0a39e00a56fefd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

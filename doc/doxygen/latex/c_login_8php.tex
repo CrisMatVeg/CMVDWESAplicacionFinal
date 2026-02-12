@@ -1,4 +1,4 @@
-\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESLogin\+Logoff/\+controller/\+c\+Login.php File Reference}
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+controller/\+c\+Login.php File Reference}
 \hypertarget{c_login_8php}{}\label{c_login_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cLogin.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cLogin.php}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -8,20 +8,63 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-if(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) if(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}registro\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_login_8php_ab96282db4312d69f248921075bdd3138}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}pagina\+Destino\textquotesingle{}]\+) \&\&\$\+\_\+\+REQUEST\+[ \textquotesingle{}pagina\+Destino\textquotesingle{}]\+=="{}inicio\+Privado"{})
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}registro\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_login_8php_a6271386785038e97046c3b6b37f1c615}{\$a\+Errores}}
+\item 
+\doxymbox{\hyperlink{c_login_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
+\item 
+\doxymbox{\hyperlink{c_login_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}acceder\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_login_8php_aad298e109770359485231f729178a641}{else}}
 \end{DoxyCompactItemize}
 
 
 \label{doc-var-members}
 \Hypertarget{c_login_8php_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{c_login_8php_ab96282db4312d69f248921075bdd3138}\index{cLogin.php@{cLogin.php}!if@{if}}
-\index{if@{if}!cLogin.php@{cLogin.php}}
-\doxysubsubsection{\texorpdfstring{if}{if}}
-{\footnotesize\ttfamily \label{c_login_8php_ab96282db4312d69f248921075bdd3138} 
-if(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) if(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}registro\textquotesingle{}]\+)) if(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}pagina\+Destino\textquotesingle{}]\+) \&\& \$\+\_\+\+REQUEST\+[\textquotesingle{}pagina\+Destino\textquotesingle{}]\+=="{}inicio\+Privado"{}) (\begin{DoxyParamCaption}\item[{isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}pagina\+Destino\textquotesingle{}]\+) \&\&}]{\$\+\_\+\+REQUEST}{\+[ \textquotesingle{}pagina\+Destino\textquotesingle{}]\+ = {\ttfamily =~"{}inicioPrivado"{}}}\end{DoxyParamCaption})}
+\Hypertarget{c_login_8php_a6271386785038e97046c3b6b37f1c615}\index{cLogin.php@{cLogin.php}!\$aErrores@{\$aErrores}}
+\index{\$aErrores@{\$aErrores}!cLogin.php@{cLogin.php}}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
+{\footnotesize\ttfamily \label{c_login_8php_a6271386785038e97046c3b6b37f1c615} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}registro\textquotesingle{}]\+)) \$a\+Errores}
 
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'codUsuario'}\ =>\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'password'}\ =>\ null}
+\DoxyCodeLine{]}
 
+\end{DoxyCode}
+\Hypertarget{c_login_8php_a6e16c1c08f9ff5671bd921d75436333e}\index{cLogin.php@{cLogin.php}!\$aRespuestas@{\$aRespuestas}}
+\index{\$aRespuestas@{\$aRespuestas}!cLogin.php@{cLogin.php}}
+\doxysubsubsection{\texorpdfstring{\$aRespuestas}{\$aRespuestas}}
+{\footnotesize\ttfamily \label{c_login_8php_a6e16c1c08f9ff5671bd921d75436333e} 
+\$a\+Respuestas}
 
-Definition at line \doxymbox{\hyperlink{c_login_8php_source_l00049}{49}} of file \doxymbox{\hyperlink{c_login_8php_source}{c\+Login.\+php}}.
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'codUsuario'}\ =>\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'password'}\ =>\ \textcolor{stringliteral}{''}}
+\DoxyCodeLine{]}
 
+\end{DoxyCode}
+\Hypertarget{c_login_8php_ab0dcac058225ef7a9871cdb707b90364}\index{cLogin.php@{cLogin.php}!\$entradaOK@{\$entradaOK}}
+\index{\$entradaOK@{\$entradaOK}!cLogin.php@{cLogin.php}}
+\doxysubsubsection{\texorpdfstring{\$entradaOK}{\$entradaOK}}
+{\footnotesize\ttfamily \label{c_login_8php_ab0dcac058225ef7a9871cdb707b90364} 
+\$entrada\+OK = true}
+
+\Hypertarget{c_login_8php_aad298e109770359485231f729178a641}\index{cLogin.php@{cLogin.php}!else@{else}}
+\index{else@{else}!cLogin.php@{cLogin.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{c_login_8php_aad298e109770359485231f729178a641} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}acceder\textquotesingle{}]\+)) else}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ =\ \textcolor{keyword}{false}}
+
+\end{DoxyCode}

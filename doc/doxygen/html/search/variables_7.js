@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['username_0',['USERNAME',['../conf_d_b_p_d_o_8php.html#a74aeb024c560ee70f79b2c2b039bc113',1,'confDBPDO.php']]]
+  ['respuesta_5fseguridad_0',['RESPUESTA_SEGURIDAD',['../conf_a_p_p_8php.html#a629db8cf3003694981c913216273d869',1,'confAPP.php']]]
 ];

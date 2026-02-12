@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: Usuario Class Reference</title>
+<title>Aplicación Final: Usuario Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="paloma.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">LoginLogoff<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación con control de acceso MVC</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -99,6 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f0be40f1ed68474a10917e8b26af96a" id="r_a4f0be40f1ed68474a10917e8b26af96a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4f0be40f1ed68474a10917e8b26af96a">__construct</a> ($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $perfil, $imagenUsuario, $fechaHoraUltimaConexionAnterior)</td></tr>
 <tr class="memitem:af6744d9c5d29fc68b5e9a5fb2fab245e" id="r_af6744d9c5d29fc68b5e9a5fb2fab245e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af6744d9c5d29fc68b5e9a5fb2fab245e">getCodUsuario</a> ()</td></tr>
 <tr class="memitem:a04e0957baeb7acde9c0c86556da2d43f" id="r_a04e0957baeb7acde9c0c86556da2d43f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a04e0957baeb7acde9c0c86556da2d43f">getPassword</a> ()</td></tr>
+<tr class="memitem:a3e35c8d3dbb2c513c618a664389e0926" id="r_a3e35c8d3dbb2c513c618a664389e0926"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e35c8d3dbb2c513c618a664389e0926">setPassword</a> ($password)</td></tr>
 <tr class="memitem:a38bc2254f1841238d4f4a4851ea5258d" id="r_a38bc2254f1841238d4f4a4851ea5258d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a38bc2254f1841238d4f4a4851ea5258d">getDescUsuario</a> ()</td></tr>
 <tr class="memitem:a22a2936d4856077edac47e6dbf430bab" id="r_a22a2936d4856077edac47e6dbf430bab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a22a2936d4856077edac47e6dbf430bab">getPerfil</a> ()</td></tr>
 <tr class="memitem:af98dbe147730701ce756e83e77e4dcb0" id="r_af98dbe147730701ce756e83e77e4dcb0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af98dbe147730701ce756e83e77e4dcb0">getNumConexiones</a> ()</td></tr>
@@ -106,10 +107,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ecc5d214e34c9ecc3944920eba61e27" id="r_a1ecc5d214e34c9ecc3944920eba61e27"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1ecc5d214e34c9ecc3944920eba61e27">setFechaHoraUltimaConexion</a> ($fecha)</td></tr>
 <tr class="memitem:a79bab760d5ef47d7e0406610c08b79a3" id="r_a79bab760d5ef47d7e0406610c08b79a3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a79bab760d5ef47d7e0406610c08b79a3">getFechaHoraUltimaConexionAnterior</a> ()</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00012">12</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4f0be40f1ed68474a10917e8b26af96a" name="a4f0be40f1ed68474a10917e8b26af96a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f0be40f1ed68474a10917e8b26af96a">&#9670;&#160;</a></span>__construct()</h2>
 
@@ -162,7 +160,7 @@ Public Member Functions</h2></td></tr>
 <p>Inicializa todas las propiedades del usuario.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$codUsuario</td><td>Código único del usuario </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código único del usuario </td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$password</td><td>Contraseña del usuario </td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$descUsuario</td><td>Nombre o descripción del usuario </td></tr>
     <tr><td class="paramtype">int</td><td class="paramname">$numConexiones</td><td>Número de conexiones realizadas </td></tr>
@@ -173,8 +171,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00075">75</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
 
 </div>
 </div>
@@ -195,8 +191,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Obtiene el código del usuario </p><dl class="section return"><dt>Returns</dt><dd>string Código del usuario </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00090">90</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
-
 </div>
 </div>
 <a id="a38bc2254f1841238d4f4a4851ea5258d" name="a38bc2254f1841238d4f4a4851ea5258d"></a>
@@ -214,8 +208,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Obtiene la descripción o nombre del usuario </p><dl class="section return"><dt>Returns</dt><dd>string Descripción del usuario </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00106">106</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
 
 </div>
 </div>
@@ -235,8 +227,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Obtiene la fecha y hora de la última conexión </p><dl class="section return"><dt>Returns</dt><dd>string Fecha y hora de la última conexión </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00130">130</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
-
 </div>
 </div>
 <a id="a79bab760d5ef47d7e0406610c08b79a3" name="a79bab760d5ef47d7e0406610c08b79a3"></a>
@@ -254,8 +244,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Obtiene la fecha y hora de la penúltima conexión </p><dl class="section return"><dt>Returns</dt><dd>string Fecha y hora de la penúltima conexión </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00146">146</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
 
 </div>
 </div>
@@ -275,8 +263,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Obtiene el número de conexiones realizadas por el usuario </p><dl class="section return"><dt>Returns</dt><dd>int Número de conexiones </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00122">122</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
-
 </div>
 </div>
 <a id="a04e0957baeb7acde9c0c86556da2d43f" name="a04e0957baeb7acde9c0c86556da2d43f"></a>
@@ -295,8 +281,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Obtiene la contraseña del usuario </p><dl class="section return"><dt>Returns</dt><dd>string Contraseña del usuario </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00098">98</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
-
 </div>
 </div>
 <a id="a22a2936d4856077edac47e6dbf430bab" name="a22a2936d4856077edac47e6dbf430bab"></a>
@@ -314,8 +298,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Obtiene el perfil del usuario </p><dl class="section return"><dt>Returns</dt><dd>string Perfil del usuario </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00114">114</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
 
 </div>
 </div>
@@ -340,12 +322,27 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_8php_source.html#l00138">138</a> of file <a class="el" href="_usuario_8php_source.html">Usuario.php</a>.</p>
+</div>
+</div>
+<a id="a3e35c8d3dbb2c513c618a664389e0926" name="a3e35c8d3dbb2c513c618a664389e0926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e35c8d3dbb2c513c618a664389e0926">&#9670;&#160;</a></span>setPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setPassword </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$password</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_usuario_8php_source.html">Usuario.php</a></li>
+<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_usuario_8php.html">Usuario.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

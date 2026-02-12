@@ -8,13 +8,13 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_alta_departamento_8php_a8db43f23e3fb56f38412236a3947dadb}{\$a\+Errores}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_alta_departamento_8php_a8db43f23e3fb56f38412236a3947dadb}{\$a\+Errores}}
 \item 
 \doxymbox{\hyperlink{c_alta_departamento_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
 \item 
 \doxymbox{\hyperlink{c_alta_departamento_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}confirmar\+Añadir\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_alta_departamento_8php_a5a0e6f477e9f09c4f103aba3b2ab1138}{else}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}confirmar\+Añadir\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_alta_departamento_8php_a5a0e6f477e9f09c4f103aba3b2ab1138}{else}}
 \end{DoxyCompactItemize}
 
 
@@ -25,7 +25,7 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \index{\$aErrores@{\$aErrores}!cAltaDepartamento.php@{cAltaDepartamento.php}}
 \doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
 {\footnotesize\ttfamily \label{c_alta_departamento_8php_a8db43f23e3fb56f38412236a3947dadb} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$a\+Errores}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$a\+Errores}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
@@ -47,7 +47,7 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
 \DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'codDepartamento'}\ =>\ \textcolor{stringliteral}{''},}
 \DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'descDepartamento'}\ =>\ \textcolor{stringliteral}{''},}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'VolumenDeNegocio'}\ =>\ \textcolor{stringliteral}{''}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'VolumenDeNegocio'}\ =>\ \textcolor{stringliteral}{''},}
 \DoxyCodeLine{]}
 
 \end{DoxyCode}
@@ -61,11 +61,12 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \index{else@{else}!cAltaDepartamento.php@{cAltaDepartamento.php}}
 \doxysubsubsection{\texorpdfstring{else}{else}}
 {\footnotesize\ttfamily \label{c_alta_departamento_8php_a5a0e6f477e9f09c4f103aba3b2ab1138} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}confirmar\+Añadir\textquotesingle{}]\+)) else}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}confirmar\+Añadir\textquotesingle{}]\+)) else}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ }
 \DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ =\ \textcolor{keyword}{false}}
 
 \end{DoxyCode}

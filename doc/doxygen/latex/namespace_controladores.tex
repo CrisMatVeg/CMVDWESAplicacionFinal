@@ -3,92 +3,365 @@
 
 
 \doxysubsection{Detailed Description}
-Controlador:\+ Detalle (c\+Detalle)
+Controlador:\+ Añadir \doxylink{class_departamento}{Departamento}
 
-Este controlador gestiona la navegación de la página de detalle en la aplicación Login/\+\+Logoff.
+Este controlador gestiona la creación de nuevos departamentos en la aplicación final.
 
 Funcionalidad:\+
-\begin{DoxyEnumerate}
-\item Gestión del botón "{}\+Atrás"{}:\+
 \begin{DoxyItemize}
-\item Si se envía {\ttfamily atras}, actualiza las variables de sesión:\+
+\item Verifica que exista sesión activa.
+\item Gestiona el botón "{}\+Atrás"{} hacia el mantenimiento de departamentos.
+\item Valida los datos del formulario:\+
 \begin{DoxyItemize}
-\item {\ttfamily pagina\+Anterior} con el valor enviado
-\item {\ttfamily pagina\+En\+Curso} con la página anterior
+\item cod\+Departamento (3 caracteres alfanuméricos)
+\item desc\+Departamento (4-\/255 caracteres)
+\item Volumen\+De\+Negocio (float positivo)
 \end{DoxyItemize}
-\item Redirige inmediatamente a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
+\item Comprueba que el código de departamento no exista.
+\item Crea el departamento mediante {\ttfamily \doxylink{class_departamento_p_d_o_ab7eb697ff904ce04c697a37df26a910a}{Departamento\+PDO\textbackslash{}alta\+Departamento}}.
+\item Redirige a mantenimiento si el alta es correcta.
 \end{DoxyItemize}
-\item Si no se envía {\ttfamily atras}, carga la vista principal ({\ttfamily layout}).
-\end{DoxyEnumerate}
 
 Dependencias:\+
 \begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_departamento_p_d_o}{Departamento\+PDO}}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
 \item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
-\item Arreglo {\ttfamily \$view} para cargar la vista layout
+\item Arreglo {\ttfamily \$view} para cargar el layout
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}
 Cristian Mateos 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0
+2.\+0
 \end{DoxyVersion}
-Controlador:\+ Inicio Privado (c\+Inicio\+Privado)
+Controlador:\+ Baja de usuario
 
-Este controlador gestiona la página de inicio privado de la aplicación Login/\+\+Logoff. Se encarga de validar la sesión del usuario, manejar la navegación entre páginas, y preparar los datos del usuario para la vista.
+Este controlador gestiona la eliminación del usuario actualmente autenticado en la aplicación.
 
 Funcionalidad:\+
-\begin{DoxyEnumerate}
-\item Validación de sesión:\+
 \begin{DoxyItemize}
-\item Si no existe {\ttfamily \$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+}, redirige a la página de Login.
+\item Verifica que exista sesión activa.
+\item Permite volver a la página anterior mediante el botón "{}volver"{}.
+\item Solicita confirmación escribiendo exactamente "{}\+SI"{}.
+\item Si la confirmación es correcta:\+
+\begin{DoxyItemize}
+\item Obtiene el código del usuario desde la sesión.
+\item Elimina el usuario mediante {\ttfamily \doxylink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO\textbackslash{}borrar\+Usuario}}.
+\item Redirige a la página de inicio público.
 \end{DoxyItemize}
-\item Navegación hacia otra página:\+
-\begin{DoxyItemize}
-\item Si se envía {\ttfamily pagina\+Destino}, actualiza {\ttfamily pagina\+Anterior} y {\ttfamily pagina\+En\+Curso}, y redirige.
 \end{DoxyItemize}
-\item Gestión del botón "{}\+Atrás"{} /\+ cierre de sesión:\+
+
+Dependencias:\+
 \begin{DoxyItemize}
-\item Si se envía {\ttfamily atras}, destruye la sesión actual, la reinicia y vuelve a la página anterior.
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Objeto usuario almacenado en sesión
+\item Arreglo {\ttfamily \$view} para cargar el layout
 \end{DoxyItemize}
-\item Preparación de datos del usuario ({\ttfamily \$av\+Inicio\+Privado}):\+
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Cambio de contraseña
+
+Este controlador permite al usuario autenticado modificar su contraseña.
+
+Funcionalidad:\+
 \begin{DoxyItemize}
-\item Extrae de {\ttfamily \$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+}:\+
+\item Verifica que exista sesión activa.
+\item Permite cerrar sesión mediante el botón "{}atras"{}.
+\item Permite volver a la página privada mediante el botón "{}volver"{}.
+\item Valida:\+
 \begin{DoxyItemize}
-\item Código de usuario ({\ttfamily cod\+Usuario})
-\item Número de conexiones ({\ttfamily num\+Conexiones})
-\item Fecha y hora de la última conexión anterior ({\ttfamily fecha\+Hora\+Ultima\+Conexion\+Anterior})
-\item Descripción del usuario ({\ttfamily desc\+Usuario})
+\item Contraseña actual
+\item Nueva contraseña
+\item Confirmación de nueva contraseña
 \end{DoxyItemize}
+\item Comprueba que:\+
+\begin{DoxyItemize}
+\item La contraseña actual sea correcta.
+\item Las nuevas contraseñas coincidan.
+\end{DoxyItemize}
+\item Actualiza la contraseña mediante {\ttfamily \doxylink{class_usuario_p_d_o_aac1a556616a81a5d14a665d6efa9be03}{Usuario\+PDO\textbackslash{}cambiar\+Password}}.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
+\item Objeto usuario almacenado en sesión
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Consultar \doxylink{class_departamento}{Departamento}
+
+Este controlador permite visualizar los datos de un departamento previamente seleccionado en el mantenimiento de departamentos.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Permite volver a la página anterior mediante el botón "{}atras"{}.
+\item Obtiene el código del departamento almacenado en sesión.
+\item Recupera el departamento mediante {\ttfamily \doxylink{class_departamento_p_d_o_a546176b329f7bbc482c7de6d4c9c8012}{Departamento\+PDO\textbackslash{}seleccionar\+Departamento}}.
+\item Almacena el objeto departamento en sesión.
+\item Prepara un array asociativo con los datos para la vista.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_departamento_p_d_o}{Departamento\+PDO}}
+\item Objeto \doxylink{class_departamento}{Departamento} y sus métodos getter
+\item Variable de sesión {\ttfamily cod\+Dpto\+Seleccionado}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Consultar \doxylink{class_usuario}{Usuario} \doxylink{namespace_a_p_i}{API} (actualmente no activo, se utiliza la \doxylink{namespace_a_p_i}{API} de ws\+Consultar\+Usuario)
+
+Este controlador permite visualizar los datos de un usuario previamente seleccionado en el mantenimiento de usuarios.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Permite volver a la página de mantenimiento de usuarios.
+\item Verifica que exista un usuario seleccionado en sesión.
+\item Prepara un array asociativo con los datos del usuario para su visualización en la vista.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Objeto \doxylink{class_usuario}{Usuario} almacenado en sesión ({\ttfamily usuario\+Seleccionado})
+\item Clase \doxylink{class_usuario}{Usuario} y sus métodos getter
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Detalle de usuario
+
+Este controlador gestiona la navegación de la página de detalle en la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica que exista sesión activa.
+\item Gestión del botón "{}\+Atrás"{}:\+
+\begin{DoxyItemize}
+\item Actualiza {\ttfamily pagina\+Anterior} y {\ttfamily pagina\+En\+Curso} según la sesión.
+\item Redirige a {\ttfamily \doxylink{index_8php}{index.\+php}}.
+\end{DoxyItemize}
+\item Si no se envía "{}atras"{}, carga la vista principal ({\ttfamily layout}).
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Modificación de \doxylink{class_departamento}{Departamento}
+
+Este controlador gestiona la visualización y edición de un departamento previamente seleccionado.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica que exista sesión activa.
+\item Permite volver a la página anterior mediante el botón "{}\+Atrás"{}.
+\item Obtiene el departamento seleccionado desde la sesión y la base de datos.
+\item Prepara los datos para la vista.
+\item Valida los campos del formulario al intentar cambiar datos:\+
+\begin{DoxyItemize}
+\item desc\+Departamento (alfanumérico, 1-\/255 caracteres)
+\item Volumen\+De\+Negocio (float positivo)
+\end{DoxyItemize}
+\item Si la validación es correcta, actualiza el departamento mediante {\ttfamily \doxylink{class_departamento_p_d_o_a8b0030679eaa1547b414227ae5736263}{Departamento\+PDO\textbackslash{}editar\+Departamento}} y redirige al mantenimiento.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_departamento_p_d_o}{Departamento\+PDO}}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Modificación de \doxylink{class_usuario}{Usuario} \doxylink{namespace_a_p_i}{API}
+
+Este controlador gestiona la visualización y edición de un usuario previamente seleccionado en el mantenimiento de usuarios \doxylink{namespace_a_p_i}{API}.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica que exista sesión activa.
+\item Permite volver a la página de mantenimiento de usuarios mediante "{}\+Atrás"{}.
+\item Obtiene el usuario seleccionado desde sesión y base de datos.
+\item Prepara los datos del usuario para la vista.
+\item Valida los campos del formulario al intentar cambiar datos:\+
+\begin{DoxyItemize}
+\item Desc\+Usuario (alfanumérico, 1-\/255 caracteres)
+\item Perfil (alfanumérico, 1-\/10 caracteres)
+\end{DoxyItemize}
+\item Si la validación es correcta, actualiza el usuario mediante {\ttfamily \doxylink{class_usuario_p_d_o_ae34109a7b1f9065943065fb3c7d651c3}{Usuario\+PDO\textbackslash{}editar\+Usuario}} y redirige al mantenimiento.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Baja de \doxylink{class_departamento}{Departamento}
+
+Este controlador gestiona la eliminación de un departamento previamente seleccionado.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica que exista sesión activa.
+\item Permite volver a la página anterior mediante el botón "{}volver"{}.
+\item Solicita confirmación escribiendo exactamente "{}\+SI"{}.
+\item Si la confirmación es correcta:\+
+\begin{DoxyItemize}
+\item Obtiene el código del departamento desde sesión.
+\item Elimina el departamento mediante {\ttfamily \doxylink{class_departamento_p_d_o_a70541a791a4413ae3238dfa452f7244b}{Departamento\+PDO\textbackslash{}borrar\+Departamento}}.
+\item Redirige a la página de mantenimiento de departamentos.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_departamento_p_d_o}{Departamento\+PDO}}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Gestión de Errores
+
+Este controlador gestiona la visualización de errores en la aplicación.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Comprueba si existe un objeto de error en sesión ({\ttfamily \$\+\_\+\+SESSION\+[\textquotesingle{}error\textquotesingle{}]\+}).
+\item Si existe, extrae la información del error:\+
+\begin{DoxyItemize}
+\item Código
+\item Descripción
+\item Archivo
+\item Línea
+\item Página siguiente
+\end{DoxyItemize}
+\item Permite volver a la página anterior mediante el botón "{}atras"{}.
+\item Carga la vista de error ({\ttfamily layout}) con los datos preparados.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Objeto Error almacenado en sesión y sus métodos getter
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Inicio Privado
+
+Este controlador gestiona la página de inicio privado de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Verifica que exista sesión activa.
+\item Determina si el usuario tiene perfil de administrador.
+\item Gestiona la navegación hacia:\+
+\begin{DoxyItemize}
+\item Mi cuenta
+\item Detalle de usuario
+\item Mantenimiento de departamentos
+\item Mantenimiento de usuarios \doxylink{namespace_a_p_i}{API}
+\item \doxylink{class_r_e_s_t}{REST}
+\item Error
+\end{DoxyItemize}
+\item Gestiona el botón "{}\+Atrás"{} /\+ cierre de sesión:\+
+\begin{DoxyItemize}
+\item Destruye la sesión y vuelve a la página anterior
+\end{DoxyItemize}
+\item Prepara los datos del usuario para la vista ({\ttfamily \$datos\+Usuario\+Vista}):\+
+\begin{DoxyItemize}
+\item Código de usuario
+\item Número de conexiones
+\item Fecha y hora de última conexión anterior
+\item Descripción del usuario
+\item Perfil administrador
 \end{DoxyItemize}
 \item Carga la vista principal ({\ttfamily layout}) con los datos preparados.
-\end{DoxyEnumerate}
+\end{DoxyItemize}
 
 Dependencias:\+
 \begin{DoxyItemize}
 \item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
 \item Clase {\ttfamily \doxylink{class_usuario}{Usuario}} para obtener información del usuario
-\item Arreglo {\ttfamily \$view} para cargar la vista layout
+\item Clase {\ttfamily \doxylink{class_d_b_p_d_o}{DBPDO}} para consultas de error
+\item Arreglo {\ttfamily \$view} para cargar el layout
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}
 Cristian Mateos 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0
+2.\+0
 \end{DoxyVersion}
-Controlador:\+ Inicio Público (c\+Inicio\+Publico)
+Controlador:\+ Inicio Público
 
 Este controlador gestiona la navegación desde la página de inicio público de la aplicación Login/\+\+Logoff.
 
 Funcionalidad:\+
 \begin{DoxyItemize}
-\item Verifica si se ha enviado {\ttfamily pagina\+Destino} mediante formulario o enlace.
+\item Comprueba si se ha enviado {\ttfamily pagina\+Destino} mediante formulario o enlace.
 \item Si se ha enviado:\+
 \begin{DoxyItemize}
-\item Actualiza la página anterior ({\ttfamily pagina\+Anterior}) con la página en curso.
-\item Actualiza la página en curso ({\ttfamily pagina\+En\+Curso}) con el destino.
-\item Redirige inmediatamente a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}} para cargar la vista correspondiente.
+\item Actualiza {\ttfamily pagina\+Anterior} con la página en curso.
+\item Actualiza {\ttfamily pagina\+En\+Curso} con el destino.
+\item Redirige a {\ttfamily \doxylink{index_8php}{index.\+php}} para cargar la vista correspondiente.
 \end{DoxyItemize}
 \item Si no se ha enviado {\ttfamily pagina\+Destino}, carga la vista principal ({\ttfamily layout}).
 \end{DoxyItemize}
@@ -103,37 +376,258 @@ Dependencias:\+
 Cristian Mateos 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0
+2.\+0
 \end{DoxyVersion}
-Controlador:\+ Login (c\+Login)
+Controlador:\+ Login Público
 
-Este controlador gestiona la lógica de inicio de sesión y navegación de la página de login de la aplicación Login/\+\+Logoff.
+Este controlador gestiona el inicio de sesión desde la página pública de la aplicación.
 
 Funcionalidad:\+
-\begin{DoxyEnumerate}
-\item Gestiona el botón "{}\+Cancelar"{}/\+"{}\+Atrás"{}:\+
 \begin{DoxyItemize}
-\item Si se envía el parámetro {\ttfamily atras}, actualiza la página actual a la página anterior y redirige a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
-\end{DoxyItemize}
-\item Gestiona el inicio de sesión:\+
+\item Gestiona la navegación:\+
 \begin{DoxyItemize}
-\item Si se envía {\ttfamily pagina\+Destino = inicio\+Privado}, recoge los valores de {\ttfamily cod\+Usuario} y {\ttfamily password} del formulario.
-\item Construye la contraseña combinando código de usuario y contraseña.
-\item Llama al modelo {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} para validar el usuario.
-\item Si el usuario es válido:\+
+\item Botón "{}\+Atrás"{} redirige a {\ttfamily inicio\+Publico}.
+\item Botón "{}\+Registro"{} redirige a la página de registro.
+\end{DoxyItemize}
+\item Valida los datos del formulario de login:\+
 \begin{DoxyItemize}
-\item Actualiza la última conexión en la base de datos y en el objeto usuario.
-\item Almacena el usuario en la sesión ({\ttfamily usuario\+Actual\+DWESLogin\+Logoff}).
-\item Actualiza la página en curso y redirige a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}.
+\item {\ttfamily cod\+Usuario} (alfanumérico, 4-\/10 caracteres)
+\item {\ttfamily password} (alfanumérico, 4-\/10 caracteres, al menos 1 carácter especial)
 \end{DoxyItemize}
+\item Si las credenciales son correctas:\+
+\begin{DoxyItemize}
+\item Carga el usuario en sesión ({\ttfamily usuario\+Actual\+DWESAplicacion\+Final}).
+\item Genera un token \doxylink{namespace_a_p_i}{API} único si no existe y lo guarda en la base de datos.
+\item Redirige a la página de inicio privado ({\ttfamily inicio\+Privado}).
 \end{DoxyItemize}
-\end{DoxyEnumerate}
+\item Si las credenciales son incorrectas, muestra errores en el formulario.
+\end{DoxyItemize}
 
 Dependencias:\+
 \begin{DoxyItemize}
-\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} y sus métodos {\ttfamily validar\+Usuario} y {\ttfamily actualizar\+Ultima\+Conexion\+YUsuario}
-\item Arreglo {\ttfamily \$view} para cargar la vista final ({\ttfamily layout})
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
 \item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar el layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Mi Perfil
+
+Este controlador gestiona la edición de los datos del usuario actual en la aplicación.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Valida sesión activa del usuario.
+\item Gestiona navegación:\+
+\begin{DoxyItemize}
+\item Botón "{}\+Atrás"{}:\+ destruye sesión y vuelve a la página anterior.
+\item Botón "{}\+Volver"{}:\+ vuelve al inicio privado.
+\item Botón "{}\+Borrar cuenta"{}:\+ redirige a la página de eliminación de cuenta.
+\item Botón "{}\+Cambiar contraseña"{}:\+ redirige a la página de cambio de password.
+\end{DoxyItemize}
+\item Procesa formulario de edición de descripción del usuario:\+
+\begin{DoxyItemize}
+\item Valida el campo {\ttfamily description} como alfanumérico.
+\item Si es correcto, actualiza el usuario en la base de datos y en sesión.
+\item Actualiza array de datos del usuario ({\ttfamily \$datos\+Usuario\+Vista}) para la vista.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} y métodos {\ttfamily editar\+Usuario} y {\ttfamily validar\+Usuario}
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar la vista layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Mantenimiento de Departamentos
+
+Este controlador gestiona la página de mantenimiento de departamentos en la aplicación. Permite navegar, buscar, filtrar y realizar acciones sobre departamentos.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Validación de sesión:\+ si no hay usuario activo, redirige a Login.
+\item Navegación entre páginas:\+
+\begin{DoxyItemize}
+\item Atrás /\+ Volver:\+ vuelve a la página anterior.
+\item Ver /\+ Editar /\+ Eliminar /\+ Dar de baja /\+ Rehabilitar /\+ Alta departamento.
+\end{DoxyItemize}
+\item Búsqueda y filtrado:\+
+\begin{DoxyItemize}
+\item Validación del campo de búsqueda (solo letras).
+\item Guarda la búsqueda y estado seleccionado en sesión.
+\end{DoxyItemize}
+\item Preparación de lista de departamentos según filtros y búsqueda.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_departamento_p_d_o}{Departamento\+PDO}} y métodos {\ttfamily buscar\+Departamentos}, {\ttfamily baja\+Departamento}, {\ttfamily rehabilitar\+Departamento}.
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}.
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}.
+\item Arreglo {\ttfamily \$view} para cargar la vista layout.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Controlador:\+ Mantenimiento de Usuarios (actualmente no activo, se utiliza la api)
+
+Este controlador gestiona la página de mantenimiento de usuarios en la aplicación. Permite navegar, buscar, filtrar y realizar acciones sobre usuarios.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Validación de sesión:\+ si no hay usuario activo, redirige a Login.
+\item Navegación entre páginas:\+
+\begin{DoxyItemize}
+\item Atrás /\+ Volver:\+ vuelve a la página anterior.
+\item Ver /\+ Editar /\+ Eliminar /\+ Baja de usuario.
+\end{DoxyItemize}
+\item Búsqueda y filtrado:\+
+\begin{DoxyItemize}
+\item Validación del campo de búsqueda (solo letras, sin números).
+\item Guarda la búsqueda en sesión.
+\end{DoxyItemize}
+\item Preparación de lista de usuarios según la búsqueda.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} y métodos {\ttfamily seleccionar\+Usuario}, {\ttfamily buscar\+Usuarios}.
+\item Clase {\ttfamily \doxylink{classvalidacion_formularios}{validacion\+Formularios}}.
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}.
+\item Arreglo {\ttfamily \$view} para cargar la vista layout.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ Mantenimiento de Usuarios \doxylink{namespace_a_p_i}{API}
+
+Este controlador gestiona la navegación de la página de mantenimiento de usuarios de tipo \doxylink{namespace_a_p_i}{API} en la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Valida sesión:\+ si no hay usuario activo, redirige a Login.
+\item Navegación entre páginas:\+
+\begin{DoxyItemize}
+\item Atrás:\+ vuelve a la página anterior, reinicia sesión.
+\item Volver:\+ vuelve a la página anterior.
+\end{DoxyItemize}
+\item Carga la vista principal ({\ttfamily layout}).
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}.
+\item Arreglo {\ttfamily \$view} para cargar la vista layout.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ Registro
+
+Este controlador gestiona el registro de nuevos usuarios en la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Navegación:\+
+\begin{DoxyItemize}
+\item Atrás:\+ vuelve a la página anterior.
+\end{DoxyItemize}
+\item Registro de usuario:\+
+\begin{DoxyItemize}
+\item Valida campos:\+ código de usuario, contraseña, descripción y pregunta de seguridad.
+\item Comprueba si el código de usuario ya existe.
+\item Si no existe, crea el usuario y redirige a inicio privado.
+\item Si ocurre un error, guarda el mensaje en sesión y redirige a login.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}} para operaciones sobre usuarios.
+\item Constante {\ttfamily \doxylink{conf_a_p_p_8php_a629db8cf3003694981c913216273d869}{RESPUESTA\+\_\+\+SEGURIDAD}} para validar la pregunta de seguridad.
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}.
+\item Arreglo {\ttfamily \$view} para cargar la vista {\ttfamily layout}.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ \doxylink{namespace_a_p_i}{API} Externa
+
+Gestiona la visualización de la foto de la \doxylink{class_n_a_s_a}{NASA} y razas de perros. Permite seleccionar fecha y raza, ampliar detalles y navegar entre páginas.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Validación de sesión.
+\item Inicialización de fecha y raza si no existen en sesión.
+\item Navegación:\+ ampliar detalles de \doxylink{class_n_a_s_a}{NASA} o Dog, o volver a la página anterior.
+\item Validación de entradas:\+ fecha y raza seleccionada.
+\item Consumo de \doxylink{namespace_a_p_is}{APIs} externas:\+
+\begin{DoxyItemize}
+\item \doxylink{class_n_a_s_a}{NASA}:\+ obtiene la foto del día según la fecha seleccionada.
+\item Dog \doxylink{namespace_a_p_i}{API}:\+ obtiene la imagen y listado de razas.
+\end{DoxyItemize}
+\item Guarda datos obtenidos en sesión para ser usados en la vista.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clases \doxylink{class_r_e_s_t}{REST}, \doxylink{class_n_a_s_a}{NASA}, \doxylink{class_dog_api}{Dog\+Api}
+\item Librería \doxylink{classvalidacion_formularios}{validacion\+Formularios}
+\item Variables de sesión \$\+\_\+\+SESSION
+\item Arreglo \$view para cargar la vista layout
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Controlador:\+ WIP
+
+Este controlador gestiona la página WIP (Work In Progress) de la aplicación. Su función principal es permitir la navegación hacia otra página si se envía {\ttfamily pagina\+Destino}, o retroceder si se pulsa "{}\+Atrás"{}.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Botón "{}\+Atrás"{}:\+ vuelve a la página anterior almacenada en sesión.
+\item Navegación a otra página:\+ si se envía {\ttfamily pagina\+Destino}, actualiza la página anterior y la página en curso y redirige.
+\item Si no hay acción, simplemente carga el layout principal.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Variables de sesión {\ttfamily \$\+\_\+\+SESSION}
+\item Arreglo {\ttfamily \$view} para cargar la vista layout
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}

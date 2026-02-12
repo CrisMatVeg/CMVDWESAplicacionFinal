@@ -8,30 +8,38 @@ namespace \doxymbox{\hyperlink{namespace_a_p_i}{API}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{ws_borrar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}{\$token\+Acceso}} = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null
+\doxymbox{\hyperlink{ws_borrar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}(\$token\+Acceso)) \doxymbox{\hyperlink{ws_borrar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903}{\$datos\+Entrada}} = json\+\_\+decode(file\+\_\+get\+\_\+contents(\textquotesingle{}php:\+/\+/\+input\textquotesingle{}), true)
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$token\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}(\$token)) \doxymbox{\hyperlink{ws_borrar_usuario_8php_a7c130730dd1c2f4cba0a39e00a56fefd}{\$input}} = json\+\_\+decode(file\+\_\+get\+\_\+contents(\textquotesingle{}php:\+/\+/\+input\textquotesingle{}), true)
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$datos\+Entrada\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset(\$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_borrar_usuario_8php_a3b12e961366ba90e1f55f8407f902494}{\$a\+Errores}}
+\doxymbox{\hyperlink{ws_borrar_usuario_8php_a6f63c5a0557f7da205d6d99f947d58b8}{\$a\+Errores}}
 \item 
 \doxymbox{\hyperlink{ws_borrar_usuario_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
 \item 
 \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset(\$datos\+Entrada\+[\textquotesingle{}confirmacion\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_borrar_usuario_8php_a9f3a5d7a453d3c1f143206ac29cefac3}{else}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$input\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset( \$input\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset(\$input\+[\textquotesingle{}confirmacion\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_borrar_usuario_8php_af4a6886662fc3121159c8cef868261e7}{else}}
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}( \$datos\+Entrada\+[ \textquotesingle{}confirmacion\textquotesingle{}]\+ !=="{}SI"{}) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$entrada\+OK) \doxymbox{\hyperlink{ws_borrar_usuario_8php_ad3afa81a2bf1616e30705aecaccf3024}{\$usuario\+Eliminado}} = \doxymbox{\hyperlink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO::\+borrar\+Usuario}}(\$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)
+\doxymbox{\hyperlink{ws_borrar_usuario_8php_a8de9c3b792f585c8ce3ff02218ed7281}{\$a\+Errores}} \+[\textquotesingle{}confirmacion\textquotesingle{}]\+ = \$input\+[\textquotesingle{}confirmacion\textquotesingle{}]\+ === "{}SI"{} ? null :\+ "{}Confirmación incorrecta"{}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}( \$a\+Errores\+[ \textquotesingle{}confirmacion\textquotesingle{}]\+ !==null) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$entrada\+OK) \doxymbox{\hyperlink{ws_borrar_usuario_8php_aaa6558cf5f8942c33c3a451c36b30b95}{\$eliminado}} = \doxymbox{\hyperlink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO::\+borrar\+Usuario}}(\$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)
 \end{DoxyCompactItemize}
 
 
 \label{doc-var-members}
 \Hypertarget{ws_borrar_usuario_8php_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{ws_borrar_usuario_8php_a3b12e961366ba90e1f55f8407f902494}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$aErrores@{\$aErrores}}
+\Hypertarget{ws_borrar_usuario_8php_a8de9c3b792f585c8ce3ff02218ed7281}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$aErrores@{\$aErrores}}
 \index{\$aErrores@{\$aErrores}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
-{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a3b12e961366ba90e1f55f8407f902494} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$datos\+Entrada\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset( \$datos\+Entrada\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \$a\+Errores}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a8de9c3b792f585c8ce3ff02218ed7281} 
+\$a\+Errores\+[ \textquotesingle{}confirmacion\textquotesingle{}]\+ = \$input\+[\textquotesingle{}confirmacion\textquotesingle{}]\+ === "{}SI"{} ? null :\+ "{}Confirmación incorrecta"{}}
+
+\Hypertarget{ws_borrar_usuario_8php_a6f63c5a0557f7da205d6d99f947d58b8}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$aErrores@{\$aErrores}}
+\index{\$aErrores@{\$aErrores}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a6f63c5a0557f7da205d6d99f947d58b8} 
+\$a\+Errores}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
@@ -53,11 +61,11 @@ namespace \doxymbox{\hyperlink{namespace_a_p_i}{API}}
 \DoxyCodeLine{]}
 
 \end{DoxyCode}
-\Hypertarget{ws_borrar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$datosEntrada@{\$datosEntrada}}
-\index{\$datosEntrada@{\$datosEntrada}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$datosEntrada}{\$datosEntrada}}
-{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}( \$token\+Acceso)) \$datos\+Entrada = json\+\_\+decode(file\+\_\+get\+\_\+contents(\textquotesingle{}php:\+/\+/\+input\textquotesingle{}), true)}
+\Hypertarget{ws_borrar_usuario_8php_aaa6558cf5f8942c33c3a451c36b30b95}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$eliminado@{\$eliminado}}
+\index{\$eliminado@{\$eliminado}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$eliminado}{\$eliminado}}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_aaa6558cf5f8942c33c3a451c36b30b95} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(\$a\+Errores\+[\textquotesingle{}confirmacion\textquotesingle{}]\+ !==null) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (! \$entrada\+OK) \$eliminado = \doxymbox{\hyperlink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO::\+borrar\+Usuario}}(\$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)}
 
 \Hypertarget{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$entradaOK@{\$entradaOK}}
 \index{\$entradaOK@{\$entradaOK}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
@@ -65,27 +73,27 @@ namespace \doxymbox{\hyperlink{namespace_a_p_i}{API}}
 {\footnotesize\ttfamily \label{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364} 
 \$entrada\+OK = true}
 
-\Hypertarget{ws_borrar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$tokenAcceso@{\$tokenAcceso}}
-\index{\$tokenAcceso@{\$tokenAcceso}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$tokenAcceso}{\$tokenAcceso}}
-{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a34ef35abd8546bb402ea1d7bdeaa9e08} 
-\$token\+Acceso = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null}
+\Hypertarget{ws_borrar_usuario_8php_a7c130730dd1c2f4cba0a39e00a56fefd}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$input@{\$input}}
+\index{\$input@{\$input}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$input}{\$input}}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a7c130730dd1c2f4cba0a39e00a56fefd} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (! \$token\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}( \$token)) \$input = json\+\_\+decode(file\+\_\+get\+\_\+contents(\textquotesingle{}php:\+/\+/\+input\textquotesingle{}), true)}
 
-\Hypertarget{ws_borrar_usuario_8php_ad3afa81a2bf1616e30705aecaccf3024}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$usuarioEliminado@{\$usuarioEliminado}}
-\index{\$usuarioEliminado@{\$usuarioEliminado}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$usuarioEliminado}{\$usuarioEliminado}}
-{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_ad3afa81a2bf1616e30705aecaccf3024} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(\$datos\+Entrada\+[\textquotesingle{}confirmacion\textquotesingle{}]\+ !=="{}SI"{}) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$entrada\+OK) \$usuario\+Eliminado = \doxymbox{\hyperlink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO::\+borrar\+Usuario}}(\$datos\+Entrada\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)}
+\Hypertarget{ws_borrar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!\$token@{\$token}}
+\index{\$token@{\$token}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$token}{\$token}}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e} 
+\$token = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null}
 
-\Hypertarget{ws_borrar_usuario_8php_a9f3a5d7a453d3c1f143206ac29cefac3}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!else@{else}}
+\Hypertarget{ws_borrar_usuario_8php_af4a6886662fc3121159c8cef868261e7}\index{wsBorrarUsuario.php@{wsBorrarUsuario.php}!else@{else}}
 \index{else@{else}!wsBorrarUsuario.php@{wsBorrarUsuario.php}}
 \doxysubsubsection{\texorpdfstring{else}{else}}
-{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_a9f3a5d7a453d3c1f143206ac29cefac3} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (!isset( \$datos\+Entrada\+[ \textquotesingle{}confirmacion\textquotesingle{}]\+)) else}
+{\footnotesize\ttfamily \label{ws_borrar_usuario_8php_af4a6886662fc3121159c8cef868261e7} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(! \$input\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!isset(\$input\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (!isset( \$input\+[ \textquotesingle{}confirmacion\textquotesingle{}]\+)) else}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$aRespuestas}}[\textcolor{stringliteral}{'confirmacion'}]\ =\ \doxymbox{\hyperlink{ws_borrar_usuario_8php_a51716f2a5fdd3e778e3264e3aeb86903}{\$datosEntrada}}[\textcolor{stringliteral}{'confirmacion'}]}
+\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$aRespuestas}}[\textcolor{stringliteral}{'confirmacion'}]\ =\ \doxymbox{\hyperlink{ws_borrar_usuario_8php_a7c130730dd1c2f4cba0a39e00a56fefd}{\$input}}[\textcolor{stringliteral}{'confirmacion'}]}
 
 \end{DoxyCode}

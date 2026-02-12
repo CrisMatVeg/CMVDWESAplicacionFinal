@@ -1,0 +1,78 @@
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+controller/\+c\+Eliminar\+Usuario\+Sin\+Api.php File Reference}
+\hypertarget{c_eliminar_usuario_sin_api_8php}{}\label{c_eliminar_usuario_sin_api_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cEliminarUsuarioSinApi.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cEliminarUsuarioSinApi.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}volver\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_a12c432a696bbea87f46d63ab5d7e0a3a}{\$a\+Errores}}
+\item 
+\doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
+\item 
+\doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
+\item 
+\doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}{\$usuario\+PDO}} = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()
+\item 
+\doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_a128d2cdcace850d9c61238f00c660bc6}{\$cod\+Usuario}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}confirmar\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_eliminar_usuario_sin_api_8php_a473f7323d49c3a40c2d1fe9946cb84a1}{else}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{c_eliminar_usuario_sin_api_8php_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{c_eliminar_usuario_sin_api_8php_a12c432a696bbea87f46d63ab5d7e0a3a}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!\$aErrores@{\$aErrores}}
+\index{\$aErrores@{\$aErrores}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_a12c432a696bbea87f46d63ab5d7e0a3a} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}volver\textquotesingle{}]\+)) \$a\+Errores}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'confirmacion'}\ =>\ null}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{c_eliminar_usuario_sin_api_8php_a6e16c1c08f9ff5671bd921d75436333e}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!\$aRespuestas@{\$aRespuestas}}
+\index{\$aRespuestas@{\$aRespuestas}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{\$aRespuestas}{\$aRespuestas}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_a6e16c1c08f9ff5671bd921d75436333e} 
+\$a\+Respuestas}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'confirmacion'}\ =>\ \textcolor{stringliteral}{''}}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{c_eliminar_usuario_sin_api_8php_a128d2cdcace850d9c61238f00c660bc6}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!\$codUsuario@{\$codUsuario}}
+\index{\$codUsuario@{\$codUsuario}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{\$codUsuario}{\$codUsuario}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_a128d2cdcace850d9c61238f00c660bc6} 
+\$cod\+Usuario = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+}
+
+\Hypertarget{c_eliminar_usuario_sin_api_8php_ab0dcac058225ef7a9871cdb707b90364}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!\$entradaOK@{\$entradaOK}}
+\index{\$entradaOK@{\$entradaOK}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{\$entradaOK}{\$entradaOK}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_ab0dcac058225ef7a9871cdb707b90364} 
+\$entrada\+OK = true}
+
+\Hypertarget{c_eliminar_usuario_sin_api_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!\$usuarioPDO@{\$usuarioPDO}}
+\index{\$usuarioPDO@{\$usuarioPDO}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{\$usuarioPDO}{\$usuarioPDO}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908} 
+\$usuario\+PDO = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()}
+
+\Hypertarget{c_eliminar_usuario_sin_api_8php_a473f7323d49c3a40c2d1fe9946cb84a1}\index{cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}!else@{else}}
+\index{else@{else}!cEliminarUsuarioSinApi.php@{cEliminarUsuarioSinApi.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{c_eliminar_usuario_sin_api_8php_a473f7323d49c3a40c2d1fe9946cb84a1} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}confirmar\textquotesingle{}]\+)) else}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ =\ \textcolor{keyword}{false}}
+
+\end{DoxyCode}

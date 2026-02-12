@@ -52,12 +52,41 @@ Dependencias:\+
 \begin{DoxyItemize}
 \item Variables de superglobales de PHP
 \item Estilos CSS externos/\+internos
-\item Archivo PHP de acción del formulario ({\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}})
+\item Archivo PHP de acción del formulario ({\ttfamily \doxylink{index_8php}{index.\+php}})
 \end{DoxyItemize}
 
 Advertencia:\+
 \begin{DoxyItemize}
 \item Esta vista debe usarse solo en entorno de desarrollo o pruebas, ya que expone información sensible de la sesión y del servidor.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista Parcial:\+ Inicio Público
+
+Este archivo contiene la sección de cabecera y contenido principal para la página de inicio público de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ muestra el logo y un formulario de navegación al login.
+\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ contiene un título y un conjunto de imágenes representativas de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).
+\end{DoxyItemize}
+
+Elementos importantes:\+
+\begin{DoxyItemize}
+\item Logo con la clase {\ttfamily .owl} y texto “\+Aplicación Final — Inicio Público”
+\item Formulario de navegación con botón “\+Login”
+\item Imágenes con clase {\ttfamily .btn secondary} que actúan como elementos interactivos
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Estilos definidos en CSS externo e interno del proyecto
+\item Acciones dirigidas a {\ttfamily \doxylink{index_8php}{index.\+php}}
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}
@@ -102,35 +131,6 @@ Cristian Mateos
 \begin{DoxyVersion}{Version}
 1.\+0
 \end{DoxyVersion}
-Vista Parcial:\+ Inicio Público
-
-Este archivo contiene la sección de cabecera y contenido principal para la página de inicio público de la aplicación Login/\+\+Logoff.
-
-Funcionalidad:\+
-\begin{DoxyItemize}
-\item {\ttfamily \texorpdfstring{$<$}{<}header\texorpdfstring{$>$}{>}}:\+ muestra el logo y un formulario de navegación al login.
-\item {\ttfamily \texorpdfstring{$<$}{<}main\texorpdfstring{$>$}{>}}:\+ contiene un título y un conjunto de imágenes representativas de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).
-\end{DoxyItemize}
-
-Elementos importantes:\+
-\begin{DoxyItemize}
-\item Logo con la clase {\ttfamily .owl} y texto “\+Aplicación Final — Inicio Público”
-\item Formulario de navegación con botón “\+Login”
-\item Imágenes con clase {\ttfamily .btn secondary} que actúan como elementos interactivos
-\end{DoxyItemize}
-
-Dependencias:\+
-\begin{DoxyItemize}
-\item Estilos definidos en CSS externo e interno del proyecto
-\item Acciones dirigidas a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}
-\end{DoxyItemize}
-
-\begin{DoxyAuthor}{Author}
-Cristian Mateos 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0
-\end{DoxyVersion}
 Vista Parcial:\+ Login
 
 Este archivo contiene la sección de cabecera y contenido principal para la página de Login de la aplicación Login/\+\+Logoff.
@@ -156,7 +156,59 @@ Elementos importantes:\+
 Dependencias:\+
 \begin{DoxyItemize}
 \item Estilos CSS externos e internos
-\item Acciones dirigidas a {\ttfamily \doxylink{index_login_logoff_8php}{index\+Login\+Logoff.\+php}}
+\item Acciones dirigidas a {\ttfamily \doxylink{index_8php}{index.\+php}}
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Vista:\+ Registro de usuario (v\+Registro)
+
+Esta vista muestra la interfaz de registro de nuevos usuarios de la aplicación Login/\+\+Logoff.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Muestra el encabezado de la aplicación:\+
+\begin{DoxyItemize}
+\item Incluye el logotipo y el nombre de la aplicación.
+\item Indica visualmente que el usuario se encuentra en la sección de Registro.
+\end{DoxyItemize}
+\item Muestra el título principal de la página:\+
+\begin{DoxyItemize}
+\item El texto del título se adapta dinámicamente según la cookie {\ttfamily idioma}:\+
+\begin{DoxyItemize}
+\item "{}\+FR"{} → SE CONNECTER
+\item "{}\+PR"{} → CONECTE-\/\+SE
+\item Cualquier otro valor → INICIAR SESIÓN
+\end{DoxyItemize}
+\item Si no existe la cookie {\ttfamily idioma}, se muestra el título "{}\+REGISTRO"{}.
+\end{DoxyItemize}
+\item Muestra el formulario de alta de usuario:\+
+\begin{DoxyItemize}
+\item Campos del formulario:\+
+\begin{DoxyItemize}
+\item {\ttfamily cod\+Usuario}:\+ código de usuario
+\item {\ttfamily desc\+Usuario}:\+ nombre completo del usuario
+\item {\ttfamily password}:\+ contraseña
+\end{DoxyItemize}
+\item El formulario envía los datos mediante POST a {\ttfamily \doxylink{index_8php}{index.\+php}}.
+\end{DoxyItemize}
+\item Navegación:\+
+\begin{DoxyItemize}
+\item Botón "{}\+Entrar"{} para enviar el formulario y realizar el alta.
+\item Botón "{}\+Login"{} para volver a la pantalla de inicio de sesión.
+\item Campo oculto {\ttfamily pagina\+Anterior} para mantener la navegación correcta.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Cookie {\ttfamily idioma} para la internacionalización básica del título
+\item Controlador frontal {\ttfamily \doxylink{index_8php}{index.\+php}}
+\item Variables de formulario enviadas por método POST
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}

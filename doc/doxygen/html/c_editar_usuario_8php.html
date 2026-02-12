@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aplicación Final: D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cEditarUsuario.php File Reference</title>
-<link rel="icon" href="paloma.svg" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación final del módulo de DWES</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -101,14 +100,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8db43f23e3fb56f38412236a3947dadb" id="r_a8db43f23e3fb56f38412236a3947dadb"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(!isset( $_SESSION[ 'usuarioActualDWESAplicacionFinal'])) <a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(isset($_REQUEST['atras']))&#160;</td><td class="memItemRight"><a class="el" href="#a8db43f23e3fb56f38412236a3947dadb">$aErrores</a></td></tr>
+<tr class="memitem:a8db43f23e3fb56f38412236a3947dadb" id="r_a8db43f23e3fb56f38412236a3947dadb"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(!isset( $_SESSION[ 'usuarioActualDWESAplicacionFinal'])) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(isset($_REQUEST['atras']))&#160;</td><td class="memItemRight"><a class="el" href="#a8db43f23e3fb56f38412236a3947dadb">$aErrores</a></td></tr>
 <tr class="memitem:a6e16c1c08f9ff5671bd921d75436333e" id="r_a6e16c1c08f9ff5671bd921d75436333e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a></td></tr>
 <tr class="memitem:ab0dcac058225ef7a9871cdb707b90364" id="r_ab0dcac058225ef7a9871cdb707b90364"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = true</td></tr>
-<tr class="memitem:a18153b628b0a3595198587e69ef3a05a" id="r_a18153b628b0a3595198587e69ef3a05a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a18153b628b0a3595198587e69ef3a05a">$gestionUsuarios</a> = new <a class="el" href="class_usuario_p_d_o.html">UsuarioPDO</a>()</td></tr>
-<tr class="memitem:a8fdddaaaa51566ffbf002c47b10bcc9b" id="r_a8fdddaaaa51566ffbf002c47b10bcc9b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8fdddaaaa51566ffbf002c47b10bcc9b">$codigoUsuarioSeleccionado</a> = $_SESSION['codUsuarioSeleccionado']</td></tr>
-<tr class="memitem:ae6715bfb5f99e2fd57fb80174d4e283f" id="r_ae6715bfb5f99e2fd57fb80174d4e283f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae6715bfb5f99e2fd57fb80174d4e283f">$usuarioSeleccionado</a> = $gestionUsuarios-&gt;validarUsuario($codigoUsuarioSeleccionado)</td></tr>
+<tr class="memitem:a0eb2a1bdb5165ab8791c6b0ec5d08908" id="r_a0eb2a1bdb5165ab8791c6b0ec5d08908"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0eb2a1bdb5165ab8791c6b0ec5d08908">$usuarioPDO</a> = new <a class="el" href="class_usuario_p_d_o.html">UsuarioPDO</a>()</td></tr>
+<tr class="memitem:a128d2cdcace850d9c61238f00c660bc6" id="r_a128d2cdcace850d9c61238f00c660bc6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a> = $_SESSION['codUsuarioSeleccionado']</td></tr>
+<tr class="memitem:ae6715bfb5f99e2fd57fb80174d4e283f" id="r_ae6715bfb5f99e2fd57fb80174d4e283f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae6715bfb5f99e2fd57fb80174d4e283f">$usuarioSeleccionado</a> = $usuarioPDO-&gt;validarUsuario($_SESSION['codUsuarioSeleccionado'])</td></tr>
 <tr class="memitem:af8c6edd18b085d8211293eb974da6436" id="r_af8c6edd18b085d8211293eb974da6436"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af8c6edd18b085d8211293eb974da6436">$_SESSION</a> ['usuarioSeleccionado'] = $usuarioSeleccionado</td></tr>
-<tr class="memitem:aa98407b48b34c1752e492b36ade80439" id="r_aa98407b48b34c1752e492b36ade80439"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(isset($_REQUEST['cambiarDatos']))&#160;</td><td class="memItemRight"><a class="el" href="#aa98407b48b34c1752e492b36ade80439">else</a></td></tr>
+<tr class="memitem:aa98407b48b34c1752e492b36ade80439" id="r_aa98407b48b34c1752e492b36ade80439"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(isset($_REQUEST['cambiarDatos']))&#160;</td><td class="memItemRight"><a class="el" href="#aa98407b48b34c1752e492b36ade80439">else</a></td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="af8c6edd18b085d8211293eb974da6436" name="af8c6edd18b085d8211293eb974da6436"></a>
@@ -132,7 +131,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) <a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (isset( $_REQUEST[ 'atras'])) $aErrores</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (isset( $_REQUEST[ 'atras'])) $aErrores</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -165,14 +164,14 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8fdddaaaa51566ffbf002c47b10bcc9b" name="a8fdddaaaa51566ffbf002c47b10bcc9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fdddaaaa51566ffbf002c47b10bcc9b">&#9670;&#160;</a></span>$codigoUsuarioSeleccionado</h2>
+<a id="a128d2cdcace850d9c61238f00c660bc6" name="a128d2cdcace850d9c61238f00c660bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a128d2cdcace850d9c61238f00c660bc6">&#9670;&#160;</a></span>$codUsuario</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$codigoUsuarioSeleccionado = $_SESSION['codUsuarioSeleccionado']</td>
+          <td class="memname">$codUsuario = $_SESSION['codUsuarioSeleccionado']</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,14 +192,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a18153b628b0a3595198587e69ef3a05a" name="a18153b628b0a3595198587e69ef3a05a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18153b628b0a3595198587e69ef3a05a">&#9670;&#160;</a></span>$gestionUsuarios</h2>
+<a id="a0eb2a1bdb5165ab8791c6b0ec5d08908" name="a0eb2a1bdb5165ab8791c6b0ec5d08908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb2a1bdb5165ab8791c6b0ec5d08908">&#9670;&#160;</a></span>$usuarioPDO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$gestionUsuarios = new <a class="el" href="class_usuario_p_d_o.html">UsuarioPDO</a>()</td>
+          <td class="memname">$usuarioPDO = new <a class="el" href="class_usuario_p_d_o.html">UsuarioPDO</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -214,7 +213,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$usuarioSeleccionado = $gestionUsuarios-&gt;validarUsuario($codigoUsuarioSeleccionado)</td>
+          <td class="memname">$usuarioSeleccionado = $usuarioPDO-&gt;validarUsuario($_SESSION['codUsuarioSeleccionado'])</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -228,13 +227,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (isset( $_REQUEST[ 'cambiarDatos'])) else</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (isset( $_REQUEST[ 'cambiarDatos'])) else</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code hl_variable" href="ws_borrar_usuario_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = <span class="keyword">false</span></div>
-<div class="ttc" id="aws_borrar_usuario_8php_html_ab0dcac058225ef7a9871cdb707b90364"><div class="ttname"><a href="ws_borrar_usuario_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a></div><div class="ttdeci">$entradaOK</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:65</div></div>
+<div class="line">    <a class="code hl_variable" href="ws_borrar_usuario_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a>=<span class="keyword">false</span></div>
+<div class="ttc" id="aws_borrar_usuario_8php_html_ab0dcac058225ef7a9871cdb707b90364"><div class="ttname"><a href="ws_borrar_usuario_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a></div><div class="ttdeci">$entradaOK</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:58</div></div>
 </div><!-- fragment -->
 </div>
 </div>

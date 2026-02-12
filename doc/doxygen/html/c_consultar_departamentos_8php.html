@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aplicación Final: D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cConsultarDepartamentos.php File Reference</title>
-<link rel="icon" href="paloma.svg" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación final del módulo de DWES</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -101,11 +100,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab2cd2ec338fec022f4f2be21119a93ac" id="r_ab2cd2ec338fec022f4f2be21119a93ac"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(isset($_REQUEST['atras']))&#160;</td><td class="memItemRight"><a class="el" href="#ab2cd2ec338fec022f4f2be21119a93ac">$gestionDepartamentos</a> = new <a class="el" href="class_departamento_p_d_o.html">DepartamentoPDO</a>()</td></tr>
-<tr class="memitem:a54350bac53973f48b83ae768fc370f16" id="r_a54350bac53973f48b83ae768fc370f16"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a54350bac53973f48b83ae768fc370f16">$codigoDepartamentoSeleccionado</a> = $_SESSION['codDptoSeleccionado']</td></tr>
-<tr class="memitem:a57bc0d9e9d6910aab0b5777c06f5c2b2" id="r_a57bc0d9e9d6910aab0b5777c06f5c2b2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a> = $gestionDepartamentos-&gt;seleccionarDepartamento($codigoDepartamentoSeleccionado)</td></tr>
-<tr class="memitem:acadc2734fedf3f592bfd07658d412d7a" id="r_acadc2734fedf3f592bfd07658d412d7a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a> ['dptoSeleccionado'] = $departamentoSeleccionado</td></tr>
-<tr class="memitem:a66ace87ea8563eaf04dab422e0296a82" id="r_a66ace87ea8563eaf04dab422e0296a82"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a66ace87ea8563eaf04dab422e0296a82">$datosDepartamentoVista</a></td></tr>
+<tr class="memitem:a1b4f5ddc83171623eda557e0b40e1ed3" id="r_a1b4f5ddc83171623eda557e0b40e1ed3"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(isset($_REQUEST['atras']))&#160;</td><td class="memItemRight"><a class="el" href="#a1b4f5ddc83171623eda557e0b40e1ed3">$departamentoPDO</a> = new <a class="el" href="class_departamento_p_d_o.html">DepartamentoPDO</a>()</td></tr>
+<tr class="memitem:a01d4e5101064b4f505ad21f6e21ccbb1" id="r_a01d4e5101064b4f505ad21f6e21ccbb1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a01d4e5101064b4f505ad21f6e21ccbb1">$codDpto</a> = $_SESSION['codDptoSeleccionado']</td></tr>
+<tr class="memitem:a5f0d991f17c490c35c7fb1679e9f7f71" id="r_a5f0d991f17c490c35c7fb1679e9f7f71"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5f0d991f17c490c35c7fb1679e9f7f71">$dptoSeleccionado</a> = $departamentoPDO-&gt;seleccionarDepartamento($codDpto)</td></tr>
+<tr class="memitem:acadc2734fedf3f592bfd07658d412d7a" id="r_acadc2734fedf3f592bfd07658d412d7a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a> ['dptoSeleccionado'] = $dptoSeleccionado</td></tr>
+<tr class="memitem:aee9cd2b0cbd18a79b414c5a2ba054c1d" id="r_aee9cd2b0cbd18a79b414c5a2ba054c1d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aee9cd2b0cbd18a79b414c5a2ba054c1d">$avConsultarDpto</a></td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="acadc2734fedf3f592bfd07658d412d7a" name="acadc2734fedf3f592bfd07658d412d7a"></a>
@@ -115,71 +114,71 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$_SESSION[ 'dptoSeleccionado'] = $departamentoSeleccionado</td>
+          <td class="memname">$_SESSION[ 'dptoSeleccionado'] = $dptoSeleccionado</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a54350bac53973f48b83ae768fc370f16" name="a54350bac53973f48b83ae768fc370f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54350bac53973f48b83ae768fc370f16">&#9670;&#160;</a></span>$codigoDepartamentoSeleccionado</h2>
+<a id="aee9cd2b0cbd18a79b414c5a2ba054c1d" name="aee9cd2b0cbd18a79b414c5a2ba054c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee9cd2b0cbd18a79b414c5a2ba054c1d">&#9670;&#160;</a></span>$avConsultarDpto</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$codigoDepartamentoSeleccionado = $_SESSION['codDptoSeleccionado']</td>
+          <td class="memname">$avConsultarDpto</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a66ace87ea8563eaf04dab422e0296a82" name="a66ace87ea8563eaf04dab422e0296a82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66ace87ea8563eaf04dab422e0296a82">&#9670;&#160;</a></span>$datosDepartamentoVista</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$datosDepartamentoVista</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">                        = [</div>
-<div class="line">    <span class="stringliteral">&quot;codDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a>-&gt;getCodDepartamento(),</div>
-<div class="line">    <span class="stringliteral">&quot;descDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a>-&gt;getDescDepartamento(),</div>
-<div class="line">    <span class="stringliteral">&quot;fechaCreacionDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a>-&gt;getFechaCreacionDepartamento(),</div>
-<div class="line">    <span class="stringliteral">&quot;VolumenDeNegocio&quot;</span> =&gt; <a class="code hl_variable" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a>-&gt;getVolumenDeNegocio(),</div>
-<div class="line">    <span class="stringliteral">&quot;fechaBajaDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a>-&gt;getFechaBajaDepartamento()</div>
+<b>Initial value:</b><div class="fragment"><div class="line">                 = [</div>
+<div class="line">    <span class="stringliteral">&quot;codDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a>[<span class="stringliteral">&#39;dptoSeleccionado&#39;</span>]-&gt;getCodDepartamento(),</div>
+<div class="line">    <span class="stringliteral">&quot;descDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a>[<span class="stringliteral">&#39;dptoSeleccionado&#39;</span>]-&gt;getDescDepartamento(),</div>
+<div class="line">    <span class="stringliteral">&quot;fechaCreacionDepartamento&quot;</span> =&gt; <a class="code hl_variable" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a>[<span class="stringliteral">&#39;dptoSeleccionado&#39;</span>]-&gt;getFechaCreacionDepartamento(),</div>
+<div class="line">    <span class="stringliteral">&quot;VolumenDeNegocio&quot;</span> =&gt; <a class="code hl_variable" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a>[<span class="stringliteral">&#39;dptoSeleccionado&#39;</span>]-&gt;getVolumenDeNegocio(),</div>
+<div class="line">    <span class="stringliteral">&quot;fechaBajaDepartamento&quot;</span>=&gt;<a class="code hl_variable" href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a>[<span class="stringliteral">&#39;dptoSeleccionado&#39;</span>]-&gt;getFechaBajaDepartamento()</div>
 <div class="line">]</div>
-<div class="ttc" id="ac_consultar_departamentos_8php_html_a57bc0d9e9d6910aab0b5777c06f5c2b2"><div class="ttname"><a href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">$departamentoSeleccionado</a></div><div class="ttdeci">$departamentoSeleccionado</div><div class="ttdef"><b>Definition</b> cConsultarDepartamentos.php:39</div></div>
+<div class="ttc" id="ac_consultar_departamentos_8php_html_acadc2734fedf3f592bfd07658d412d7a"><div class="ttname"><a href="#acadc2734fedf3f592bfd07658d412d7a">$_SESSION</a></div><div class="ttdeci">$_SESSION[&#39;dptoSeleccionado&#39;]</div><div class="ttdef"><b>Definition</b> cConsultarDepartamentos.php:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a57bc0d9e9d6910aab0b5777c06f5c2b2" name="a57bc0d9e9d6910aab0b5777c06f5c2b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57bc0d9e9d6910aab0b5777c06f5c2b2">&#9670;&#160;</a></span>$departamentoSeleccionado</h2>
+<a id="a01d4e5101064b4f505ad21f6e21ccbb1" name="a01d4e5101064b4f505ad21f6e21ccbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d4e5101064b4f505ad21f6e21ccbb1">&#9670;&#160;</a></span>$codDpto</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$departamentoSeleccionado = $gestionDepartamentos-&gt;seleccionarDepartamento($codigoDepartamentoSeleccionado)</td>
+          <td class="memname">$codDpto = $_SESSION['codDptoSeleccionado']</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab2cd2ec338fec022f4f2be21119a93ac" name="ab2cd2ec338fec022f4f2be21119a93ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2cd2ec338fec022f4f2be21119a93ac">&#9670;&#160;</a></span>$gestionDepartamentos</h2>
+<a id="a1b4f5ddc83171623eda557e0b40e1ed3" name="a1b4f5ddc83171623eda557e0b40e1ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4f5ddc83171623eda557e0b40e1ed3">&#9670;&#160;</a></span>$departamentoPDO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (isset( $_REQUEST[ 'atras'])) $gestionDepartamentos = new <a class="el" href="class_departamento_p_d_o.html">DepartamentoPDO</a>()</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (isset( $_REQUEST[ 'atras'])) $departamentoPDO = new <a class="el" href="class_departamento_p_d_o.html">DepartamentoPDO</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f0d991f17c490c35c7fb1679e9f7f71" name="a5f0d991f17c490c35c7fb1679e9f7f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0d991f17c490c35c7fb1679e9f7f71">&#9670;&#160;</a></span>$dptoSeleccionado</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$dptoSeleccionado = $departamentoPDO-&gt;seleccionarDepartamento($codDpto)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['setfechahoraultimaconexion_0',['setFechaHoraUltimaConexion',['../class_usuario.html#a1ecc5d214e34c9ecc3944920eba61e27',1,'Usuario']]]
+  ['getarchivoerror_0',['getArchivoError',['../class_app_error.html#a20d9d28d8d1fa5cc43602a2d580d338b',1,'AppError']]],
+  ['getcoddepartamento_1',['getCodDepartamento',['../class_departamento.html#a4c17dfa2be25810e84477c6ce051a127',1,'Departamento']]],
+  ['getcoderror_2',['getCodError',['../class_app_error.html#a166fa4993ad91f07a7a69a376b4702eb',1,'AppError']]],
+  ['getcodusuario_3',['getCodUsuario',['../class_usuario.html#af6744d9c5d29fc68b5e9a5fb2fab245e',1,'Usuario']]],
+  ['getdescdepartamento_4',['getDescDepartamento',['../class_departamento.html#aea34946343ede8a630a5bbf7455e6274',1,'Departamento']]],
+  ['getdescerror_5',['getDescError',['../class_app_error.html#a50aa4852f7a59392669b60216e1867b5',1,'AppError']]],
+  ['getdescusuario_6',['getDescUsuario',['../class_usuario.html#a38bc2254f1841238d4f4a4851ea5258d',1,'Usuario']]],
+  ['getfechabajadepartamento_7',['getFechaBajaDepartamento',['../class_departamento.html#a817c3be61a49dd183d4a553962802cfe',1,'Departamento']]],
+  ['getfechacreaciondepartamento_8',['getFechaCreacionDepartamento',['../class_departamento.html#a61186df0d39b62d81eef2a9cfdd0fca7',1,'Departamento']]],
+  ['getfechahoraultimaconexion_9',['getFechaHoraUltimaConexion',['../class_usuario.html#abcc0f031ac30c407e3c8daeeed1adb0d',1,'Usuario']]],
+  ['getfechahoraultimaconexionanterior_10',['getFechaHoraUltimaConexionAnterior',['../class_usuario.html#a79bab760d5ef47d7e0406610c08b79a3',1,'Usuario']]],
+  ['getlineaerror_11',['getLineaError',['../class_app_error.html#afc6b991565a6e556c142d7aa6ceb6d61',1,'AppError']]],
+  ['getnumconexiones_12',['getNumConexiones',['../class_usuario.html#af98dbe147730701ce756e83e77e4dcb0',1,'Usuario']]],
+  ['getpaginasiguiente_13',['getPaginaSiguiente',['../class_app_error.html#a079ea9813573b3525bf47838874e5387',1,'AppError']]],
+  ['getpassword_14',['getPassword',['../class_usuario.html#a04e0957baeb7acde9c0c86556da2d43f',1,'Usuario']]],
+  ['getperfil_15',['getPerfil',['../class_usuario.html#a22a2936d4856077edac47e6dbf430bab',1,'Usuario']]],
+  ['getvolumendenegocio_16',['getVolumenDeNegocio',['../class_departamento.html#afc68df14f61f2df4040fa2ef7ca0ba9c',1,'Departamento']]],
+  ['guardartoken_17',['guardarToken',['../class_usuario_p_d_o.html#af02f4bcf0895992a84b43b15c7a3461d',1,'UsuarioPDO']]]
 ];

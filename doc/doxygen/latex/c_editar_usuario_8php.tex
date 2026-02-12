@@ -8,21 +8,21 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_usuario_8php_a8db43f23e3fb56f38412236a3947dadb}{\$a\+Errores}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_usuario_8php_a8db43f23e3fb56f38412236a3947dadb}{\$a\+Errores}}
 \item 
 \doxymbox{\hyperlink{c_editar_usuario_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
 \item 
 \doxymbox{\hyperlink{c_editar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
 \item 
-\doxymbox{\hyperlink{c_editar_usuario_8php_a18153b628b0a3595198587e69ef3a05a}{\$gestion\+Usuarios}} = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()
+\doxymbox{\hyperlink{c_editar_usuario_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}{\$usuario\+PDO}} = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()
 \item 
-\doxymbox{\hyperlink{c_editar_usuario_8php_a8fdddaaaa51566ffbf002c47b10bcc9b}{\$codigo\+Usuario\+Seleccionado}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+
+\doxymbox{\hyperlink{c_editar_usuario_8php_a128d2cdcace850d9c61238f00c660bc6}{\$cod\+Usuario}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+
 \item 
-\doxymbox{\hyperlink{c_editar_usuario_8php_ae6715bfb5f99e2fd57fb80174d4e283f}{\$usuario\+Seleccionado}} = \$gestion\+Usuarios-\/$>$validar\+Usuario(\$codigo\+Usuario\+Seleccionado)
+\doxymbox{\hyperlink{c_editar_usuario_8php_ae6715bfb5f99e2fd57fb80174d4e283f}{\$usuario\+Seleccionado}} = \$usuario\+PDO-\/$>$validar\+Usuario(\$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+)
 \item 
 \doxymbox{\hyperlink{c_editar_usuario_8php_af8c6edd18b085d8211293eb974da6436}{\$\+\_\+\+SESSION}} \+[\textquotesingle{}usuario\+Seleccionado\textquotesingle{}]\+ = \$usuario\+Seleccionado
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_usuario_8php_aa98407b48b34c1752e492b36ade80439}{else}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_usuario_8php_aa98407b48b34c1752e492b36ade80439}{else}}
 \end{DoxyCompactItemize}
 
 
@@ -39,7 +39,7 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \index{\$aErrores@{\$aErrores}!cEditarUsuario.php@{cEditarUsuario.php}}
 \doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
 {\footnotesize\ttfamily \label{c_editar_usuario_8php_a8db43f23e3fb56f38412236a3947dadb} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$a\+Errores}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$a\+Errores}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
@@ -67,11 +67,11 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \DoxyCodeLine{]}
 
 \end{DoxyCode}
-\Hypertarget{c_editar_usuario_8php_a8fdddaaaa51566ffbf002c47b10bcc9b}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$codigoUsuarioSeleccionado@{\$codigoUsuarioSeleccionado}}
-\index{\$codigoUsuarioSeleccionado@{\$codigoUsuarioSeleccionado}!cEditarUsuario.php@{cEditarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$codigoUsuarioSeleccionado}{\$codigoUsuarioSeleccionado}}
-{\footnotesize\ttfamily \label{c_editar_usuario_8php_a8fdddaaaa51566ffbf002c47b10bcc9b} 
-\$codigo\+Usuario\+Seleccionado = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+}
+\Hypertarget{c_editar_usuario_8php_a128d2cdcace850d9c61238f00c660bc6}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$codUsuario@{\$codUsuario}}
+\index{\$codUsuario@{\$codUsuario}!cEditarUsuario.php@{cEditarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$codUsuario}{\$codUsuario}}
+{\footnotesize\ttfamily \label{c_editar_usuario_8php_a128d2cdcace850d9c61238f00c660bc6} 
+\$cod\+Usuario = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+}
 
 \Hypertarget{c_editar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$entradaOK@{\$entradaOK}}
 \index{\$entradaOK@{\$entradaOK}!cEditarUsuario.php@{cEditarUsuario.php}}
@@ -79,27 +79,27 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 {\footnotesize\ttfamily \label{c_editar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364} 
 \$entrada\+OK = true}
 
-\Hypertarget{c_editar_usuario_8php_a18153b628b0a3595198587e69ef3a05a}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$gestionUsuarios@{\$gestionUsuarios}}
-\index{\$gestionUsuarios@{\$gestionUsuarios}!cEditarUsuario.php@{cEditarUsuario.php}}
-\doxysubsubsection{\texorpdfstring{\$gestionUsuarios}{\$gestionUsuarios}}
-{\footnotesize\ttfamily \label{c_editar_usuario_8php_a18153b628b0a3595198587e69ef3a05a} 
-\$gestion\+Usuarios = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()}
+\Hypertarget{c_editar_usuario_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$usuarioPDO@{\$usuarioPDO}}
+\index{\$usuarioPDO@{\$usuarioPDO}!cEditarUsuario.php@{cEditarUsuario.php}}
+\doxysubsubsection{\texorpdfstring{\$usuarioPDO}{\$usuarioPDO}}
+{\footnotesize\ttfamily \label{c_editar_usuario_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908} 
+\$usuario\+PDO = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()}
 
 \Hypertarget{c_editar_usuario_8php_ae6715bfb5f99e2fd57fb80174d4e283f}\index{cEditarUsuario.php@{cEditarUsuario.php}!\$usuarioSeleccionado@{\$usuarioSeleccionado}}
 \index{\$usuarioSeleccionado@{\$usuarioSeleccionado}!cEditarUsuario.php@{cEditarUsuario.php}}
 \doxysubsubsection{\texorpdfstring{\$usuarioSeleccionado}{\$usuarioSeleccionado}}
 {\footnotesize\ttfamily \label{c_editar_usuario_8php_ae6715bfb5f99e2fd57fb80174d4e283f} 
-\$usuario\+Seleccionado = \$gestion\+Usuarios-\/$>$validar\+Usuario(\$codigo\+Usuario\+Seleccionado)}
+\$usuario\+Seleccionado = \$usuario\+PDO-\/$>$validar\+Usuario(\$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Usuario\+Seleccionado\textquotesingle{}]\+)}
 
 \Hypertarget{c_editar_usuario_8php_aa98407b48b34c1752e492b36ade80439}\index{cEditarUsuario.php@{cEditarUsuario.php}!else@{else}}
 \index{else@{else}!cEditarUsuario.php@{cEditarUsuario.php}}
 \doxysubsubsection{\texorpdfstring{else}{else}}
 {\footnotesize\ttfamily \label{c_editar_usuario_8php_aa98407b48b34c1752e492b36ade80439} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) else}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) else}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}=\textcolor{keyword}{false}}
 
 \end{DoxyCode}

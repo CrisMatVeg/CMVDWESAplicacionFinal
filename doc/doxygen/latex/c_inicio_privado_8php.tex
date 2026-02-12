@@ -1,4 +1,4 @@
-\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESLogin\+Logoff/\+controller/\+c\+Inicio\+Privado.php File Reference}
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+controller/\+c\+Inicio\+Privado.php File Reference}
 \hypertarget{c_inicio_privado_8php}{}\label{c_inicio_privado_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cInicioPrivado.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cInicioPrivado.php}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -8,30 +8,49 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}pagina\+Destino\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}{\$av\+Inicio\+Privado}}
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+-\/$>$get\+Perfil()=="{}admin"{}) \doxymbox{\hyperlink{c_inicio_privado_8php_a0104a617223898f90c69d7be45574642}{else}}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}miperfil\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}detalle\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}mto\+Dptos\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}mto\+Usuarios\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}rest\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}error\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_inicio_privado_8php_a9ba0d40ca4be4105cb0ca2c26af60c3d}{\$av\+Inicio\+Privado}}
+\item 
+\doxymbox{\hyperlink{c_inicio_privado_8php_a5a815048467eecbacbdaf5df91b31d40}{\$\+\_\+\+SESSION}} \+[\textquotesingle{}array\+Datos\+Usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+ =\$av\+Inicio\+Privado
 \end{DoxyCompactItemize}
 
 
 \label{doc-var-members}
 \Hypertarget{c_inicio_privado_8php_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486}\index{cInicioPrivado.php@{cInicioPrivado.php}!\$avInicioPrivado@{\$avInicioPrivado}}
+\Hypertarget{c_inicio_privado_8php_a5a815048467eecbacbdaf5df91b31d40}\index{cInicioPrivado.php@{cInicioPrivado.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!cInicioPrivado.php@{cInicioPrivado.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{\$\_SESSION}}
+{\footnotesize\ttfamily \label{c_inicio_privado_8php_a5a815048467eecbacbdaf5df91b31d40} 
+\$\+\_\+\+SESSION\+[ \textquotesingle{}array\+Datos\+Usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+ =\$av\+Inicio\+Privado}
+
+\Hypertarget{c_inicio_privado_8php_a9ba0d40ca4be4105cb0ca2c26af60c3d}\index{cInicioPrivado.php@{cInicioPrivado.php}!\$avInicioPrivado@{\$avInicioPrivado}}
 \index{\$avInicioPrivado@{\$avInicioPrivado}!cInicioPrivado.php@{cInicioPrivado.php}}
 \doxysubsubsection{\texorpdfstring{\$avInicioPrivado}{\$avInicioPrivado}}
-{\footnotesize\ttfamily \label{c_inicio_privado_8php_a2c4e5b8113736a03df34fc305e0fe486} 
-\doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESLogin\+Logoff\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}pagina\+Destino\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_detalle_8php_a57d1a007cd360aa3e643758db2168b92}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$av\+Inicio\+Privado}
+{\footnotesize\ttfamily \label{c_inicio_privado_8php_a9ba0d40ca4be4105cb0ca2c26af60c3d} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}miperfil\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}detalle\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}mto\+Dptos\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}mto\+Usuarios\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}rest\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}error\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$av\+Inicio\+Privado}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}codUsuario"{}}\ =>\ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]-\/>getCodUsuario(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}numConexiones"{}}\ =>\ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]-\/>getNumConexiones(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}\ =>\ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]-\/>getFechaHoraUltimaConexionAnterior(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}descUsuario"{}}\ =>\ \$\_SESSION[\textcolor{stringliteral}{'usuarioActualDWESLoginLogoff'}]-\/>getDescUsuario()}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}codUsuario"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'usuarioActualDWESAplicacionFinal'}]-\/>getCodUsuario(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}numConexiones"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'usuarioActualDWESAplicacionFinal'}]-\/>getNumConexiones(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaHoraUltimaConexionAnterior"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'usuarioActualDWESAplicacionFinal'}]-\/>getFechaHoraUltimaConexionAnterior(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}descUsuario"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'usuarioActualDWESAplicacionFinal'}]-\/>getDescUsuario(),}
+\DoxyCodeLine{\ \ \ \ \$esAdmin}
 \DoxyCodeLine{]}
 
 \end{DoxyCode}
+\Hypertarget{c_inicio_privado_8php_a0104a617223898f90c69d7be45574642}\index{cInicioPrivado.php@{cInicioPrivado.php}!else@{else}}
+\index{else@{else}!cInicioPrivado.php@{cInicioPrivado.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{c_inicio_privado_8php_a0104a617223898f90c69d7be45574642} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} ( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+-\/$>$get\+Perfil()=="{}admin"{}) else}
 
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \$esAdmin=\textcolor{keyword}{false}}
 
-Definition at line \doxymbox{\hyperlink{c_inicio_privado_8php_source_l00062}{62}} of file \doxymbox{\hyperlink{c_inicio_privado_8php_source}{c\+Inicio\+Privado.\+php}}.
-
+\end{DoxyCode}

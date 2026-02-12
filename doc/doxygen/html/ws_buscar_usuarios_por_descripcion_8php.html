@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aplicación Final: D:/ProyectosNB/CMVDWESAplicacionFinal/api/wsBuscarUsuariosPorDescripcion.php File Reference</title>
-<link rel="icon" href="paloma.svg" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación final del módulo de DWES</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -101,35 +100,35 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a34ef35abd8546bb402ea1d7bdeaa9e08" id="r_a34ef35abd8546bb402ea1d7bdeaa9e08"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34ef35abd8546bb402ea1d7bdeaa9e08">$tokenAcceso</a> = $_GET['token'] ?? null</td></tr>
-<tr class="memitem:a8904cd8052fe4955108d51178419852f" id="r_a8904cd8052fe4955108d51178419852f"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($tokenAcceso))&#160;</td><td class="memItemRight"><a class="el" href="#a8904cd8052fe4955108d51178419852f">$descripcionBusqueda</a> = $_GET['descripcion'] ?? null</td></tr>
-<tr class="memitem:a838ebbb6b58761d3d50f7c0b606df855" id="r_a838ebbb6b58761d3d50f7c0b606df855"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a838ebbb6b58761d3d50f7c0b606df855">$coleccionUsuarios</a> = <a class="el" href="class_usuario_p_d_o.html#a34b8b6b1220afab922021bb2b3df973d">UsuarioPDO::buscarUsuarios</a>($descripcionBusqueda)</td></tr>
+<tr class="memitem:a00ae4fcafb1145f5e968bdf920f83e2e" id="r_a00ae4fcafb1145f5e968bdf920f83e2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a00ae4fcafb1145f5e968bdf920f83e2e">$token</a> = $_GET['token'] ?? null</td></tr>
+<tr class="memitem:a92f11f7dbc5cf5869500f8ddcb7fcf3c" id="r_a92f11f7dbc5cf5869500f8ddcb7fcf3c"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($token))&#160;</td><td class="memItemRight"><a class="el" href="#a92f11f7dbc5cf5869500f8ddcb7fcf3c">$descripcion</a> = $_GET['descripcion'] ?? null</td></tr>
+<tr class="memitem:afa7badae934de9c3072bde60237b07a2" id="r_afa7badae934de9c3072bde60237b07a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afa7badae934de9c3072bde60237b07a2">$listaUsuarios</a> = <a class="el" href="class_usuario_p_d_o.html#a34b8b6b1220afab922021bb2b3df973d">UsuarioPDO::buscarUsuarios</a>($descripcion)</td></tr>
 <tr class="memitem:a06face0ef35c41554d8f4fe115363f58" id="r_a06face0ef35c41554d8f4fe115363f58"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a06face0ef35c41554d8f4fe115363f58">$resultado</a> = []</td></tr>
-<tr class="memitem:a17c46beb91b88ab8ada2bf2fb7fede8e" id="r_a17c46beb91b88ab8ada2bf2fb7fede8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a17c46beb91b88ab8ada2bf2fb7fede8e">foreach</a> ( $coleccionUsuarios as $usuario) {</td></tr>
+<tr class="memitem:a2fe76f2f80daafbc2ccb1bb1d99d88a2" id="r_a2fe76f2f80daafbc2ccb1bb1d99d88a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2fe76f2f80daafbc2ccb1bb1d99d88a2">foreach</a> ( $listaUsuarios as $usuario) {</td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="a838ebbb6b58761d3d50f7c0b606df855" name="a838ebbb6b58761d3d50f7c0b606df855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a838ebbb6b58761d3d50f7c0b606df855">&#9670;&#160;</a></span>$coleccionUsuarios</h2>
+<a id="a92f11f7dbc5cf5869500f8ddcb7fcf3c" name="a92f11f7dbc5cf5869500f8ddcb7fcf3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f11f7dbc5cf5869500f8ddcb7fcf3c">&#9670;&#160;</a></span>$descripcion</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$coleccionUsuarios = <a class="el" href="class_usuario_p_d_o.html#a34b8b6b1220afab922021bb2b3df973d">UsuarioPDO::buscarUsuarios</a>($descripcionBusqueda)</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $token)) $descripcion = $_GET['descripcion'] ?? null</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a8904cd8052fe4955108d51178419852f" name="a8904cd8052fe4955108d51178419852f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8904cd8052fe4955108d51178419852f">&#9670;&#160;</a></span>$descripcionBusqueda</h2>
+<a id="afa7badae934de9c3072bde60237b07a2" name="afa7badae934de9c3072bde60237b07a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7badae934de9c3072bde60237b07a2">&#9670;&#160;</a></span>$listaUsuarios</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $tokenAcceso)) $descripcionBusqueda = $_GET['descripcion'] ?? null</td>
+          <td class="memname">$listaUsuarios = <a class="el" href="class_usuario_p_d_o.html#a34b8b6b1220afab922021bb2b3df973d">UsuarioPDO::buscarUsuarios</a>($descripcion)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -150,22 +149,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a34ef35abd8546bb402ea1d7bdeaa9e08" name="a34ef35abd8546bb402ea1d7bdeaa9e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ef35abd8546bb402ea1d7bdeaa9e08">&#9670;&#160;</a></span>$tokenAcceso</h2>
+<a id="a00ae4fcafb1145f5e968bdf920f83e2e" name="a00ae4fcafb1145f5e968bdf920f83e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ae4fcafb1145f5e968bdf920f83e2e">&#9670;&#160;</a></span>$token</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$tokenAcceso = $_GET['token'] ?? null</td>
+          <td class="memname">$token = $_GET['token'] ?? null</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a17c46beb91b88ab8ada2bf2fb7fede8e" name="a17c46beb91b88ab8ada2bf2fb7fede8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17c46beb91b88ab8ada2bf2fb7fede8e">&#9670;&#160;</a></span>foreach</h2>
+<a id="a2fe76f2f80daafbc2ccb1bb1d99d88a2" name="a2fe76f2f80daafbc2ccb1bb1d99d88a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe76f2f80daafbc2ccb1bb1d99d88a2">&#9670;&#160;</a></span>foreach</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +172,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">foreach </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$coleccionUsuarios as</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$listaUsuarios as</em></span></td><td>)</td>
           <td> {</td>
         </tr>
       </table>

@@ -8,15 +8,15 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_consultar_departamentos_8php_ab2cd2ec338fec022f4f2be21119a93ac}{\$gestion\+Departamentos}} = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_consultar_departamentos_8php_a1b4f5ddc83171623eda557e0b40e1ed3}{\$departamento\+PDO}} = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()
 \item 
-\doxymbox{\hyperlink{c_consultar_departamentos_8php_a54350bac53973f48b83ae768fc370f16}{\$codigo\+Departamento\+Seleccionado}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+
+\doxymbox{\hyperlink{c_consultar_departamentos_8php_a01d4e5101064b4f505ad21f6e21ccbb1}{\$cod\+Dpto}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+
 \item 
-\doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamento\+Seleccionado}} = \$gestion\+Departamentos-\/$>$seleccionar\+Departamento(\$codigo\+Departamento\+Seleccionado)
+\doxymbox{\hyperlink{c_consultar_departamentos_8php_a5f0d991f17c490c35c7fb1679e9f7f71}{\$dpto\+Seleccionado}} = \$departamento\+PDO-\/$>$seleccionar\+Departamento(\$cod\+Dpto)
 \item 
-\doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\+\_\+\+SESSION}} \+[\textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$departamento\+Seleccionado
+\doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\+\_\+\+SESSION}} \+[\textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$dpto\+Seleccionado
 \item 
-\doxymbox{\hyperlink{c_consultar_departamentos_8php_a66ace87ea8563eaf04dab422e0296a82}{\$datos\+Departamento\+Vista}}
+\doxymbox{\hyperlink{c_consultar_departamentos_8php_aee9cd2b0cbd18a79b414c5a2ba054c1d}{\$av\+Consultar\+Dpto}}
 \end{DoxyCompactItemize}
 
 
@@ -27,40 +27,40 @@ namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
 \index{\$\_SESSION@{\$\_SESSION}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
 \doxysubsubsection{\texorpdfstring{\$\_SESSION}{\$\_SESSION}}
 {\footnotesize\ttfamily \label{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a} 
-\$\+\_\+\+SESSION\+[ \textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$departamento\+Seleccionado}
+\$\+\_\+\+SESSION\+[ \textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$dpto\+Seleccionado}
 
-\Hypertarget{c_consultar_departamentos_8php_a54350bac53973f48b83ae768fc370f16}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$codigoDepartamentoSeleccionado@{\$codigoDepartamentoSeleccionado}}
-\index{\$codigoDepartamentoSeleccionado@{\$codigoDepartamentoSeleccionado}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
-\doxysubsubsection{\texorpdfstring{\$codigoDepartamentoSeleccionado}{\$codigoDepartamentoSeleccionado}}
-{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a54350bac53973f48b83ae768fc370f16} 
-\$codigo\+Departamento\+Seleccionado = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+}
-
-\Hypertarget{c_consultar_departamentos_8php_a66ace87ea8563eaf04dab422e0296a82}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$datosDepartamentoVista@{\$datosDepartamentoVista}}
-\index{\$datosDepartamentoVista@{\$datosDepartamentoVista}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
-\doxysubsubsection{\texorpdfstring{\$datosDepartamentoVista}{\$datosDepartamentoVista}}
-{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a66ace87ea8563eaf04dab422e0296a82} 
-\$datos\+Departamento\+Vista}
+\Hypertarget{c_consultar_departamentos_8php_aee9cd2b0cbd18a79b414c5a2ba054c1d}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$avConsultarDpto@{\$avConsultarDpto}}
+\index{\$avConsultarDpto@{\$avConsultarDpto}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
+\doxysubsubsection{\texorpdfstring{\$avConsultarDpto}{\$avConsultarDpto}}
+{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_aee9cd2b0cbd18a79b414c5a2ba054c1d} 
+\$av\+Consultar\+Dpto}
 
 {\bfseries Initial value:\+}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}codDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getCodDepartamento(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}descDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getDescDepartamento(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaCreacionDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getFechaCreacionDepartamento(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}VolumenDeNegocio"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getVolumenDeNegocio(),}
-\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaBajaDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getFechaBajaDepartamento()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}codDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'dptoSeleccionado'}]-\/>getCodDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}descDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'dptoSeleccionado'}]-\/>getDescDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaCreacionDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'dptoSeleccionado'}]-\/>getFechaCreacionDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}VolumenDeNegocio"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'dptoSeleccionado'}]-\/>getVolumenDeNegocio(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaBajaDepartamento"{}}=>\doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'dptoSeleccionado'}]-\/>getFechaBajaDepartamento()}
 \DoxyCodeLine{]}
 
 \end{DoxyCode}
-\Hypertarget{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$departamentoSeleccionado@{\$departamentoSeleccionado}}
-\index{\$departamentoSeleccionado@{\$departamentoSeleccionado}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
-\doxysubsubsection{\texorpdfstring{\$departamentoSeleccionado}{\$departamentoSeleccionado}}
-{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2} 
-\$departamento\+Seleccionado = \$gestion\+Departamentos-\/$>$seleccionar\+Departamento(\$codigo\+Departamento\+Seleccionado)}
+\Hypertarget{c_consultar_departamentos_8php_a01d4e5101064b4f505ad21f6e21ccbb1}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$codDpto@{\$codDpto}}
+\index{\$codDpto@{\$codDpto}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
+\doxysubsubsection{\texorpdfstring{\$codDpto}{\$codDpto}}
+{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a01d4e5101064b4f505ad21f6e21ccbb1} 
+\$cod\+Dpto = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+}
 
-\Hypertarget{c_consultar_departamentos_8php_ab2cd2ec338fec022f4f2be21119a93ac}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$gestionDepartamentos@{\$gestionDepartamentos}}
-\index{\$gestionDepartamentos@{\$gestionDepartamentos}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
-\doxysubsubsection{\texorpdfstring{\$gestionDepartamentos}{\$gestionDepartamentos}}
-{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_ab2cd2ec338fec022f4f2be21119a93ac} 
-\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$gestion\+Departamentos = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()}
+\Hypertarget{c_consultar_departamentos_8php_a1b4f5ddc83171623eda557e0b40e1ed3}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$departamentoPDO@{\$departamentoPDO}}
+\index{\$departamentoPDO@{\$departamentoPDO}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
+\doxysubsubsection{\texorpdfstring{\$departamentoPDO}{\$departamentoPDO}}
+{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a1b4f5ddc83171623eda557e0b40e1ed3} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a48bd4936c69eb11351bd353967e74efd}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$departamento\+PDO = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()}
+
+\Hypertarget{c_consultar_departamentos_8php_a5f0d991f17c490c35c7fb1679e9f7f71}\index{cConsultarDepartamentos.php@{cConsultarDepartamentos.php}!\$dptoSeleccionado@{\$dptoSeleccionado}}
+\index{\$dptoSeleccionado@{\$dptoSeleccionado}!cConsultarDepartamentos.php@{cConsultarDepartamentos.php}}
+\doxysubsubsection{\texorpdfstring{\$dptoSeleccionado}{\$dptoSeleccionado}}
+{\footnotesize\ttfamily \label{c_consultar_departamentos_8php_a5f0d991f17c490c35c7fb1679e9f7f71} 
+\$dpto\+Seleccionado = \$departamento\+PDO-\/$>$seleccionar\+Departamento(\$cod\+Dpto)}
 

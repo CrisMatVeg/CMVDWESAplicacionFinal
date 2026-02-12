@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: UsuarioPDO Class Reference</title>
+<title>Aplicación Final: UsuarioPDO Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="paloma.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">LoginLogoff<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación con control de acceso MVC</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -96,14 +96,22 @@ $(function(){initNavTree('class_usuario_p_d_o.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a415f396e149593193eaf4e319361a2f7" id="r_a415f396e149593193eaf4e319361a2f7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a415f396e149593193eaf4e319361a2f7">validarUsuario</a> ($codUsuario, $password)</td></tr>
 <tr class="memitem:a51e5b047b8655d1513915cdd0f5f6653" id="r_a51e5b047b8655d1513915cdd0f5f6653"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a51e5b047b8655d1513915cdd0f5f6653">actualizarUltimaConexionYUsuario</a> ($usuario)</td></tr>
-<tr class="memitem:a0f1403d5c9dbd708353e24e7c145a004" id="r_a0f1403d5c9dbd708353e24e7c145a004"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0f1403d5c9dbd708353e24e7c145a004">altaUsuario</a> ($codUsuario, $password, $descUsuario)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae21e7daa9bcc8f4ea4e8f4ba7050584f" id="r_ae21e7daa9bcc8f4ea4e8f4ba7050584f"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ae21e7daa9bcc8f4ea4e8f4ba7050584f">validarUsuario</a> ($codUsuario, $password=null)</td></tr>
+<tr class="memitem:a52fa586fecf82d3f4df7ff5dac39afc8" id="r_a52fa586fecf82d3f4df7ff5dac39afc8"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a52fa586fecf82d3f4df7ff5dac39afc8">validarCodNoExiste</a> ($codUsuario)</td></tr>
+<tr class="memitem:a7a5176f4bfba2cf39eca0462195676b8" id="r_a7a5176f4bfba2cf39eca0462195676b8"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a7a5176f4bfba2cf39eca0462195676b8">altaUsuario</a> ($codUsuario, $password, $descUsuario)</td></tr>
+<tr class="memitem:aac1a556616a81a5d14a665d6efa9be03" id="r_aac1a556616a81a5d14a665d6efa9be03"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#aac1a556616a81a5d14a665d6efa9be03">cambiarPassword</a> ($oUsuario, $nuevaPassword)</td></tr>
+<tr class="memitem:ae34109a7b1f9065943065fb3c7d651c3" id="r_ae34109a7b1f9065943065fb3c7d651c3"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ae34109a7b1f9065943065fb3c7d651c3">editarUsuario</a> ($codUsuario, array $datosNuevos)</td></tr>
+<tr class="memitem:af02f4bcf0895992a84b43b15c7a3461d" id="r_af02f4bcf0895992a84b43b15c7a3461d"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#af02f4bcf0895992a84b43b15c7a3461d">guardarToken</a> ($codUsuario, $token)</td></tr>
+<tr class="memitem:ad668ad6ac5cc8ab4216dbae04d3cbeea" id="r_ad668ad6ac5cc8ab4216dbae04d3cbeea"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ad668ad6ac5cc8ab4216dbae04d3cbeea">obtenerToken</a> ($codUsuario)</td></tr>
+<tr class="memitem:a38a823e97a3d66a7a43cf1cc50f8a84d" id="r_a38a823e97a3d66a7a43cf1cc50f8a84d"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a38a823e97a3d66a7a43cf1cc50f8a84d">validarToken</a> ($token)</td></tr>
+<tr class="memitem:a34b8b6b1220afab922021bb2b3df973d" id="r_a34b8b6b1220afab922021bb2b3df973d"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a34b8b6b1220afab922021bb2b3df973d">buscarUsuarios</a> ($descripcion=null)</td></tr>
+<tr class="memitem:ac08be54eb31f194fb1bdd1457a2c008e" id="r_ac08be54eb31f194fb1bdd1457a2c008e"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ac08be54eb31f194fb1bdd1457a2c008e">borrarUsuario</a> ($codUsuario)</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_usuario_p_d_o_8php_source.html#l00016">16</a> of file <a class="el" href="_usuario_p_d_o_8php_source.html">UsuarioPDO.php</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a51e5b047b8655d1513915cdd0f5f6653" name="a51e5b047b8655d1513915cdd0f5f6653"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51e5b047b8655d1513915cdd0f5f6653">&#9670;&#160;</a></span>actualizarUltimaConexionYUsuario()</h2>
 
@@ -118,25 +126,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Actualiza la última conexión y la información del usuario en la base de datos</p>
-<p>Incrementa el número de conexiones y actualiza la fecha/hora de la última conexión en la tabla T01_Usuarios. Luego actualiza el objeto <a class="el" href="class_usuario.html">Usuario</a> pasado como parámetro con la nueva fecha/hora.</p>
+<p>Actualiza la última conexión y número de conexiones del usuario.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a></td><td class="paramname">$usuario</td><td>Objeto <a class="el" href="class_usuario.html">Usuario</a> a actualizar </td></tr>
+    <tr><td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a></td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a559c8003f481610caf373b85cc607fb6">$usuario</a></td><td>Objeto usuario a actualizar </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_usuario_p_d_o_8php_source.html#l00062">62</a> of file <a class="el" href="_usuario_p_d_o_8php_source.html">UsuarioPDO.php</a>.</p>
-
 </div>
 </div>
-<a id="a0f1403d5c9dbd708353e24e7c145a004" name="a0f1403d5c9dbd708353e24e7c145a004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f1403d5c9dbd708353e24e7c145a004">&#9670;&#160;</a></span>altaUsuario()</h2>
+<a id="a7a5176f4bfba2cf39eca0462195676b8" name="a7a5176f4bfba2cf39eca0462195676b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a5176f4bfba2cf39eca0462195676b8">&#9670;&#160;</a></span>altaUsuario()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">altaUsuario </td>
@@ -154,28 +162,312 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$descUsuario</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Da de alta un nuevo usuario en la base de datos</p>
-<p>Inserta un nuevo registro en la tabla T01_Usuarios con el código, contraseña (encriptada) y descripción proporcionados. Si el registro se realiza correctamente, valida el usuario y devuelve el objeto <a class="el" href="class_usuario.html">Usuario</a> para la sesión. Si falla, devuelve false.</p>
+<p>Crea un nuevo usuario en la base de datos.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$codUsuario</td><td>Código del nuevo usuario </td></tr>
-    <tr><td class="paramtype">string</td><td class="paramname">$password</td><td>Contraseña del nuevo usuario </td></tr>
-    <tr><td class="paramtype">string</td><td class="paramname">$descUsuario</td><td>Descripción o nombre del nuevo usuario </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$password</td><td>Contraseña </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$descUsuario</td><td>Descripción o nombre </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Usuario|false Objeto <a class="el" href="class_usuario.html">Usuario</a> recién creado o false si falla la inserción </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_p_d_o_8php_source.html#l00090">90</a> of file <a class="el" href="_usuario_p_d_o_8php_source.html">UsuarioPDO.php</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Usuario|null Objeto <a class="el" href="class_usuario.html">Usuario</a> creado o null si falla </dd></dl>
 
 </div>
 </div>
-<a id="a415f396e149593193eaf4e319361a2f7" name="a415f396e149593193eaf4e319361a2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a415f396e149593193eaf4e319361a2f7">&#9670;&#160;</a></span>validarUsuario()</h2>
+<a id="ac08be54eb31f194fb1bdd1457a2c008e" name="ac08be54eb31f194fb1bdd1457a2c008e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08be54eb31f194fb1bdd1457a2c008e">&#9670;&#160;</a></span>borrarUsuario()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">borrarUsuario </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$codUsuario</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Borra un usuario de la base de datos.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True si se eliminó, False si no </dd></dl>
+
+</div>
+</div>
+<a id="a34b8b6b1220afab922021bb2b3df973d" name="a34b8b6b1220afab922021bb2b3df973d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b8b6b1220afab922021bb2b3df973d">&#9670;&#160;</a></span>buscarUsuarios()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">buscarUsuarios </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$descripcion</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Busca usuarios filtrando por descripción.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname"><a class="el" href="ws_buscar_usuarios_por_descripcion_8php.html#a92f11f7dbc5cf5869500f8ddcb7fcf3c">$descripcion</a></td><td>Texto a buscar en T01_DescUsuario </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_usuario.html">Usuario</a>[] Array de objetos <a class="el" href="class_usuario.html">Usuario</a> </dd></dl>
+
+</div>
+</div>
+<a id="aac1a556616a81a5d14a665d6efa9be03" name="aac1a556616a81a5d14a665d6efa9be03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1a556616a81a5d14a665d6efa9be03">&#9670;&#160;</a></span>cambiarPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cambiarPassword </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$oUsuario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$nuevaPassword</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cambia la contraseña de un usuario.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a></td><td class="paramname">$oUsuario</td><td>Objeto usuario a actualizar </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$nuevaPassword</td><td>Nueva contraseña </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Usuario|null <a class="el" href="class_usuario.html">Usuario</a> actualizado o null si falla </dd></dl>
+
+</div>
+</div>
+<a id="ae34109a7b1f9065943065fb3c7d651c3" name="ae34109a7b1f9065943065fb3c7d651c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae34109a7b1f9065943065fb3c7d651c3">&#9670;&#160;</a></span>editarUsuario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">editarUsuario </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$codUsuario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$datosNuevos</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Edita datos de un usuario existente.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$datosNuevos</td><td>Array asociativo de campos y valores </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True si se actualizó, False si no </dd></dl>
+
+</div>
+</div>
+<a id="af02f4bcf0895992a84b43b15c7a3461d" name="af02f4bcf0895992a84b43b15c7a3461d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af02f4bcf0895992a84b43b15c7a3461d">&#9670;&#160;</a></span>guardarToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">guardarToken </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$codUsuario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$token</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Guarda un token <a class="el" href="namespace_a_p_i.html">API</a> para un usuario.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname"><a class="el" href="ws_borrar_usuario_8php.html#a00ae4fcafb1145f5e968bdf920f83e2e">$token</a></td><td>Token a guardar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ad668ad6ac5cc8ab4216dbae04d3cbeea" name="ad668ad6ac5cc8ab4216dbae04d3cbeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad668ad6ac5cc8ab4216dbae04d3cbeea">&#9670;&#160;</a></span>obtenerToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">obtenerToken </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$codUsuario</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el token <a class="el" href="namespace_a_p_i.html">API</a> de un usuario.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string|null Token o null si no existe </dd></dl>
+
+</div>
+</div>
+<a id="a52fa586fecf82d3f4df7ff5dac39afc8" name="a52fa586fecf82d3f4df7ff5dac39afc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52fa586fecf82d3f4df7ff5dac39afc8">&#9670;&#160;</a></span>validarCodNoExiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">validarCodNoExiste </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$codUsuario</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Comprueba si un código de usuario no existe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True si existe, False si no </dd></dl>
+
+</div>
+</div>
+<a id="a38a823e97a3d66a7a43cf1cc50f8a84d" name="a38a823e97a3d66a7a43cf1cc50f8a84d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a823e97a3d66a7a43cf1cc50f8a84d">&#9670;&#160;</a></span>validarToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">validarToken </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$token</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Valida un token <a class="el" href="namespace_a_p_i.html">API</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_borrar_usuario_8php.html#a00ae4fcafb1145f5e968bdf920f83e2e">$token</a></td><td>Token a validar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True si existe, False si no </dd></dl>
+
+</div>
+</div>
+<a id="ae21e7daa9bcc8f4ea4e8f4ba7050584f" name="ae21e7daa9bcc8f4ea4e8f4ba7050584f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21e7daa9bcc8f4ea4e8f4ba7050584f">&#9670;&#160;</a></span>validarUsuario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">validarUsuario </td>
@@ -185,27 +477,29 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$password</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$password</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Valida un usuario en la base de datos</p>
-<p>Consulta la tabla T01_Usuarios para comprobar si existe un usuario con el código y la contraseña proporcionados. Si existe, crea y devuelve un objeto <a class="el" href="class_usuario.html">Usuario</a>; si no, devuelve false.</p>
+<p>Valida un usuario en la base de datos.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$codUsuario</td><td>Código del usuario a validar </td></tr>
-    <tr><td class="paramtype">string</td><td class="paramname">$password</td><td>Contraseña del usuario </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname"><a class="el" href="ws_consultar_usuario_8php.html#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a></td><td>Código del usuario </td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$password</td><td>Contraseña (opcional) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Usuario|false Devuelve un objeto <a class="el" href="class_usuario.html">Usuario</a> si es válido, o false si no lo es </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_usuario_p_d_o_8php_source.html#l00029">29</a> of file <a class="el" href="_usuario_p_d_o_8php_source.html">UsuarioPDO.php</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Usuario|null Objeto <a class="el" href="class_usuario.html">Usuario</a> si existe y contraseña coincide, null si no </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_usuario_p_d_o_8php_source.html">UsuarioPDO.php</a></li>
+<li>D:/ProyectosNB/CMVDWESAplicacionFinal/model/<a class="el" href="_usuario_p_d_o_8php.html">UsuarioPDO.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

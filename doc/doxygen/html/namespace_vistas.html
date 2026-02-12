@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LoginLogoff: Vistas Namespace Reference</title>
+<title>Aplicación Final: Vistas Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="paloma.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">LoginLogoff<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación con control de acceso MVC</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -126,10 +126,27 @@ $(function(){initNavTree('namespace_vistas.html','',''); });
 <p>Dependencias:</p><ul>
 <li>Variables de superglobales de PHP</li>
 <li>Estilos CSS externos/internos</li>
-<li>Archivo PHP de acción del formulario (<span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span>)</li>
+<li>Archivo PHP de acción del formulario (<span class="tt"><a class="el" href="index_8php.html">index.php</a></span>)</li>
 </ul>
 <p>Advertencia:</p><ul>
 <li>Esta vista debe usarse solo en entorno de desarrollo o pruebas, ya que expone información sensible de la sesión y del servidor.</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
+<p>Vista Parcial: Inicio Público</p>
+<p>Este archivo contiene la sección de cabecera y contenido principal para la página de inicio público de la aplicación Login/Logoff.</p>
+<p>Funcionalidad:</p><ul>
+<li><span class="tt">&lt;header&gt;</span>: muestra el logo y un formulario de navegación al login.</li>
+<li><span class="tt">&lt;main&gt;</span>: contiene un título y un conjunto de imágenes representativas de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).</li>
+</ul>
+<p>Elementos importantes:</p><ul>
+<li>Logo con la clase <span class="tt">.owl</span> y texto “Aplicación Final — Inicio Público”</li>
+<li>Formulario de navegación con botón “Login”</li>
+<li>Imágenes con clase <span class="tt">.btn secondary</span> que actúan como elementos interactivos</li>
+</ul>
+<p>Dependencias:</p><ul>
+<li>Estilos definidos en CSS externo e interno del proyecto</li>
+<li>Acciones dirigidas a <span class="tt"><a class="el" href="index_8php.html">index.php</a></span></li>
 </ul>
 <dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
@@ -157,23 +174,6 @@ $(function(){initNavTree('namespace_vistas.html','',''); });
 </ul>
 <dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
-<p>Vista Parcial: Inicio Público</p>
-<p>Este archivo contiene la sección de cabecera y contenido principal para la página de inicio público de la aplicación Login/Logoff.</p>
-<p>Funcionalidad:</p><ul>
-<li><span class="tt">&lt;header&gt;</span>: muestra el logo y un formulario de navegación al login.</li>
-<li><span class="tt">&lt;main&gt;</span>: contiene un título y un conjunto de imágenes representativas de distintas secciones del proyecto (navegación, ficheros, clases, modelo físico).</li>
-</ul>
-<p>Elementos importantes:</p><ul>
-<li>Logo con la clase <span class="tt">.owl</span> y texto “Aplicación Final — Inicio Público”</li>
-<li>Formulario de navegación con botón “Login”</li>
-<li>Imágenes con clase <span class="tt">.btn secondary</span> que actúan como elementos interactivos</li>
-</ul>
-<p>Dependencias:</p><ul>
-<li>Estilos definidos en CSS externo e interno del proyecto</li>
-<li>Acciones dirigidas a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span></li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
 <p>Vista Parcial: Login</p>
 <p>Este archivo contiene la sección de cabecera y contenido principal para la página de Login de la aplicación Login/Logoff.</p>
 <p>Funcionalidad:</p><ul>
@@ -192,7 +192,49 @@ $(function(){initNavTree('namespace_vistas.html','',''); });
 </ul>
 <p>Dependencias:</p><ul>
 <li>Estilos CSS externos e internos</li>
-<li>Acciones dirigidas a <span class="tt"><a class="el" href="index_login_logoff_8php.html">index.php</a></span></li>
+<li>Acciones dirigidas a <span class="tt"><a class="el" href="index_8php.html">index.php</a></span></li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
+<p>Vista: Registro de usuario (vRegistro)</p>
+<p>Esta vista muestra la interfaz de registro de nuevos usuarios de la aplicación Login/Logoff.</p>
+<p>Funcionalidad:</p><ol type="1">
+<li>Muestra el encabezado de la aplicación:<ul>
+<li>Incluye el logotipo y el nombre de la aplicación.</li>
+<li>Indica visualmente que el usuario se encuentra en la sección de Registro.</li>
+</ul>
+</li>
+<li>Muestra el título principal de la página:<ul>
+<li>El texto del título se adapta dinámicamente según la cookie <span class="tt">idioma</span>:<ul>
+<li>"FR" → SE CONNECTER</li>
+<li>"PR" → CONECTE-SE</li>
+<li>Cualquier otro valor → INICIAR SESIÓN</li>
+</ul>
+</li>
+<li>Si no existe la cookie <span class="tt">idioma</span>, se muestra el título "REGISTRO".</li>
+</ul>
+</li>
+<li>Muestra el formulario de alta de usuario:<ul>
+<li>Campos del formulario:<ul>
+<li><span class="tt">codUsuario</span>: código de usuario</li>
+<li><span class="tt">descUsuario</span>: nombre completo del usuario</li>
+<li><span class="tt">password</span>: contraseña</li>
+</ul>
+</li>
+<li>El formulario envía los datos mediante POST a <span class="tt"><a class="el" href="index_8php.html">index.php</a></span>.</li>
+</ul>
+</li>
+<li>Navegación:<ul>
+<li>Botón "Entrar" para enviar el formulario y realizar el alta.</li>
+<li>Botón "Login" para volver a la pantalla de inicio de sesión.</li>
+<li>Campo oculto <span class="tt">paginaAnterior</span> para mantener la navegación correcta.</li>
+</ul>
+</li>
+</ol>
+<p>Dependencias:</p><ul>
+<li>Cookie <span class="tt">idioma</span> para la internacionalización básica del título</li>
+<li>Controlador frontal <span class="tt"><a class="el" href="index_8php.html">index.php</a></span></li>
+<li>Variables de formulario enviadas por método POST</li>
 </ul>
 <dl class="section author"><dt>Author</dt><dd>Cristian Mateos </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>

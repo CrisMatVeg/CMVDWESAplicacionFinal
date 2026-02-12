@@ -3,19 +3,31 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}{validar\+Usuario}} (\$cod\+Usuario, \$password)
-\item 
 \doxymbox{\hyperlink{class_usuario_p_d_o_a51e5b047b8655d1513915cdd0f5f6653}{actualizar\+Ultima\+Conexion\+YUsuario}} (\$usuario)
-\item 
-\doxymbox{\hyperlink{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004}{alta\+Usuario}} (\$cod\+Usuario, \$password, \$desc\+Usuario)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00016}{16}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
-
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}{validar\+Usuario}} (\$cod\+Usuario, \$password=null)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_a52fa586fecf82d3f4df7ff5dac39afc8}{validar\+Cod\+No\+Existe}} (\$cod\+Usuario)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_a7a5176f4bfba2cf39eca0462195676b8}{alta\+Usuario}} (\$cod\+Usuario, \$password, \$desc\+Usuario)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_aac1a556616a81a5d14a665d6efa9be03}{cambiar\+Password}} (\$o\+Usuario, \$nueva\+Password)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_ae34109a7b1f9065943065fb3c7d651c3}{editar\+Usuario}} (\$cod\+Usuario, array \$datos\+Nuevos)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_af02f4bcf0895992a84b43b15c7a3461d}{guardar\+Token}} (\$cod\+Usuario, \$token)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_ad668ad6ac5cc8ab4216dbae04d3cbeea}{obtener\+Token}} (\$cod\+Usuario)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{validar\+Token}} (\$token)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d}{buscar\+Usuarios}} (\$descripcion=null)
+\item 
+static \doxymbox{\hyperlink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{borrar\+Usuario}} (\$cod\+Usuario)
+\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
@@ -27,74 +39,190 @@ Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00016}{16}} 
 {\footnotesize\ttfamily \label{class_usuario_p_d_o_a51e5b047b8655d1513915cdd0f5f6653} 
 actualizar\+Ultima\+Conexion\+YUsuario (\begin{DoxyParamCaption}\item[{}]{\$usuario}{}\end{DoxyParamCaption})}
 
-Actualiza la última conexión y la información del usuario en la base de datos
-
-Incrementa el número de conexiones y actualiza la fecha/\+hora de la última conexión en la tabla T01\+\_\+\+Usuarios. Luego actualiza el objeto \doxylink{class_usuario}{Usuario} pasado como parámetro con la nueva fecha/\+hora.
+Actualiza la última conexión y número de conexiones del usuario.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\doxylink{class_usuario}{Usuario} & {\em \$usuario} & Objeto \doxylink{class_usuario}{Usuario} a actualizar \\
+\doxylink{class_usuario}{Usuario} & {\em \doxylink{ws_consultar_usuario_8php_a559c8003f481610caf373b85cc607fb6}{\$usuario}} & Objeto usuario a actualizar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00062}{62}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
-
-\Hypertarget{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004}\index{UsuarioPDO@{UsuarioPDO}!altaUsuario@{altaUsuario}}
+\Hypertarget{class_usuario_p_d_o_a7a5176f4bfba2cf39eca0462195676b8}\index{UsuarioPDO@{UsuarioPDO}!altaUsuario@{altaUsuario}}
 \index{altaUsuario@{altaUsuario}!UsuarioPDO@{UsuarioPDO}}
 \doxysubsubsection{\texorpdfstring{altaUsuario()}{altaUsuario()}}
-{\footnotesize\ttfamily \label{class_usuario_p_d_o_a0f1403d5c9dbd708353e24e7c145a004} 
-alta\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{, }\item[{}]{\$desc\+Usuario}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a7a5176f4bfba2cf39eca0462195676b8} 
+alta\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{, }\item[{}]{\$desc\+Usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Da de alta un nuevo usuario en la base de datos
-
-Inserta un nuevo registro en la tabla T01\+\_\+\+Usuarios con el código, contraseña (encriptada) y descripción proporcionados. Si el registro se realiza correctamente, valida el usuario y devuelve el objeto \doxylink{class_usuario}{Usuario} para la sesión. Si falla, devuelve false.
+Crea un nuevo usuario en la base de datos.
 
 
 \begin{DoxyParams}[1]{Parameters}
-string & {\em \$cod\+Usuario} & Código del nuevo usuario \\
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
 \hline
-string & {\em \$password} & Contraseña del nuevo usuario \\
+string & {\em \$password} & Contraseña \\
 \hline
-string & {\em \$desc\+Usuario} & Descripción o nombre del nuevo usuario \\
+string & {\em \$desc\+Usuario} & Descripción o nombre \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Usuario\texorpdfstring{$\vert$}{|}false Objeto \doxylink{class_usuario}{Usuario} recién creado o false si falla la inserción 
+Usuario\texorpdfstring{$\vert$}{|}null Objeto \doxylink{class_usuario}{Usuario} creado o null si falla 
 \end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}\index{UsuarioPDO@{UsuarioPDO}!borrarUsuario@{borrarUsuario}}
+\index{borrarUsuario@{borrarUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{borrarUsuario()}{borrarUsuario()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e} 
+borrar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Borra un usuario de la base de datos.
 
 
-Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00090}{90}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se eliminó, False si no 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d}\index{UsuarioPDO@{UsuarioPDO}!buscarUsuarios@{buscarUsuarios}}
+\index{buscarUsuarios@{buscarUsuarios}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{buscarUsuarios()}{buscarUsuarios()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d} 
+buscar\+Usuarios (\begin{DoxyParamCaption}\item[{}]{\$descripcion}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\Hypertarget{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}\index{UsuarioPDO@{UsuarioPDO}!validarUsuario@{validarUsuario}}
+Busca usuarios filtrando por descripción.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string | null & {\em \doxylink{ws_buscar_usuarios_por_descripcion_8php_a92f11f7dbc5cf5869500f8ddcb7fcf3c}{\$descripcion}} & Texto a buscar en T01\+\_\+\+Desc\+Usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_usuario}{Usuario}\+[]\+ Array de objetos \doxylink{class_usuario}{Usuario} 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_aac1a556616a81a5d14a665d6efa9be03}\index{UsuarioPDO@{UsuarioPDO}!cambiarPassword@{cambiarPassword}}
+\index{cambiarPassword@{cambiarPassword}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{cambiarPassword()}{cambiarPassword()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_aac1a556616a81a5d14a665d6efa9be03} 
+cambiar\+Password (\begin{DoxyParamCaption}\item[{}]{\$o\+Usuario}{, }\item[{}]{\$nueva\+Password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cambia la contraseña de un usuario.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxylink{class_usuario}{Usuario} & {\em \$o\+Usuario} & Objeto usuario a actualizar \\
+\hline
+string & {\em \$nueva\+Password} & Nueva contraseña \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Usuario\texorpdfstring{$\vert$}{|}null \doxylink{class_usuario}{Usuario} actualizado o null si falla 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_ae34109a7b1f9065943065fb3c7d651c3}\index{UsuarioPDO@{UsuarioPDO}!editarUsuario@{editarUsuario}}
+\index{editarUsuario@{editarUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{editarUsuario()}{editarUsuario()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_ae34109a7b1f9065943065fb3c7d651c3} 
+editar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{array}]{\$datos\+Nuevos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Edita datos de un usuario existente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
+\hline
+array & {\em \$datos\+Nuevos} & Array asociativo de campos y valores \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se actualizó, False si no 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_af02f4bcf0895992a84b43b15c7a3461d}\index{UsuarioPDO@{UsuarioPDO}!guardarToken@{guardarToken}}
+\index{guardarToken@{guardarToken}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{guardarToken()}{guardarToken()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_af02f4bcf0895992a84b43b15c7a3461d} 
+guardar\+Token (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Guarda un token \doxylink{namespace_a_p_i}{API} para un usuario.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
+\hline
+string | null & {\em \doxylink{ws_borrar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} & Token a guardar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_ad668ad6ac5cc8ab4216dbae04d3cbeea}\index{UsuarioPDO@{UsuarioPDO}!obtenerToken@{obtenerToken}}
+\index{obtenerToken@{obtenerToken}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{obtenerToken()}{obtenerToken()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_ad668ad6ac5cc8ab4216dbae04d3cbeea} 
+obtener\+Token (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene el token \doxylink{namespace_a_p_i}{API} de un usuario.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string\texorpdfstring{$\vert$}{|}null Token o null si no existe 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_a52fa586fecf82d3f4df7ff5dac39afc8}\index{UsuarioPDO@{UsuarioPDO}!validarCodNoExiste@{validarCodNoExiste}}
+\index{validarCodNoExiste@{validarCodNoExiste}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{validarCodNoExiste()}{validarCodNoExiste()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a52fa586fecf82d3f4df7ff5dac39afc8} 
+validar\+Cod\+No\+Existe (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Comprueba si un código de usuario no existe.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si existe, False si no 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}\index{UsuarioPDO@{UsuarioPDO}!validarToken@{validarToken}}
+\index{validarToken@{validarToken}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{validarToken()}{validarToken()}}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d} 
+validar\+Token (\begin{DoxyParamCaption}\item[{}]{\$token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Valida un token \doxylink{namespace_a_p_i}{API}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \doxylink{ws_borrar_usuario_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} & Token a validar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si existe, False si no 
+\end{DoxyReturn}
+\Hypertarget{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f}\index{UsuarioPDO@{UsuarioPDO}!validarUsuario@{validarUsuario}}
 \index{validarUsuario@{validarUsuario}!UsuarioPDO@{UsuarioPDO}}
 \doxysubsubsection{\texorpdfstring{validarUsuario()}{validarUsuario()}}
-{\footnotesize\ttfamily \label{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7} 
-validar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_usuario_p_d_o_ae21e7daa9bcc8f4ea4e8f4ba7050584f} 
+validar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario}{, }\item[{}]{\$password}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Valida un usuario en la base de datos
-
-Consulta la tabla T01\+\_\+\+Usuarios para comprobar si existe un usuario con el código y la contraseña proporcionados. Si existe, crea y devuelve un objeto \doxylink{class_usuario}{Usuario}; si no, devuelve false.
+Valida un usuario en la base de datos.
 
 
 \begin{DoxyParams}[1]{Parameters}
-string & {\em \$cod\+Usuario} & Código del usuario a validar \\
+string & {\em \doxylink{ws_consultar_usuario_8php_a2adc15beb82b2b52c6a9c09a946396ae}{\$cod\+Usuario}} & Código del usuario \\
 \hline
-string & {\em \$password} & Contraseña del usuario \\
+string | null & {\em \$password} & Contraseña (opcional) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Usuario\texorpdfstring{$\vert$}{|}false Devuelve un objeto \doxylink{class_usuario}{Usuario} si es válido, o false si no lo es 
+Usuario\texorpdfstring{$\vert$}{|}null Objeto \doxylink{class_usuario}{Usuario} si existe y contraseña coincide, null si no 
 \end{DoxyReturn}
-
-
-Definition at line \doxymbox{\hyperlink{_usuario_p_d_o_8php_source_l00029}{29}} of file \doxymbox{\hyperlink{_usuario_p_d_o_8php_source}{Usuario\+PDO.\+php}}.
-
 
 
 The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-D:\+/\+\+Proyectos\+NB/\+\+CMVDWESLogin\+Logoff/\+model/\+\doxymbox{\hyperlink{_usuario_p_d_o_8php}{Usuario\+PDO.\+php}}\end{DoxyCompactItemize}
+D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+model/\+\doxymbox{\hyperlink{_usuario_p_d_o_8php}{Usuario\+PDO.\+php}}\end{DoxyCompactItemize}

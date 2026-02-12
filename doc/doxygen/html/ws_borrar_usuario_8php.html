@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aplicación Final: D:/ProyectosNB/CMVDWESAplicacionFinal/api/wsBorrarUsuario.php File Reference</title>
-<link rel="icon" href="paloma.svg" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación final del módulo de DWES</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -101,23 +100,38 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a34ef35abd8546bb402ea1d7bdeaa9e08" id="r_a34ef35abd8546bb402ea1d7bdeaa9e08"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34ef35abd8546bb402ea1d7bdeaa9e08">$tokenAcceso</a> = $_GET['token'] ?? null</td></tr>
-<tr class="memitem:a51716f2a5fdd3e778e3264e3aeb86903" id="r_a51716f2a5fdd3e778e3264e3aeb86903"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($tokenAcceso))&#160;</td><td class="memItemRight"><a class="el" href="#a51716f2a5fdd3e778e3264e3aeb86903">$datosEntrada</a> = json_decode(file_get_contents('php://input'), true)</td></tr>
-<tr class="memitem:a3b12e961366ba90e1f55f8407f902494" id="r_a3b12e961366ba90e1f55f8407f902494"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $datosEntrada||!isset($datosEntrada['codUsuario']))&#160;</td><td class="memItemRight"><a class="el" href="#a3b12e961366ba90e1f55f8407f902494">$aErrores</a></td></tr>
+<tr class="memitem:a00ae4fcafb1145f5e968bdf920f83e2e" id="r_a00ae4fcafb1145f5e968bdf920f83e2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a00ae4fcafb1145f5e968bdf920f83e2e">$token</a> = $_GET['token'] ?? null</td></tr>
+<tr class="memitem:a7c130730dd1c2f4cba0a39e00a56fefd" id="r_a7c130730dd1c2f4cba0a39e00a56fefd"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($token))&#160;</td><td class="memItemRight"><a class="el" href="#a7c130730dd1c2f4cba0a39e00a56fefd">$input</a> = json_decode(file_get_contents('php://input'), true)</td></tr>
+<tr class="memitem:a6f63c5a0557f7da205d6d99f947d58b8" id="r_a6f63c5a0557f7da205d6d99f947d58b8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a></td></tr>
 <tr class="memitem:a6e16c1c08f9ff5671bd921d75436333e" id="r_a6e16c1c08f9ff5671bd921d75436333e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a></td></tr>
 <tr class="memitem:ab0dcac058225ef7a9871cdb707b90364" id="r_ab0dcac058225ef7a9871cdb707b90364"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = true</td></tr>
-<tr class="memitem:a9f3a5d7a453d3c1f143206ac29cefac3" id="r_a9f3a5d7a453d3c1f143206ac29cefac3"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(!isset($datosEntrada['confirmacion']))&#160;</td><td class="memItemRight"><a class="el" href="#a9f3a5d7a453d3c1f143206ac29cefac3">else</a></td></tr>
-<tr class="memitem:ad3afa81a2bf1616e30705aecaccf3024" id="r_ad3afa81a2bf1616e30705aecaccf3024"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>( $datosEntrada[ 'confirmacion'] !==&quot;SI&quot;) <a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $entradaOK)&#160;</td><td class="memItemRight"><a class="el" href="#ad3afa81a2bf1616e30705aecaccf3024">$usuarioEliminado</a> = <a class="el" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">UsuarioPDO::borrarUsuario</a>($datosEntrada['codUsuario'])</td></tr>
+<tr class="memitem:af4a6886662fc3121159c8cef868261e7" id="r_af4a6886662fc3121159c8cef868261e7"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(! $input||!isset( $input[ 'codUsuario'])) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(!isset($input['confirmacion']))&#160;</td><td class="memItemRight"><a class="el" href="#af4a6886662fc3121159c8cef868261e7">else</a></td></tr>
+<tr class="memitem:a8de9c3b792f585c8ce3ff02218ed7281" id="r_a8de9c3b792f585c8ce3ff02218ed7281"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8de9c3b792f585c8ce3ff02218ed7281">$aErrores</a> ['confirmacion'] = $input['confirmacion'] === &quot;SI&quot; ? null : &quot;Confirmación incorrecta&quot;</td></tr>
+<tr class="memitem:aaa6558cf5f8942c33c3a451c36b30b95" id="r_aaa6558cf5f8942c33c3a451c36b30b95"><td class="memItemLeft"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>( $aErrores[ 'confirmacion'] !==null) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(! $entradaOK)&#160;</td><td class="memItemRight"><a class="el" href="#aaa6558cf5f8942c33c3a451c36b30b95">$eliminado</a> = <a class="el" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">UsuarioPDO::borrarUsuario</a>($input['codUsuario'])</td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="a3b12e961366ba90e1f55f8407f902494" name="a3b12e961366ba90e1f55f8407f902494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b12e961366ba90e1f55f8407f902494">&#9670;&#160;</a></span>$aErrores</h2>
+<a id="a8de9c3b792f585c8ce3ff02218ed7281" name="a8de9c3b792f585c8ce3ff02218ed7281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de9c3b792f585c8ce3ff02218ed7281">&#9670;&#160;</a></span>$aErrores <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $datosEntrada||!isset( $datosEntrada[ 'codUsuario'])) $aErrores</td>
+          <td class="memname">$aErrores[ 'confirmacion'] = $input['confirmacion'] === &quot;SI&quot; ? null : &quot;Confirmación incorrecta&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f63c5a0557f7da205d6d99f947d58b8" name="a6f63c5a0557f7da205d6d99f947d58b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f63c5a0557f7da205d6d99f947d58b8">&#9670;&#160;</a></span>$aErrores <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$aErrores</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -144,14 +158,14 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a51716f2a5fdd3e778e3264e3aeb86903" name="a51716f2a5fdd3e778e3264e3aeb86903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51716f2a5fdd3e778e3264e3aeb86903">&#9670;&#160;</a></span>$datosEntrada</h2>
+<a id="aaa6558cf5f8942c33c3a451c36b30b95" name="aaa6558cf5f8942c33c3a451c36b30b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6558cf5f8942c33c3a451c36b30b95">&#9670;&#160;</a></span>$eliminado</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $tokenAcceso)) $datosEntrada = json_decode(file_get_contents('php://input'), true)</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>($aErrores['confirmacion'] !==null) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (! $entradaOK) $eliminado = <a class="el" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">UsuarioPDO::borrarUsuario</a>($input['codUsuario'])</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -172,49 +186,49 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a34ef35abd8546bb402ea1d7bdeaa9e08" name="a34ef35abd8546bb402ea1d7bdeaa9e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ef35abd8546bb402ea1d7bdeaa9e08">&#9670;&#160;</a></span>$tokenAcceso</h2>
+<a id="a7c130730dd1c2f4cba0a39e00a56fefd" name="a7c130730dd1c2f4cba0a39e00a56fefd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c130730dd1c2f4cba0a39e00a56fefd">&#9670;&#160;</a></span>$input</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$tokenAcceso = $_GET['token'] ?? null</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $token)) $input = json_decode(file_get_contents('php://input'), true)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad3afa81a2bf1616e30705aecaccf3024" name="ad3afa81a2bf1616e30705aecaccf3024"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3afa81a2bf1616e30705aecaccf3024">&#9670;&#160;</a></span>$usuarioEliminado</h2>
+<a id="a00ae4fcafb1145f5e968bdf920f83e2e" name="a00ae4fcafb1145f5e968bdf920f83e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ae4fcafb1145f5e968bdf920f83e2e">&#9670;&#160;</a></span>$token</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>($datosEntrada['confirmacion'] !==&quot;SI&quot;) <a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $entradaOK) $usuarioEliminado = <a class="el" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">UsuarioPDO::borrarUsuario</a>($datosEntrada['codUsuario'])</td>
+          <td class="memname">$token = $_GET['token'] ?? null</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a9f3a5d7a453d3c1f143206ac29cefac3" name="a9f3a5d7a453d3c1f143206ac29cefac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f3a5d7a453d3c1f143206ac29cefac3">&#9670;&#160;</a></span>else</h2>
+<a id="af4a6886662fc3121159c8cef868261e7" name="af4a6886662fc3121159c8cef868261e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a6886662fc3121159c8cef868261e7">&#9670;&#160;</a></span>else</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (!isset( $datosEntrada[ 'confirmacion'])) else</td>
+          <td class="memname"><a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a>(! $input||!isset($input['codUsuario'])) <a class="el" href="ws_consultar_usuario_8php.html#a48bd4936c69eb11351bd353967e74efd">if</a> (!isset( $input[ 'confirmacion'])) else</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code hl_variable" href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a>[<span class="stringliteral">&#39;confirmacion&#39;</span>] = <a class="code hl_variable" href="#a51716f2a5fdd3e778e3264e3aeb86903">$datosEntrada</a>[<span class="stringliteral">&#39;confirmacion&#39;</span>]</div>
-<div class="ttc" id="aws_borrar_usuario_8php_html_a51716f2a5fdd3e778e3264e3aeb86903"><div class="ttname"><a href="#a51716f2a5fdd3e778e3264e3aeb86903">$datosEntrada</a></div><div class="ttdeci">if(! $tokenAcceso||!UsuarioPDO::validarToken($tokenAcceso)) $datosEntrada</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:50</div></div>
-<div class="ttc" id="aws_borrar_usuario_8php_html_a6e16c1c08f9ff5671bd921d75436333e"><div class="ttname"><a href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a></div><div class="ttdeci">$aRespuestas</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:61</div></div>
+<div class="line">    <a class="code hl_variable" href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a>[<span class="stringliteral">&#39;confirmacion&#39;</span>] = <a class="code hl_variable" href="#a7c130730dd1c2f4cba0a39e00a56fefd">$input</a>[<span class="stringliteral">&#39;confirmacion&#39;</span>]</div>
+<div class="ttc" id="aws_borrar_usuario_8php_html_a6e16c1c08f9ff5671bd921d75436333e"><div class="ttname"><a href="#a6e16c1c08f9ff5671bd921d75436333e">$aRespuestas</a></div><div class="ttdeci">$aRespuestas</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:54</div></div>
+<div class="ttc" id="aws_borrar_usuario_8php_html_a7c130730dd1c2f4cba0a39e00a56fefd"><div class="ttname"><a href="#a7c130730dd1c2f4cba0a39e00a56fefd">$input</a></div><div class="ttdeci">if(! $token||!UsuarioPDO::validarToken($token)) $input</div><div class="ttdef"><b>Definition</b> wsBorrarUsuario.php:48</div></div>
 </div><!-- fragment -->
 </div>
 </div>

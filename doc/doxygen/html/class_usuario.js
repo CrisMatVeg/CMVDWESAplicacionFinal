@@ -8,5 +8,6 @@ var class_usuario =
     [ "getNumConexiones", "class_usuario.html#af98dbe147730701ce756e83e77e4dcb0", null ],
     [ "getPassword", "class_usuario.html#a04e0957baeb7acde9c0c86556da2d43f", null ],
     [ "getPerfil", "class_usuario.html#a22a2936d4856077edac47e6dbf430bab", null ],
-    [ "setFechaHoraUltimaConexion", "class_usuario.html#a1ecc5d214e34c9ecc3944920eba61e27", null ]
+    [ "setFechaHoraUltimaConexion", "class_usuario.html#a1ecc5d214e34c9ecc3944920eba61e27", null ],
+    [ "setPassword", "class_usuario.html#a3e35c8d3dbb2c513c618a664389e0926", null ]
 ];

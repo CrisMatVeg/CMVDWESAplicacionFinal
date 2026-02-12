@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Aplicación Final: D:/ProyectosNB/CMVDWESAplicacionFinal/api/wsConsultarUsuario.php File Reference</title>
-<link rel="icon" href="paloma.svg" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +29,7 @@
   <td id="projectalign">
    <div id="projectname">Aplicación Final<span id="projectnumber">&#160;v4.0.0</span>
    </div>
-   <div id="projectbrief">Aplicación final del módulo de DWES</div>
+   <div id="projectbrief">Aplicación Final de la asignatura de DWES</div>
   </td>
  </tr>
  </tbody>
@@ -101,79 +100,94 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a34ef35abd8546bb402ea1d7bdeaa9e08" id="r_a34ef35abd8546bb402ea1d7bdeaa9e08"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34ef35abd8546bb402ea1d7bdeaa9e08">$tokenAcceso</a> = $_GET['token'] ?? null</td></tr>
-<tr class="memitem:a51716f2a5fdd3e778e3264e3aeb86903" id="r_a51716f2a5fdd3e778e3264e3aeb86903"><td class="memItemLeft"><a class="el" href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($tokenAcceso))&#160;</td><td class="memItemRight"><a class="el" href="#a51716f2a5fdd3e778e3264e3aeb86903">$datosEntrada</a> = json_decode(file_get_contents(&quot;php://input&quot;), true)</td></tr>
-<tr class="memitem:aba1fe35914806ec2253a9c2bc664f0a8" id="r_aba1fe35914806ec2253a9c2bc664f0a8"><td class="memItemLeft"><a class="el" href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a>(! $datosEntrada||empty($datosEntrada['codUsuario']))&#160;</td><td class="memItemRight"><a class="el" href="#aba1fe35914806ec2253a9c2bc664f0a8">$codigoUsuario</a> = $datosEntrada['codUsuario']</td></tr>
-<tr class="memitem:aa426dc0fc9577c731868d64419bd4f23" id="r_aa426dc0fc9577c731868d64419bd4f23"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa426dc0fc9577c731868d64419bd4f23">$usuarioEncontrado</a> = <a class="el" href="class_usuario_p_d_o.html#ae21e7daa9bcc8f4ea4e8f4ba7050584f">UsuarioPDO::validarUsuario</a>($codigoUsuario)</td></tr>
-<tr class="memitem:a289bcbdb1f25c4a412e4cd0ef02f4f8c" id="r_a289bcbdb1f25c4a412e4cd0ef02f4f8c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $usuarioEncontrado)</td></tr>
+<tr class="memitem:a00ae4fcafb1145f5e968bdf920f83e2e" id="r_a00ae4fcafb1145f5e968bdf920f83e2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a00ae4fcafb1145f5e968bdf920f83e2e">$token</a> = $_GET['token'] ?? null</td></tr>
+<tr class="memitem:a30e356a2467a4cdc5bc7e16577d23919" id="r_a30e356a2467a4cdc5bc7e16577d23919"><td class="memItemLeft"><a class="el" href="#a48bd4936c69eb11351bd353967e74efd">if</a>(! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>($token))&#160;</td><td class="memItemRight"><a class="el" href="#a30e356a2467a4cdc5bc7e16577d23919">$rawData</a> = file_get_contents(&quot;php://input&quot;)</td></tr>
+<tr class="memitem:a69b271260be394b90709736cccb22c76" id="r_a69b271260be394b90709736cccb22c76"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a69b271260be394b90709736cccb22c76">$input</a> = json_decode($rawData, true)</td></tr>
+<tr class="memitem:a2adc15beb82b2b52c6a9c09a946396ae" id="r_a2adc15beb82b2b52c6a9c09a946396ae"><td class="memItemLeft"><a class="el" href="#a48bd4936c69eb11351bd353967e74efd">if</a>(! $input||!isset($input['codUsuario'])||empty($input['codUsuario']))&#160;</td><td class="memItemRight"><a class="el" href="#a2adc15beb82b2b52c6a9c09a946396ae">$codUsuario</a> = $input['codUsuario']</td></tr>
+<tr class="memitem:a559c8003f481610caf373b85cc607fb6" id="r_a559c8003f481610caf373b85cc607fb6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a559c8003f481610caf373b85cc607fb6">$usuario</a> = <a class="el" href="class_usuario_p_d_o.html#ae21e7daa9bcc8f4ea4e8f4ba7050584f">UsuarioPDO::validarUsuario</a>($codUsuario)</td></tr>
+<tr class="memitem:a48bd4936c69eb11351bd353967e74efd" id="r_a48bd4936c69eb11351bd353967e74efd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a48bd4936c69eb11351bd353967e74efd">if</a> (! $usuario)</td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="aba1fe35914806ec2253a9c2bc664f0a8" name="aba1fe35914806ec2253a9c2bc664f0a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1fe35914806ec2253a9c2bc664f0a8">&#9670;&#160;</a></span>$codigoUsuario</h2>
+<a id="a2adc15beb82b2b52c6a9c09a946396ae" name="a2adc15beb82b2b52c6a9c09a946396ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2adc15beb82b2b52c6a9c09a946396ae">&#9670;&#160;</a></span>$codUsuario</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $datosEntrada||empty( $datosEntrada[ 'codUsuario'])) $codigoUsuario = $datosEntrada['codUsuario']</td>
+          <td class="memname"><a class="el" href="#a48bd4936c69eb11351bd353967e74efd">if</a> (! $input||!isset( $input[ 'codUsuario'])||empty( $input[ 'codUsuario'])) $codUsuario = $input['codUsuario']</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a51716f2a5fdd3e778e3264e3aeb86903" name="a51716f2a5fdd3e778e3264e3aeb86903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51716f2a5fdd3e778e3264e3aeb86903">&#9670;&#160;</a></span>$datosEntrada</h2>
+<a id="a69b271260be394b90709736cccb22c76" name="a69b271260be394b90709736cccb22c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b271260be394b90709736cccb22c76">&#9670;&#160;</a></span>$input</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">if</a> (! $tokenAcceso||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $tokenAcceso)) $datosEntrada = json_decode(file_get_contents(&quot;php://input&quot;), true)</td>
+          <td class="memname">$input = json_decode($rawData, true)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a34ef35abd8546bb402ea1d7bdeaa9e08" name="a34ef35abd8546bb402ea1d7bdeaa9e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ef35abd8546bb402ea1d7bdeaa9e08">&#9670;&#160;</a></span>$tokenAcceso</h2>
+<a id="a30e356a2467a4cdc5bc7e16577d23919" name="a30e356a2467a4cdc5bc7e16577d23919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e356a2467a4cdc5bc7e16577d23919">&#9670;&#160;</a></span>$rawData</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$tokenAcceso = $_GET['token'] ?? null</td>
+          <td class="memname"><a class="el" href="#a48bd4936c69eb11351bd353967e74efd">if</a> (! $token||!<a class="el" href="class_usuario_p_d_o.html#a38a823e97a3d66a7a43cf1cc50f8a84d">UsuarioPDO::validarToken</a>( $token)) $rawData = file_get_contents(&quot;php://input&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa426dc0fc9577c731868d64419bd4f23" name="aa426dc0fc9577c731868d64419bd4f23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa426dc0fc9577c731868d64419bd4f23">&#9670;&#160;</a></span>$usuarioEncontrado</h2>
+<a id="a00ae4fcafb1145f5e968bdf920f83e2e" name="a00ae4fcafb1145f5e968bdf920f83e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ae4fcafb1145f5e968bdf920f83e2e">&#9670;&#160;</a></span>$token</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$usuarioEncontrado = <a class="el" href="class_usuario_p_d_o.html#ae21e7daa9bcc8f4ea4e8f4ba7050584f">UsuarioPDO::validarUsuario</a>($codigoUsuario)</td>
+          <td class="memname">$token = $_GET['token'] ?? null</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a289bcbdb1f25c4a412e4cd0ef02f4f8c" name="a289bcbdb1f25c4a412e4cd0ef02f4f8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a289bcbdb1f25c4a412e4cd0ef02f4f8c">&#9670;&#160;</a></span>if</h2>
+<a id="a559c8003f481610caf373b85cc607fb6" name="a559c8003f481610caf373b85cc607fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a559c8003f481610caf373b85cc607fb6">&#9670;&#160;</a></span>$usuario</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">if(! $usuarioEncontrado) </td>
+          <td class="memname">$usuario = <a class="el" href="class_usuario_p_d_o.html#ae21e7daa9bcc8f4ea4e8f4ba7050584f">UsuarioPDO::validarUsuario</a>($codUsuario)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48bd4936c69eb11351bd353967e74efd" name="a48bd4936c69eb11351bd353967e74efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48bd4936c69eb11351bd353967e74efd">&#9670;&#160;</a></span>if</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">if(! $usuario) </td>
           <td>(</td>
-          <td class="paramtype">!</td>          <td class="paramname"><span class="paramname"><em>$usuarioEncontrado</em></span></td><td>)</td>
+          <td class="paramtype">!</td>          <td class="paramname"><span class="paramname"><em>$usuario</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

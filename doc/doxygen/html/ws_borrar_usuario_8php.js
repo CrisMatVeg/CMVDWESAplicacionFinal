@@ -1,10 +1,11 @@
 var ws_borrar_usuario_8php =
 [
-    [ "$aErrores", "ws_borrar_usuario_8php.html#a3b12e961366ba90e1f55f8407f902494", null ],
+    [ "$aErrores", "ws_borrar_usuario_8php.html#a8de9c3b792f585c8ce3ff02218ed7281", null ],
+    [ "$aErrores", "ws_borrar_usuario_8php.html#a6f63c5a0557f7da205d6d99f947d58b8", null ],
     [ "$aRespuestas", "ws_borrar_usuario_8php.html#a6e16c1c08f9ff5671bd921d75436333e", null ],
-    [ "$datosEntrada", "ws_borrar_usuario_8php.html#a51716f2a5fdd3e778e3264e3aeb86903", null ],
+    [ "$eliminado", "ws_borrar_usuario_8php.html#aaa6558cf5f8942c33c3a451c36b30b95", null ],
     [ "$entradaOK", "ws_borrar_usuario_8php.html#ab0dcac058225ef7a9871cdb707b90364", null ],
-    [ "$tokenAcceso", "ws_borrar_usuario_8php.html#a34ef35abd8546bb402ea1d7bdeaa9e08", null ],
-    [ "$usuarioEliminado", "ws_borrar_usuario_8php.html#ad3afa81a2bf1616e30705aecaccf3024", null ],
-    [ "else", "ws_borrar_usuario_8php.html#a9f3a5d7a453d3c1f143206ac29cefac3", null ]
+    [ "$input", "ws_borrar_usuario_8php.html#a7c130730dd1c2f4cba0a39e00a56fefd", null ],
+    [ "$token", "ws_borrar_usuario_8php.html#a00ae4fcafb1145f5e968bdf920f83e2e", null ],
+    [ "else", "ws_borrar_usuario_8php.html#af4a6886662fc3121159c8cef868261e7", null ]
 ];
