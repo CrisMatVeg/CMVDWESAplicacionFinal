@@ -1,0 +1,120 @@
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+controller/\+c\+Editar\+Departamento.php File Reference}
+\hypertarget{c_editar_departamento_8php}{}\label{c_editar_departamento_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cEditarDepartamento.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cEditarDepartamento.php}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_departamento_8php_a8db43f23e3fb56f38412236a3947dadb}{\$a\+Errores}}
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}}
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entrada\+OK}} = true
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_a7c555ca6f634f8259ef3f58d01e6438d}{\$gestion\+Departamentos}} = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_a54350bac53973f48b83ae768fc370f16}{\$codigo\+Departamento\+Seleccionado}} = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamento\+Seleccionado}} = \$gestion\+Departamentos-\/$>$seleccionar\+Departamento(\$codigo\+Departamento\+Seleccionado)
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\+\_\+\+SESSION}} \+[\textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$departamento\+Seleccionado
+\item 
+\doxymbox{\hyperlink{c_editar_departamento_8php_a66ace87ea8563eaf04dab422e0296a82}{\$datos\+Departamento\+Vista}}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_editar_departamento_8php_aa98407b48b34c1752e492b36ade80439}{else}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{c_editar_departamento_8php_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{c_editar_departamento_8php_acadc2734fedf3f592bfd07658d412d7a}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{\$\_SESSION}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_acadc2734fedf3f592bfd07658d412d7a} 
+\$\+\_\+\+SESSION\+[ \textquotesingle{}dpto\+Seleccionado\textquotesingle{}]\+ = \$departamento\+Seleccionado}
+
+\Hypertarget{c_editar_departamento_8php_a8db43f23e3fb56f38412236a3947dadb}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$aErrores@{\$aErrores}}
+\index{\$aErrores@{\$aErrores}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a8db43f23e3fb56f38412236a3947dadb} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \$a\+Errores}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'descDepartamento'}\ =>\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'VolumenDeNegocio'}\ =>\ null}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{c_editar_departamento_8php_a6e16c1c08f9ff5671bd921d75436333e}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$aRespuestas@{\$aRespuestas}}
+\index{\$aRespuestas@{\$aRespuestas}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$aRespuestas}{\$aRespuestas}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a6e16c1c08f9ff5671bd921d75436333e} 
+\$a\+Respuestas}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'descDepartamento'}\ =>\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'VolumenDeNegocio'}\ =>\ \textcolor{stringliteral}{''}}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{c_editar_departamento_8php_a54350bac53973f48b83ae768fc370f16}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$codigoDepartamentoSeleccionado@{\$codigoDepartamentoSeleccionado}}
+\index{\$codigoDepartamentoSeleccionado@{\$codigoDepartamentoSeleccionado}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$codigoDepartamentoSeleccionado}{\$codigoDepartamentoSeleccionado}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a54350bac53973f48b83ae768fc370f16} 
+\$codigo\+Departamento\+Seleccionado = \$\+\_\+\+SESSION\+[\textquotesingle{}cod\+Dpto\+Seleccionado\textquotesingle{}]\+}
+
+\Hypertarget{c_editar_departamento_8php_a66ace87ea8563eaf04dab422e0296a82}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$datosDepartamentoVista@{\$datosDepartamentoVista}}
+\index{\$datosDepartamentoVista@{\$datosDepartamentoVista}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$datosDepartamentoVista}{\$datosDepartamentoVista}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a66ace87ea8563eaf04dab422e0296a82} 
+\$datos\+Departamento\+Vista}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}codDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getCodDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}descDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getDescDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaCreacionDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getFechaCreacionDepartamento(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}VolumenDeNegocio"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getVolumenDeNegocio(),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}fechaBajaDepartamento"{}}\ =>\ \doxymbox{\hyperlink{c_consultar_departamentos_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}{\$departamentoSeleccionado}}-\/>getFechaBajaDepartamento()}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{c_editar_departamento_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$departamentoSeleccionado@{\$departamentoSeleccionado}}
+\index{\$departamentoSeleccionado@{\$departamentoSeleccionado}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$departamentoSeleccionado}{\$departamentoSeleccionado}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a57bc0d9e9d6910aab0b5777c06f5c2b2} 
+\$departamento\+Seleccionado = \$gestion\+Departamentos-\/$>$seleccionar\+Departamento(\$codigo\+Departamento\+Seleccionado)}
+
+\Hypertarget{c_editar_departamento_8php_ab0dcac058225ef7a9871cdb707b90364}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$entradaOK@{\$entradaOK}}
+\index{\$entradaOK@{\$entradaOK}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$entradaOK}{\$entradaOK}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_ab0dcac058225ef7a9871cdb707b90364} 
+\$entrada\+OK = true}
+
+\Hypertarget{c_editar_departamento_8php_a7c555ca6f634f8259ef3f58d01e6438d}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!\$gestionDepartamentos@{\$gestionDepartamentos}}
+\index{\$gestionDepartamentos@{\$gestionDepartamentos}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{\$gestionDepartamentos}{\$gestionDepartamentos}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_a7c555ca6f634f8259ef3f58d01e6438d} 
+\$gestion\+Departamentos = new \doxymbox{\hyperlink{class_departamento_p_d_o}{Departamento\+PDO}}()}
+
+\Hypertarget{c_editar_departamento_8php_aa98407b48b34c1752e492b36ade80439}\index{cEditarDepartamento.php@{cEditarDepartamento.php}!else@{else}}
+\index{else@{else}!cEditarDepartamento.php@{cEditarDepartamento.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{c_editar_departamento_8php_aa98407b48b34c1752e492b36ade80439} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}cambiar\+Datos\textquotesingle{}]\+)) else}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ =\ \textcolor{keyword}{false}}
+
+\end{DoxyCode}

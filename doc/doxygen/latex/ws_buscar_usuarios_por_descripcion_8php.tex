@@ -1,0 +1,55 @@
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+api/\+ws\+Buscar\+Usuarios\+Por\+Descripcion.php File Reference}
+\hypertarget{ws_buscar_usuarios_por_descripcion_8php}{}\label{ws_buscar_usuarios_por_descripcion_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/api/wsBuscarUsuariosPorDescripcion.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/api/wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespace_a_p_i}{API}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{ws_buscar_usuarios_por_descripcion_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}{\$token\+Acceso}} = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}(\$token\+Acceso)) \doxymbox{\hyperlink{ws_buscar_usuarios_por_descripcion_8php_a8904cd8052fe4955108d51178419852f}{\$descripcion\+Busqueda}} = \$\+\_\+\+GET\+[\textquotesingle{}descripcion\textquotesingle{}]\+ ?? null
+\item 
+\doxymbox{\hyperlink{ws_buscar_usuarios_por_descripcion_8php_a838ebbb6b58761d3d50f7c0b606df855}{\$coleccion\+Usuarios}} = \doxymbox{\hyperlink{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d}{Usuario\+PDO::\+buscar\+Usuarios}}(\$descripcion\+Busqueda)
+\item 
+\doxymbox{\hyperlink{ws_buscar_usuarios_por_descripcion_8php_a06face0ef35c41554d8f4fe115363f58}{\$resultado}} = \+[$\,$]\+
+\item 
+\doxymbox{\hyperlink{ws_buscar_usuarios_por_descripcion_8php_a17c46beb91b88ab8ada2bf2fb7fede8e}{foreach}} ( \$coleccion\+Usuarios as \$usuario) \{
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_a838ebbb6b58761d3d50f7c0b606df855}\index{wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}!\$coleccionUsuarios@{\$coleccionUsuarios}}
+\index{\$coleccionUsuarios@{\$coleccionUsuarios}!wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection{\texorpdfstring{\$coleccionUsuarios}{\$coleccionUsuarios}}
+{\footnotesize\ttfamily \label{ws_buscar_usuarios_por_descripcion_8php_a838ebbb6b58761d3d50f7c0b606df855} 
+\$coleccion\+Usuarios = \doxymbox{\hyperlink{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d}{Usuario\+PDO::\+buscar\+Usuarios}}(\$descripcion\+Busqueda)}
+
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_a8904cd8052fe4955108d51178419852f}\index{wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}!\$descripcionBusqueda@{\$descripcionBusqueda}}
+\index{\$descripcionBusqueda@{\$descripcionBusqueda}!wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection{\texorpdfstring{\$descripcionBusqueda}{\$descripcionBusqueda}}
+{\footnotesize\ttfamily \label{ws_buscar_usuarios_por_descripcion_8php_a8904cd8052fe4955108d51178419852f} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (! \$token\+Acceso\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}!\doxymbox{\hyperlink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO::\+validar\+Token}}( \$token\+Acceso)) \$descripcion\+Busqueda = \$\+\_\+\+GET\+[\textquotesingle{}descripcion\textquotesingle{}]\+ ?? null}
+
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_a06face0ef35c41554d8f4fe115363f58}\index{wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}!\$resultado@{\$resultado}}
+\index{\$resultado@{\$resultado}!wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection{\texorpdfstring{\$resultado}{\$resultado}}
+{\footnotesize\ttfamily \label{ws_buscar_usuarios_por_descripcion_8php_a06face0ef35c41554d8f4fe115363f58} 
+\$resultado = \+[$\,$]\+}
+
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_a34ef35abd8546bb402ea1d7bdeaa9e08}\index{wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}!\$tokenAcceso@{\$tokenAcceso}}
+\index{\$tokenAcceso@{\$tokenAcceso}!wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection{\texorpdfstring{\$tokenAcceso}{\$tokenAcceso}}
+{\footnotesize\ttfamily \label{ws_buscar_usuarios_por_descripcion_8php_a34ef35abd8546bb402ea1d7bdeaa9e08} 
+\$token\+Acceso = \$\+\_\+\+GET\+[\textquotesingle{}token\textquotesingle{}]\+ ?? null}
+
+\Hypertarget{ws_buscar_usuarios_por_descripcion_8php_a17c46beb91b88ab8ada2bf2fb7fede8e}\index{wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}!foreach@{foreach}}
+\index{foreach@{foreach}!wsBuscarUsuariosPorDescripcion.php@{wsBuscarUsuariosPorDescripcion.php}}
+\doxysubsubsection{\texorpdfstring{foreach}{foreach}}
+{\footnotesize\ttfamily \label{ws_buscar_usuarios_por_descripcion_8php_a17c46beb91b88ab8ada2bf2fb7fede8e} 
+foreach (\begin{DoxyParamCaption}\item[{}]{\$coleccion\+Usuarios as}{}\end{DoxyParamCaption}) \{}
+

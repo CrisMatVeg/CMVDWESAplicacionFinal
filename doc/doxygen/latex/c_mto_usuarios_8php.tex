@@ -1,0 +1,62 @@
+\doxysection{D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+controller/\+c\+Mto\+Usuarios.php File Reference}
+\hypertarget{c_mto_usuarios_8php}{}\label{c_mto_usuarios_8php}\index{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cMtoUsuarios.php@{D:/ProyectosNB/CMVDWESAplicacionFinal/controller/cMtoUsuarios.php}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespace_controladores}{Controladores}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset(\$\+\_\+\+SESSION\+[\textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}volver\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_mto_usuarios_8php_a7d943a93b734c9d2e4e08e391f018323}{\$usuario\+PDO}} = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}ver\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}editar\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}baja\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}borrar\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_mto_usuarios_8php_a1e14158fef4fca55517ecbaf9d97a140}{\$entrada\+OK}} = true
+\item 
+\doxymbox{\hyperlink{c_mto_usuarios_8php_a6f63c5a0557f7da205d6d99f947d58b8}{\$a\+Errores}} = \+[\textquotesingle{}descripcion\textquotesingle{} =$>$ \textquotesingle{}\textquotesingle{}]\+
+\item 
+\doxymbox{\hyperlink{c_mto_usuarios_8php_a6e16c1c08f9ff5671bd921d75436333e}{\$a\+Respuestas}} = \+[\textquotesingle{}descripcion\textquotesingle{} =$>$ \textquotesingle{}\textquotesingle{}]\+
+\item 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}busqueda\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}enviar\textquotesingle{}]\+)) \doxymbox{\hyperlink{c_mto_usuarios_8php_a9b3002c4f8eeaf551f62628f3523bf88}{\$usuarios}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{c_mto_usuarios_8php_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{c_mto_usuarios_8php_a6f63c5a0557f7da205d6d99f947d58b8}\index{cMtoUsuarios.php@{cMtoUsuarios.php}!\$aErrores@{\$aErrores}}
+\index{\$aErrores@{\$aErrores}!cMtoUsuarios.php@{cMtoUsuarios.php}}
+\doxysubsubsection{\texorpdfstring{\$aErrores}{\$aErrores}}
+{\footnotesize\ttfamily \label{c_mto_usuarios_8php_a6f63c5a0557f7da205d6d99f947d58b8} 
+\$a\+Errores = \+[\textquotesingle{}descripcion\textquotesingle{} =$>$ \textquotesingle{}\textquotesingle{}]\+}
+
+\Hypertarget{c_mto_usuarios_8php_a6e16c1c08f9ff5671bd921d75436333e}\index{cMtoUsuarios.php@{cMtoUsuarios.php}!\$aRespuestas@{\$aRespuestas}}
+\index{\$aRespuestas@{\$aRespuestas}!cMtoUsuarios.php@{cMtoUsuarios.php}}
+\doxysubsubsection{\texorpdfstring{\$aRespuestas}{\$aRespuestas}}
+{\footnotesize\ttfamily \label{c_mto_usuarios_8php_a6e16c1c08f9ff5671bd921d75436333e} 
+\$a\+Respuestas = \+[\textquotesingle{}descripcion\textquotesingle{} =$>$ \textquotesingle{}\textquotesingle{}]\+}
+
+\Hypertarget{c_mto_usuarios_8php_a1e14158fef4fca55517ecbaf9d97a140}\index{cMtoUsuarios.php@{cMtoUsuarios.php}!\$entradaOK@{\$entradaOK}}
+\index{\$entradaOK@{\$entradaOK}!cMtoUsuarios.php@{cMtoUsuarios.php}}
+\doxysubsubsection{\texorpdfstring{\$entradaOK}{\$entradaOK}}
+{\footnotesize\ttfamily \label{c_mto_usuarios_8php_a1e14158fef4fca55517ecbaf9d97a140} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}ver\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[\textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}editar\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}baja\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}borrar\+Usuario\textquotesingle{}]\+, \$\+\_\+\+REQUEST\+[ \textquotesingle{}cod\+Usuario\textquotesingle{}]\+)) \$entrada\+OK = true}
+
+\Hypertarget{c_mto_usuarios_8php_a7d943a93b734c9d2e4e08e391f018323}\index{cMtoUsuarios.php@{cMtoUsuarios.php}!\$usuarioPDO@{\$usuarioPDO}}
+\index{\$usuarioPDO@{\$usuarioPDO}!cMtoUsuarios.php@{cMtoUsuarios.php}}
+\doxysubsubsection{\texorpdfstring{\$usuarioPDO}{\$usuarioPDO}}
+{\footnotesize\ttfamily \label{c_mto_usuarios_8php_a7d943a93b734c9d2e4e08e391f018323} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(!isset( \$\+\_\+\+SESSION\+[ \textquotesingle{}usuario\+Actual\+DWESAplicacion\+Final\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+REQUEST\+[\textquotesingle{}atras\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}volver\textquotesingle{}]\+)) \$usuario\+PDO = new \doxymbox{\hyperlink{class_usuario_p_d_o}{Usuario\+PDO}}()}
+
+\Hypertarget{c_mto_usuarios_8php_a9b3002c4f8eeaf551f62628f3523bf88}\index{cMtoUsuarios.php@{cMtoUsuarios.php}!\$usuarios@{\$usuarios}}
+\index{\$usuarios@{\$usuarios}!cMtoUsuarios.php@{cMtoUsuarios.php}}
+\doxysubsubsection{\texorpdfstring{\$usuarios}{\$usuarios}}
+{\footnotesize\ttfamily \label{c_mto_usuarios_8php_a9b3002c4f8eeaf551f62628f3523bf88} 
+\doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}}(isset(\$\+\_\+\+SESSION\+[\textquotesingle{}busqueda\+Usuario\textquotesingle{}]\+)) \doxymbox{\hyperlink{ws_consultar_usuario_8php_a289bcbdb1f25c4a412e4cd0ef02f4f8c}{if}} (isset( \$\+\_\+\+REQUEST\+[ \textquotesingle{}enviar\textquotesingle{}]\+)) \$usuarios}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ =\ \doxymbox{\hyperlink{ws_borrar_usuario_8php_ab0dcac058225ef7a9871cdb707b90364}{\$entradaOK}}\ \&\&\ !empty(\doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'busquedaUsuario'}])}
+\DoxyCodeLine{?\ \doxymbox{\hyperlink{c_mi_cuenta_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}{\$usuarioPDO}}-\/>buscarUsuarios(\doxymbox{\hyperlink{c_consultar_departamentos_8php_acadc2734fedf3f592bfd07658d412d7a}{\$\_SESSION}}[\textcolor{stringliteral}{'busquedaUsuario'}])}
+\DoxyCodeLine{:\ \doxymbox{\hyperlink{c_mi_cuenta_8php_a0eb2a1bdb5165ab8791c6b0ec5d08908}{\$usuarioPDO}}-\/>buscarUsuarios()}
+
+\end{DoxyCode}

@@ -1,0 +1,124 @@
+\doxysection{API Namespace Reference}
+\hypertarget{namespace_a_p_i}{}\label{namespace_a_p_i}\index{API@{API}}
+
+
+\doxysubsection{Detailed Description}
+Endpoint \doxylink{namespace_a_p_i}{API}:\+ Eliminación de usuario
+
+Este script gestiona la eliminación de un usuario mediante una petición HTTP con formato JSON. Devuelve siempre una respuesta en formato JSON.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Validación de acceso:\+
+\begin{DoxyItemize}
+\item Recoge el parámetro {\ttfamily token} por GET.
+\item Verifica su validez mediante {\ttfamily \doxylink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO\textbackslash{}validar\+Token}}.
+\item Si el token no es válido, devuelve error "{}\+No autorizado"{}.
+\end{DoxyItemize}
+\item Recepción de datos:\+
+\begin{DoxyItemize}
+\item Lee el cuerpo de la petición (JSON).
+\item Requiere el campo {\ttfamily cod\+Usuario}.
+\item Requiere el campo {\ttfamily confirmacion}.
+\end{DoxyItemize}
+\item Validación funcional:\+
+\begin{DoxyItemize}
+\item La confirmación debe ser exactamente "{}\+SI"{}.
+\item Si la validación falla, devuelve:\+
+\begin{DoxyItemize}
+\item exito = false
+\item array de errores
+\item array de respuestas
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Eliminación del usuario:\+
+\begin{DoxyItemize}
+\item Llama al método {\ttfamily \doxylink{class_usuario_p_d_o_ac08be54eb31f194fb1bdd1457a2c008e}{Usuario\+PDO\textbackslash{}borrar\+Usuario}}.
+\item Devuelve el resultado en formato JSON.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Métodos estáticos {\ttfamily validar\+Token} y {\ttfamily borrar\+Usuario}
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Endpoint \doxylink{namespace_a_p_i}{API}:\+ Búsqueda de usuarios
+
+Este script gestiona la consulta de usuarios mediante una petición HTTP y devuelve los resultados en formato JSON.
+
+Funcionalidad:\+
+\begin{DoxyEnumerate}
+\item Validación de acceso:\+
+\begin{DoxyItemize}
+\item Recoge el parámetro {\ttfamily token} por GET.
+\item Verifica su validez mediante {\ttfamily \doxylink{class_usuario_p_d_o_a38a823e97a3d66a7a43cf1cc50f8a84d}{Usuario\+PDO\textbackslash{}validar\+Token}}.
+\item Si el token no es válido, devuelve error "{}\+Token no valido"{}.
+\end{DoxyItemize}
+\item Búsqueda de usuarios:\+
+\begin{DoxyItemize}
+\item Recoge el parámetro opcional {\ttfamily descripcion}.
+\item Llama al método {\ttfamily \doxylink{class_usuario_p_d_o_a34b8b6b1220afab922021bb2b3df973d}{Usuario\+PDO\textbackslash{}buscar\+Usuarios}}.
+\item Obtiene una colección de objetos \doxylink{class_usuario}{Usuario}.
+\end{DoxyItemize}
+\item Formateo de respuesta:\+
+\begin{DoxyItemize}
+\item Recorre la lista de usuarios.
+\item Extrae los datos necesarios mediante métodos getter.
+\item Devuelve el resultado en formato JSON estructurado.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Métodos estáticos {\ttfamily validar\+Token} y {\ttfamily buscar\+Usuarios}
+\item Clase {\ttfamily \doxylink{class_usuario}{Usuario}} y sus métodos getter
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+Endpoint \doxylink{namespace_a_p_i}{API}:\+ Consulta de usuario por código
+
+Este script permite obtener la información completa de un usuario a partir de su código, mediante una petición HTTP con cuerpo JSON.
+
+Funcionalidad:\+
+\begin{DoxyItemize}
+\item Valida el token recibido por GET.
+\item Lee el cuerpo de la petición en formato JSON.
+\item Comprueba que se haya enviado {\ttfamily cod\+Usuario}.
+\item Verifica la existencia del usuario en base de datos.
+\item Devuelve los datos del usuario en formato JSON.
+\end{DoxyItemize}
+
+Códigos de respuesta:\+
+\begin{DoxyItemize}
+\item 401 → Token no válido o no autorizado.
+\item 400 → \doxylink{class_usuario}{Usuario} no especificado.
+\item 404 → \doxylink{class_usuario}{Usuario} no encontrado.
+\end{DoxyItemize}
+
+Dependencias:\+
+\begin{DoxyItemize}
+\item Clase {\ttfamily \doxylink{class_usuario_p_d_o}{Usuario\+PDO}}
+\item Métodos {\ttfamily validar\+Token} y {\ttfamily validar\+Usuario}
+\item Clase {\ttfamily \doxylink{class_usuario}{Usuario}} y sus métodos getter
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Cristian Mateos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}

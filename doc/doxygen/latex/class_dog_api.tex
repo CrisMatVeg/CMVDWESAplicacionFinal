@@ -1,0 +1,73 @@
+\doxysection{Dog\+Api Class Reference}
+\hypertarget{class_dog_api}{}\label{class_dog_api}\index{DogApi@{DogApi}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_dog_api_aa679db743ad1e22decd83fc0bc2536be}{\+\_\+\+\_\+construct}} (array \$datos\+Api)
+\item 
+\doxymbox{\hyperlink{class_dog_api_a10a96ee93e60af64125cb7d004a40c41}{obtener\+Datos\+Foto\+Perro}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_dog_api_ae8d4171b2685127058f15fd1a626b6be}{procesar\+Razas}} (array \$datos\+Api)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_dog_api_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dog_api_aa679db743ad1e22decd83fc0bc2536be}\index{DogApi@{DogApi}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DogApi@{DogApi}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_dog_api_aa679db743ad1e22decd83fc0bc2536be} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{array}]{\$datos\+Api}{}\end{DoxyParamCaption})}
+
+Constructor
+
+Inicializa los datos de la \doxylink{namespace_a_p_i}{API} a partir del array devuelto
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$datos\+Api} & Array obtenido de la \doxylink{namespace_a_p_i}{API} con keys \textquotesingle{}message\textquotesingle{} y \textquotesingle{}status\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_dog_api_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dog_api_a10a96ee93e60af64125cb7d004a40c41}\index{DogApi@{DogApi}!obtenerDatosFotoPerro@{obtenerDatosFotoPerro}}
+\index{obtenerDatosFotoPerro@{obtenerDatosFotoPerro}!DogApi@{DogApi}}
+\doxysubsubsection{\texorpdfstring{obtenerDatosFotoPerro()}{obtenerDatosFotoPerro()}}
+{\footnotesize\ttfamily \label{class_dog_api_a10a96ee93e60af64125cb7d004a40c41} 
+obtener\+Datos\+Foto\+Perro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve un array con los datos de la foto del perro
+
+\begin{DoxyReturn}{Returns}
+array Array asociativo con keys \textquotesingle{}imagen\textquotesingle{} y \textquotesingle{}estado\textquotesingle{} 
+\end{DoxyReturn}
+\Hypertarget{class_dog_api_ae8d4171b2685127058f15fd1a626b6be}\index{DogApi@{DogApi}!procesarRazas@{procesarRazas}}
+\index{procesarRazas@{procesarRazas}!DogApi@{DogApi}}
+\doxysubsubsection{\texorpdfstring{procesarRazas()}{procesarRazas()}}
+{\footnotesize\ttfamily \label{class_dog_api_ae8d4171b2685127058f15fd1a626b6be} 
+procesar\+Razas (\begin{DoxyParamCaption}\item[{array}]{\$datos\+Api}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Procesa las razas de perros recibidas desde la \doxylink{namespace_a_p_i}{API}
+
+Convierte el array de subrazas en strings con formato "{}raza/\+subraza"{} y ordena alfabéticamente.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$datos\+Api} & Array devuelto por la \doxylink{namespace_a_p_i}{API} con key \textquotesingle{}message\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Array de strings con todas las razas procesadas 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+model/\+\doxymbox{\hyperlink{_dog_api_8php}{Dog\+Api.\+php}}\end{DoxyCompactItemize}

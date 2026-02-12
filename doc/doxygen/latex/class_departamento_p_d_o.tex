@@ -1,0 +1,167 @@
+\doxysection{Departamento\+PDO Class Reference}
+\hypertarget{class_departamento_p_d_o}{}\label{class_departamento_p_d_o}\index{DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_ab5e717ac6f640869eb025137f55b86be}{buscar\+Departamentos}} (\$estado="{}Todos"{}, \$descripcion=null)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_a546176b329f7bbc482c7de6d4c9c8012}{seleccionar\+Departamento}} (\$cod\+Departamento)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_adfb5ad7954e765df4d079715481478cc}{validar\+Cod\+No\+Existe}} (\$cod\+Departamento)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_ab7eb697ff904ce04c697a37df26a910a}{alta\+Departamento}} (\$cod\+Departamento, \$Desc\+Departamento, \$Volumen\+De\+Negocio)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_a8b0030679eaa1547b414227ae5736263}{editar\+Departamento}} (\$cod\+Departamento, \$datos\+Nuevos)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_ad8fddee880c70f1782e19f2ab30932ae}{rehabilitar\+Departamento}} (\$cod\+Departamento)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_a60f002ffadc7c554b5832e3680642513}{baja\+Departamento}} (\$cod\+Departamento)
+\item 
+static \doxymbox{\hyperlink{class_departamento_p_d_o_a70541a791a4413ae3238dfa452f7244b}{borrar\+Departamento}} (\$cod\+Departamento)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_departamento_p_d_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_departamento_p_d_o_ab7eb697ff904ce04c697a37df26a910a}\index{DepartamentoPDO@{DepartamentoPDO}!altaDepartamento@{altaDepartamento}}
+\index{altaDepartamento@{altaDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{altaDepartamento()}{altaDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_ab7eb697ff904ce04c697a37df26a910a} 
+alta\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{, }\item[{}]{\$\+Desc\+Departamento}{, }\item[{}]{\$\+Volumen\+De\+Negocio}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Da de alta un nuevo departamento
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+string & {\em \$\+Desc\+Departamento} & \\
+\hline
+float & {\em \$\+Volumen\+De\+Negocio} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\texorpdfstring{$\vert$}{|}null True si se insertó, null si falló 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_a60f002ffadc7c554b5832e3680642513}\index{DepartamentoPDO@{DepartamentoPDO}!bajaDepartamento@{bajaDepartamento}}
+\index{bajaDepartamento@{bajaDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{bajaDepartamento()}{bajaDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_a60f002ffadc7c554b5832e3680642513} 
+baja\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Da de baja un departamento (pone Fecha\+Baja\+Departamento a NOW())
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se modificó 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_a70541a791a4413ae3238dfa452f7244b}\index{DepartamentoPDO@{DepartamentoPDO}!borrarDepartamento@{borrarDepartamento}}
+\index{borrarDepartamento@{borrarDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{borrarDepartamento()}{borrarDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_a70541a791a4413ae3238dfa452f7244b} 
+borrar\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Borra un departamento de la base de datos
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se eliminó, False si no existía 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_ab5e717ac6f640869eb025137f55b86be}\index{DepartamentoPDO@{DepartamentoPDO}!buscarDepartamentos@{buscarDepartamentos}}
+\index{buscarDepartamentos@{buscarDepartamentos}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{buscarDepartamentos()}{buscarDepartamentos()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_ab5e717ac6f640869eb025137f55b86be} 
+buscar\+Departamentos (\begin{DoxyParamCaption}\item[{}]{\$estado}{ = {\ttfamily "{}Todos"{}}, }\item[{}]{\$descripcion}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Busca departamentos filtrando por estado y/\+o descripción.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$estado} & "{}\+Todos"{}, "{}\+Alta"{} o "{}\+Baja"{} \\
+\hline
+string | null & {\em \$descripcion} & Texto a buscar en la descripción \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Array de objetos std\+Class con los datos de los departamentos 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_a8b0030679eaa1547b414227ae5736263}\index{DepartamentoPDO@{DepartamentoPDO}!editarDepartamento@{editarDepartamento}}
+\index{editarDepartamento@{editarDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{editarDepartamento()}{editarDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_a8b0030679eaa1547b414227ae5736263} 
+editar\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{, }\item[{}]{\$datos\+Nuevos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Edita un departamento
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+array & {\em \$datos\+Nuevos} & Array asociativo con los campos a modificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se modificó al menos un campo 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_ad8fddee880c70f1782e19f2ab30932ae}\index{DepartamentoPDO@{DepartamentoPDO}!rehabilitarDepartamento@{rehabilitarDepartamento}}
+\index{rehabilitarDepartamento@{rehabilitarDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{rehabilitarDepartamento()}{rehabilitarDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_ad8fddee880c70f1782e19f2ab30932ae} 
+rehabilitar\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Rehabilita un departamento (pone Fecha\+Baja\+Departamento a NULL)
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si se modificó 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_a546176b329f7bbc482c7de6d4c9c8012}\index{DepartamentoPDO@{DepartamentoPDO}!seleccionarDepartamento@{seleccionarDepartamento}}
+\index{seleccionarDepartamento@{seleccionarDepartamento}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{seleccionarDepartamento()}{seleccionarDepartamento()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_a546176b329f7bbc482c7de6d4c9c8012} 
+seleccionar\+Departamento (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene un departamento por su código
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Departamento\texorpdfstring{$\vert$}{|}null Devuelve un objeto \doxylink{class_departamento}{Departamento} o null si no existe 
+\end{DoxyReturn}
+\Hypertarget{class_departamento_p_d_o_adfb5ad7954e765df4d079715481478cc}\index{DepartamentoPDO@{DepartamentoPDO}!validarCodNoExiste@{validarCodNoExiste}}
+\index{validarCodNoExiste@{validarCodNoExiste}!DepartamentoPDO@{DepartamentoPDO}}
+\doxysubsubsection{\texorpdfstring{validarCodNoExiste()}{validarCodNoExiste()}}
+{\footnotesize\ttfamily \label{class_departamento_p_d_o_adfb5ad7954e765df4d079715481478cc} 
+validar\+Cod\+No\+Existe (\begin{DoxyParamCaption}\item[{}]{\$cod\+Departamento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Comprueba si un código de departamento ya existe
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cod\+Departamento} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True si existe, False si no 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+D:\+/\+\+Proyectos\+NB/\+\+CMVDWESAplicacion\+Final/\+model/\+\doxymbox{\hyperlink{_departamento_p_d_o_8php}{Departamento\+PDO.\+php}}\end{DoxyCompactItemize}
