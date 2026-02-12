@@ -79,7 +79,7 @@ class UsuarioPDO {
     public static function cambiarPassword($oUsuario, $nuevaPassword) {
         $sql = "UPDATE T01_Usuarios 
                 SET T01_Password = SHA2(:password,256) 
-                WHERE T01_CodUsuario = :usuario";
+                WHERE T01_CodUsuario = :codUsuario";
 
         $consulta = DBPDO::ejecutarConsulta($sql, [
             ':codUsuario' => $oUsuario->getCodUsuario(),
