@@ -1,10 +1,41 @@
 <?php
+
+/**
+ * Controlador: Añadir Departamento
+ *
+ * Este controlador gestiona la creación de nuevos departamentos
+ * en la aplicación final.
+ *
+ * Funcionalidad:
+ * - Verifica que exista sesión activa.
+ * - Gestiona el botón "Atrás" hacia el mantenimiento de departamentos.
+ * - Valida los datos del formulario:
+ *      - codDepartamento (3 caracteres alfanuméricos)
+ *      - descDepartamento (4-255 caracteres)
+ *      - VolumenDeNegocio (float positivo)
+ * - Comprueba que el código de departamento no exista.
+ * - Crea el departamento mediante `DepartamentoPDO::altaDepartamento`.
+ * - Redirige a mantenimiento si el alta es correcta.
+ *
+ * Dependencias:
+ * - Clase `DepartamentoPDO`
+ * - Clase `validacionFormularios`
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
+
+// Control de sesión obligatoria
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
     exit;
 }
 
+// Gestión del botón atrás
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
     header('Location: index.php');
@@ -20,7 +51,7 @@ $aErrores = [
 $aRespuestas = [
     'codDepartamento' => '',
     'descDepartamento' => '',
-    'VolumenDeNegocio' => '',
+    'VolumenDeNegocio' => ''
 ];
 
 $entradaOK = true;
@@ -29,37 +60,41 @@ if (isset($_REQUEST['confirmarAñadir'])) {
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
 
-    $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['codDepartamento'], 3, 3, 1);
-    $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descDepartamento'], 255, 4, 1, 1);
-    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['VolumenDeNegocio'], PHP_FLOAT_MAX, 0, 1);
+    $codigoDepartamento = $_REQUEST['codDepartamento'];
+    $descripcionDepartamento = $_REQUEST['descDepartamento'];
+    $volumenNegocio = $_REQUEST['VolumenDeNegocio'];
 
-    $aRespuestas['codDepartamento'] = $_REQUEST['codDepartamento'];
-    $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento'];
-    $aRespuestas['VolumenDeNegocio'] = $_REQUEST['VolumenDeNegocio'];
+    // Validación de campos
+    $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfaNumerico($codigoDepartamento, 3, 3, 1);
+    $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfaNumerico($descripcionDepartamento, 255, 4, 1, 1);
+    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($volumenNegocio, PHP_FLOAT_MAX, 0, 1);
 
-    foreach ($aErrores as $campo => $error) {
-        if ($error != null) {
+    $aRespuestas['codDepartamento'] = $codigoDepartamento;
+    $aRespuestas['descDepartamento'] = $descripcionDepartamento;
+    $aRespuestas['VolumenDeNegocio'] = $volumenNegocio;
+
+    foreach ($aErrores as $error) {
+        if ($error !== null) {
             $entradaOK = false;
         }
     }
 
     if ($entradaOK) {
-        // Se comprueba si el código de departamento ya existe
-        if (DepartamentoPDO::validarCodNoExiste($_REQUEST['codDepartamento'])) {
+
+        // Verifica si el código ya existe
+        if (DepartamentoPDO::validarCodNoExiste($codigoDepartamento)) {
             $aErrores['codDepartamento'] = "El codigo de departamento ya existe.";
             $entradaOK = false;
         } else {
-            // Si no existe, se crea el nuevo departamento
-            $oDepartamento = DepartamentoPDO::altaDepartamento(
-                $_REQUEST['codDepartamento'],
-                $_REQUEST['descDepartamento'],
-                $_REQUEST['VolumenDeNegocio']
+
+            $departamentoCreado = DepartamentoPDO::altaDepartamento(
+                $codigoDepartamento,
+                $descripcionDepartamento,
+                $volumenNegocio
             );
 
-
-            if ($oDepartamento === null) {
+            if ($departamentoCreado === null) {
                 $entradaOK = false;
-                //Se crea el error en el caso de que no se pueda crear el departamento
                 $_SESSION['errorRegistro'] = "Error al crear el departamento. Por favor, inténtalo de nuevo.";
             } else {
                 $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
@@ -69,9 +104,7 @@ if (isset($_REQUEST['confirmarAñadir'])) {
         }
     }
 } else {
-    // Si no se ha enviado el formulario
     $entradaOK = false;
 }
 
-// Si hay errores o no se ha enviado, cargar el layout con el formulario
 require_once $view['layout'];

@@ -1,16 +1,17 @@
 <?php
+
 /**
- * Controlador: Inicio Público (cInicioPublico)
+ * Controlador: Inicio Público
  *
  * Este controlador gestiona la navegación desde la página de inicio público
  * de la aplicación Login/Logoff.
  *
  * Funcionalidad:
- * - Verifica si se ha enviado `paginaDestino` mediante formulario o enlace.
+ * - Comprueba si se ha enviado `paginaDestino` mediante formulario o enlace.
  * - Si se ha enviado:
- *      - Actualiza la página anterior (`paginaAnterior`) con la página en curso.
- *      - Actualiza la página en curso (`paginaEnCurso`) con el destino.
- *      - Redirige inmediatamente a `index.php` para cargar la vista correspondiente.
+ *      - Actualiza `paginaAnterior` con la página en curso.
+ *      - Actualiza `paginaEnCurso` con el destino.
+ *      - Redirige a `index.php` para cargar la vista correspondiente.
  * - Si no se ha enviado `paginaDestino`, carga la vista principal (`layout`).
  *
  * Dependencias:
@@ -19,9 +20,10 @@
  *
  * @package Controladores
  * @author Cristian Mateos
- * @version 1.0
+ * @version 2.0
  */
 
+// Navegación hacia la página destino
 if (isset($_REQUEST['paginaDestino'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = $_REQUEST["paginaDestino"];
@@ -29,5 +31,5 @@ if (isset($_REQUEST['paginaDestino'])) {
     exit;
 }
 
-// Carga la vista layout principal
+// Carga la vista principal
 require_once $view["layout"];
