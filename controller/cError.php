@@ -1,4 +1,29 @@
 <?php
+/**
+ * Controlador: Gestión de Errores
+ *
+ * Este controlador gestiona la visualización de errores en la aplicación.
+ *
+ * Funcionalidad:
+ * - Comprueba si existe un objeto de error en sesión (`$_SESSION['error']`).
+ * - Si existe, extrae la información del error:
+ *      - Código
+ *      - Descripción
+ *      - Archivo
+ *      - Línea
+ *      - Página siguiente
+ * - Permite volver a la página anterior mediante el botón "atras".
+ * - Carga la vista de error (`layout`) con los datos preparados.
+ *
+ * Dependencias:
+ * - Objeto Error almacenado en sesión y sus métodos getter
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
     $avError = [
         'codError' => '',
         'descError' => '',

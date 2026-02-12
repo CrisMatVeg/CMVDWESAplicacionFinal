@@ -1,26 +1,23 @@
 <?php
 /**
- * Controlador: Detalle (cDetalle)
+ * Controlador: Detalle de usuario
  *
  * Este controlador gestiona la navegación de la página de detalle
  * en la aplicación Login/Logoff.
  *
  * Funcionalidad:
- * 1. Gestión del botón "Atrás":
- *    - Si se envía `atras`, actualiza las variables de sesión:
- *       - `paginaAnterior` con el valor enviado
- *       - `paginaEnCurso` con la página anterior
- *    - Redirige inmediatamente a `index.php`.
- *
- * 2. Si no se envía `atras`, carga la vista principal (`layout`).
+ * - Verifica que exista sesión activa.
+ * - Gestión del botón "Atrás":
+ *      - Actualiza `paginaAnterior` y `paginaEnCurso` según la sesión.
+ *      - Redirige a `index.php`.
+ * - Si no se envía "atras", carga la vista principal (`layout`).
  *
  * Dependencias:
  * - Variables de sesión `$_SESSION`
- * - Arreglo `$view` para cargar la vista layout
+ * - Arreglo `$view` para cargar el layout
  *
  * @package Controladores
- * @author Cristian Mateos
- * @version 1.0
+ * @version 2.0
  */
 
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {

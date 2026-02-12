@@ -1,11 +1,32 @@
 <?php
-
 /**
- * @author: Véro Grué
- * Creado el 03/01/2026
+ * Controlador: Cambio de contraseña
+ *
+ * Este controlador permite al usuario autenticado modificar su contraseña.
+ *
+ * Funcionalidad:
+ * - Verifica que exista sesión activa.
+ * - Permite cerrar sesión mediante el botón "atras".
+ * - Permite volver a la página privada mediante el botón "volver".
+ * - Valida:
+ *      - Contraseña actual
+ *      - Nueva contraseña
+ *      - Confirmación de nueva contraseña
+ * - Comprueba que:
+ *      - La contraseña actual sea correcta.
+ *      - Las nuevas contraseñas coincidan.
+ * - Actualiza la contraseña mediante `UsuarioPDO::cambiarPassword`.
+ *
+ * Dependencias:
+ * - Clase `UsuarioPDO`
+ * - Clase `validacionFormularios`
+ * - Objeto usuario almacenado en sesión
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
  */
-
-// Si se hace clic en el botón volver no sigue y redirige al ceunta
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

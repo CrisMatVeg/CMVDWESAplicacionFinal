@@ -1,4 +1,28 @@
 <?php
+/**
+ * Controlador: Registro
+ *
+ * Este controlador gestiona el registro de nuevos usuarios en la aplicación Login/Logoff.
+ *
+ * Funcionalidad:
+ * - Navegación:
+ *      - Atrás: vuelve a la página anterior.
+ * - Registro de usuario:
+ *      - Valida campos: código de usuario, contraseña, descripción y pregunta de seguridad.
+ *      - Comprueba si el código de usuario ya existe.
+ *      - Si no existe, crea el usuario y redirige a inicio privado.
+ *      - Si ocurre un error, guarda el mensaje en sesión y redirige a login.
+ *
+ * Dependencias:
+ * - Clase `UsuarioPDO` para operaciones sobre usuarios.
+ * - Constante `RESPUESTA_SEGURIDAD` para validar la pregunta de seguridad.
+ * - Variables de sesión `$_SESSION`.
+ * - Arreglo `$view` para cargar la vista `layout`.
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 1.0
+ */
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');

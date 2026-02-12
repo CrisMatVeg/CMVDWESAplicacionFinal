@@ -1,4 +1,31 @@
 <?php
+/**
+ * Controlador: Añadir Departamento
+ *
+ * Este controlador gestiona la creación de nuevos departamentos
+ * en la aplicación final.
+ *
+ * Funcionalidad:
+ * - Verifica que exista sesión activa.
+ * - Gestiona el botón "Atrás" hacia el mantenimiento de departamentos.
+ * - Valida los datos del formulario:
+ *      - codDepartamento (3 caracteres alfanuméricos)
+ *      - descDepartamento (4-255 caracteres)
+ *      - VolumenDeNegocio (float positivo)
+ * - Comprueba que el código de departamento no exista.
+ * - Crea el departamento mediante `DepartamentoPDO::altaDepartamento`.
+ * - Redirige a mantenimiento si el alta es correcta.
+ *
+ * Dependencias:
+ * - Clase `DepartamentoPDO`
+ * - Clase `validacionFormularios`
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

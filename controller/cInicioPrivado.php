@@ -1,38 +1,38 @@
 <?php
 /**
- * Controlador: Inicio Privado (cInicioPrivado)
+ * Controlador: Inicio Privado
  *
  * Este controlador gestiona la página de inicio privado de la aplicación Login/Logoff.
- * Se encarga de validar la sesión del usuario, manejar la navegación entre páginas,
- * y preparar los datos del usuario para la vista.
  *
  * Funcionalidad:
- * 1. Validación de sesión:
- *    - Si no existe `$_SESSION['usuarioActualDWESAplicacionFinal']`, redirige a la página de Login.
- *
- * 2. Navegación hacia otra página:
- *    - Si se envía `paginaDestino`, actualiza `paginaAnterior` y `paginaEnCurso`, y redirige.
- *
- * 3. Gestión del botón "Atrás" / cierre de sesión:
- *    - Si se envía `atras`, destruye la sesión actual, la reinicia y vuelve a la página anterior.
- *
- * 4. Preparación de datos del usuario (`$avInicioPrivado`):
- *    - Extrae de `$_SESSION['usuarioActualDWESAplicacionFinal']`:
- *       - Código de usuario (`codUsuario`)
- *       - Número de conexiones (`numConexiones`)
- *       - Fecha y hora de la última conexión anterior (`fechaHoraUltimaConexionAnterior`)
- *       - Descripción del usuario (`descUsuario`)
- *
- * 5. Carga la vista principal (`layout`) con los datos preparados.
+ * - Verifica que exista sesión activa.
+ * - Determina si el usuario tiene perfil de administrador.
+ * - Gestiona la navegación hacia:
+ *      - Mi cuenta
+ *      - Detalle de usuario
+ *      - Mantenimiento de departamentos
+ *      - Mantenimiento de usuarios API
+ *      - REST
+ *      - Error
+ * - Gestiona el botón "Atrás" / cierre de sesión:
+ *      - Destruye la sesión y vuelve a la página anterior
+ * - Prepara los datos del usuario para la vista (`$datosUsuarioVista`):
+ *      - Código de usuario
+ *      - Número de conexiones
+ *      - Fecha y hora de última conexión anterior
+ *      - Descripción del usuario
+ *      - Perfil administrador
+ * - Carga la vista principal (`layout`) con los datos preparados.
  *
  * Dependencias:
  * - Variables de sesión `$_SESSION`
  * - Clase `Usuario` para obtener información del usuario
- * - Arreglo `$view` para cargar la vista layout
+ * - Clase `DBPDO` para consultas de error
+ * - Arreglo `$view` para cargar el layout
  *
  * @package Controladores
  * @author Cristian Mateos
- * @version 1.0
+ * @version 2.0
  */
 
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {

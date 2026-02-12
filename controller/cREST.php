@@ -1,4 +1,30 @@
 <?php
+/**
+ * Controlador: API Externa
+ *
+ * Gestiona la visualización de la foto de la NASA y razas de perros.
+ * Permite seleccionar fecha y raza, ampliar detalles y navegar entre páginas.
+ *
+ * Funcionalidad:
+ * - Validación de sesión.
+ * - Inicialización de fecha y raza si no existen en sesión.
+ * - Navegación: ampliar detalles de NASA o Dog, o volver a la página anterior.
+ * - Validación de entradas: fecha y raza seleccionada.
+ * - Consumo de APIs externas:
+ *      - NASA: obtiene la foto del día según la fecha seleccionada.
+ *      - Dog API: obtiene la imagen y listado de razas.
+ * - Guarda datos obtenidos en sesión para ser usados en la vista.
+ *
+ * Dependencias:
+ * - Clases REST, NASA, DogApi
+ * - Librería validacionFormularios
+ * - Variables de sesión $_SESSION
+ * - Arreglo $view para cargar la vista layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 1.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

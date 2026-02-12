@@ -1,4 +1,32 @@
 <?php
+/**
+ * Controlador: Login Público
+ *
+ * Este controlador gestiona el inicio de sesión desde la página pública de la aplicación.
+ *
+ * Funcionalidad:
+ * - Gestiona la navegación:
+ *      - Botón "Atrás" redirige a `inicioPublico`.
+ *      - Botón "Registro" redirige a la página de registro.
+ * - Valida los datos del formulario de login:
+ *      - `codUsuario` (alfanumérico, 4-10 caracteres)
+ *      - `password` (alfanumérico, 4-10 caracteres, al menos 1 carácter especial)
+ * - Si las credenciales son correctas:
+ *      - Carga el usuario en sesión (`usuarioActualDWESAplicacionFinal`).
+ *      - Genera un token API único si no existe y lo guarda en la base de datos.
+ *      - Redirige a la página de inicio privado (`inicioPrivado`).
+ * - Si las credenciales son incorrectas, muestra errores en el formulario.
+ *
+ * Dependencias:
+ * - Clase `UsuarioPDO`
+ * - Clase `validacionFormularios`
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
 if (isset($_REQUEST['atras'])) {
     $_SESSION['paginaEnCurso'] = 'inicioPublico';
     header('Location: index.php');

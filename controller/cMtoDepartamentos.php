@@ -1,4 +1,30 @@
 <?php
+/**
+ * Controlador: Mantenimiento de Departamentos
+ *
+ * Este controlador gestiona la página de mantenimiento de departamentos en la aplicación.
+ * Permite navegar, buscar, filtrar y realizar acciones sobre departamentos.
+ *
+ * Funcionalidad:
+ * - Validación de sesión: si no hay usuario activo, redirige a Login.
+ * - Navegación entre páginas:
+ *      - Atrás / Volver: vuelve a la página anterior.
+ *      - Ver / Editar / Eliminar / Dar de baja / Rehabilitar / Alta departamento.
+ * - Búsqueda y filtrado:
+ *      - Validación del campo de búsqueda (solo letras).
+ *      - Guarda la búsqueda y estado seleccionado en sesión.
+ * - Preparación de lista de departamentos según filtros y búsqueda.
+ *
+ * Dependencias:
+ * - Clase `DepartamentoPDO` y métodos `buscarDepartamentos`, `bajaDepartamento`, `rehabilitarDepartamento`.
+ * - Clase `validacionFormularios`.
+ * - Variables de sesión `$_SESSION`.
+ * - Arreglo `$view` para cargar la vista layout.
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

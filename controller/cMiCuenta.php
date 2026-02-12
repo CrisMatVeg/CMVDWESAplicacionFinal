@@ -1,4 +1,31 @@
 <?php
+/**
+ * Controlador: Mi Perfil
+ *
+ * Este controlador gestiona la edición de los datos del usuario actual en la aplicación.
+ *
+ * Funcionalidad:
+ * - Valida sesión activa del usuario.
+ * - Gestiona navegación:
+ *      - Botón "Atrás": destruye sesión y vuelve a la página anterior.
+ *      - Botón "Volver": vuelve al inicio privado.
+ *      - Botón "Borrar cuenta": redirige a la página de eliminación de cuenta.
+ *      - Botón "Cambiar contraseña": redirige a la página de cambio de password.
+ * - Procesa formulario de edición de descripción del usuario:
+ *      - Valida el campo `description` como alfanumérico.
+ *      - Si es correcto, actualiza el usuario en la base de datos y en sesión.
+ *      - Actualiza array de datos del usuario (`$datosUsuarioVista`) para la vista.
+ *
+ * Dependencias:
+ * - Clase `UsuarioPDO` y métodos `editarUsuario` y `validarUsuario`
+ * - Clase `validacionFormularios`
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar la vista layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

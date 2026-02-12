@@ -1,4 +1,31 @@
 <?php
+/**
+ * Controlador: Modificación de Departamento
+ *
+ * Este controlador gestiona la visualización y edición de un departamento
+ * previamente seleccionado.
+ *
+ * Funcionalidad:
+ * - Verifica que exista sesión activa.
+ * - Permite volver a la página anterior mediante el botón "Atrás".
+ * - Obtiene el departamento seleccionado desde la sesión y la base de datos.
+ * - Prepara los datos para la vista.
+ * - Valida los campos del formulario al intentar cambiar datos:
+ *      - descDepartamento (alfanumérico, 1-255 caracteres)
+ *      - VolumenDeNegocio (float positivo)
+ * - Si la validación es correcta, actualiza el departamento mediante
+ *   `DepartamentoPDO::editarDepartamento` y redirige al mantenimiento.
+ *
+ * Dependencias:
+ * - Clase `DepartamentoPDO`
+ * - Clase `validacionFormularios`
+ * - Variables de sesión `$_SESSION`
+ * - Arreglo `$view` para cargar el layout
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 2.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');

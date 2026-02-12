@@ -1,4 +1,30 @@
 <?php
+/**
+ * Controlador: Mantenimiento de Usuarios (actualmente no activo, se utiliza la api)
+ *
+ * Este controlador gestiona la página de mantenimiento de usuarios en la aplicación.
+ * Permite navegar, buscar, filtrar y realizar acciones sobre usuarios.
+ *
+ * Funcionalidad:
+ * - Validación de sesión: si no hay usuario activo, redirige a Login.
+ * - Navegación entre páginas:
+ *      - Atrás / Volver: vuelve a la página anterior.
+ *      - Ver / Editar / Eliminar / Baja de usuario.
+ * - Búsqueda y filtrado:
+ *      - Validación del campo de búsqueda (solo letras, sin números).
+ *      - Guarda la búsqueda en sesión.
+ * - Preparación de lista de usuarios según la búsqueda.
+ *
+ * Dependencias:
+ * - Clase `UsuarioPDO` y métodos `seleccionarUsuario`, `buscarUsuarios`.
+ * - Clase `validacionFormularios`.
+ * - Variables de sesión `$_SESSION`.
+ * - Arreglo `$view` para cargar la vista layout.
+ *
+ * @package Controladores
+ * @author Cristian Mateos
+ * @version 1.0
+ */
 if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
     $_SESSION['paginaEnCurso'] = 'Login';
     header('Location: index.php');
