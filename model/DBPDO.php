@@ -26,6 +26,9 @@ class DBPDO {
             $conexion = new PDO(DSN, USERNAME, PASSWORD);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            date_default_timezone_set('Europe/Madrid');
+            $conexion->exec("SET time_zone = '+01:00'");
+            
             $consulta = $conexion->prepare($sql);
 
             // Ejecutar con o sin parámetros

@@ -2,7 +2,7 @@
  * Token API para autenticar las llamadas a los servicios web.
  * @type {string}
  */
- const tokenAPI = "4db4c99a1258756d97732f80de66485f687b7711070547bff0b2496fa51fa741";
+ const tokenAPI = "04cddc393e711ca78e65a6b72f18d6051f6d6809feeb540de28625f2ce9ea05b";
 
  /**
   * Inicializa la página al cargarla.

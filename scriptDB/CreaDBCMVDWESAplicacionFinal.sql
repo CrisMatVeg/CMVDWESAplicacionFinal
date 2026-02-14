@@ -6,7 +6,7 @@
  * Author:  cristian.matveg
  * Created: 30 oct. 2025
  */
-CREATE DATABASE IF NOT EXISTS DBCMVDWESAplicacionFinal;
+/* CREATE DATABASE IF NOT EXISTS DBCMVDWESAplicacionFinal; */
 USE DBCMVDWESAplicacionFinal;
 /* 
 CREATE TABLE IF NOT EXISTS T02_Departamento (
