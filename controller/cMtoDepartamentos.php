@@ -134,13 +134,13 @@ if (isset($_REQUEST['enviar'])) {
     }
 }
 
-$estadoSeleccionado = $_REQUEST['estado'] ?? 'Todos';
+$estadoSeleccionado = $_REQUEST['estado'] ?? 'Alta';
 
 // Guardar estado en sesión
 if (isset($_REQUEST['enviar'])) {
     $_SESSION['estadoDepartamento'] = $estadoSeleccionado;
 } else {
-    $estadoSeleccionado = $_SESSION['estadoDepartamento'] ?? 'Todos';
+    $estadoSeleccionado = $_SESSION['estadoDepartamento'] ?? 'Alta';
 }
 
 $descripcionBusqueda = $_SESSION['busquedaDepartamento'] ?? null;

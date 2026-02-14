@@ -25,7 +25,7 @@
             <form method="post" class="formbuscar">
                 <label for="descripcion">Buscar Departamento de:</label>
                 <input type="text" name="descripcion" id="descripcion" value="<?php echo(empty($aErrores['descripcion'])) ? ($_SESSION['busquedaDepartamento'] ?? '') : ''; ?>">
-                <?php $estadoActual = $_SESSION['estadoDepartamento'] ?? 'Todos'; ?>
+                <?php $estadoActual = $_SESSION['estadoDepartamento'] ?? 'Alta'; ?>
                 <div>
                     <label for="todos">Todos</label>
                     <input type="radio" name="estado" id="todos" value="Todos"
