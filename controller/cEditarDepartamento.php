@@ -72,12 +72,7 @@ if (isset($_REQUEST['cambiarDatos'])) {
         1
     );
 
-    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat(
-        $_REQUEST['VolumenDeNegocio'],
-        PHP_FLOAT_MAX,
-        0,
-        1
-    );
+    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['VolumenDeNegocio'],100000000,0,1);
 
     $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento'];
     $aRespuestas['VolumenDeNegocio'] = $_REQUEST['VolumenDeNegocio'];
