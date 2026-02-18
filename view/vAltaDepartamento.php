@@ -16,13 +16,13 @@
             <div>
                 <div>
                     <label for="codDepartamento">Código de departamento:</label>
-                    <input type="text" class="required" name="codDepartamento" id="codDepartamento" value="">
+                    <input type="text" class="required" name="codDepartamento" id="codDepartamento" maxlength="3" value="<?php echo !$aErrores['codDepartamento'] ? $aRespuestas['codDepartamento'] : ''; ?>" oninput="this.value = this.value.toUpperCase();">
                     <span style="color:red;"><?php echo $aErrores['codDepartamento']; ?></span>
                     <label for="descDepartamento">Descripción de departamento:</label>
-                    <input type="text" class="required" name="descDepartamento" id="descDepartamento" value="">
+                    <input type="text" class="required" name="descDepartamento" id="descDepartamento" value="<?php echo !$aErrores['descDepartamento'] ? $aRespuestas['descDepartamento'] : ''; ?>">
                     <span style="color:red;"><?php echo $aErrores['descDepartamento']; ?></span>
                     <label for="VolumenDeNegocio">Volumen de negocio de departamento:</label>
-                    <input type="text" class="required" name="VolumenDeNegocio" id="VolumenDeNegocio" value="">
+                    <input type="text" class="required" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php echo !$aErrores['VolumenDeNegocio'] ? $aRespuestas['VolumenDeNegocio'] : ''; ?>">
                     <span style="color:red;"><?php echo $aErrores['VolumenDeNegocio']; ?></span>
                 </div>
             </div>
