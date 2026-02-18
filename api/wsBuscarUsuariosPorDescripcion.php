@@ -31,16 +31,21 @@
  * @version 2.0
  */
 require_once '../model/UsuarioPDO.php';
-header('Content-Type: application/json');
-
+require_once '../core/231018libreriaValidacion.php';
+header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json; charset=utf-8');
 $token = $_GET['token'] ?? null;
 
 if (!$token || !UsuarioPDO::validarToken($token)) {
-    echo json_encode(['error' => 'Token no valido']);
+    echo json_encode([], JSON_PRETTY_PRINT);
     exit;
 }
 
-$descripcion = $_GET['descripcion'] ?? null;
+$descripcion = $_GET['descripcion'] ?? '';
+if (!empty(validacionFormularios::comprobarAlfabetico($descripcion,255,0,0))) {
+    echo json_encode([], JSON_PRETTY_PRINT);
+    exit;
+}
 $listaUsuarios = UsuarioPDO::buscarUsuarios($descripcion);
 
 $resultado = [];
@@ -55,4 +60,4 @@ foreach ($listaUsuarios as $usuario) {
     ];
 }
 
-echo json_encode($resultado, JSON_PRETTY_PRINT);
+echo json_encode($resultado, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
