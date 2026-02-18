@@ -36,12 +36,13 @@
  * @version 2.0
  */
 require_once '../model/UsuarioPDO.php';
-header('Content-Type: application/json');
-
+require_once '../core/231018libreriaValidacion.php';
+header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json; charset=utf-8');
 $token = $_GET['token'] ?? null;
 
 if (!$token || !UsuarioPDO::validarToken($token)) {
-    echo json_encode(['error' => 'No autorizado']);
+    echo json_encode([], JSON_PRETTY_PRINT);
     exit;
 }
 
@@ -57,8 +58,8 @@ $aRespuestas = [
 
 $entradaOK = true;
 
-if (!$input || !isset($input['codUsuario'])) {
-    echo json_encode(['error' => 'Usuario no especificado']);
+if (!isset($input['codUsuario']) || !empty(validacionFormularios::comprobarAlfabetico($input['codUsuario'],100,4,0))) {
+    echo json_encode(['exito'=>false,'errores'=>['codUsuario'=>'Código incorrecto']]);
     exit;
 }
 

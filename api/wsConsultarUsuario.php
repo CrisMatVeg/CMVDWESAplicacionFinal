@@ -22,12 +22,14 @@
  * @version 2.0
  */
 require_once '../model/UsuarioPDO.php';
-header('Content-Type: application/json');
+require_once '../core/231018libreriaValidacion.php';
+header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json; charset=utf-8');
 
 $token = $_GET['token'] ?? null;
 
 if (!$token || !UsuarioPDO::validarToken($token)) {
-    echo json_encode(['error' => 'No autorizado']);
+    echo json_encode([], JSON_PRETTY_PRINT);
     exit;
 }
 
@@ -39,12 +41,16 @@ if (!$input || !isset($input['codUsuario']) || empty($input['codUsuario'])) {
     exit;
 }
 
-$codUsuario = $input['codUsuario'];
+$codUsuario = $input['codUsuario'] ?? '';
+if (empty($codUsuario) || !empty(validacionFormularios::comprobarAlfabetico($codUsuario, 100, 4, 0))) {
+    echo json_encode([], JSON_PRETTY_PRINT);
+    exit;
+}
 
 $usuario = UsuarioPDO::validarUsuario($codUsuario);
 
 if (!$usuario) {
-    echo json_encode(['error' => 'Usuario no encontrado']);
+    echo json_encode([], JSON_PRETTY_PRINT);
     exit;
 }
 
@@ -54,4 +60,4 @@ echo json_encode([
     'numConexiones' => $usuario->getNumConexiones(),
     'fechaHoraUltimaConexion' => $usuario->getFechaHoraUltimaConexion(),
     'perfil' => $usuario->getPerfil()
-], JSON_PRETTY_PRINT);
+], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

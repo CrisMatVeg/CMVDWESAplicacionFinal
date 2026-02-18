@@ -40,7 +40,7 @@ class UsuarioPDO {
             $objetoResultado['T01_Password'],
             $objetoResultado['T01_DescUsuario'],
             $objetoResultado['T01_NumConexiones'],
-            null,
+            $objetoResultado['T01_FechaHoraUltimaConexion'],
             $objetoResultado['T01_Perfil'],
             $objetoResultado['T01_ImagenUsuario'],
             new DateTime($objetoResultado['T01_FechaHoraUltimaConexion'])
@@ -53,7 +53,7 @@ class UsuarioPDO {
      * @param Usuario $usuario Objeto usuario a actualizar
      * @return void
      */
-    public function actualizarUltimaConexionYUsuario($usuario) {
+    public static function actualizarUltimaConexionYUsuario($usuario) {
         $codUsuario = $usuario->getCodUsuario();
 
         $sqlUpdate = "UPDATE T01_Usuarios 

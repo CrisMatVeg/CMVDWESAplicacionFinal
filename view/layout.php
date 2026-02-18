@@ -179,7 +179,7 @@
         ?>
             <footer>
                 <div class="footer-grid">
-                    <div>© 2025-26 IES Los Sauces. Todos los derechos reservados. <a href="../CMVDWESProyectoDWES/indexProyectoDWES.php" title="Inicio">Cristian Mateos Vega</a></div>
+                    <div>© 2025-26 IES Los Sauces. Todos los derechos reservados. <a href="../CMVDWESProyectoDWES/indexProyectoDWES.php" target="_blank" title="Inicio">Cristian Mateos Vega</a></div>
                     <div>
                         <?php
                             if(isset($_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']) && $_SESSION['arrayDatosUsuarioActualDWESAplicacionFinal']['esAdmin']){

@@ -5,7 +5,7 @@
  * Representa un usuario del sistema con sus datos de acceso, perfil, 
  * número de conexiones y fecha/hora de última conexión.
  *
- * @package Modelos
+ * @package Usuarios
  * @author Cristian Mateos
  * @version 1.0
  */
@@ -99,10 +99,6 @@ class Usuario {
         return $this->password; 
     }
 
-    public function setPassword($password) { 
-        return $this->password=$password; 
-    }
-
     /**
      * Obtiene la descripción o nombre del usuario
      * @return string Descripción del usuario
@@ -137,7 +133,7 @@ class Usuario {
 
     /**
      * Establece la fecha y hora de la última conexión
-     * @param string $fecha Nueva fecha/hora de la última conexión
+     * @param DateTime $fecha Nueva fecha/hora de la última conexión
      */
     public function setFechaHoraUltimaConexion($fecha) {
         $this->fechaHoraUltimaConexion = $fecha;

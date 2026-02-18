@@ -85,29 +85,31 @@ if (isset($_REQUEST['acceder'])) {
 
     if ($entradaOK) {
 
-        $codUsuario = $_REQUEST['codUsuario'];
-        $password = $codUsuario . $_REQUEST['password'];
+        $codUsuario = $_REQUEST['codUsuario'] == null ? '' : $_REQUEST['codUsuario'];
+        $password = $_REQUEST['password'] == null ? '' : $codUsuario . $_REQUEST['password'];
 
         // Llamar al modelo
         $usuarioPDO = new UsuarioPDO();
-        $usuario = UsuarioPDO::validarUsuario($codUsuario, $password);
+        $usuario = $usuarioPDO->validarUsuario($codUsuario, $password);
 
         if ($usuario) {
+            $usuarioPDO->actualizarUltimaConexionYUsuario($usuario);
+
             // Guardar usuario en sesión para la app
             $_SESSION['usuarioActualDWESAplicacionFinal'] = $usuario;
-        
+
             // Buscar si ya tiene token en la base de datos
             $token = UsuarioPDO::obtenerToken($codUsuario);
-        
+
             if (!$token) {
                 // Generar token aleatorio (una sola vez)
                 $token = bin2hex(random_bytes(32)); // 64 caracteres hex
                 UsuarioPDO::guardarToken($codUsuario, $token);
             }
-        
+
             // Guardar token en sesión opcional (para mostrarlo en la app)
             $_SESSION['tokenAPI'] = $token;
-        
+
             // Redirigir a la app
             $_SESSION['paginaEnCurso'] = 'inicioPrivado';
             header('Location: index.php');

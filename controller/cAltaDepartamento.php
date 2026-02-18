@@ -58,7 +58,7 @@ if (isset($_REQUEST['confirmarAñadir'])) {
 
     $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['codDepartamento'], 3, 3, 1);
     $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descDepartamento'], 255, 4, 1, 1);
-    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['VolumenDeNegocio'], PHP_FLOAT_MAX, 0, 1);
+    $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['VolumenDeNegocio'], 10, 0, 1);
 
     $aRespuestas['codDepartamento'] = $_REQUEST['codDepartamento'];
     $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento'];

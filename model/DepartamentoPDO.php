@@ -21,7 +21,7 @@ class DepartamentoPDO {
      * @param string|null $descripcion Texto a buscar en la descripción
      * @return array Array de objetos stdClass con los datos de los departamentos
      */
-    public static function buscarDepartamentos($estado = "Todos", $descripcion = null) {
+    public static function buscarDepartamentos($estado, $descripcion = null) {
 
         $sql = "SELECT * FROM T02_Departamento WHERE 1=1";
         $parametros = [];

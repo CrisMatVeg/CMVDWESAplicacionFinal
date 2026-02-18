@@ -25,7 +25,7 @@
             <form method="post" class="formbuscar">
                 <label for="descripcion">Buscar Departamento de:</label>
                 <input type="text" name="descripcion" id="descripcion" value="<?php echo(empty($aErrores['descripcion'])) ? ($_SESSION['busquedaDepartamento'] ?? '') : ''; ?>">
-                <?php $estadoActual = $_SESSION['estadoDepartamento'] ?? 'Todos'; ?>
+                <?php $estadoActual = $_SESSION['estadoDepartamento'] ?? 'Alta'; ?>
                 <div>
                     <label for="todos">Todos</label>
                     <input type="radio" name="estado" id="todos" value="Todos"
@@ -58,6 +58,12 @@
                     echo $estaDeBaja ? '<tr class="dpto-baja">' : '<tr>';
                     foreach (get_object_vars($departamento) as $campo => $valor) {
                         if (!is_null($valor)) {
+                            if (strpos(strtolower($campo), 'fecha') !== false) {
+                                $valor = date('d/m/Y H:i:s', strtotime($valor));
+                            }
+                            elseif (strpos(strtolower($campo), 'volumen') !== false) {
+                                $valor = number_format($valor, 2, ',', '.') . ' €';
+                            }
                             echo "<td>$valor</td>";
                         } else {
                             echo "<td>No Determinado</td>";
