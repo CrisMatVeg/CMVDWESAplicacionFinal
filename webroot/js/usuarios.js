@@ -13,30 +13,41 @@ const tokenAPI =
 window.onload = function () {
   const descripcionInput = document.getElementById("descripcion");
 
-  const busquedaGuardada =
-    sessionStorage.getItem("busquedaUsuarios") ?? "";
-
+  // Recuperar búsqueda guardada en sessionStorage
+  const busquedaGuardada = sessionStorage.getItem("busquedaUsuarios") ?? "";
   descripcionInput.value = busquedaGuardada;
 
+  // Cargar tabla inicialmente
   cargarUsuarios(busquedaGuardada);
 
-  descripcionInput.addEventListener("input", function () {
-    const valor = descripcionInput.value.trim();
-    sessionStorage.setItem("busquedaUsuarios", valor);
-    cargarUsuarios(valor);
-  });
+  // Evento input con debounce de 300ms
+  descripcionInput.addEventListener(
+    "input",
+    debounce(function () {
+      const valor = descripcionInput.value.trim();
+      sessionStorage.setItem("busquedaUsuarios", valor);
+      cargarUsuarios(valor);
+    }, 300),
+  );
 };
+
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
 
 function formatearFecha(fechaISO) {
   const fecha = new Date(fechaISO);
+  if (isNaN(fecha)) return "";
+
   const pad = (n) => n.toString().padStart(2, "0");
-  const dia = pad(fecha.getDate());
-  const mes = pad(fecha.getMonth() + 1);
-  const anio = fecha.getFullYear();
-  const hora = pad(fecha.getHours());
-  const min = pad(fecha.getMinutes());
-  const seg = pad(fecha.getSeconds());
-  return `${dia}/${mes}/${anio} ${hora}:${min}:${seg}`;
+
+  return `${pad(fecha.getDate())}/${pad(fecha.getMonth() + 1)}/${fecha.getFullYear()} ${pad(
+    fecha.getHours()
+  )}:${pad(fecha.getMinutes())}:${pad(fecha.getSeconds())}`;
 }
 
 /**
@@ -45,20 +56,17 @@ function formatearFecha(fechaISO) {
  */
 async function cargarUsuarios(descripcion = "") {
   const cuerpoTabla = document.querySelector("#tablaUsuarios tbody");
-  cuerpoTabla.innerHTML = "";
+
+  while (cuerpoTabla.firstChild) {
+    cuerpoTabla.removeChild(cuerpoTabla.firstChild);
+  }
 
   try {
     let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=${tokenAPI}`;
-
-    if (descripcion) {
-      url += `&descripcion=${encodeURIComponent(descripcion)}`;
-    }
+    if (descripcion) url += `&descripcion=${encodeURIComponent(descripcion)}`;
 
     const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error("Error HTTP: " + response.status);
-    }
+    if (!response.ok) throw new Error("Error HTTP: " + response.status);
 
     const listaUsuarios = await response.json();
 
@@ -66,6 +74,7 @@ async function cargarUsuarios(descripcion = "") {
       listaUsuarios.forEach((usuario) => {
         const fila = document.createElement("tr");
 
+        // Función interna para crear celdas
         function crearCelda(texto) {
           const td = document.createElement("td");
           td.textContent = texto ?? "";
@@ -76,31 +85,28 @@ async function cargarUsuarios(descripcion = "") {
           ? formatearFecha(usuario.fechaHoraUltimaConexion)
           : "";
 
+        // Añadir celdas de datos
         crearCelda(usuario.codUsuario);
         crearCelda(usuario.descUsuario);
         crearCelda(usuario.numConexiones);
         crearCelda(fechaUltimaConexion);
         crearCelda(usuario.perfil);
 
-        // Celda de acciones
+        // Celda de acciones con botones
         const tdAcciones = document.createElement("td");
 
-        // Botón consultar
         const btnConsultar = document.createElement("button");
         btnConsultar.className = "opcionUsuario";
         btnConsultar.type = "button";
-        btnConsultar.innerHTML =
-          '<i class="fa-solid fa-eye"></i>';
+        btnConsultar.innerHTML = '<i class="fa-solid fa-eye"></i>';
         btnConsultar.addEventListener("click", () => {
           consultarUsuario(usuario.codUsuario);
         });
 
-        // Botón borrar
         const btnBorrar = document.createElement("button");
         btnBorrar.className = "opcionUsuario";
         btnBorrar.type = "button";
-        btnBorrar.innerHTML =
-          '<i class="fa-solid fa-trash"></i>';
+        btnBorrar.innerHTML = '<i class="fa-solid fa-trash"></i>';
         btnBorrar.addEventListener("click", () => {
           borrarUsuario(usuario.codUsuario);
         });
@@ -112,6 +118,7 @@ async function cargarUsuarios(descripcion = "") {
         cuerpoTabla.appendChild(fila);
       });
     } else {
+      // Caso: no hay resultados
       const fila = document.createElement("tr");
       const td = document.createElement("td");
       td.colSpan = 6;
@@ -122,6 +129,7 @@ async function cargarUsuarios(descripcion = "") {
   } catch (error) {
     console.error("Error al cargar usuarios:", error);
 
+    // Caso: error en fetch o red
     const fila = document.createElement("tr");
     const td = document.createElement("td");
     td.colSpan = 6;
@@ -148,23 +156,22 @@ function consultarUsuario(codUsuario) {
         return;
       }
       let fechaUltimaConexion = usuario.fechaHoraUltimaConexion
-            ? formatearFecha(usuario.fechaHoraUltimaConexion)
-            : "";
+        ? formatearFecha(usuario.fechaHoraUltimaConexion)
+        : "";
       const contenido = `
        <h2>Información del Usuario</h2>
        <p><strong>Usuario:</strong> ${usuario.codUsuario}</p>
        <p><strong>Descripción:</strong> ${usuario.descUsuario}</p>
        <p><strong>Nº Conexiones:</strong> ${usuario.numConexiones}</p>
        <p><strong>Última conexión:</strong> ${
-        fechaUltimaConexion ?? "Nunca"
+         fechaUltimaConexion ?? "Nunca"
        }</p>
        <p><strong>Perfil:</strong> ${usuario.perfil}</p>
      `;
 
       document.getElementById("contenidoModal").innerHTML = contenido;
-      document.getElementById(
-        "accionesModal"
-      ).innerHTML = `<button onclick="cerrarModal()" class="btn primary">Cerrar</button>`;
+      document.getElementById("accionesModal").innerHTML =
+        `<button onclick="cerrarModal()" class="btn primary">Cerrar</button>`;
 
       abrirModal();
     })
