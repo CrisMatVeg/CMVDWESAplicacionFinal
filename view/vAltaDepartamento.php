@@ -22,7 +22,7 @@
                     <input type="text" class="required" name="descDepartamento" id="descDepartamento" value="<?php echo !$aErrores['descDepartamento'] ? $aRespuestas['descDepartamento'] : ''; ?>">
                     <span style="color:red;"><?php echo $aErrores['descDepartamento']; ?></span>
                     <label for="VolumenDeNegocio">Volumen de negocio de departamento:</label>
-                    <input type="text" class="required" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php echo !$aErrores['VolumenDeNegocio'] ? $aRespuestas['VolumenDeNegocio'] : ''; ?>">
+                    <input type="text" class="required" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php echo !$aErrores['VolumenDeNegocio'] ? str_replace('.', ',', $aRespuestas['VolumenDeNegocio']) : ''; ?>">
                     <span style="color:red;"><?php echo $aErrores['VolumenDeNegocio']; ?></span>
                 </div>
             </div>
