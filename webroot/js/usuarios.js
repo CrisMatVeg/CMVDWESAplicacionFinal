@@ -3,7 +3,7 @@
  * @type {string}
  */
 const tokenAPI =
-  "38641cd2ecbb2fb866b28f2e104e94101e150a820f6201ae39c8e48c5c17f918";
+  "04cddc393e711ca78e65a6b72f18d6051f6d6809feeb540de28625f2ce9ea05b";
 
 /**
  * Inicializa la página al cargarla.
@@ -13,81 +13,130 @@ const tokenAPI =
 window.onload = function () {
   const descripcionInput = document.getElementById("descripcion");
 
-  // Recuperar búsqueda guardada
-  const busquedaGuardada = localStorage.getItem("busquedaUsuarios") ?? "";
+  // Recuperar búsqueda guardada en sessionStorage
+  const busquedaGuardada = sessionStorage.getItem("busquedaUsuarios") ?? "";
   descripcionInput.value = busquedaGuardada;
 
-  // Cargar tabla de usuarios inicialmente
+  // Cargar tabla inicialmente
   cargarUsuarios(busquedaGuardada);
 
-  // Evento para actualización en tiempo real y almacenamiento en localStorage
-  descripcionInput.addEventListener("input", function () {
-    const valor = descripcionInput.value.trim();
-    localStorage.setItem("busquedaUsuarios", valor);
-    cargarUsuarios(valor);
-  });
+  // Evento input con debounce de 300ms
+  descripcionInput.addEventListener(
+    "input",
+    debounce(function () {
+      const valor = descripcionInput.value.trim();
+      sessionStorage.setItem("busquedaUsuarios", valor);
+      cargarUsuarios(valor);
+    }, 300),
+  );
 };
+
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
 
 function formatearFecha(fechaISO) {
   const fecha = new Date(fechaISO);
+  if (isNaN(fecha)) return "";
+
   const pad = (n) => n.toString().padStart(2, "0");
-  const dia = pad(fecha.getDate());
-  const mes = pad(fecha.getMonth() + 1);
-  const anio = fecha.getFullYear();
-  const hora = pad(fecha.getHours());
-  const min = pad(fecha.getMinutes());
-  const seg = pad(fecha.getSeconds());
-  return `${dia}/${mes}/${anio} ${hora}:${min}:${seg}`;
+
+  return `${pad(fecha.getDate())}/${pad(fecha.getMonth() + 1)}/${fecha.getFullYear()} ${pad(
+    fecha.getHours()
+  )}:${pad(fecha.getMinutes())}:${pad(fecha.getSeconds())}`;
 }
 
 /**
  * Carga la lista de usuarios desde la API y la muestra en la tabla.
  * @param {string} descripcion Filtro opcional por descripción
  */
-function cargarUsuarios(descripcion = "") {
-  let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=${tokenAPI}`;
-  if (descripcion) {
-    url += `&descripcion=${encodeURIComponent(descripcion)}`;
+async function cargarUsuarios(descripcion = "") {
+  const cuerpoTabla = document.querySelector("#tablaUsuarios tbody");
+
+  while (cuerpoTabla.firstChild) {
+    cuerpoTabla.removeChild(cuerpoTabla.firstChild);
   }
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((listaUsuarios) => {
-      const cuerpoTabla = document.querySelector("#tablaUsuarios tbody");
-      cuerpoTabla.innerHTML = "";
+  try {
+    let url = `./api/wsBuscarUsuariosPorDescripcion.php?token=${tokenAPI}`;
+    if (descripcion) url += `&descripcion=${encodeURIComponent(descripcion)}`;
 
-      if (listaUsuarios.length > 0) {
-        listaUsuarios.forEach((usuario) => {
-          let fechaUltimaConexion = usuario.fechaHoraUltimaConexion
-            ? formatearFecha(usuario.fechaHoraUltimaConexion)
-            : "";
-          cuerpoTabla.innerHTML += `
-             <tr>
-               <td>${usuario.codUsuario}</td>
-               <td>${usuario.descUsuario}</td>
-               <td>${usuario.numConexiones}</td>
-               <td>${fechaUltimaConexion}</td>
-               <td>${usuario.perfil}</td>
-               <td>
-                 <button onclick="consultarUsuario('${
-                   usuario.codUsuario
-                 }')" class="opcionUsuario" type="button">
-                   <i class="fa-solid fa-eye"></i>
-                 </button>
-                 <button onclick="borrarUsuario('${
-                   usuario.codUsuario
-                 }')" class="opcionUsuario" type="button">
-                   <i class="fa-solid fa-trash"></i>
-                 </button>
-               </td>
-             </tr>
-           `;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Error HTTP: " + response.status);
+
+    const listaUsuarios = await response.json();
+
+    if (Array.isArray(listaUsuarios) && listaUsuarios.length > 0) {
+      listaUsuarios.forEach((usuario) => {
+        const fila = document.createElement("tr");
+
+        // Función interna para crear celdas
+        function crearCelda(texto) {
+          const td = document.createElement("td");
+          td.textContent = texto ?? "";
+          fila.appendChild(td);
+        }
+
+        const fechaUltimaConexion = usuario.fechaHoraUltimaConexion
+          ? formatearFecha(usuario.fechaHoraUltimaConexion)
+          : "";
+
+        // Añadir celdas de datos
+        crearCelda(usuario.codUsuario);
+        crearCelda(usuario.descUsuario);
+        crearCelda(usuario.numConexiones);
+        crearCelda(fechaUltimaConexion);
+        crearCelda(usuario.perfil);
+
+        // Celda de acciones con botones
+        const tdAcciones = document.createElement("td");
+
+        const btnConsultar = document.createElement("button");
+        btnConsultar.className = "opcionUsuario";
+        btnConsultar.type = "button";
+        btnConsultar.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        btnConsultar.addEventListener("click", () => {
+          consultarUsuario(usuario.codUsuario);
         });
-      } else {
-        cuerpoTabla.innerHTML = `<td>No hay resultados que mostrar</td>`;
-      }
-    })
-    .catch((error) => console.error("Error al cargar usuarios:", error));
+
+        const btnBorrar = document.createElement("button");
+        btnBorrar.className = "opcionUsuario";
+        btnBorrar.type = "button";
+        btnBorrar.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        btnBorrar.addEventListener("click", () => {
+          borrarUsuario(usuario.codUsuario);
+        });
+
+        tdAcciones.appendChild(btnConsultar);
+        tdAcciones.appendChild(btnBorrar);
+
+        fila.appendChild(tdAcciones);
+        cuerpoTabla.appendChild(fila);
+      });
+    } else {
+      // Caso: no hay resultados
+      const fila = document.createElement("tr");
+      const td = document.createElement("td");
+      td.colSpan = 6;
+      td.textContent = "No hay resultados que mostrar";
+      fila.appendChild(td);
+      cuerpoTabla.appendChild(fila);
+    }
+  } catch (error) {
+    console.error("Error al cargar usuarios:", error);
+
+    // Caso: error en fetch o red
+    const fila = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 6;
+    td.textContent = "Error al conectar con el servidor";
+    fila.appendChild(td);
+    cuerpoTabla.appendChild(fila);
+  }
 }
 
 /**
@@ -107,23 +156,22 @@ function consultarUsuario(codUsuario) {
         return;
       }
       let fechaUltimaConexion = usuario.fechaHoraUltimaConexion
-            ? formatearFecha(usuario.fechaHoraUltimaConexion)
-            : "";
+        ? formatearFecha(usuario.fechaHoraUltimaConexion)
+        : "";
       const contenido = `
        <h2>Información del Usuario</h2>
        <p><strong>Usuario:</strong> ${usuario.codUsuario}</p>
        <p><strong>Descripción:</strong> ${usuario.descUsuario}</p>
        <p><strong>Nº Conexiones:</strong> ${usuario.numConexiones}</p>
        <p><strong>Última conexión:</strong> ${
-        fechaUltimaConexion ?? "Nunca"
+         fechaUltimaConexion ?? "Nunca"
        }</p>
        <p><strong>Perfil:</strong> ${usuario.perfil}</p>
      `;
 
       document.getElementById("contenidoModal").innerHTML = contenido;
-      document.getElementById(
-        "accionesModal"
-      ).innerHTML = `<button onclick="cerrarModal()" class="btn primary">Cerrar</button>`;
+      document.getElementById("accionesModal").innerHTML =
+        `<button onclick="cerrarModal()" class="btn primary">Cerrar</button>`;
 
       abrirModal();
     })
