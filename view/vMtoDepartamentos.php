@@ -58,6 +58,12 @@
                     echo $estaDeBaja ? '<tr class="dpto-baja">' : '<tr>';
                     foreach (get_object_vars($departamento) as $campo => $valor) {
                         if (!is_null($valor)) {
+                            if (strpos(strtolower($campo), 'fecha') !== false) {
+                                $valor = date('d/m/Y H:i:s', strtotime($valor));
+                            }
+                            elseif (strpos(strtolower($campo), 'volumen') !== false) {
+                                $valor = number_format($valor, 2, ',', '.') . ' €';
+                            }
                             echo "<td>$valor</td>";
                         } else {
                             echo "<td>No Determinado</td>";
