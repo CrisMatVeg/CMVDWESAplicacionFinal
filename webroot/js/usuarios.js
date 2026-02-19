@@ -3,7 +3,7 @@
  * @type {string}
  */
 const tokenAPI =
-  "04cddc393e711ca78e65a6b72f18d6051f6d6809feeb540de28625f2ce9ea05b";
+  "38641cd2ecbb2fb866b28f2e104e94101e150a820f6201ae39c8e48c5c17f918";
 
 /**
  * Inicializa la página al cargarla.

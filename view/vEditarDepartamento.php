@@ -20,9 +20,11 @@
                         <label for="descDepartamento">Descripción de departamento:</label>
                         <input type="text" class="required" name="descDepartamento" id="descDepartamento" value="<?php echo $avConsultarDpto["descDepartamento"]?>">
                         <label for="fechaCreacionDepartamento">Fecha de creación de departamento:</label>
-                        <input disabled type="text" name="fechaCreacionDepartamento" id="fechaCreacionDepartamento" value="<?php echo $avConsultarDpto["fechaCreacionDepartamento"]?>">
+                        <input disabled type="text" name="fechaCreacionDepartamento" id="fechaCreacionDepartamento" value="<?php $avConsultarDpto["fechaCreacionDepartamento"] = date('d/m/Y H:i:s', strtotime($avConsultarDpto["fechaCreacionDepartamento"])); 
+                            echo $avConsultarDpto["fechaCreacionDepartamento"];?>">
                         <label for="VolumenDeNegocio">Volumen de negocio de departamento:</label>
-                        <input type="text" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php echo $avConsultarDpto["VolumenDeNegocio"]?>">
+                        <input type="text" name="VolumenDeNegocio" id="VolumenDeNegocio" value="<?php $avConsultarDpto["VolumenDeNegocio"]=number_format($avConsultarDpto["VolumenDeNegocio"], 2, ',', '.') . ' €';
+                            echo $avConsultarDpto["VolumenDeNegocio"];?>">
                         <label for="FechaDeBaja">Fecha de Baja:</label>
                         <input disabled type="text" disabled id="FechaDeBaja" value="<?php echo $avConsultarDpto["fechaBajaDepartamento"] ?? "---"?>">
                     </div>
