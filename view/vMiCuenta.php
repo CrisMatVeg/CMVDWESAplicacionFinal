@@ -30,7 +30,8 @@
                 <div>
                     <div>
                         <label for="description">Description:</label>
-                        <input type="text" id="description" name="description">
+                        <input type="text" id="description" name="description" value="<?php echo !$aErrores['description'] ? $aRespuestas['description'] : ''; ?>">
+                        <span style="color:red;"><?php echo $aErrores['description']; ?></span>
                     </div>
                 </div>
                 <input type="submit" name="cambiarDatos" value='Cambiar Datos' class="btn primary">

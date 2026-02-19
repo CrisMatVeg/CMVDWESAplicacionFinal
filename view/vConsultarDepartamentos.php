@@ -28,7 +28,14 @@
                             $avConsultarDpto["VolumenDeNegocio"]=number_format($avConsultarDpto["VolumenDeNegocio"], 2, ',', '.') . ' €';
                             echo $avConsultarDpto["VolumenDeNegocio"];?>">
                         <label for="FechaDeBaja">Fecha de Baja:</label>
-                        <input type="text" disabled id="FechaDeBaja" value="<?php echo $avConsultarDpto["fechaBajaDepartamento"]?? "---"?>">
+                        <input type="text" disabled id="FechaDeBaja" value="<?php 
+                            if($avConsultarDpto["fechaBajaDepartamento"]){
+                                $avConsultarDpto["fechaBajaDepartamento"] = date('d/m/Y H:i:s', strtotime($avConsultarDpto["fechaBajaDepartamento"]));
+                                echo $avConsultarDpto["fechaBajaDepartamento"];
+                            }else{
+                                echo "---";
+                            }
+                        ?>">
                     </div>
                 </div>
             </fieldset>
