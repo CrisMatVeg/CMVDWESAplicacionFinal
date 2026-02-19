@@ -33,7 +33,7 @@ if (!isset($_SESSION['usuarioActualDWESAplicacionFinal'])) {
 }
 
 if (isset($_REQUEST['atras'])) {
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    $_SESSION['paginaEnCurso'] = 'MtoDepartamentos';
     header('Location: index.php');
     exit;
 }
@@ -64,6 +64,9 @@ $avConsultarDpto = [
 if (isset($_REQUEST['cambiarDatos'])) {
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    if (isset($_REQUEST['VolumenDeNegocio'])) {
+        $_REQUEST['VolumenDeNegocio'] = str_replace(',', '.', $_REQUEST['VolumenDeNegocio']);
+    }
 
     $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfaNumerico(
         $_REQUEST['descDepartamento'],
@@ -75,7 +78,7 @@ if (isset($_REQUEST['cambiarDatos'])) {
     $aErrores['VolumenDeNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['VolumenDeNegocio'],100000000,0,1);
 
     $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento'];
-    $aRespuestas['VolumenDeNegocio'] = $_REQUEST['VolumenDeNegocio'];
+    $aRespuestas['VolumenDeNegocio'] = str_replace('.', ',', $_REQUEST['VolumenDeNegocio']);
 
     foreach ($aErrores as $error) {
         if ($error != null) {
