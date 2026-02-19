@@ -184,7 +184,7 @@ function consultarUsuario(codUsuario) {
  */
 function borrarUsuario(codUsuario) {
   const contenido = `
-       <h3>Eliminar Usuario</h3>
+       <h3>Quiere eliminar al usuario ${codUsuario}?</h3>
        <p>Para confirmar escribe <strong>SI</strong></p>
        <input type="text" id="confirmacionInput">
        <div id="errorConfirmacion" style="color:red;"></div>

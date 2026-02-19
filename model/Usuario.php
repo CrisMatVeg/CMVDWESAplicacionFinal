@@ -100,6 +100,14 @@ class Usuario {
     }
 
     /**
+     * Cambia la contraseña del usuario
+     * @return string Contraseña del usuario
+     */
+    public function setPassword($password) { 
+        return $this->password=$password; 
+    }
+
+    /**
      * Obtiene la descripción o nombre del usuario
      * @return string Descripción del usuario
      */
