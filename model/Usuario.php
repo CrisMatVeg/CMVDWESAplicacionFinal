@@ -101,7 +101,8 @@ class Usuario {
 
     /**
      * Cambia la contraseña del usuario
-     * @return string Contraseña del usuario
+     * @param string $password Nueva contraseña del usuario
+     * @return bool Devuelve si se ha cambiado la contraseña o no
      */
     public function setPassword($password) { 
         return $this->password=$password; 
